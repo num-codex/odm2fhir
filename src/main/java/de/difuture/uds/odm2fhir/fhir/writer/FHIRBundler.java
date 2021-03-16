@@ -1,0 +1,255 @@
+package de.difuture.uds.odm2fhir.fhir.writer;
+
+/*
+ * Copyright (C) 2021 DIFUTURE (https://difuture.de)
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
+ * documentation files (the "Software"), to deal in the Software without restriction, including without limitation
+ * the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, copies
+ * of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following
+ * conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the
+ * Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+ * WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+ * OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+
+import ca.uhn.fhir.context.support.DefaultProfileValidationSupport;
+import ca.uhn.fhir.context.support.ValidationSupportContext;
+import ca.uhn.fhir.context.support.ValueSetExpansionOptions;
+import ca.uhn.fhir.validation.FhirValidator;
+import ca.uhn.fhir.validation.SingleValidationMessage;
+
+import lombok.extern.slf4j.Slf4j;
+
+import org.hl7.fhir.common.hapi.validation.support.CachingValidationSupport;
+import org.hl7.fhir.common.hapi.validation.support.CommonCodeSystemsTerminologyService;
+import org.hl7.fhir.common.hapi.validation.support.InMemoryTerminologyServerValidationSupport;
+import org.hl7.fhir.common.hapi.validation.support.PrePopulatedValidationSupport;
+import org.hl7.fhir.common.hapi.validation.support.RemoteTerminologyServiceValidationSupport;
+import org.hl7.fhir.common.hapi.validation.support.SnapshotGeneratingValidationSupport;
+import org.hl7.fhir.common.hapi.validation.support.ValidationSupportChain;
+import org.hl7.fhir.common.hapi.validation.validator.FhirInstanceValidator;
+import org.hl7.fhir.instance.model.api.IBaseResource;
+import org.hl7.fhir.r4.model.Bundle;
+import org.hl7.fhir.r4.model.Bundle.BundleEntryRequestComponent;
+import org.hl7.fhir.r4.model.DomainResource;
+import org.hl7.fhir.r4.model.Meta;
+import org.hl7.fhir.r4.model.ValueSet;
+import org.hl7.fhir.utilities.npm.NpmPackage;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+
+import java.io.IOException;
+import java.net.URI;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.Locale;
+import java.util.stream.Stream;
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+import javax.annotation.PostConstruct;
+
+import static ca.uhn.fhir.validation.ResultSeverityEnum.ERROR;
+import static ca.uhn.fhir.validation.ResultSeverityEnum.WARNING;
+
+import static de.difuture.uds.odm2fhir.fhir.util.CommonCodeSystem.ICD_10_GM;
+import static de.difuture.uds.odm2fhir.fhir.util.CommonCodeSystem.LOINC;
+import static de.difuture.uds.odm2fhir.fhir.util.CommonCodeSystem.SNOMED_CT;
+import static de.difuture.uds.odm2fhir.fhir.util.NUMStructureDefinition.GECCO_BUNDLE;
+import static de.difuture.uds.odm2fhir.fhir.writer.FHIRBundleWriter.FHIR_CONTEXT;
+import static de.difuture.uds.odm2fhir.fhir.writer.FHIRBundleWriter.JSON_PARSER;
+import static de.difuture.uds.odm2fhir.util.EnvironmentProvider.getEnvironment;
+import static de.difuture.uds.odm2fhir.util.HTTPHelper.createAuthInterceptor;
+
+import static org.apache.commons.lang3.StringUtils.containsAny;
+import static org.apache.commons.lang3.StringUtils.startsWith;
+import static org.apache.commons.lang3.function.Failable.asFunction;
+import static org.apache.commons.lang3.function.Failable.asPredicate;
+
+import static org.hl7.fhir.r4.model.Bundle.BundleType.TRANSACTION;
+import static org.hl7.fhir.r4.model.Bundle.HTTPVerb.POST;
+import static org.hl7.fhir.r4.model.Bundle.HTTPVerb.PUT;
+import static org.hl7.fhir.r4.model.codesystems.ResourceTypes.CODESYSTEM;
+import static org.hl7.fhir.r4.model.codesystems.ResourceTypes.STRUCTUREDEFINITION;
+import static org.hl7.fhir.r4.model.codesystems.ResourceTypes.VALUESET;
+import static org.hl7.fhir.r4.model.codesystems.ResourceTypes.fromCode;
+import static org.hl7.fhir.r4.model.codesystems.SearchModifierCode.IDENTIFIER;
+
+import static org.springframework.util.CollectionUtils.isEmpty;
+
+import static java.lang.String.format;
+import static java.util.Comparator.comparing;
+import static java.util.Locale.ENGLISH;
+import static java.util.function.Predicate.not;
+
+@Slf4j
+@Service
+public class FHIRBundler {
+
+  @Value("classpath:fhir/profiles")
+  private Path profiles;
+
+  @Value("${fhir.updateascreate.enabled:false}")
+  private boolean updateascreateEnabled;
+
+  @Value("${fhir.validation.enabled:false}")
+  private boolean validationEnabled;
+
+  @Value("${fhir.validation.codeerrors.ignored:true}")
+  private boolean validationCodeerrorsIgnored;
+
+  @Value("${fhir.terminologyserver.url:}")
+  private URI terminologyserverUrl;
+
+  @Value("${fhir.terminologyserver.basicauth.username:}")
+  private String terminologyserverBasicauthUsername;
+
+  @Value("${fhir.terminologyserver.basicauth.password:}")
+  private String terminologyserverBasicauthPassword;
+
+  @Value("${fhir.terminologyserver.oauth2.token.url:}")
+  private String terminologyserverOauth2TokenURL;
+
+  @Value("${fhir.terminologyserver.oauth2.client.id:}")
+  private String terminologyserverOauth2ClientId;
+
+  @Value("${fhir.terminologyserver.oauth2.client.secret:}")
+  private String terminologyserverOauth2ClientSecret;
+
+  private FhirValidator fhirValidator;
+
+  @PostConstruct
+  private void init() throws IOException {
+    if (validationEnabled) {
+      Locale.setDefault(ENGLISH);
+      @SuppressWarnings("unchecked")
+      var prePopulatedValidationSupport = new PrePopulatedValidationSupport(FHIR_CONTEXT) {
+        @Override
+        public ValueSetExpansionOutcome expandValueSet(ValidationSupportContext validationSupportContext,
+                                                       @Nullable ValueSetExpansionOptions valueSetExpansionOptions,
+                                                       @Nonnull IBaseResource valueSet) {
+          return new ValueSetExpansionOutcome(valueSet);
+        }
+      };
+      Files.list(profiles)
+          .filter(not(asPredicate(Files::isHidden)))
+          .map(asFunction(Files::newInputStream))
+          .map(asFunction(NpmPackage::fromPackage))
+          .flatMap(asFunction(npmPackage ->
+              npmPackage.listResources(CODESYSTEM.toCode(), STRUCTUREDEFINITION.toCode(), VALUESET.toCode()).stream()
+                  .map(asFunction(npmPackage::loadResource))))
+          .map(JSON_PARSER::parseResource)
+          .forEach(resource -> {
+            switch (fromCode(resource.fhirType())) {
+              case CODESYSTEM:
+                prePopulatedValidationSupport.addCodeSystem(resource);
+                break;
+              case STRUCTUREDEFINITION:
+                prePopulatedValidationSupport.addStructureDefinition(resource);
+                break;
+              case VALUESET:
+                prePopulatedValidationSupport.addValueSet((ValueSet) resource);
+            }
+          });
+
+      var validationSupportChain = new ValidationSupportChain(
+          new DefaultProfileValidationSupport(FHIR_CONTEXT),
+          new CommonCodeSystemsTerminologyService(FHIR_CONTEXT),
+          new InMemoryTerminologyServerValidationSupport(FHIR_CONTEXT),
+          new SnapshotGeneratingValidationSupport(FHIR_CONTEXT),
+          prePopulatedValidationSupport);
+
+      if (terminologyserverUrl.isAbsolute()) {
+        var remoteTerminologyServiceValidationSupport = new RemoteTerminologyServiceValidationSupport(FHIR_CONTEXT);
+        remoteTerminologyServiceValidationSupport.setBaseUrl(terminologyserverUrl.toString());
+        remoteTerminologyServiceValidationSupport.addClientInterceptor(
+            createAuthInterceptor(terminologyserverBasicauthUsername, terminologyserverBasicauthPassword,
+                                  terminologyserverOauth2TokenURL, terminologyserverOauth2ClientId, terminologyserverOauth2ClientSecret));
+        validationSupportChain.addValidationSupport(remoteTerminologyServiceValidationSupport);
+      }
+
+      fhirValidator = FHIR_CONTEXT.newValidator()
+          .registerValidatorModule(new FhirInstanceValidator(new CachingValidationSupport(validationSupportChain)));
+    }
+  }
+
+  public Bundle bundle(Stream<DomainResource> domainResources) {
+    var bundle = (Bundle) new Bundle().setType(TRANSACTION).setMeta(new Meta().addProfile(GECCO_BUNDLE.getUrl()));
+
+    domainResources.filter(domainResource -> {
+      if (validationEnabled) {
+        var validationResult = fhirValidator.validateWithResult(domainResource);
+
+        var messages = validationResult.getMessages().stream()
+            .sorted(comparing(SingleValidationMessage::getSeverity).reversed())
+            .peek(message -> {
+              if (message.getSeverity() == ERROR) {
+                // TODO This circumvents some bugs in GECCO about which the curators have been already informed about...
+                if (startsWith(message.getMessage(), "Procedure.performed[x]:performedPeriod") ||
+                    startsWith(message.getLocationString(), "Observation.effective.ofType(dateTime)")) {
+                  message.setSeverity(WARNING);
+                  message.setMessage("GECCO ISSUE - " + message.getMessage());
+                }
+
+                if (validationCodeerrorsIgnored && !terminologyserverUrl.isAbsolute() &&
+                    containsAny(message.getMessage(), ICD_10_GM.getUrl(), LOINC.getUrl(), SNOMED_CT.getUrl())) {
+                  message.setSeverity(WARNING);
+                }
+              }
+            })
+            .peek(message -> {
+              switch (message.getSeverity()) {
+                case FATAL:
+                case ERROR:
+                  log.error(message.toString());
+                  break;
+                case WARNING:
+                  log.warn(message.toString());
+                  break;
+                case INFORMATION:
+                  log.info(message.toString());
+              }
+            });
+
+        if (!isEmpty(validationResult.getMessages())) {
+          log.debug(JSON_PARSER.encodeResourceToString(domainResource));
+        }
+
+        return validationResult.isSuccessful() || messages.noneMatch(message -> message.getSeverity() == ERROR);
+      }
+
+      return true;
+    })
+    .forEach(domainResource -> {
+      var method = PUT;
+
+      var id = domainResource.getId();
+      var fhirType = domainResource.fhirType();
+      var url = format("%s/%s", fhirType, id);
+      var fullUrl = "";
+
+      var ifNoneExist = "";
+
+      if (!updateascreateEnabled) {
+        method = POST;
+        fullUrl = url;
+        url = fhirType;
+        ifNoneExist = format("%s=%s|%s", IDENTIFIER.toCode(),
+                             getEnvironment().getProperty("fhir.identifier.system." + fhirType.toLowerCase()), id);
+        domainResource.setId("");
+      }
+
+      bundle.addEntry().setResource(domainResource).setFullUrl(fullUrl)
+            .setRequest(new BundleEntryRequestComponent().setMethod(method).setUrl(url).setIfNoneExist(ifNoneExist));
+    });
+
+    return bundle;
+  }
+
+}

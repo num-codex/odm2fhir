@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>de.difuture.uds</groupId>
+  <artifactId>odm2fhir</artifactId>
+  <version>0.5.0</version>
+
+  <name>ODM2FHIR</name>
+  <description>Mapper for GECCO based study/patient data in CDISC ODM to HL7 FHIR</description>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.4.3</version>
+  </parent>
+
+  <properties>
+    <java.version>11</java.version>
+
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+    <hapi-fhir.version>5.3.0</hapi-fhir.version>
+    <jackson.version>2.12.2</jackson.version>
+    <lombok.version>1.18.18</lombok.version>
+    <spring-boot.version>${project.parent.version}</spring-boot.version>
+    <spring-retry.version>1.3.1</spring-retry.version>
+    <woodstox.version>6.2.4</woodstox.version>
+
+    <maven-antrun-plugin.version>3.0.0</maven-antrun-plugin.version>
+    <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+    <maven-project-info-reports-plugin.version>3.1.1</maven-project-info-reports-plugin.version>
+    <maven-site-plugin.version>3.9.1</maven-site-plugin.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.retry</groupId>
+      <artifactId>spring-retry</artifactId>
+      <version>${spring-retry.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>${lombok.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-annotations</artifactId>
+      <version>${jackson.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-core</artifactId>
+      <version>${jackson.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>${jackson.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.dataformat</groupId>
+      <artifactId>jackson-dataformat-xml</artifactId>
+      <version>${jackson.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.woodstox</groupId>
+      <artifactId>woodstox-core</artifactId>
+      <version>${woodstox.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>ca.uhn.hapi.fhir</groupId>
+      <artifactId>hapi-fhir-client</artifactId>
+      <version>${hapi-fhir.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>ca.uhn.hapi.fhir</groupId>
+      <artifactId>hapi-fhir-structures-r4</artifactId>
+      <version>${hapi-fhir.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>ca.uhn.hapi.fhir</groupId>
+      <artifactId>hapi-fhir-validation</artifactId>
+      <version>${hapi-fhir.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>ca.uhn.hapi.fhir</groupId>
+      <artifactId>hapi-fhir-validation-resources-r4</artifactId>
+      <version>${hapi-fhir.version}</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <version>${spring-boot.version}</version>
+        <configuration>
+          <image>
+            <name>${GITHUB_CONTAINER_REGISTRY_URL}/${project.artifactId}:${project.version}</name>
+            <publish>true</publish>
+            <env>
+              <BPE_DELIM_JAVA_TOOL_OPTIONS xml:space="preserve"> </BPE_DELIM_JAVA_TOOL_OPTIONS>
+              <BPE_PREPEND_JAVA_TOOL_OPTIONS>-XX:MaxDirectMemorySize=265m</BPE_PREPEND_JAVA_TOOL_OPTIONS>
+              <BP_OCI_DESCRIPTION>${DESCRIPTION}</BP_OCI_DESCRIPTION>
+              <BP_OCI_SOURCE>${GITHUB_PROJECT_REPOSITORY_URL}</BP_OCI_SOURCE>
+              <HTTP_PROXY>${HTTP_PROXY}</HTTP_PROXY>
+              <HTTPS_PROXY>${HTTPS_PROXY}</HTTPS_PROXY>
+            </env>
+          </image>
+          <docker>
+            <publishRegistry>
+              <url>${GITHUB_CONTAINER_REGISTRY_URL}</url>
+              <username>${GITHUB_USERNAME}</username>
+              <password>${GITHUB_PERSONAL_ACCESS_TOKEN}</password>
+            </publishRegistry>
+          </docker>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${maven-compiler-plugin.version}</version>
+        <configuration>
+          <annotationProcessorPaths>
+            <path>
+              <groupId>org.projectlombok</groupId>
+              <artifactId>lombok</artifactId>
+              <version>${lombok.version}</version>
+            </path>
+          </annotationProcessorPaths>
+          <release>${java.version}</release>
+          <fork>true</fork>
+          <compilerArgument>-Xlint:all,-path,-processing</compilerArgument>
+          <showDeprecation>true</showDeprecation>
+          <showWarnings>true</showWarnings>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <version>${maven-antrun-plugin.version}</version>
+        <executions>
+          <execution>
+            <id>copy-resources</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <target>
+            <copy file="README.md" todir="${project.build.outputDirectory}"/>
+            <replaceregexp file="${project.build.outputDirectory}/README.md" match="\n.+docs/.+\n" replace=""/>
+            <copy file="README.md" tofile="docs/index.md"/>
+            <replace file="docs/index.md" token="docs/" value=""/>
+          </target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-site-plugin</artifactId>
+        <version>${maven-site-plugin.version}</version>
+      </plugin>
+    </plugins>
+  </build>
+
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-project-info-reports-plugin</artifactId>
+        <version>${maven-project-info-reports-plugin.version}</version>
+        <reportSets>
+          <reportSet>
+            <configuration>
+              <skip>true</skip>
+            </configuration>
+          </reportSet>
+        </reportSets>
+      </plugin>
+    </plugins>
+  </reporting>
+
+</project>

@@ -1,0 +1,54 @@
+#cron: 0 0 0 * * *
+
+odm:
+#  incompleteforms.allowed: true
+  file.path: /workspace/input/ODM.xml
+#  redcap.api:
+#    url: http://redcap/api/
+#    token: 12345ABCDE67890ABCDE12345ABCDEF0
+#  dis.rest:
+#    url: http://dis/m4export/resteasy/export
+#    studyname: COVID_GECCO
+#    username: gecco
+#    password: gecco
+
+fhir:
+#  updateascreate.enabled: true
+#  validation:
+#    enabled: true
+#    codeerrors.ignored: false
+#  errorhandling.strict: true
+  folder.path: /workspace/output
+#  file.contenthashsuffix.enabled: true
+#  server:
+#    url: https://fhir-server:9443/fhir-server/api/v4/
+#    basicauth:
+#      username: fhiruser
+#      password: change-password
+#    oauth2:
+#      token.url: https://keycloak:8443/auth/realms/fhir/protocol/openid-connect/token
+#      client:
+#        id: fhir
+#        secret: 1234567890
+#  terminologyserver:
+#    url: https://fhir-server:9443/fhir-server/api/v4/
+#    basicauth:
+#      username: fhiruser
+#      password: change-password
+#    oauth2:
+#      token.url: https://keycloak:8443/auth/realms/fhir/protocol/openid-connect/token
+#      client:
+#        id: fhir
+#        secret: 1234567890
+  identifier:
+    assigner: Mein Krankenhaus
+    system:
+      condition: https://mein.krankenhaus.de/fhir/NamingSystem/conditionId
+      consent: https://mein.krankenhaus.de/fhir/NamingSystem/consentId
+      diagnosticreport: https://mein.krankenhaus.de/fhir/NamingSystem/diagnosticreportId
+      encounter: https://mein.krankenhaus.de/fhir/NamingSystem/encounterId
+      immunization: https://mein.krankenhaus.de/fhir/NamingSystem/immunizationId
+      medicationstatement: https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId
+      observation: https://mein.krankenhaus.de/fhir/NamingSystem/observationId
+      patient: https://mein.krankenhaus.de/fhir/NamingSystem/patientId
+      procedure: https://mein.krankenhaus.de/fhir/NamingSystem/procedureId
