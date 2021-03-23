@@ -41,6 +41,10 @@ docker run **VOLUMES** ghcr.io/num-codex/odm2fhir **ARGUMENTS**
 --odm.redcap.api.url=**ODM_REDCAP_API_URL**
 --odm.redcap.api.token=**ODM_REDCAP_API_TOKEN**
 ```
+If desired or necessary (e.g. in the event of a timeouts), the ODM export from REDCap can be divided into chunks by adding the argument:
+```sh
+--odm.redcap.api.chunksize=**CHUNKSIZE**
+``` 
 
 ### DIS
 ```sh

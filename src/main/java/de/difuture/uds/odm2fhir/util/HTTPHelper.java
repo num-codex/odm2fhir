@@ -28,6 +28,7 @@ import org.apache.http.client.methods.RequestBuilder;
 import org.apache.http.conn.ssl.NoopHostnameVerifier;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
+import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 import org.apache.http.ssl.SSLContextBuilder;
 
 import java.io.IOException;
@@ -42,7 +43,12 @@ public class HTTPHelper {
 
   static {
     try {
+      var connectionManager = new PoolingHttpClientConnectionManager();
+      connectionManager.setMaxTotal(100);
+      connectionManager.setDefaultMaxPerRoute(100);
+
       HTTP_CLIENT = HttpClientBuilder.create()
+          .setConnectionManager(connectionManager)
           .setSSLContext(SSLContextBuilder.create().loadTrustMaterial(null, (certificate, authType) -> true).build())
           .setSSLHostnameVerifier(new NoopHostnameVerifier())
           .build();

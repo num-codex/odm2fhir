@@ -1,4 +1,4 @@
-# ODM2FHIR
+
 
 This tool maps study/patient data in CDISC ODM based on the [GECCO data dictionary](https://confluence.imi.med.fau.de/display/MIIC/30+EDC+System+REDCap) to HL7 FHIR which adheres to the [GECCO profiles, value sets and code systems](https://simplifier.net/ForschungsnetzCovid-19).
 
@@ -41,6 +41,10 @@ docker run **VOLUMES** ghcr.io/num-codex/odm2fhir **ARGUMENTS**
 --odm.redcap.api.url=**ODM_REDCAP_API_URL**
 --odm.redcap.api.token=**ODM_REDCAP_API_TOKEN**
 ```
+If desired or necessary (e.g. in the event of a timeouts), the ODM export from REDCap can be divided into chunks by adding the argument:
+```sh
+--odm.redcap.api.chunksize=**CHUNKSIZE**
+``` 
 
 ### DIS
 ```sh
@@ -60,7 +64,7 @@ docker run **VOLUMES** ghcr.io/num-codex/odm2fhir **ARGUMENTS**
 -v **FHIR_BUNDLES_FOLDER_PATH**:/workspace/output
 ```
 
-By default, the name of each bundle file is based on the patient identfier. To add a suffix based on the hash of the (FHIR) content add the following argument:
+By default, the patient identfier is used ad name of each bundle file. To add a suffix based on the hash of the (FHIR) content add the argument:
 ```sh
 --fhir.file.contenthashsuffix.enabled=true
 ```

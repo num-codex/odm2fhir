@@ -85,9 +85,9 @@ public class ODM2FHIRApplication implements CommandLineRunner {
 
   private void process() throws Exception {
     fhirBundleWriter.write(
-        odmReader.read().getClinicalData().getSubjectData().stream()
-            .map(subjectData -> new Subject().map(subjectData))
-            .map(fhirBundler::bundle));
+        odmReader.read().flatMap(odm -> odm.getClinicalData().getSubjectData().stream()
+                                           .map(subjectData -> new Subject().map(subjectData))
+                        .map(fhirBundler::bundle)));
   }
 
 }

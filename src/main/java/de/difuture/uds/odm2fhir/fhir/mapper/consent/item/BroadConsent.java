@@ -26,7 +26,6 @@ import org.hl7.fhir.r4.model.Consent;
 import org.hl7.fhir.r4.model.Consent.ConsentPolicyComponent;
 import org.hl7.fhir.r4.model.DomainResource;
 import org.hl7.fhir.r4.model.Period;
-import org.hl7.fhir.r4.model.Reference;
 
 import java.util.HashMap;
 import java.util.List;
@@ -36,7 +35,9 @@ import java.util.stream.Stream;
 import static de.difuture.uds.odm2fhir.fhir.util.CommonCodeSystem.LOINC;
 import static de.difuture.uds.odm2fhir.fhir.util.CommonStructureDefinition.GERMAN_CONSENT;
 
-import static org.apache.commons.codec.digest.DigestUtils.md5Hex;
+import static java.util.function.Predicate.not;
+import static java.util.stream.Collectors.toList;
+
 import static org.apache.commons.lang3.time.DateUtils.addYears;
 
 import static org.hl7.fhir.r4.model.Consent.ConsentProvisionType.DENY;
@@ -45,11 +46,6 @@ import static org.hl7.fhir.r4.model.Consent.ConsentState;
 import static org.hl7.fhir.r4.model.Consent.ConsentState.INACTIVE;
 import static org.hl7.fhir.r4.model.Consent.ConsentState.REJECTED;
 import static org.hl7.fhir.r4.model.codesystems.ResourceTypes.CONSENT;
-import static org.hl7.fhir.r4.model.codesystems.ResourceTypes.QUESTIONNAIRERESPONSE;
-
-import static java.lang.String.format;
-import static java.util.function.Predicate.not;
-import static java.util.stream.Collectors.toList;
 
 public class BroadConsent extends Item {
 
@@ -124,7 +120,6 @@ public class BroadConsent extends Item {
 
     var consent = (Consent) new Consent()
         .addIdentifier(identifier)
-        .setSource(new Reference(format("%s/%s", QUESTIONNAIRERESPONSE.toCode(), md5Hex(identifier.getValue())))) // Only dummy value!!!
         .setDateTimeElement(createDateTimeType(formData.getItemData("miibc_dat_dok")))
         .addOrganization(getOrganizationReference())
         .setScope(RESEARCH)
