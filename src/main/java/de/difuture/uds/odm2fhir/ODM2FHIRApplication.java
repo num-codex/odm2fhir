@@ -18,10 +18,7 @@ package de.difuture.uds.odm2fhir;
  * OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-import de.difuture.uds.odm2fhir.fhir.mapper.Subject;
-import de.difuture.uds.odm2fhir.fhir.writer.FHIRBundleWriter;
-import de.difuture.uds.odm2fhir.fhir.writer.FHIRBundler;
-import de.difuture.uds.odm2fhir.odm.reader.ODMReader;
+import de.difuture.uds.odm2fhir.odm.processor.ODMProcessor;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -45,15 +42,9 @@ import static java.nio.file.Files.readString;
 @SpringBootApplication
 public class ODM2FHIRApplication implements CommandLineRunner {
 
-  @Autowired
-  private ODMReader odmReader;
-
-  @Autowired
-  private FHIRBundler fhirBundler;
-
   @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
-  @Autowired
-  private FHIRBundleWriter fhirBundleWriter;
+  @Autowired(required = false)
+  private ODMProcessor odmProcessor;
 
   @Value("classpath:README.md")
   private Path readme;
@@ -75,19 +66,18 @@ public class ODM2FHIRApplication implements CommandLineRunner {
     } else if (contains(args, "--odm.redcap.datadictionary")) {
       log.info(readString(odmRedcapDatadictionary));
     } else {
+      if (odmProcessor == null) {
+        throw new IllegalArgumentException("Neither (existing) 'odm.file.path' nor " +
+            "'odm.redcap.api.url' and 'odm.redcap.api.token' or " +
+            "'odm.dis.rest.url', 'odm.dis.rest.studyname', 'odm.dis.rest.username' and 'odm.dis.rest.password' specified");
+      }
+      
       if (isBlank(cron)) {
-        process();
+        odmProcessor.process();
       } else {
-        new ConcurrentTaskScheduler().schedule(asRunnable(this::process), new CronTrigger(cron));
+        new ConcurrentTaskScheduler().schedule(asRunnable(odmProcessor::process), new CronTrigger(cron));
       }
     }
-  }
-
-  private void process() throws Exception {
-    fhirBundleWriter.write(
-        odmReader.read().flatMap(odm -> odm.getClinicalData().getSubjectData().stream()
-                                           .map(subjectData -> new Subject().map(subjectData))
-                        .map(fhirBundler::bundle)));
   }
 
 }

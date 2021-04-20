@@ -1,5 +1,11 @@
+build.sh
+temp/
 target/
+!.mvn/wrapper/maven-wrapper.jar
+bundle-out/
+bundleout*
 .DS_STORE
+index.md
 
 ### STS ###
 .apt_generated
@@ -23,3 +29,4 @@ target/
 /dist/
 /nbdist/
 /.nb-gradle/
+*.db

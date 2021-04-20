@@ -22,6 +22,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import lombok.experimental.Accessors;
 
@@ -36,6 +37,7 @@ public class ClinicalData {
   @JsonManagedReference
   private List<SubjectData> subjectData = List.of();
 
+  @EqualsAndHashCode.Exclude
   @ToString.Exclude
   @JsonBackReference
   private ODM odm;

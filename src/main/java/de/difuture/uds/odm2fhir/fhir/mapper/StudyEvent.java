@@ -91,7 +91,7 @@ public class StudyEvent {
 
     var encounter = new Encounter();
 
-    if (containsAny(studyEventData.getStudyEventOID(),"GECCOVISIT", "fall")) {
+    if (containsAny(studyEventData.getStudyEventOID(), "GECCOVISIT", "fall")) {
       var encounterIdentifier = new Identifier()
           .setSystem(getEnvironment().getProperty("fhir.identifier.system.encounter"))
           .setValue(format("%s-%s.%s",

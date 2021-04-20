@@ -23,6 +23,7 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import lombok.experimental.Accessors;
 
@@ -43,6 +44,7 @@ public class ItemGroupData {
   @JsonManagedReference
   private List<ItemData> itemData = List.of();
 
+  @EqualsAndHashCode.Exclude
   @ToString.Exclude
   @JsonBackReference
   private FormData formData;

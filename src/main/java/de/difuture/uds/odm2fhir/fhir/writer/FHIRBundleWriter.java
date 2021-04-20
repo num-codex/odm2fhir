@@ -28,7 +28,6 @@ import org.springframework.beans.factory.annotation.Value;
 
 import java.io.IOException;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.stream.Stream;
 import javax.annotation.PostConstruct;
 
 import static de.difuture.uds.odm2fhir.util.HTTPHelper.HTTP_CLIENT;
@@ -41,10 +40,10 @@ public abstract class FHIRBundleWriter {
   protected static final FhirContext FHIR_CONTEXT = FhirContext.forR4();
   protected static final IParser JSON_PARSER = FHIR_CONTEXT.newJsonParser().setPrettyPrint(true);
 
-  protected static final AtomicInteger RESOURCES_NUMBER = new AtomicInteger();
-  protected static final AtomicInteger BUNDLES_NUMBER = new AtomicInteger();
+  public static final AtomicInteger RESOURCES_NUMBER = new AtomicInteger();
+  public static final AtomicInteger BUNDLES_NUMBER = new AtomicInteger();
 
-  public abstract void write(Stream<Bundle> bundles) throws IOException;
+  public abstract void write(Bundle bundle) throws IOException;
 
   @PostConstruct
   private void init() {

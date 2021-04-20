@@ -41,10 +41,23 @@ docker run **VOLUMES** ghcr.io/num-codex/odm2fhir **ARGUMENTS**
 --odm.redcap.api.url=**ODM_REDCAP_API_URL**
 --odm.redcap.api.token=**ODM_REDCAP_API_TOKEN**
 ```
-If desired or necessary (e.g. in the event of a timeouts), the ODM export from REDCap can be divided into chunks by adding the argument:
+
+#### Export Chunking
+If desired or necessary (e.g. in the event of a timeout), the ODM export from REDCap can be divided into chunks by adding the argument:
 ```sh
 --odm.redcap.api.chunksize=**CHUNKSIZE**
-``` 
+```
+
+#### Filtering
+By default, all subjects within an ODM are processed. To process only subjects with changed values add the argument:
+```sh
+--odm.filtering.enabled=true
+```
+Also add the volume with **HASHES_FOLDER** pointing to a local folder:
+```sh
+-v **HASHES_FOLDER**:/workspace/hashes
+```
+(Note: To reset the filtering, empty the folder `**HASHES_FOLDER**`.)
 
 ### DIS
 ```sh
@@ -62,11 +75,6 @@ If desired or necessary (e.g. in the event of a timeouts), the ODM export from R
 ### Local Folder
 ```sh
 -v **FHIR_BUNDLES_FOLDER_PATH**:/workspace/output
-```
-
-By default, the patient identfier is used ad name of each bundle file. To add a suffix based on the hash of the (FHIR) content add the argument:
-```sh
---fhir.file.contenthashsuffix.enabled=true
 ```
 
 ### FHIR Server

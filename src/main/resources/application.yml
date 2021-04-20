@@ -1,6 +1,9 @@
 #cron: 0 0 0 * * *
 
 odm:
+#  filtering:
+#    enabled: true
+#    hashes.folder.path: /workspace/hashes
 #  incompleteforms.allowed: true
   file.path: /workspace/input/ODM.xml
 #  redcap.api:
@@ -20,7 +23,6 @@ fhir:
 #    codeerrors.ignored: false
 #  errorhandling.strict: true
   folder.path: /workspace/output
-#  file.contenthashsuffix.enabled: true
 #  server:
 #    url: https://fhir-server:9443/fhir-server/api/v4/
 #    basicauth:
@@ -41,6 +43,7 @@ fhir:
 #      client:
 #        id: fhir
 #        secret: 1234567890
+
   identifier:
     assigner: Mein Krankenhaus
     system:

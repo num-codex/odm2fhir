@@ -19,7 +19,6 @@ package de.difuture.uds.odm2fhir.odm.model;
  */
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 
 import lombok.Data;
@@ -29,9 +28,6 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 @JacksonXmlRootElement
 public class ODM {
-
-  @JacksonXmlProperty(isAttribute = true)
-  private String sourceSystem;
 
   @JsonManagedReference
   private ClinicalData clinicalData = new ClinicalData();

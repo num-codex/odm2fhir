@@ -21,8 +21,10 @@ package de.difuture.uds.odm2fhir.odm.model;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import lombok.experimental.Accessors;
 
@@ -38,6 +40,7 @@ import static java.util.stream.Collectors.toMap;
 
 @Data
 @Accessors(chain = true)
+@JacksonXmlRootElement
 public class SubjectData {
 
   @JacksonXmlProperty(isAttribute = true)
@@ -49,6 +52,7 @@ public class SubjectData {
   @JsonManagedReference("subjectData-formData")
   private List<FormData> formData = List.of();
 
+  @EqualsAndHashCode.Exclude
   @ToString.Exclude
   @JsonBackReference
   private ClinicalData clinicalData;

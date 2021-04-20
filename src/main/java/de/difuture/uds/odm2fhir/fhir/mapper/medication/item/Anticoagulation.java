@@ -42,29 +42,32 @@ import static java.util.function.Predicate.not;
 public class Anticoagulation extends Item {
 
   public Stream<DomainResource> map(FormData formData) {
-    var itemGroupData = formData.getItemGroupData("medikation.antikoagulation_unfraktioniertes_heparin");
+    var itemGroupData = formData.getItemGroupData("medikation.antikoagulation_absicht");
     var generalPresence = formData.getItemData("antikoagulation");
     var generalCoding = formData.getItemData("antikoagulation_code");
     var dateCoding = formData.getItemData("medikation_datum");
+    var reasonCoding = formData.getItemData("antikoagulation_absicht");
 
     //übergeordnete Frage nicht mit "JA" beantwortet = keine Medikation
     return !"1".equals(generalPresence.getValue()) ? Stream.empty() :
         itemGroupData.getItemData().stream()
-            .filter(itemData -> !endsWithAny(itemData.getItemOID(), "_code", "_textfeld"))
+            .filter(itemData -> !endsWithAny(itemData.getItemOID(), "_code", "_textfeld", "_absicht"))
             .filter(not(ItemData::isEmpty))
             .map(specificCoding ->
                 createMedicationStatement(generalCoding, specificCoding,
                     formData.getItemData(specificCoding.getItemOID() +
-                        (endsWith(specificCoding.getItemOID(), "_andere") ? "_textfeld" : "_code")), dateCoding));
+                        (endsWith(specificCoding.getItemOID(), "_andere") ? "_textfeld" : "_code")), dateCoding, reasonCoding));
   }
 
   private MedicationStatement createMedicationStatement(ItemData generalCoding, ItemData specificCoding,
-                                                        ItemData accurateCodingOrText, ItemData dateCoding) {
+                                                        ItemData accurateCodingOrText, ItemData dateCoding,
+                                                        ItemData reasonCoding) {
     var medicationStatement = (MedicationStatement) new MedicationStatement()
         .addIdentifier(createIdentifier(MEDICATIONSTATEMENT, specificCoding))
         .setEffective(createDateTimeType(dateCoding))
-        .addReasonCode(createCodeableConcept(createCoding(SNOMED_CT, "373808002",
-            "Curative - procedure intent (qualifier value)")))
+        .addReasonCode(createCodeableConcept(!reasonCoding.isEmpty() ?
+            createCoding(reasonCoding) :
+            createCoding(SNOMED_CT, "373808002", "Curative - procedure intent (qualifier value)")))
         .setMeta(createMeta(PHARMACOLOGICAL_THERAPY_ANTICOAGULANTS));
 
     var medicationCodeableConcept = createCodeableConcept(generalCoding);

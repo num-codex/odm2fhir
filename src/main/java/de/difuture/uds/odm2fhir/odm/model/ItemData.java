@@ -24,6 +24,7 @@ import com.fasterxml.jackson.databind.util.StdConverter;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import lombok.experimental.Accessors;
 
@@ -40,6 +41,7 @@ public class ItemData {
   @JacksonXmlProperty(isAttribute = true)
   private String value;
 
+  @EqualsAndHashCode.Exclude
   @ToString.Exclude
   @JsonBackReference
   private ItemGroupData itemGroupData;
