@@ -52,6 +52,9 @@ import static org.apache.commons.lang3.function.Failable.asConsumer;
 
 import static java.nio.file.Files.createDirectories;
 import static java.nio.file.Files.exists;
+import static java.nio.file.Files.isWritable;
+import static java.nio.file.Files.readString;
+import static java.nio.file.Files.writeString;
 import static java.util.stream.Collectors.toList;
 
 @Service
@@ -65,13 +68,10 @@ public abstract class ODMProcessor {
   @Autowired
   private FHIRBundleWriter fhirBundleWriter;
 
-  @Value("${odm.filtering.enabled:false}")
-  private boolean filteringEnabled;
+  @Value("${odm.cache.folder.path:}")
+  private Path cacheFolderPath;
 
-  @Value("${odm.filtering.hashes.folder.path:}")
-  private Path filteringHashesFolderPath;
-
-  private Map<String,Integer> filteringHashes;
+  private Map<String,Integer> subjectODMHashes;
 
   LocalDateTime previousRunDateTime;
 
@@ -79,27 +79,31 @@ public abstract class ODMProcessor {
 
   abstract Stream<InputStream> read() throws Exception;
 
-  @SuppressWarnings("unchecked")
   public void process() throws Exception {
     ObjectMapper objectMapper = null;
-    Path filteringHashesFile = null;
+    Path subjectODMHashesFile = null;
+    Path previousRunDateTimeFile = null;
 
-    if (filteringEnabled) {
-      if (filteringHashesFolderPath == null) {
-        throw new IllegalArgumentException("'odm.filtering.hashes.folder.path' not specified");
-      }
-      createDirectories(filteringHashesFolderPath);
-      filteringHashesFile = filteringHashesFolderPath.resolve("hashes.json");
+    if (cacheFolderPath == null || !isWritable(cacheFolderPath)) {
+      log.info("'odm.cache.folder.path' not specified or not writable - filtering disabled");
+    } else {
+      createDirectories(cacheFolderPath);
+      subjectODMHashesFile = cacheFolderPath.resolve("subject-odm-hashes");
+      previousRunDateTimeFile = cacheFolderPath.resolve("previous-run-date-time");
       objectMapper = new ObjectMapper();
-      filteringHashes = !exists(filteringHashesFile) ? new HashMap<>() :
-                        objectMapper.readValue(filteringHashesFile.toFile(), new TypeReference<HashMap<String,Integer>>() {});
+      subjectODMHashes = !exists(subjectODMHashesFile) ? new HashMap<>() :
+                                  objectMapper.readValue(subjectODMHashesFile.toFile(), new TypeReference<HashMap<String,Integer>>() {});
+      if (exists(previousRunDateTimeFile)) {
+        previousRunDateTime = LocalDateTime.parse(readString(previousRunDateTimeFile));
+      }
     }
 
     read().collect(toList()).forEach(asConsumer(this::process));
 
-    if (filteringEnabled) {
-      objectMapper.writerWithDefaultPrettyPrinter().writeValue(filteringHashesFile.toFile(), filteringHashes);
-    }
+    if (subjectODMHashes != null) {
+      objectMapper.writerWithDefaultPrettyPrinter().writeValue(subjectODMHashesFile.toFile(), subjectODMHashes);
+        writeString(previousRunDateTimeFile, previousRunDateTime.toString());
+      }
 
     log.info("{} bundles with {} resources written", BUNDLES_NUMBER.getAndSet(0), RESOURCES_NUMBER.getAndSet(0));
   }
@@ -118,7 +122,7 @@ public abstract class ODMProcessor {
       if (xmlStreamReader.isStartElement()) {
         switch (xmlStreamReader.getLocalName()) {
           case "ODM":
-            if (initialODMInRun) {
+            if (subjectODMHashes != null && initialODMInRun) {
               var creationDateTime = xmlStreamReader.getAttributeValue(null, "CreationDateTime");
               try {
                 previousRunDateTime = LocalDateTime.parse(creationDateTime);
@@ -130,13 +134,13 @@ public abstract class ODMProcessor {
           case "SubjectData":
             var subjectData = xmlMapper.readValue(xmlStreamReader, SubjectData.class);
 
-            var hash = filteringEnabled ? subjectData.hashCode() : null;
+            var hash = subjectODMHashes != null ? subjectData.hashCode() : null;
 
-            if (hash == null || !hash.equals(filteringHashes.get(subjectData.getSubjectKey()))) {
+            if (hash == null || !hash.equals(subjectODMHashes.get(subjectData.getSubjectKey()))) {
               fhirBundleWriter.write(fhirBundler.bundle(new Subject().map(subjectData)));
 
-              if (filteringEnabled) {
-                filteringHashes.put(subjectData.getSubjectKey(), hash);
+              if (subjectODMHashes != null) {
+                subjectODMHashes.put(subjectData.getSubjectKey(), hash);
               }
             }
         }

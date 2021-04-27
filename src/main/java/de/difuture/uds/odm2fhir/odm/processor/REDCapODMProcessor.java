@@ -69,7 +69,7 @@ public class REDCapODMProcessor extends ODMProcessor {
       return readPatientIDs().collect(groupingBy(patientID -> counter.getAndIncrement() / chunksize))
                              .values()
                              .stream()
-                             .map(asFunction(patientIDs -> read(patientIDs)));
+                             .map(asFunction(this::read));
     } else {
       return Stream.of(read(List.of()));
     }

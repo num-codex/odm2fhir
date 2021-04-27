@@ -49,15 +49,11 @@ If desired or necessary (e.g. in the event of a timeout), the ODM export from RE
 ```
 
 #### Filtering
-By default, all subjects within an ODM are processed. To process only subjects with changed values add the argument:
+By default, all subjects within an ODM are processed. To process only subjects with changed values since the last run add a volume with `**CACHE_FOLDER**` pointing to a local folder:
 ```sh
---odm.filtering.enabled=true
+-v **CACHE_FOLDER**:/workspace/cache
 ```
-Also add the volume with **HASHES_FOLDER** pointing to a local folder:
-```sh
--v **HASHES_FOLDER**:/workspace/hashes
-```
-(Note: To reset the filtering, empty the folder `**HASHES_FOLDER**`.)
+(Note: To reset the filtering, empty the folder `**CACHE_FOLDER**`.)
 
 ### DIS
 ```sh

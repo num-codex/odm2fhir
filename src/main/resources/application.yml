@@ -1,9 +1,7 @@
 #cron: 0 0 0 * * *
 
 odm:
-#  filtering:
-#    enabled: true
-#    hashes.folder.path: /workspace/hashes
+  cache.folder.path: /workspace/cache
 #  incompleteforms.allowed: true
   file.path: /workspace/input/ODM.xml
 #  redcap.api:
