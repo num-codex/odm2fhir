@@ -83,6 +83,7 @@ import static de.difuture.uds.odm2fhir.fhir.util.NUMCodeSystem.FRAILTY_SCORE;
 import static de.difuture.uds.odm2fhir.fhir.util.NUMStructureDefinition.UNCERTAINTY_OF_PRESENCE;
 import static de.difuture.uds.odm2fhir.util.EnvironmentProvider.getEnvironment;
 
+import static org.apache.commons.codec.digest.DigestUtils.sha256Hex;
 import static org.apache.commons.lang3.StringUtils.isBlank;
 import static org.apache.commons.lang3.StringUtils.split;
 import static org.apache.commons.lang3.StringUtils.splitByWholeSeparator;
@@ -387,14 +388,20 @@ public abstract class Item {
     var formData = itemGroupData.getFormData();
     var studyEventData = formData.getStudyEventData();
     var subjectData = studyEventData.getSubjectData();
+    var value = format("%s-%s.%s-%s.%s-%s.%s-%s",
+                       subjectData.getSubjectKey(),
+                       studyEventData.getStudyEventOID(), studyEventData.getStudyEventRepeatKey(),
+                       formData.getFormOID(), formData.getFormRepeatKey(),
+                       itemGroupData.getItemGroupOID(), itemGroupData.getItemGroupRepeatKey(),
+                       itemData.getItemOID());
+
+    if (!getEnvironment().containsProperty("debug"))  {
+      value = sha256Hex(value);
+    }
+
     return new Identifier()
         .setSystem(getEnvironment().getProperty("fhir.identifier.system." + resourceType.toCode().toLowerCase()))
-        .setValue(format("%s-%s.%s-%s.%s-%s.%s-%s",
-                         subjectData.getSubjectKey(),
-                         studyEventData.getStudyEventOID(), studyEventData.getStudyEventRepeatKey(),
-                         formData.getFormOID(), formData.getFormRepeatKey(),
-                         itemGroupData.getItemGroupOID(), itemGroupData.getItemGroupRepeatKey(),
-                         itemData.getItemOID()));
+        .setValue(value);
   }
 
   protected final Age createAge(ItemData itemData) {

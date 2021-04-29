@@ -8,7 +8,7 @@
 
   <groupId>de.difuture.uds</groupId>
   <artifactId>odm2fhir</artifactId>
-  <version>0.6.1</version>
+  <version>0.6.2</version>
 
   <name>ODM2FHIR</name>
   <description>Mapper for GECCO based study/patient data in CDISC ODM to HL7 FHIR</description>

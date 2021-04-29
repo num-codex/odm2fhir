@@ -48,7 +48,7 @@ import java.util.stream.Stream;
 
 import static de.difuture.uds.odm2fhir.util.EnvironmentProvider.getEnvironment;
 
-import static org.apache.commons.codec.digest.DigestUtils.md5Hex;
+import static org.apache.commons.codec.digest.DigestUtils.sha256Hex;
 import static org.apache.commons.lang3.StringUtils.containsAny;
 import static org.apache.commons.lang3.StringUtils.equalsAny;
 
@@ -92,17 +92,23 @@ public class StudyEvent {
     var encounter = new Encounter();
 
     if (containsAny(studyEventData.getStudyEventOID(), "GECCOVISIT", "fall")) {
+      var value = format("%s-%s.%s",
+                         studyEventData.getSubjectData().getSubjectKey(),
+                         studyEventData.getStudyEventOID(), studyEventData.getStudyEventRepeatKey());
+
+      if (!getEnvironment().containsProperty("debug")) {
+        value = sha256Hex(value);
+      }
+
       var encounterIdentifier = new Identifier()
           .setSystem(getEnvironment().getProperty("fhir.identifier.system.encounter"))
-          .setValue(format("%s-%s.%s",
-                           studyEventData.getSubjectData().getSubjectKey(),
-                           studyEventData.getStudyEventOID(), studyEventData.getStudyEventRepeatKey()))
+          .setValue(value)
           .setAssigner(subject.getOrganizationReference());
 
       encounter.setStatus(UNKNOWN)
           .setClass_(new Coding(IMP.getSystem(), IMP.toCode(), IMP.getDisplay()))
           .addIdentifier(encounterIdentifier)
-          .setId(md5Hex(encounterIdentifier.getSystem() + encounterIdentifier.getValue()));
+          .setId(sha256Hex(encounterIdentifier.getSystem() + encounterIdentifier.getValue()));
 
       encounterReference = new Reference(format("%s/%s", ENCOUNTER.toCode(), encounter.getId()));
     }

@@ -44,7 +44,7 @@ import static de.difuture.uds.odm2fhir.fhir.util.NUMStructureDefinition.SARS_COV
 import static de.difuture.uds.odm2fhir.fhir.util.NUMStructureDefinition.SARS_COV_2_IGM_SER_PL_IA_ACNC;
 import static de.difuture.uds.odm2fhir.fhir.util.NUMStructureDefinition.SARS_COV_2_IGM_SER_PL_QL_IA;
 
-import static org.apache.commons.codec.digest.DigestUtils.md5Hex;
+import static org.apache.commons.codec.digest.DigestUtils.sha256Hex;
 import static org.apache.commons.lang3.StringUtils.substringAfterLast;
 
 import static org.hl7.fhir.r4.model.Observation.ObservationStatus.FINAL;
@@ -137,7 +137,7 @@ public class SARSCoV2Antibodies extends Item {
         .addCategory(LABORATORY.copy().addCoding(createCoding(LOINC.getUrl(), "26436-6")))
         .setValue(value)
         .setCode(new CodeableConcept().setCoding(usableCodings).setText(labValueName)) // TODO Add parameter name as text!!!
-        .setId(md5Hex(identifier.getSystem() + identifier.getValue())) // This really needs to be and stay here!!!
+        .setId(sha256Hex(identifier.getSystem() + identifier.getValue())) // This really needs to be and stay here!!!
         .setMeta(createMeta(PROFILES.get(labValueName)));
   }
 

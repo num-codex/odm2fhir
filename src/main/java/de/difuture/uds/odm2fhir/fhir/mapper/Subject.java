@@ -39,7 +39,7 @@ import java.util.stream.Stream;
 import static de.difuture.uds.odm2fhir.fhir.util.CommonCodeSystem.IDENTIFIER_TYPE_CODES;
 import static de.difuture.uds.odm2fhir.util.EnvironmentProvider.getEnvironment;
 
-import static org.apache.commons.codec.digest.DigestUtils.md5Hex;
+import static org.apache.commons.codec.digest.DigestUtils.sha256Hex;
 import static org.apache.commons.lang3.StringUtils.equalsAny;
 
 import static org.hl7.fhir.r4.model.codesystems.V3Hl7PublishingDomain.MR;
@@ -63,7 +63,7 @@ public class Subject {
 
   public Stream<DomainResource> map(SubjectData subjectData) {
     var organization = new Organization().setName(getEnvironment().getProperty("fhir.identifier.assigner"));
-    organization.setId(md5Hex(organization.getName()));
+    organization.setId(sha256Hex(organization.getName()));
 
     organizationReference = new Reference(format("%s/%s", ORGANIZATION.toCode(), organization.getId()));
 
@@ -75,7 +75,7 @@ public class Subject {
 
     patient = (Patient) new Patient()
         .addIdentifier(patientIdentifier)
-        .setId(md5Hex(patientIdentifier.getSystem() + patientIdentifier.getValue()))
+        .setId(sha256Hex(patientIdentifier.getSystem() + patientIdentifier.getValue()))
         .setMeta(new Meta().addProfile(NUMStructureDefinition.PATIENT.getUrl()));
 
     patientReference = new Reference(format("%s/%s", PATIENT.toCode(), patient.getId()));
@@ -91,7 +91,7 @@ public class Subject {
   private void setId(DomainResource domainResource) {
     var identifier = (Identifier) invokeMethod(
         findMethod(domainResource.getClass(), "getIdentifierFirstRep"), domainResource);
-    domainResource.setId(md5Hex(identifier.getSystem() + identifier.getValue()));
+    domainResource.setId(sha256Hex(identifier.getSystem() + identifier.getValue()));
   }
 
   private void setPatientSubject(DomainResource domainResource) {

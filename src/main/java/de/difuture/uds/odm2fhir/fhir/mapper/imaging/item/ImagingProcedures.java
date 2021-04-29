@@ -37,7 +37,7 @@ import static de.difuture.uds.odm2fhir.fhir.util.CommonCodeSystem.SNOMED_CT;
 import static de.difuture.uds.odm2fhir.fhir.util.NUMStructureDefinition.DIAGNOSTIC_REPORT_RADIOLOGY;
 import static de.difuture.uds.odm2fhir.fhir.util.NUMStructureDefinition.RADIOLOGY_PROCEDURES;
 
-import static org.apache.commons.codec.digest.DigestUtils.md5Hex;
+import static org.apache.commons.codec.digest.DigestUtils.sha256Hex;
 import static org.apache.commons.lang3.StringUtils.contains;
 import static org.apache.commons.lang3.StringUtils.equalsAny;
 
@@ -90,7 +90,7 @@ public class ImagingProcedures extends Item {
         .setCode(createCodeableConcept(createCoding(LOINC, "18748-4", "Diagnostic imaging study")))
         .addConclusionCode(createCodeableConcept(befundCoding))
         .setMeta(createMeta(DIAGNOSTIC_REPORT_RADIOLOGY))
-        .setId(md5Hex(identifier.getSystem() + identifier.getValue()));
+        .setId(sha256Hex(identifier.getSystem() + identifier.getValue()));
   }
 
   private Procedure createProcedure(ItemData techniqueCoding) {
