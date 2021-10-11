@@ -34,15 +34,14 @@ import java.util.List;
 public class Therapy extends Form {
 
   @Getter
-  private final String OID = "Form.therapie";
+  private final String OID = "therapie";
 
   @Getter
-  private final List<Item> items = List.of(
-      new DialysisHemofiltration(),
-      new Apheresis(),
-      new PronePosition(),
-      new ECMO(),
-      new VentilationType(),
-      new PatientInICU());
+  private final List<Item> items = List.of(new DialysisHemofiltration(),
+                                           new Apheresis(),
+                                           new PronePosition(),
+                                           new ECMO(),
+                                           new VentilationType(),
+                                           new PatientInICU());
 
 }

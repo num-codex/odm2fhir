@@ -78,10 +78,11 @@ import static de.difuture.uds.odm2fhir.fhir.util.CommonCodeSystem.SNOMED_CT;
 import static de.difuture.uds.odm2fhir.fhir.util.CommonCodeSystem.UCUM;
 import static de.difuture.uds.odm2fhir.fhir.util.CommonCodeSystem.UNII;
 import static de.difuture.uds.odm2fhir.fhir.util.CommonStructureDefinition.DATA_ABSENT_REASON;
+import static de.difuture.uds.odm2fhir.fhir.util.IdentifierHelper.getIdentifierSystem;
 import static de.difuture.uds.odm2fhir.fhir.util.NUMCodeSystem.ECRF_PARAMETER_CODES;
 import static de.difuture.uds.odm2fhir.fhir.util.NUMCodeSystem.FRAILTY_SCORE;
 import static de.difuture.uds.odm2fhir.fhir.util.NUMStructureDefinition.UNCERTAINTY_OF_PRESENCE;
-import static de.difuture.uds.odm2fhir.util.EnvironmentProvider.getEnvironment;
+import static de.difuture.uds.odm2fhir.util.EnvironmentProvider.ENVIRONMENT;
 
 import static org.apache.commons.codec.digest.DigestUtils.sha256Hex;
 import static org.apache.commons.lang3.StringUtils.isBlank;
@@ -122,7 +123,7 @@ public abstract class Item {
   protected final CodeableConcept LABORATORY = createCodeableConcept(ObservationCategory.LABORATORY);
   protected final CodeableConcept REFUTED = createCodeableConcept(ConditionVerStatus.REFUTED).copy()
       .addCoding(createCoding(SNOMED_CT, "410594000", "Definitely NOT present (qualifier value)"));
-  protected final CodeableConcept RESEARCH = createCodeableConcept(ConsentCategory.RESEARCH);
+  protected final CodeableConcept RESEARCH = createCodeableConcept(ConsentScope.RESEARCH);
   protected final CodeableConcept SOCIAL_HISTORY = createCodeableConcept(ObservationCategory.SOCIALHISTORY);
   protected final CodeableConcept SURVEY = createCodeableConcept(ObservationCategory.SURVEY);
   protected final CodeableConcept UNKNOWN = createCodeableConcept(DataAbsentReason.UNKNOWN);
@@ -146,12 +147,17 @@ public abstract class Item {
   static {
     CODE_SYSTEMS = new HashMap<>();
 
-    CODE_SYSTEMS.put(DE_HC_OID + ".409", ICD_10_GM.getUrl());
-    CODE_SYSTEMS.put(DE_HC_OID + ".502", ICD_10_GM.getUrl());
+    CODE_SYSTEMS.put(DE_HC_OID + ".409", ICD_10_GM.getUrl() + "|2012"); // TODO Remove after data dictionary fix!!!
+    CODE_SYSTEMS.put(DE_HC_OID + ".502", ICD_10_GM.getUrl() + "|2021");
+
+    CODE_SYSTEMS.put(DE_HC_OID + ".487", OPS.getUrl() + "|2020"); // TODO Remove after data dictionary fix!!!
+    CODE_SYSTEMS.put(DE_HC_OID + ".503", OPS.getUrl() + "|2021");
+
+    CODE_SYSTEMS.put(DE_HC_OID + ".498", ATC.getUrl() + "|2019"); // TODO Remove after data dictionary fix!!!
+    CODE_SYSTEMS.put(DE_HC_OID + ".510", ATC.getUrl() + "|2020");
+    CODE_SYSTEMS.put(DE_HC_OID + ".525", ATC.getUrl() + "|2021"); // Currently unused...
 
     CODE_SYSTEMS.put(DE_HC_OID + ".483", GENDER_AMTLICH_DE.getUrl());
-    CODE_SYSTEMS.put(DE_HC_OID + ".487", OPS.getUrl());
-    CODE_SYSTEMS.put(DE_HC_OID + ".498", ATC.getUrl());
 
     CODE_SYSTEMS.put("1.2.840.10008.2.16.4", DCM.getUrl());
 
@@ -248,12 +254,12 @@ public abstract class Item {
     return createCoding(system.getUrl(), code);
   }
 
+  protected final Coding createCoding(String system, String code, String display, String version) {
+    return new Coding(system, code, display).setVersion(version);
+  }
+
   protected final Coding createCoding(String system, String code, String display) {
-    var coding = new Coding(system, code, display);
-    if (ICD_10_GM.getCodeSystem().getUrl().equals(system)) {
-      coding.setVersion("2021"); // TODO Replace with the actual retrieved year
-    }
-    return coding;
+    return createCoding(system, code, display, null);
   }
 
   protected final Coding createCoding(String system, String code) {
@@ -267,6 +273,7 @@ public abstract class Item {
       var items = split(itemData.getValue(), "_");
 
       var system = "";
+      var version = "";
       var systemOID = "";
       var code = "";
 
@@ -286,17 +293,23 @@ public abstract class Item {
         if (isBlank(system)) {
           logInvalidValue(CODESYSTEM, itemData.copy().setValue(systemOID));
           system = "urn:oid:" + systemOID;
+        } else {
+          items = split(system, "|");
+          if (items.length == 2) {
+            system = items[0];
+            version = items[1];
+          }
         }
       }
 
-     if (isBlank(code)) {
+      if (isBlank(code)) {
         logInvalidValue(CODING, itemData.copy().setValue(code));
         code = "";
       } else if ("NoCode".equals(code)) {
         code = "";
       }
 
-      coding = createCoding(system, code);
+      coding = createCoding(system, code, null, version);
     }
 
     return coding;
@@ -313,19 +326,20 @@ public abstract class Item {
       var display = "";
 
       switch (items.length) {
-        case 1:
+        case 1 -> {
           code = items[0];
           system = LOINC.getUrl();
-          break;
-        case 2:
+        }
+        case 2 -> {
           code = items[0];
           display = items[1];
           system = LOINC.getUrl();
-          break;
-        case 3:
+        }
+        case 3 -> {
           system = items[0];
           code = items[1];
           display = items[2];
+        }
       }
 
       if (isBlank(code)) {
@@ -395,13 +409,11 @@ public abstract class Item {
                        itemGroupData.getItemGroupOID(), itemGroupData.getItemGroupRepeatKey(),
                        itemData.getItemOID());
 
-    if (!getEnvironment().containsProperty("debug"))  {
+    if (!ENVIRONMENT.containsProperty("debug"))  {
       value = sha256Hex(value);
     }
 
-    return new Identifier()
-        .setSystem(getEnvironment().getProperty("fhir.identifier.system." + resourceType.toCode().toLowerCase()))
-        .setValue(value);
+    return new Identifier().setSystem(getIdentifierSystem(resourceType)).setValue(value);
   }
 
   protected final Age createAge(ItemData itemData) {

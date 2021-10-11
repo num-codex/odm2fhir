@@ -28,33 +28,44 @@ import org.apache.http.client.methods.RequestBuilder;
 import org.apache.http.conn.ssl.NoopHostnameVerifier;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
-import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 import org.apache.http.ssl.SSLContextBuilder;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
+import org.springframework.stereotype.Service;
+
+import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 import static org.apache.commons.lang3.StringUtils.isNoneBlank;
+import static org.apache.commons.lang3.function.Failable.asConsumer;
 
+@Service
 public class HTTPHelper {
 
   private HTTPHelper() {}
 
   public static CloseableHttpClient HTTP_CLIENT;
 
-  static {
-    try {
-      var connectionManager = new PoolingHttpClientConnectionManager();
-      connectionManager.setMaxTotal(100);
-      connectionManager.setDefaultMaxPerRoute(100);
+  @Autowired
+  public void setHttpClient(Environment environment) throws Exception {
+    var sslContextBuilder = SSLContextBuilder.create()
+                                             .loadTrustMaterial(null, (certificate, authType) -> true);
 
-      HTTP_CLIENT = HttpClientBuilder.create()
-          .setConnectionManager(connectionManager)
-          .setSSLContext(SSLContextBuilder.create().loadTrustMaterial(null, (certificate, authType) -> true).build())
-          .setSSLHostnameVerifier(new NoopHostnameVerifier())
-          .build();
-    } catch (Exception exception) {
-      // Nothing to be done here as an exception will never be thrown here...
-    }
+    List.of("odm.redcap.api", "odm.dis.rest", "fhir.server", "fhir.terminologyserver")
+        .forEach(asConsumer(entry -> {
+          var keyFile = environment.getProperty(entry + ".key.file.path", File.class);
+          var keyPassword = environment.getProperty(entry + ".key.password", "").toCharArray();
+          if (keyFile != null) {
+            sslContextBuilder.loadKeyMaterial(keyFile, keyPassword, keyPassword);
+          }
+        }));
+
+    HTTP_CLIENT = HttpClientBuilder.create()
+                                   .setSSLContext(sslContextBuilder.build())
+                                   .setSSLHostnameVerifier(new NoopHostnameVerifier())
+                                   .build();
   }
 
   public static IClientInterceptor createAuthInterceptor(String basicauthUsername, String basicauthPassword,

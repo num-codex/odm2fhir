@@ -45,6 +45,7 @@ import static de.difuture.uds.odm2fhir.fhir.util.NUMStructureDefinition.SARS_COV
 import static de.difuture.uds.odm2fhir.fhir.util.NUMStructureDefinition.SARS_COV_2_IGM_SER_PL_QL_IA;
 
 import static org.apache.commons.codec.digest.DigestUtils.sha256Hex;
+import static org.apache.commons.lang3.StringUtils.removeStart;
 import static org.apache.commons.lang3.StringUtils.substringAfterLast;
 
 import static org.hl7.fhir.r4.model.Observation.ObservationStatus.FINAL;
@@ -57,39 +58,32 @@ import static java.util.function.Predicate.not;
 
 public class SARSCoV2Antibodies extends Item {
 
-  private static final List<String> PARAMETERS = List.of(
-      "sarsco_v2_covid19_ab_pnl",
-      "sarsco_v2_covid19_ab_ia_ql",
-      "sarsco_v2_covid19_ab_ia_qn",
-      "sarsco_v2_covid19_ig_a_ia_ql",
-      "sarsco_v2_covid19_ig_a_ia_qn",
-      "sarsco_v2_covid19_ig_g_ia_ql",
-      "sarsco_v2_covid19_ig_g_ia_qn",
-      "sarsco_v2_covid19_ig_m_ia_ql",
-      "sarsco_v2_covid19_ig_m_ia_qn");
+  private static final List<String> PARAMETERS = List.of("ab_pnl", "ab_ia_ql", "ab_ia_qn", "ig_a_ia_ql", "ig_a_ia_qn",
+                                                         "ig_g_ia_ql", "ig_g_ia_qn", "ig_m_ia_ql", "ig_m_ia_qn");
 
-  private static final Map<String, NUMStructureDefinition> PROFILES = Map.of(
-      "sarsco_v2_covid19_ab_pnl", SARS_COV_2_AB_PNL_SER_PL_IA,
-      "sarsco_v2_covid19_ab_ia_ql", SARS_COV_2_AB_SER_PL_QL_IA,
-      "sarsco_v2_covid19_ab_ia_qn", SARS_COV_2_AB_SER_PL_IA_ACNC,
-      "sarsco_v2_covid19_ig_a_ia_ql", SARS_COV_2_IGA_SER_PL_QL_IA,
-      "sarsco_v2_covid19_ig_a_ia_qn", SARS_COV_2_IGA_SER_PL_IA_ACNC,
-      "sarsco_v2_covid19_ig_g_ia_ql", SARS_COV_2_IGG_SER_PL_QL_IA,
-      "sarsco_v2_covid19_ig_g_ia_qn", SARS_COV_2_IGG_SER_PL_IA_ACNC,
-      "sarsco_v2_covid19_ig_m_ia_ql", SARS_COV_2_IGM_SER_PL_QL_IA,
-      "sarsco_v2_covid19_ig_m_ia_qn", SARS_COV_2_IGM_SER_PL_IA_ACNC);
+  private static final Map<String, NUMStructureDefinition> PROFILES = Map.of("ab_pnl", SARS_COV_2_AB_PNL_SER_PL_IA,
+                                                                             "ab_ia_ql", SARS_COV_2_AB_SER_PL_QL_IA,
+                                                                             "ab_ia_qn", SARS_COV_2_AB_SER_PL_IA_ACNC,
+                                                                             "ig_a_ia_ql", SARS_COV_2_IGA_SER_PL_QL_IA,
+                                                                             "ig_a_ia_qn", SARS_COV_2_IGA_SER_PL_IA_ACNC,
+                                                                             "ig_g_ia_ql", SARS_COV_2_IGG_SER_PL_QL_IA,
+                                                                             "ig_g_ia_qn", SARS_COV_2_IGG_SER_PL_IA_ACNC,
+                                                                             "ig_m_ia_ql", SARS_COV_2_IGM_SER_PL_QL_IA,
+                                                                             "ig_m_ia_qn", SARS_COV_2_IGM_SER_PL_IA_ACNC);
 
   public Stream<DomainResource> map(FormData formData) {
     // Extremely ugly and hacky workaround for non-existent panel parameter in form... :-/
     return PARAMETERS.stream()
+        .map(key -> "sarsco_v2_covid19_" + key)
         .map(formData::getItemData)
         .filter(not(ItemData::isEmpty))
         .findFirst()
         .map(itemData -> {
           itemData = itemData.copy().setItemOID(PARAMETERS.get(0));
 
-          itemData.getItemGroupData().getItemData().addAll(List.of(itemData,
-              itemData.copy().setItemOID(itemData.getItemOID() + "_code").setValue(HL7_OID + ".6.1_94504-8")));
+          itemData.getItemGroupData().getItemData()
+                  .addAll(List.of(itemData, itemData.copy().setItemOID(itemData.getItemOID() + "_code")
+                                                    .setValue(HL7_OID + ".6.1_94504-8")));
 
           var observation = createObservation(formData, itemData);
 
@@ -113,15 +107,16 @@ public class SARSCoV2Antibodies extends Item {
 
     Type value = null;
     switch (substringAfterLast(labValueName, "_")) {
-      case "qn":
+      case "qn" -> {
         var unit = getLabUnit(labValueName, formData.getItemData(labValueName + "_unit").getValue());
         value = createQuantity(formData.getItemData(labValueName), unit, unit);
-        break;
-      case "ql":
+      }
+      case "ql" -> {
         var codings = createCodings(formData.getItemData(labValueName));
         if (!isEmpty(codings)) {
           value = new CodeableConcept().setCoding(codings);
         }
+      }
     }
 
     var loincCoding = formData.getItemData(labValueName + "_loinc");
@@ -138,7 +133,7 @@ public class SARSCoV2Antibodies extends Item {
         .setValue(value)
         .setCode(new CodeableConcept().setCoding(usableCodings).setText(labValueName)) // TODO Add parameter name as text!!!
         .setId(sha256Hex(identifier.getSystem() + identifier.getValue())) // This really needs to be and stay here!!!
-        .setMeta(createMeta(PROFILES.get(labValueName)));
+        .setMeta(createMeta(PROFILES.get(removeStart(labValueName, "sarsco_v2_covid19_"))));
   }
 
 }

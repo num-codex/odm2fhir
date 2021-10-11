@@ -37,21 +37,16 @@ import static org.apache.commons.lang3.StringUtils.contains;
 
 public class ComplicationConditions extends Item {
 
-  private static final List<String> COMPLICATIONS = List.of(
-      "komplikation_thrombembolische_ereignisse",
-      "komplikation_venoese_thrombose",
-      "komplikation_lungenarterienembolie",
-      "komplikation_stroke",
-      "komplikation_myokardinfarkt",
-      "komplikation_andere",
-      "komplikation_pulmonale_co_infektionen",
-      "komplikation_blutstrominfektionen");
+  private static final List<String> COMPLICATIONS = List.of("thrombembolische_ereignisse", "venoese_thrombose",
+                                                            "lungenarterienembolie", "stroke", "myokardinfarkt",
+                                                            "andere", "pulmonale_co_infektionen", "blutstrominfektionen");
 
   public Stream<DomainResource> map(FormData formData) {
     var generalComplicationCoding = formData.getItemData("komplikation_code");
 
     return !"1".equals(formData.getItemData("komplikation").getValue()) ? Stream.empty() :
-        COMPLICATIONS.stream().map(key -> createCondition(generalComplicationCoding, formData.getItemData(key)));
+        COMPLICATIONS.stream().map(key -> createCondition(generalComplicationCoding,
+                                                          formData.getItemData("komplikation_" + key)));
   }
 
   private Condition createCondition(ItemData generalComplicationCoding, ItemData specificComplicationCoding) {
@@ -72,17 +67,10 @@ public class ComplicationConditions extends Item {
     var codeableConcept = new CodeableConcept();
     for (var coding : createCodings(specificComplicationCoding)) {
       switch (coding.getCode()) {
-        case "410605003": //confirmed
-          condition.setClinicalStatus(ACTIVE).setVerificationStatus(CONFIRMED);
-          break;
-        case "410594000": //refuted
-          condition.setVerificationStatus(REFUTED);
-          break;
-        case "261665006": //unknown
-          condition.addModifierExtension(DATA_PRESENCE_UNKNOWN);
-          break;
-        default: //Condition-codes
-          codeableConcept.addCoding(coding);
+        case "410605003" -> condition.setClinicalStatus(ACTIVE).setVerificationStatus(CONFIRMED); //confirmed
+        case "410594000" -> condition.setVerificationStatus(REFUTED); //refuted
+        case "261665006" -> condition.addModifierExtension(DATA_PRESENCE_UNKNOWN); //unknown
+        default -> codeableConcept.addCoding(coding); //Condition-codes
       }
     }
 

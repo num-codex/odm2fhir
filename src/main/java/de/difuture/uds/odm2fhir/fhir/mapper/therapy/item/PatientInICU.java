@@ -27,7 +27,7 @@ import org.hl7.fhir.r4.model.Observation;
 
 import java.util.stream.Stream;
 
-import static de.difuture.uds.odm2fhir.fhir.util.NUMCodeSystem.ECRF_PARAMETER_CODES;
+import static de.difuture.uds.odm2fhir.fhir.util.CommonCodeSystem.LOINC;
 import static de.difuture.uds.odm2fhir.fhir.util.NUMStructureDefinition.PATIENT_IN_ICU;
 
 import static org.hl7.fhir.r4.model.Observation.ObservationStatus.FINAL;
@@ -47,7 +47,7 @@ public class PatientInICU extends Item {
         .setStatus(FINAL)
         .setEffective(UNKNOWN_DATE_TIME) // TODO Set actual DateTime value
         .addCategory(SURVEY)
-        .setCode(createCodeableConcept(createCoding(ECRF_PARAMETER_CODES, "01", "Is the patient in the intensive care unit?")))
+        .setCode(createCodeableConcept(createCoding(LOINC, "95420-6", "Whether the patient was admitted to intensive care unit (ICU) for condition of interest")))
         .setValue(createCodeableConcept(answerCoding))
         .setMeta(createMeta(PATIENT_IN_ICU));
   }

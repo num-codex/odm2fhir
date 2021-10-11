@@ -30,6 +30,7 @@ import lombok.experimental.Accessors;
 
 import org.springframework.util.CollectionUtils;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.TreeMap;
 
@@ -64,14 +65,12 @@ public class SubjectData {
   //
 
   public List<StudyEventData> getMergedStudyEventData() {
-    return studyEventData.stream()
-       .collect(toMap(studyEventData -> format("%s.%s", studyEventData.getStudyEventOID(), studyEventData.getStudyEventRepeatKey()),
-                      identity(),
-                      (studyEventData1, studyEventData2) -> {
-                         studyEventData1.getFormData().addAll(studyEventData2.getFormData());
-                         return studyEventData1;
-                      }, TreeMap::new))
-       .values().stream().collect(toList());
+    return new ArrayList<>(studyEventData.stream().collect(toMap(
+        studyEventData -> format("%s.%s", studyEventData.getStudyEventOID(), studyEventData.getStudyEventRepeatKey()),
+        identity(), (studyEventData1, studyEventData2) -> {
+          studyEventData1.getFormData().addAll(studyEventData2.getFormData());
+          return studyEventData1;
+        }, TreeMap::new)).values());
   }
 
 }

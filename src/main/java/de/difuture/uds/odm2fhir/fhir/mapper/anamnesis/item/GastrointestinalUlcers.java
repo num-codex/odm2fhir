@@ -45,20 +45,14 @@ public class GastrointestinalUlcers extends Item {
     var condition = (Condition) new Condition()
         .addIdentifier(createIdentifier(CONDITION, generalCoding))
         .setRecordedDateElement(UNKNOWN_DATE_TIME) // TODO Set actual DateTime value
-        .addCategory(createCodeableConcept(createCoding(SNOMED_CT, "394584008", "Gastroenterology (qualifier value))")))
+        .addCategory(createCodeableConcept(createCoding(SNOMED_CT, "394584008", "Gastroenterology (qualifier value)")))
         .setMeta(createMeta(GASTROINTESTINAL_ULCERS));
 
     for (var coding : createCodings(answerCoding)) {
       switch (coding.getCode()) {
-        case "410605003": //YES
-          condition.setClinicalStatus(ACTIVE).setVerificationStatus(CONFIRMED);
-          break;
-        case "410594000": //NO
-          condition.setVerificationStatus(REFUTED);
-          break;
-        case "261665006": //UNKNOWN
-          condition.addModifierExtension(DATA_PRESENCE_UNKNOWN);
-          break;
+        case "410605003" -> condition.setClinicalStatus(ACTIVE).setVerificationStatus(CONFIRMED); //YES
+        case "410594000" -> condition.setVerificationStatus(REFUTED); //NO
+        case "261665006" -> condition.addModifierExtension(DATA_PRESENCE_UNKNOWN); //UNKNOWN
       }
     }
 

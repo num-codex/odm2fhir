@@ -37,24 +37,17 @@ import static java.util.function.Predicate.not;
 
 public class SymptomConditions extends Item {
 
-  private final static List<String> SYMPTOMS = List.of(
-      "symptome_geruchs_bzw_geschmacksstoerungen",
-      "symptome_bauchschmerzen",
-      "symptome_bewusstseinsstoerungen_verwirrtheit",
-      "symptome_durchfall",
-      "symptome_erbrechen",
-      "symptome_husten",
-      "symptome_kurzatmigkeit_dyspnoe",
-      "symptome_uebelkeit",
-      "symptome_fieber",
-      "symptome_kopfschmerzen",
-      "symptome_andere_symptome");
+  private final static List<String> SYMPTOMS = List.of("geruchs_bzw_geschmacksstoerungen", "bauchschmerzen",
+                                                       "bewusstseinsstoerungen_verwirrtheit", "durchfall", "erbrechen",
+                                                       "husten", "kurzatmigkeit_dyspnoe", "uebelkeit", "fieber",
+                                                       "kopfschmerzen", "andere_symptome");
 
   public Stream<DomainResource> map(FormData formData) {
     var generalSymptomCoding = formData.getItemData("symptome_code");
 
     return !"1".equals(formData.getItemData("symptome").getValue()) ? Stream.empty() :
         SYMPTOMS.stream()
+            .map(key -> "symptome_" + key)
             .map(formData::getItemData)
             .filter(not(ItemData::isEmpty))
             .flatMap(symptom -> createConditions(formData, generalSymptomCoding, symptom));
@@ -105,13 +98,13 @@ public class SymptomConditions extends Item {
       var identifier = condition.getIdentifierFirstRep();
 
       // TODO Check if really nothing should be returned in case only either taste or smell is empty
-      return codeableConceptTASTE.isEmpty() || codeableConceptSMELL.isEmpty() ? Stream.empty() : Stream.of(
-          condition.copy()
-              .setCode(codeableConceptTASTE)
-              .setIdentifier(List.of(identifier.copy().setValue(identifier.getValue() + "_geschmack"))),
-          condition.copy()
-              .setCode(codeableConceptSMELL)
-              .setIdentifier(List.of(identifier.copy().setValue(identifier.getValue() + "_geruch"))));
+      return codeableConceptTASTE.isEmpty() || codeableConceptSMELL.isEmpty() ? Stream.empty() :
+             Stream.of(condition.copy()
+                                .setCode(codeableConceptTASTE)
+                                .setIdentifier(List.of(identifier.copy().setValue(identifier.getValue() + "_geschmack"))),
+                       condition.copy()
+                                .setCode(codeableConceptSMELL)
+                                .setIdentifier(List.of(identifier.copy().setValue(identifier.getValue() + "_geruch"))));
     }
 
     return codeCodeableConcept.isEmpty() ? Stream.empty() : Stream.of(condition.setCode(codeCodeableConcept));

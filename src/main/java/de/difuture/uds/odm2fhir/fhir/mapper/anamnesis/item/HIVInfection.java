@@ -51,14 +51,9 @@ public class HIVInfection extends Item {
 
     for (var coding : createCodings(answerCoding)) {
       switch (coding.getCode()) {
-        case "410605003": //YES
-          condition.setClinicalStatus(ACTIVE).setVerificationStatus(CONFIRMED);
-          break;
-        case "410594000": //NO
-          condition.setVerificationStatus(REFUTED);
-          break;
-        case "261665006": //UNKNOWN
-          condition.addModifierExtension(DATA_PRESENCE_UNKNOWN);
+        case "410605003" -> condition.setClinicalStatus(ACTIVE).setVerificationStatus(CONFIRMED); //YES
+        case "410594000" -> condition.setVerificationStatus(REFUTED); //NO
+        case "261665006" -> condition.addModifierExtension(DATA_PRESENCE_UNKNOWN); //UNKNOWN
       }
     }
 

@@ -57,22 +57,18 @@ public class REDCapODMProcessor extends ODMProcessor {
   @Value("${odm.redcap.api.token}")
   private String token;
 
-  @Value("${odm.redcap.api.chunksize:0}")
-  private int chunksize;
+  @Value("${odm.redcap.api.patientspercall:1}")
+  private int patientspercall;
 
   public Stream<InputStream> read() throws Exception {
     log.info("Reading ODM via REDCap API at '{}'", url);
 
-    if (chunksize > 0) {
-      var counter = new AtomicInteger();
+    var counter = new AtomicInteger();
 
-      return readPatientIDs().collect(groupingBy(patientID -> counter.getAndIncrement() / chunksize))
-                             .values()
-                             .stream()
-                             .map(asFunction(this::read));
-    } else {
-      return Stream.of(read(List.of()));
-    }
+    return readPatientIDs().collect(groupingBy(patientID -> counter.getAndIncrement() / patientspercall))
+                           .values()
+                           .stream()
+                           .map(asFunction(this::read));
   }
 
   private InputStream read(List<String> patientIDs) throws Exception {

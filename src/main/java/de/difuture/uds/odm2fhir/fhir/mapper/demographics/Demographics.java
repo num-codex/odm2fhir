@@ -36,17 +36,16 @@ import java.util.List;
 public class Demographics extends Form {
 
   @Getter
-  private final String OID = "Form.demographie";
+  private final String OID = "demographie";
 
   @Getter
-  private final List<Item> items = List.of(
-      new Age(),
-      new DateOfBirth(),
-      new EthnicGroup(),
-      new PregnancyStatus(),
-      new BiologicalSex(),
-      new FrailtyScore(),
-      new BodyWeight(),
-      new BodyHeight());
+  private final List<Item> items = List.of(new Age(),
+                                           new DateOfBirth(),
+                                           new EthnicGroup(),
+                                           new PregnancyStatus(),
+                                           new BiologicalSex(),
+                                           new FrailtyScore(),
+                                           new BodyWeight(),
+                                           new BodyHeight());
 
 }

@@ -48,9 +48,8 @@ public abstract class FHIRBundleWriter {
   @PostConstruct
   private void init() {
     if (errorhandlingStrict) {
-      FHIR_CONTEXT.setParserErrorHandler(new StrictErrorHandler());
+      JSON_PARSER.setParserErrorHandler(new StrictErrorHandler());
     }
-
     FHIR_CONTEXT.getRestfulClientFactory().setHttpClient(HTTP_CLIENT);
   }
 

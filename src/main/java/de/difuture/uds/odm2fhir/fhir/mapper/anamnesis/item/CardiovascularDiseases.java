@@ -44,7 +44,7 @@ public class CardiovascularDiseases extends Item {
   public Stream<DomainResource> map(FormData formData) {
     var itemGroupData = formData.getItemGroupData("anamnese_risikofaktoren.herzkreislauferkrankungen_bluthochdruck");
     var generalPresence = formData.getItemData("herzkreislauferkrankungen");
-    
+
     return createCodings(generalPresence).stream()
         .map(Coding::getCode)
         .anyMatch(code -> equalsAny(code, "410594000", "261665006")) ? Stream.empty() : // generalPresence != YES
@@ -64,18 +64,10 @@ public class CardiovascularDiseases extends Item {
     var codeableConcept = new CodeableConcept();
     for (var coding : createCodings(resourceCoding)) {
       switch (coding.getCode()) {
-        case "410605003": //YES
-          condition.setClinicalStatus(ACTIVE).setVerificationStatus(CONFIRMED);
-          break;
-        case "410594000": //NO
-          condition.setVerificationStatus(REFUTED);
-          break;
-        case "261665006": //UNKNOWN
-          condition.addModifierExtension(DATA_PRESENCE_UNKNOWN);
-          break;
-        default: //add ConditionCoding
-          codeableConcept.addCoding(coding);
-          break;
+        case "410605003" -> condition.setClinicalStatus(ACTIVE).setVerificationStatus(CONFIRMED); //YES
+        case "410594000" -> condition.setVerificationStatus(REFUTED); //NO
+        case "261665006" -> condition.addModifierExtension(DATA_PRESENCE_UNKNOWN); //UNKNOWN
+        default -> codeableConcept.addCoding(coding); //add ConditionCoding
       }
 
       if ("<49601007".equals(coding.getCode()) && !textValue.isEmpty()) {

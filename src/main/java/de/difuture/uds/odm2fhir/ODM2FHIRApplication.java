@@ -25,8 +25,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.info.BuildProperties;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.scheduling.concurrent.ConcurrentTaskScheduler;
 import org.springframework.scheduling.support.CronTrigger;
 
@@ -36,15 +38,21 @@ import static org.apache.commons.lang3.ArrayUtils.contains;
 import static org.apache.commons.lang3.StringUtils.isBlank;
 import static org.apache.commons.lang3.function.Failable.asRunnable;
 
+import static org.springframework.boot.Banner.Mode.OFF;
+
 import static java.nio.file.Files.readString;
 
 @Slf4j
 @SpringBootApplication
+@PropertySource("classpath:odm/redcap/mapping.properties")
 public class ODM2FHIRApplication implements CommandLineRunner {
 
   @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
   @Autowired(required = false)
   private ODMProcessor odmProcessor;
+
+  @Autowired
+  BuildProperties buildProperties;
 
   @Value("classpath:README.md")
   private Path readme;
@@ -52,26 +60,33 @@ public class ODM2FHIRApplication implements CommandLineRunner {
   @Value("classpath:odm/redcap/datadictionary.csv")
   private Path odmRedcapDatadictionary;
 
+  @Value("classpath:odm/redcap/mapping.properties")
+  private Path odmRedcapMapping;
+
   @Value("${cron:}")
   private String cron;
 
   public static void main(String... args) {
-    new SpringApplication(ODM2FHIRApplication.class).run(args);
+    new SpringApplicationBuilder(ODM2FHIRApplication.class).bannerMode(OFF).run(args);
   }
 
   @Override
   public void run(String... args) throws Exception {
+    log.info("{} version {}", buildProperties.getName(), buildProperties.getVersion());
+
     if (contains(args, "--help")) {
       log.info(readString(readme));
     } else if (contains(args, "--odm.redcap.datadictionary")) {
       log.info(readString(odmRedcapDatadictionary));
+    } else if (contains(args, "--odm.redcap.mapping")) {
+      log.info(readString(odmRedcapMapping));
     } else {
       if (odmProcessor == null) {
         throw new IllegalArgumentException("Neither (existing) 'odm.file.path' nor " +
             "'odm.redcap.api.url' and 'odm.redcap.api.token' or " +
             "'odm.dis.rest.url', 'odm.dis.rest.studyname', 'odm.dis.rest.username' and 'odm.dis.rest.password' specified");
       }
-      
+
       if (isBlank(cron)) {
         odmProcessor.process();
       } else {

@@ -29,7 +29,7 @@ import java.util.List;
 public class EpidemiologicalFactors extends Form {
 
   @Getter
-  private final String OID = "Form.epidemiologische_faktoren";
+  private final String OID = "epidemiologische_faktoren";
 
   @Getter
   private final List<Item> items = List.of(new KnownExposure());

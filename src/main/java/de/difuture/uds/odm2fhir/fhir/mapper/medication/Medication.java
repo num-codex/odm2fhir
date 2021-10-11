@@ -32,13 +32,12 @@ import java.util.List;
 public class Medication extends Form {
 
   @Getter
-  private final String OID = "Form.medikation";
+  private final String OID = "medikation";
 
   @Getter
-  private final List<Item> items = List.of(
-      new COVID19Therapy(),
-      new ACEInhibitors(),
-      new Immunoglobulins(),
-      new Anticoagulation());
+  private final List<Item> items = List.of(new COVID19Therapy(),
+                                           new ACEInhibitors(),
+                                           new Immunoglobulins(),
+                                           new Anticoagulation());
 
 }

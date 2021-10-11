@@ -30,11 +30,10 @@ import java.util.List;
 public class StudyEnrollmentInclusionCriteria extends Form {
 
   @Getter
-  private final String OID = "Form.studieneinschluss_einschlusskriterien";
+  private final String OID = "studieneinschluss_einschlusskriterien";
 
   @Getter
-  private final List<Item> items = List.of(
-      new StudyEnrollmentCOVID19(),
-      new InterventionalStudiesParticipation());
+  private final List<Item> items = List.of(new StudyEnrollmentCOVID19(),
+                                           new InterventionalStudiesParticipation());
 
 }

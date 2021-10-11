@@ -38,19 +38,18 @@ import java.util.List;
 public class VitalSigns extends Form {
 
   @Getter
-  private final String OID = "Form.vitalparameter";
+  private final String OID = "vitalparameter";
 
   @Getter
-  private final List<Item> items = List.of(
-      new PaCO2(),
-      new PaO2(),
-      new FiO2(),
-      new PHValue(),
-      new SOFAScore(),
-      new RespiratoryRate(),
-      new BloodPressure(),
-      new HeartRate(),
-      new BodyTemperature(),
-      new PeripheralOxygenSaturation());
+  private final List<Item> items = List.of(new PaCO2(),
+                                           new PaO2(),
+                                           new FiO2(),
+                                           new PHValue(),
+                                           new SOFAScore(),
+                                           new RespiratoryRate(),
+                                           new BloodPressure(),
+                                           new HeartRate(),
+                                           new BodyTemperature(),
+                                           new PeripheralOxygenSaturation());
 
 }

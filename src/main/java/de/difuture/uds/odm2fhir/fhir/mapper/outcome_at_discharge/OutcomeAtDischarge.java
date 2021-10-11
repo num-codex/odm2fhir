@@ -31,12 +31,11 @@ import java.util.List;
 public class OutcomeAtDischarge extends Form {
 
   @Getter
-  private final String OID = "Form.outcome_bei_entlassung";
+  private final String OID = "outcome_bei_entlassung";
 
   @Getter
-  private final List<Item> items = List.of(
-      new RespiratoryOutcome(),
-      new TypeOfDischarge(),
-      new FollowUpSwabResult());
+  private final List<Item> items = List.of(new RespiratoryOutcome(),
+                                           new TypeOfDischarge(),
+                                           new FollowUpSwabResult());
 
 }

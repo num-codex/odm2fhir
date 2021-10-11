@@ -49,17 +49,18 @@ public class SARSCoV2RTPCR extends Item {
     var valueCodeableConcept = new CodeableConcept();
     for (var coding : createCodings(answerCoding)) {
       switch (coding.getCode()) { //add coding.display and codeableConcept.text
-        case "260373001":
+        case "260373001" -> {
           coding.setDisplay("Detected (qualifier value)");
           valueCodeableConcept.setText("SARS-CoV-2-RNA positiv");
-          break;
-        case "260415000":
+        }
+        case "260415000" -> {
           coding.setDisplay("Not detected (qualifier value)");
           valueCodeableConcept.setText("SARS-CoV-2-RNA negativ");
-          break;
-        case "419984006":
+        }
+        case "419984006" -> {
           coding.setDisplay("Inconclusive (qualifier value)");
           valueCodeableConcept.setText("SARS-CoV-2-RNA nicht eindeutig");
+        }
       }
       valueCodeableConcept.addCoding(coding);
     }

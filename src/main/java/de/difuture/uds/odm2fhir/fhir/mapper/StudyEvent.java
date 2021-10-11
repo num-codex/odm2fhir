@@ -46,7 +46,8 @@ import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Stream;
 
-import static de.difuture.uds.odm2fhir.util.EnvironmentProvider.getEnvironment;
+import static de.difuture.uds.odm2fhir.util.EnvironmentProvider.ENVIRONMENT;
+import static de.difuture.uds.odm2fhir.fhir.util.IdentifierHelper.getIdentifierSystem;
 
 import static org.apache.commons.codec.digest.DigestUtils.sha256Hex;
 import static org.apache.commons.lang3.StringUtils.containsAny;
@@ -70,21 +71,20 @@ public class StudyEvent {
 
   private Reference encounterReference;
 
-  private final List<Form> forms = List.of(
-      new Consent(),
-      new OnsetOfIllness(),
-      new StudyEnrollmentInclusionCriteria(),
-      new Anamnesis(),
-      new Imaging(),
-      new Demographics(),
-      new EpidemiologicalFactors(),
-      new Complications(),
-      new LaboratoryValues(),
-      new Medication(),
-      new Symptoms(),
-      new Therapy(),
-      new VitalSigns(),
-      new OutcomeAtDischarge());
+  private final List<Form> forms = List.of(new Consent(),
+                                           new OnsetOfIllness(),
+                                           new StudyEnrollmentInclusionCriteria(),
+                                           new Anamnesis(),
+                                           new Imaging(),
+                                           new Demographics(),
+                                           new EpidemiologicalFactors(),
+                                           new Complications(),
+                                           new LaboratoryValues(),
+                                           new Medication(),
+                                           new Symptoms(),
+                                           new Therapy(),
+                                           new VitalSigns(),
+                                           new OutcomeAtDischarge());
 
   public Stream<DomainResource> map(Subject subject, StudyEventData studyEventData) {
     this.subject = subject;
@@ -96,12 +96,12 @@ public class StudyEvent {
                          studyEventData.getSubjectData().getSubjectKey(),
                          studyEventData.getStudyEventOID(), studyEventData.getStudyEventRepeatKey());
 
-      if (!getEnvironment().containsProperty("debug")) {
+      if (!ENVIRONMENT.containsProperty("debug")) {
         value = sha256Hex(value);
       }
 
       var encounterIdentifier = new Identifier()
-          .setSystem(getEnvironment().getProperty("fhir.identifier.system.encounter"))
+          .setSystem(getIdentifierSystem(ENCOUNTER))
           .setValue(value)
           .setAssigner(subject.getOrganizationReference());
 

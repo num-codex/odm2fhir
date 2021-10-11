@@ -31,12 +31,11 @@ import java.util.List;
 public class LaboratoryValues extends Form {
 
   @Getter
-  private final String OID = "Form.laborwerte";
+  private final String OID = "laborwerte";
 
   @Getter
-  private final List<Item> items = List.of(
-      new LaboratoryValue(),
-      new SARSCoV2RTPCR(),
-      new SARSCoV2Antibodies());
+  private final List<Item> items = List.of(new LaboratoryValue(),
+                                           new SARSCoV2RTPCR(),
+                                           new SARSCoV2Antibodies());
 
 }

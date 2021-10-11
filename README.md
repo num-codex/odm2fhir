@@ -11,11 +11,13 @@ docker run **VOLUMES** ghcr.io/num-codex/odm2fhir **ARGUMENTS**
 
 ### Arguments
 
-(Note: Replace all `**VARIABLE**` references with the actual values.)
+(Note: Replace all `**VARIABLE**` references with their actual values.)
 
 * `--help` Print `README`.
 
 * `--odm.redcap.datadictionary` Print current data dictionary.
+
+* `--odm.redcap.mapping` Print current mapping.
 
 * `--fhir.identifier.system.**TYPE**=**TYPE_IDENTIFIER_SYSTEM**` Add an identifier system with `**TYPE**` of `condition`, `consent`, `diagnosticreport`, `encounter`, `immunization`, `medicationstatement`, `observation`, `patient` or `procedure` (see [here](https://simplifier.net/guide/GermanCoronaConsensusDataSet-ImplementationGuide/TransactionBundle)).
 
@@ -42,10 +44,16 @@ docker run **VOLUMES** ghcr.io/num-codex/odm2fhir **ARGUMENTS**
 --odm.redcap.api.token=**ODM_REDCAP_API_TOKEN**
 ```
 
-#### Export Chunking
-If desired or necessary (e.g. in the event of a timeout), the ODM export from REDCap can be divided into chunks by adding the argument:
+#### PKCS12 Certificate
 ```sh
---odm.redcap.api.chunksize=**CHUNKSIZE**
+--odm.redcap.api.key.file.path=**ODM_REDCAP_API_KEY_FILE_PATH**
+--odm.redcap.api.key.password=**ODM_REDCAP_API_KEY_PASSWORD**
+```
+
+#### Export Chunking
+The ODM export from REDCap is by default divided into exports for data of single patients to avoid connection issues and timeouts but can be changed by adding the argument:
+```sh
+--odm.redcap.api.patientspercall=**PATIENTS_PER_CALL**
 ```
 
 #### Filtering
@@ -63,6 +71,11 @@ By default, all subjects within an ODM are processed. To process only subjects w
 --odm.dis.rest.password=**ODM_DIS_REST_PASSWORD**
 ```
 
+#### PKCS12 Certificate
+```sh
+--odm.dis.rest.key.file.path=**ODM_DIS_REST_KEY_FILE_PATH**
+--odm.dis.rest.key.password=**ODM_DIS_REST_KEY_PASSWORD**
+```
 
 ## Output
 
@@ -91,6 +104,11 @@ By default, all subjects within an ODM are processed. To process only subjects w
 --fhir.server.oauth2.client.secret=**FHIR_SERVER_OAUTH2_CLIENT_SECRET**
 ```
 
+#### PKCS12 Certificate
+```sh
+--fhir.server.key.file.path=**FHIR_SERVER_KEY_FILE_PATH**
+--fhir.server.key.password=**FHIR_SERVER_KEY_PASSWORD**
+```
 
 ## Validation
 Enable validation of the generated FHIR resources - and filtering out of all invalid ones - according to mentioned profiles by adding the argument `--fhir.validation.enabled=true`.
@@ -113,6 +131,12 @@ Enable the use of an external terminology server by adding the argument(s) below
 --fhir.terminologyserver.oauth2.token.url=**FHIR_TERMINOLOGYSERVER_OAUTH2_TOKEN_URL**
 --fhir.terminologyserver.oauth2.client.id=**FHIR_TERMINOLOGYSERVER_OAUTH2_CLIENT_ID**
 --fhir.terminologyserver.oauth2.client.secret=**FHIR_TERMINOLOGYSERVER_OAUTH2_CLIENT_SECRET**
+```
+
+#### PKCS12 Certificate
+```sh
+--fhir.terminologyserver.key.file.path=**FHIR_TERMINOLOGYSERVER_KEY_FILE_PATH**
+--fhir.terminologyserver.key.password=**FHIR_TERMINOLOGYSERVER_KEY_PASSWORD**
 ```
 
 ## License

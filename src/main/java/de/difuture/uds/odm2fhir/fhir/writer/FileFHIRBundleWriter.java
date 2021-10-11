@@ -40,7 +40,7 @@ public class FileFHIRBundleWriter extends FHIRBundleWriter {
 
   @Value("${fhir.folder.path:}")
   private Path folderPath;
-  
+
   @Override
   public void write(Bundle bundle) throws IOException {
     if (folderPath == null) {

@@ -19,8 +19,6 @@ package de.difuture.uds.odm2fhir.odm.model;
  */
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.util.StdConverter;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import lombok.Data;
@@ -28,7 +26,13 @@ import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import lombok.experimental.Accessors;
 
+import java.util.List;
+
 import static org.apache.commons.lang3.StringUtils.isBlank;
+import static org.apache.commons.lang3.StringUtils.isNumeric;
+import static org.apache.commons.lang3.StringUtils.replaceEach;
+
+import static de.difuture.uds.odm2fhir.util.EnvironmentProvider.ENVIRONMENT;
 
 @Data
 @Accessors(chain = true)
@@ -37,7 +41,6 @@ public class ItemData {
   @JacksonXmlProperty(isAttribute = true)
   private String itemOID;
 
-  @JsonDeserialize(converter = ValueConverter.class)
   @JacksonXmlProperty(isAttribute = true)
   private String value;
 
@@ -54,19 +57,19 @@ public class ItemData {
     return new ItemData().setItemOID(itemOID).setValue(value).setItemGroupData(itemGroupData);
   }
 
-  public static class ValueConverter extends StdConverter<String, String> {
-
-    @Override
-    public String convert(String value) {
-      return value.replaceAll("PLUS", "+")
-                  .replaceAll("EQUAL", "=")
-                  .replaceAll("COLON", ":")
-                  .replaceAll("COMMA", ",")
-                  .replaceAll("LESSTHAN", "<")
-                  .replaceAll("LBRACKET", "{")
-                  .replaceAll("RBRACKET", "}");
+  @SuppressWarnings("unchecked")
+  public String getValue() {
+    if (isNumeric(value)) {
+      var codes = ENVIRONMENT.getProperty(itemOID, List.class);
+      if (codes != null) {
+        value = ((String) codes.get(Integer.parseInt(value) - 1));
+      }
     }
 
+    value = replaceEach(value, new String[]{ "PLUS", "EQUAL", "COLON", "COMMA", "LESSTHAN", "LBRACKET", "RBRACKET" },
+                               new String[]{ "+",    "=",     ":",     ",",     "<",        "{",        "}"        });
+
+    return value;
   }
 
 }

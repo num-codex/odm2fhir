@@ -37,7 +37,9 @@ import org.hl7.fhir.r4.model.Reference;
 import java.util.stream.Stream;
 
 import static de.difuture.uds.odm2fhir.fhir.util.CommonCodeSystem.IDENTIFIER_TYPE_CODES;
-import static de.difuture.uds.odm2fhir.util.EnvironmentProvider.getEnvironment;
+import static de.difuture.uds.odm2fhir.fhir.util.IdentifierHelper.getIdentifierAssigner;
+import static de.difuture.uds.odm2fhir.fhir.util.IdentifierHelper.getIdentifierSystem;
+import static de.difuture.uds.odm2fhir.util.EnvironmentProvider.ENVIRONMENT;
 
 import static org.apache.commons.codec.digest.DigestUtils.sha256Hex;
 import static org.apache.commons.lang3.StringUtils.equalsAny;
@@ -62,14 +64,32 @@ public class Subject {
   private Reference patientReference;
 
   public Stream<DomainResource> map(SubjectData subjectData) {
-    var organization = new Organization().setName(getEnvironment().getProperty("fhir.identifier.assigner"));
-    organization.setId(sha256Hex(organization.getName()));
+    var value = getIdentifierAssigner();
+
+    if (!ENVIRONMENT.containsProperty("debug")) {
+      value = sha256Hex(value);
+    }
+
+    var organizationIdentifier = new Identifier()
+        .setSystem(getIdentifierSystem(ORGANIZATION))
+        .setValue(value);
+
+    var organization = (Organization) new Organization()
+        .setName(getIdentifierAssigner())
+        .addIdentifier(organizationIdentifier)
+        .setId(sha256Hex(organizationIdentifier.getSystem() + organizationIdentifier.getValue()));
 
     organizationReference = new Reference(format("%s/%s", ORGANIZATION.toCode(), organization.getId()));
 
+    value = subjectData.getSubjectKey();
+
+    if (!ENVIRONMENT.containsProperty("debug")) {
+      value = sha256Hex(value);
+    }
+
     var patientIdentifier = new Identifier()
-        .setSystem(getEnvironment().getProperty("fhir.identifier.system.patient"))
-        .setValue(subjectData.getSubjectKey())
+        .setSystem(getIdentifierSystem(PATIENT))
+        .setValue(value)
         .setType(new CodeableConcept(new Coding().setSystem(IDENTIFIER_TYPE_CODES.getUrl()).setCode(MR.toCode())))
         .setAssigner(organizationReference);
 

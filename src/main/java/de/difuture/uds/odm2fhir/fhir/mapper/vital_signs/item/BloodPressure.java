@@ -61,13 +61,15 @@ public class BloodPressure extends Item {
             .setText("Blood pressure"))
         .addCategory(VITAL_SIGNS)
         .addComponent(Optional.of(createQuantity(systolicValue, "mm[Hg]", "mmHg"))
-            .map(quantity -> new ObservationComponentComponent()
+                              .map(quantity -> new ObservationComponentComponent()
                 .setCode(createCodeableConcept(systolicCoding).setText("Systolic blood pressure"))
-                .setValue(quantity)).orElse(null))
+                .setValue(quantity)
+                .setDataAbsentReason(quantity.isEmpty() ? UNKNOWN : null)).get())
         .addComponent(Optional.of(createQuantity(diastolicValue, "mm[Hg]", "mmHg"))
             .map(quantity -> new ObservationComponentComponent()
                 .setCode(createCodeableConcept(diastolicCoding).setText("Diastolic blood pressure"))
-                .setValue(quantity)).orElse(null))
+                .setValue(quantity)
+                .setDataAbsentReason(quantity.isEmpty() ? UNKNOWN : null)).get())
         .setMeta(createMeta(BLOOD_PRESSURE));
   }
 

@@ -42,9 +42,10 @@ import static java.util.function.Predicate.not;
 public class LaboratoryValue extends Item {
 
   private static final List<String> PARAMETERS = List.of("crp", "ferritin", "bilirubin", "ddimer", "gammagt", "gotast",
-      "ldh", "kardiale_troponine", "hamoglobin", "kreatinin", "laktat", "leukozyten_absolut", "lymphozyten_absolut",
-      "neutrophile_absolut", "ptt", "thrombozyten_absolut", "inr", "serumalbumin", "antithrombin_iii",
-      "pct_procalcitonin", "il6_interleukin_6", "ntprobnp", "fibrinogen");
+                                                         "ldh", "kardiale_troponine", "hamoglobin", "kreatinin", "laktat",
+                                                         "leukozyten_absolut", "lymphozyten_absolut", "neutrophile_absolut",
+                                                         "ptt", "thrombozyten_absolut", "inr", "serumalbumin", "antithrombin_iii",
+                                                         "pct_procalcitonin", "il6_interleukin_6", "ntprobnp", "fibrinogen");
 
   public Stream<DomainResource> map(FormData formData) {
     return PARAMETERS.stream()

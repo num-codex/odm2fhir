@@ -144,15 +144,14 @@ public class SOFAScore extends Item {
     var sofaTotalScore = formData.getItemData("sofa_total_score");
     var dateCoding = formData.getItemData("vitalparameter_datum");
 
-    var itemDatas = Stream.of(
-        formData.getItemData("sofa_score_resp"),
-        formData.getItemData("sofa_score_ns"),
-        formData.getItemData("sofa_score_kid"),
-        formData.getItemData("sofa_score_cvs"),
-        formData.getItemData("sofa_score_liv"),
-        formData.getItemData("sofa_score_coa"))
-        .filter(not(ItemData::isEmpty))
-        .collect(toList());
+    var itemDatas = Stream.of(formData.getItemData("sofa_score_resp"),
+                              formData.getItemData("sofa_score_ns"),
+                              formData.getItemData("sofa_score_kid"),
+                              formData.getItemData("sofa_score_cvs"),
+                              formData.getItemData("sofa_score_liv"),
+                              formData.getItemData("sofa_score_coa"))
+                          .filter(not(ItemData::isEmpty))
+                          .collect(toList());
 
     return itemDatas.isEmpty() ? Stream.empty() : Stream.of(createObservation(itemDatas, sofaTotalScore, dateCoding));
   }

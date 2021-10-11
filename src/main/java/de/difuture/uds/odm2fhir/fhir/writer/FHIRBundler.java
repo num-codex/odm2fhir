@@ -32,17 +32,19 @@ import org.hl7.fhir.common.hapi.validation.support.InMemoryTerminologyServerVali
 import org.hl7.fhir.common.hapi.validation.support.PrePopulatedValidationSupport;
 import org.hl7.fhir.common.hapi.validation.support.RemoteTerminologyServiceValidationSupport;
 import org.hl7.fhir.common.hapi.validation.support.SnapshotGeneratingValidationSupport;
+import org.hl7.fhir.common.hapi.validation.support.UnknownCodeSystemWarningValidationSupport;
 import org.hl7.fhir.common.hapi.validation.support.ValidationSupportChain;
 import org.hl7.fhir.common.hapi.validation.validator.FhirInstanceValidator;
 import org.hl7.fhir.instance.model.api.IBaseResource;
 import org.hl7.fhir.r4.model.Bundle;
 import org.hl7.fhir.r4.model.Bundle.BundleEntryRequestComponent;
 import org.hl7.fhir.r4.model.DomainResource;
+import org.hl7.fhir.r4.model.Identifier;
 import org.hl7.fhir.r4.model.Meta;
-import org.hl7.fhir.r4.model.ValueSet;
 import org.hl7.fhir.utilities.npm.NpmPackage;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.DependsOn;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -61,27 +63,25 @@ import static ca.uhn.fhir.validation.ResultSeverityEnum.WARNING;
 import static de.difuture.uds.odm2fhir.fhir.util.CommonCodeSystem.ICD_10_GM;
 import static de.difuture.uds.odm2fhir.fhir.util.CommonCodeSystem.LOINC;
 import static de.difuture.uds.odm2fhir.fhir.util.CommonCodeSystem.SNOMED_CT;
+import static de.difuture.uds.odm2fhir.fhir.util.IdentifierHelper.getIdentifierSystem;
 import static de.difuture.uds.odm2fhir.fhir.util.NUMStructureDefinition.GECCO_BUNDLE;
 import static de.difuture.uds.odm2fhir.fhir.writer.FHIRBundleWriter.FHIR_CONTEXT;
 import static de.difuture.uds.odm2fhir.fhir.writer.FHIRBundleWriter.JSON_PARSER;
-import static de.difuture.uds.odm2fhir.util.EnvironmentProvider.getEnvironment;
 import static de.difuture.uds.odm2fhir.util.HTTPHelper.createAuthInterceptor;
 
 import static org.apache.commons.lang3.StringUtils.containsAny;
-import static org.apache.commons.lang3.StringUtils.startsWith;
 import static org.apache.commons.lang3.function.Failable.asFunction;
 import static org.apache.commons.lang3.function.Failable.asPredicate;
 
 import static org.hl7.fhir.r4.model.Bundle.BundleType.TRANSACTION;
 import static org.hl7.fhir.r4.model.Bundle.HTTPVerb.POST;
 import static org.hl7.fhir.r4.model.Bundle.HTTPVerb.PUT;
-import static org.hl7.fhir.r4.model.codesystems.ResourceTypes.CODESYSTEM;
-import static org.hl7.fhir.r4.model.codesystems.ResourceTypes.STRUCTUREDEFINITION;
-import static org.hl7.fhir.r4.model.codesystems.ResourceTypes.VALUESET;
 import static org.hl7.fhir.r4.model.codesystems.ResourceTypes.fromCode;
 import static org.hl7.fhir.r4.model.codesystems.SearchModifierCode.IDENTIFIER;
 
 import static org.springframework.util.CollectionUtils.isEmpty;
+import static org.springframework.util.ReflectionUtils.findMethod;
+import static org.springframework.util.ReflectionUtils.invokeMethod;
 
 import static java.lang.String.format;
 import static java.util.Comparator.comparing;
@@ -90,6 +90,7 @@ import static java.util.function.Predicate.not;
 
 @Slf4j
 @Service
+@DependsOn("HTTPHelper")
 public class FHIRBundler {
 
   @Value("classpath:fhir/profiles")
@@ -128,6 +129,7 @@ public class FHIRBundler {
   private void init() throws IOException {
     if (validationEnabled) {
       Locale.setDefault(ENGLISH);
+
       @SuppressWarnings("unchecked")
       var prePopulatedValidationSupport = new PrePopulatedValidationSupport(FHIR_CONTEXT) {
         @Override
@@ -137,31 +139,24 @@ public class FHIRBundler {
           return new ValueSetExpansionOutcome(valueSet);
         }
       };
+
       Files.list(profiles)
           .filter(not(asPredicate(Files::isHidden)))
           .map(asFunction(Files::newInputStream))
           .map(asFunction(NpmPackage::fromPackage))
-          .flatMap(asFunction(npmPackage ->
-              npmPackage.listResources(CODESYSTEM.toCode(), STRUCTUREDEFINITION.toCode(), VALUESET.toCode()).stream()
-                  .map(asFunction(npmPackage::loadResource))))
+          .flatMap(asFunction(npmPackage -> npmPackage.list("package").stream()
+                                                      .map(asFunction(npmPackage::loadResource))))
           .map(JSON_PARSER::parseResource)
-          .forEach(resource -> {
-            switch (fromCode(resource.fhirType())) {
-              case CODESYSTEM:
-                prePopulatedValidationSupport.addCodeSystem(resource);
-                break;
-              case STRUCTUREDEFINITION:
-                prePopulatedValidationSupport.addStructureDefinition(resource);
-                break;
-              case VALUESET:
-                prePopulatedValidationSupport.addValueSet((ValueSet) resource);
-            }
-          });
+          .forEach(prePopulatedValidationSupport::addResource);
+
+      var unknownCodeSystemWarningValidationSupport = new UnknownCodeSystemWarningValidationSupport(FHIR_CONTEXT);
+      unknownCodeSystemWarningValidationSupport.setAllowNonExistentCodeSystem(true);
 
       var validationSupportChain = new ValidationSupportChain(
           new DefaultProfileValidationSupport(FHIR_CONTEXT),
           new CommonCodeSystemsTerminologyService(FHIR_CONTEXT),
           new InMemoryTerminologyServerValidationSupport(FHIR_CONTEXT),
+          unknownCodeSystemWarningValidationSupport,
           new SnapshotGeneratingValidationSupport(FHIR_CONTEXT),
           prePopulatedValidationSupport);
 
@@ -185,18 +180,10 @@ public class FHIRBundler {
     domainResources.filter(domainResource -> {
       if (validationEnabled) {
         var validationResult = fhirValidator.validateWithResult(domainResource);
-
         var messages = validationResult.getMessages().stream()
             .sorted(comparing(SingleValidationMessage::getSeverity).reversed())
             .peek(message -> {
               if (message.getSeverity() == ERROR) {
-                // TODO This circumvents some bugs in GECCO about which the curators have been already informed about...
-                if (startsWith(message.getMessage(), "Procedure.performed[x]:performedPeriod") ||
-                    startsWith(message.getLocationString(), "Observation.effective.ofType(dateTime)")) {
-                  message.setSeverity(WARNING);
-                  message.setMessage("GECCO ISSUE - " + message.getMessage());
-                }
-
                 if (validationCodeerrorsIgnored && !terminologyserverUrl.isAbsolute() &&
                     containsAny(message.getMessage(), ICD_10_GM.getUrl(), LOINC.getUrl(), SNOMED_CT.getUrl())) {
                   message.setSeverity(WARNING);
@@ -205,15 +192,9 @@ public class FHIRBundler {
             })
             .peek(message -> {
               switch (message.getSeverity()) {
-                case FATAL:
-                case ERROR:
-                  log.error(message.toString());
-                  break;
-                case WARNING:
-                  log.warn(message.toString());
-                  break;
-                case INFORMATION:
-                  log.info(message.toString());
+                case FATAL, ERROR -> log.error(message.toString());
+                case WARNING -> log.warn(message.toString());
+                case INFORMATION -> log.info(message.toString());
               }
             });
 
@@ -240,8 +221,10 @@ public class FHIRBundler {
         method = POST;
         fullUrl = url;
         url = fhirType;
-        ifNoneExist = format("%s=%s|%s", IDENTIFIER.toCode(),
-                             getEnvironment().getProperty("fhir.identifier.system." + fhirType.toLowerCase()), id);
+        var identifier = ((Identifier) invokeMethod(
+            findMethod(domainResource.getClass(), "getIdentifierFirstRep"), domainResource)).getValue();
+        ifNoneExist = format("%s=%s|%s", IDENTIFIER.toCode(), getIdentifierSystem(fromCode(fhirType)),
+                             identifier.replace(" ", "%20"));
         domainResource.setId("");
       }
 

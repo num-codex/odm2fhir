@@ -29,7 +29,7 @@ import java.util.List;
 public class Complications extends Form {
 
   @Getter
-  private final String OID = "Form.komplikationen";
+  private final String OID = "komplikationen";
 
   @Getter
   private final List<Item> items = List.of(new ComplicationConditions());

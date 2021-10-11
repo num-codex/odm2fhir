@@ -29,7 +29,7 @@ import java.util.List;
 public class OnsetOfIllness extends Form {
 
   @Getter
-  private final String OID = "Form.krankheitsbeginn_aufnahme";
+  private final String OID = "krankheitsbeginn_aufnahme";
 
   @Getter
   private final List<Item> items = List.of(new StageAtDiagnosis());

@@ -29,7 +29,7 @@ import java.util.List;
 public class Imaging extends Form {
 
   @Getter
-  private final String OID = "Form.bildgebung";
+  private final String OID = "bildgebung";
 
   @Getter
   private final List<Item> items = List.of(new ImagingProcedures());

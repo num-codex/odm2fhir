@@ -22,6 +22,7 @@ import de.difuture.uds.odm2fhir.fhir.mapper.Form;
 import de.difuture.uds.odm2fhir.fhir.mapper.Item;
 
 import de.difuture.uds.odm2fhir.fhir.mapper.symptoms.item.SymptomConditions;
+
 import lombok.Getter;
 
 import java.util.List;
@@ -29,7 +30,7 @@ import java.util.List;
 public class Symptoms extends Form {
 
   @Getter
-  private final String OID = "Form.symptome";
+  private final String OID = "symptome";
 
   @Getter
   private final List<Item> items = List.of(new SymptomConditions());

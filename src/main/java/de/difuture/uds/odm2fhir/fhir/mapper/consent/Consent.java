@@ -29,7 +29,7 @@ import java.util.List;
 public class Consent extends Form {
 
   @Getter
-  private final String OID = "Form.einwilligungserklaerung_mii_broad_consent";
+  private final String OID = "einwilligungserklaerung_mii_broad_consent";
 
   @Getter
   private final List<Item> items = List.of(new BroadConsent());

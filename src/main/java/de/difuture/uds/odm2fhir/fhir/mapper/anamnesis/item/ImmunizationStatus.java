@@ -48,8 +48,8 @@ public class ImmunizationStatus extends Item {
 
     return itemGroupData.isEmpty() ? Stream.empty() :
         itemGroupData.getItemData().stream()
-            .filter(itemData -> !endsWithAny(itemData.getItemOID(), "_datum", "_textfeld"))
             .map(ItemData::getItemOID)
+            .filter(itemOID -> !endsWithAny(itemOID, "_datum", "_textfeld"))
             .filter(itemOID -> !formData.getItemData(itemOID).isEmpty())
             .map(itemOID -> createImmunization(
                 formData.getItemData(itemOID),
@@ -110,7 +110,7 @@ public class ImmunizationStatus extends Item {
     }
 
     if (diseaseCodeableCoding.isEmpty()) { //add targetDisease unknown if none present
-      diseaseCodeableCoding.addCoding(createCoding(SNOMED_CT, "64572001", "targetDisease unknown"));
+      diseaseCodeableCoding.addCoding(createCoding(SNOMED_CT, "64572001", "Disease (disorder)"));
     }
 
     immunization.setVaccineCode(vaccineCodeableCoding)

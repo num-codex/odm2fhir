@@ -28,7 +28,7 @@ import org.hl7.fhir.r4.model.DomainResource;
 import java.util.List;
 import java.util.stream.Stream;
 
-import static de.difuture.uds.odm2fhir.util.EnvironmentProvider.getEnvironment;
+import static de.difuture.uds.odm2fhir.util.EnvironmentProvider.ENVIRONMENT;
 
 import static org.apache.commons.lang3.StringUtils.equalsAny;
 import static org.apache.commons.lang3.StringUtils.removeStart;
@@ -47,7 +47,7 @@ public abstract class Form {
   protected Stream<DomainResource> map(StudyEvent studyEvent, FormData formData) {
     this.studyEvent = studyEvent;
 
-    return !getOID().equals(formData.getFormOID()) || !isComplete(formData) ? Stream.empty() :
+    return !formData.getFormOID().endsWith(getOID()) || !isComplete(formData) ? Stream.empty() :
         getItems().stream()
             .flatMap(item -> item.map(this, formData))
             .filter(not(DomainResource::isEmpty));
@@ -55,13 +55,13 @@ public abstract class Form {
 
   private boolean isComplete(FormData formData) {
     // Always add demographics form
-    return "Form.demographie".equals(getOID()) ||
-        getEnvironment().getProperty("odm.incompleteforms.allowed", Boolean.class, false) ||
-        // Remove "Form." prefix to get REDCap field name for complete value / check DIS status field for complete (2), locked (4) or signed (5)
-        Stream.of(removeStart(formData.getFormOID() + "_complete", "Form."), "Status")
-            .map(formData::getItemData)
-            .map(ItemData::getValue)
-            .anyMatch(value -> equalsAny(value, "2", "4", "5"));
+    return "demographie".equals(getOID()) ||
+           ENVIRONMENT.getProperty("odm.incompleteforms.allowed", Boolean.class, false) ||
+           // Check REDCap X_complete and  DIS status field for complete (2), locked (4) or signed (5)
+           Stream.of(formData.getFormOID() + "_complete", "Status")
+                 .map(formData::getItemData)
+                 .map(ItemData::getValue)
+                 .anyMatch(value -> equalsAny(value, "2", "4", "5"));
   }
 
 }

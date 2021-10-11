@@ -40,9 +40,8 @@ public class Age extends Item {
     if (!answerCoding.isEmpty()) {
       ofNullable(getPatient().getExtensionByUrl(AGE.getUrl()))
           .orElseGet(() -> getPatient().addExtension().setUrl(AGE.getUrl()))
-          .setExtension(List.of(
-              new Extension("dateTimeOfDocumentation", UNKNOWN_DATE_TIME), // TODO Set actual DateTime value
-              new Extension("age", createAge(answerCoding))));
+          .setExtension(List.of(new Extension("dateTimeOfDocumentation", UNKNOWN_DATE_TIME), // TODO Set actual DateTime value
+                                new Extension("age", createAge(answerCoding))));
     }
 
     return Stream.empty();

@@ -44,25 +44,24 @@ import java.util.List;
 public class Anamnesis extends Form {
 
   @Getter
-  private final String OID = "Form.anamnese_risikofaktoren";
+  private final String OID = "anamnese_risikofaktoren";
 
   @Getter
-  private final List<Item> items = List.of(
-      new ChronicLungDiseases(),
-      new CardiovascularDiseases(),
-      new ChronicLiverDiseases(),
-      new RheumatologicalImmunologicalDiseases(),
-      new HIVInfection(),
-      new OrganRecipient(),
-      new DiabetesMellitus(),
-      new MalignantNeoplasticDiseases(),
-      new ChronicNeurologicalMentalDiseases(),
-      new ChronicKidneyDiseases(),
-      new GastrointestinalUlcers(),
-      new SmokingStatus(),
-      new HistoryOfTravel(),
-      new RespiratoryTherapies(),
-      new ImmunizationStatus(),
-      new DNROrder());
+  private final List<Item> items = List.of(new ChronicLungDiseases(),
+                                           new CardiovascularDiseases(),
+                                           new ChronicLiverDiseases(),
+                                           new RheumatologicalImmunologicalDiseases(),
+                                           new HIVInfection(),
+                                           new OrganRecipient(),
+                                           new DiabetesMellitus(),
+                                           new MalignantNeoplasticDiseases(),
+                                           new ChronicNeurologicalMentalDiseases(),
+                                           new ChronicKidneyDiseases(),
+                                           new GastrointestinalUlcers(),
+                                           new SmokingStatus(),
+                                           new HistoryOfTravel(),
+                                           new RespiratoryTherapies(),
+                                           new ImmunizationStatus(),
+                                           new DNROrder());
 
 }

@@ -27,15 +27,11 @@ public class EnvironmentProvider {
 
   private EnvironmentProvider() {}
 
-  private static Environment ENVIRONMENT;
+  public static Environment ENVIRONMENT;
 
   @Autowired
   public void setEnvironment(Environment environment) {
     ENVIRONMENT = environment;
-  }
-
-  public static Environment getEnvironment() {
-    return ENVIRONMENT;
   }
 
 }

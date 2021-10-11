@@ -72,12 +72,11 @@ public class HistoryOfTravel extends Item {
 
     return generalCoding.isEmpty() ? Stream.empty() :
         IntStream.rangeClosed(1, 10)
-            .mapToObj(i -> Map.of(
-                "start", formData.getItemData("reiseaktivitat_start_date_" + i),
-                "end", formData.getItemData("reiseaktivitat_end_date_" + i),
-                "country", formData.getItemData("reiseaktivitat_country_" + i),
-                "state", formData.getItemData("reiseaktivitat_state_" + i),
-                "city", formData.getItemData("reiseaktivitat_city_" + i)))
+            .mapToObj(i -> Map.of("start", formData.getItemData("reiseaktivitat_start_date_" + i),
+                                  "end", formData.getItemData("reiseaktivitat_end_date_" + i),
+                                  "country", formData.getItemData("reiseaktivitat_country_" + i),
+                                  "state", formData.getItemData("reiseaktivitat_state_" + i),
+                                  "city", formData.getItemData("reiseaktivitat_city_" + i)))
             .filter(map -> map.values()
                 .stream()
                 .anyMatch(not(ItemData::isEmpty)))
