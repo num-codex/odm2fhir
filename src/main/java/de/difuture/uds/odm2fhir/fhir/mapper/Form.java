@@ -31,7 +31,6 @@ import java.util.stream.Stream;
 import static de.difuture.uds.odm2fhir.util.EnvironmentProvider.ENVIRONMENT;
 
 import static org.apache.commons.lang3.StringUtils.equalsAny;
-import static org.apache.commons.lang3.StringUtils.removeStart;
 
 import static java.util.function.Predicate.not;
 

@@ -36,7 +36,6 @@ import java.util.TreeMap;
 
 import static java.lang.String.format;
 import static java.util.function.Function.identity;
-import static java.util.stream.Collectors.toList;
 import static java.util.stream.Collectors.toMap;
 
 @Data

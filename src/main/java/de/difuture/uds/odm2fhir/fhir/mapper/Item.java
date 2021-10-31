@@ -133,8 +133,8 @@ public abstract class Item {
 
   protected final Extension DATA_PRESENCE_UNKNOWN = createExtension(UNCERTAINTY_OF_PRESENCE,
       createCoding(SNOMED_CT, "261665006", "Unknown (qualifier value)"), "Presence unknown.");
-  protected final Extension DATA_ABSENT_FOR_UNKNOWN_REASON =
-      createExtension(createCoding(DATA_ABSENT_REASON.getUrl(), DataAbsentReason.UNKNOWN.toCode()));
+  protected final Extension DATA_ABSENT_FOR_UNKNOWN_REASON = createExtension(
+      createCoding(DATA_ABSENT_REASON.getUrl(), DataAbsentReason.UNKNOWN.toCode(), DataAbsentReason.UNKNOWN.getDisplay()));
 
   protected final DateType UNKNOWN_DATE = (DateType) new DateType().addExtension(DATA_ABSENT_FOR_UNKNOWN_REASON);
   protected final DateTimeType UNKNOWN_DATE_TIME = (DateTimeType) new DateTimeType().addExtension(DATA_ABSENT_FOR_UNKNOWN_REASON);
@@ -242,16 +242,8 @@ public abstract class Item {
     return createCoding(system.getUrl(), code, display);
   }
 
-  protected final Coding createCoding(CommonCodeSystem system, String code) {
-    return createCoding(system.getUrl(), code);
-  }
-
   protected final Coding createCoding(NUMCodeSystem system, String code, String display) {
     return createCoding(system.getUrl(), code, display);
-  }
-
-  protected final Coding createCoding(NUMCodeSystem system, String code) {
-    return createCoding(system.getUrl(), code);
   }
 
   protected final Coding createCoding(String system, String code, String display, String version) {
@@ -260,10 +252,6 @@ public abstract class Item {
 
   protected final Coding createCoding(String system, String code, String display) {
     return createCoding(system, code, display, null);
-  }
-
-  protected final Coding createCoding(String system, String code) {
-    return createCoding(system, code, null);
   }
 
   protected final Coding createCoding(ItemData itemData) {

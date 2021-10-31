@@ -8,7 +8,7 @@
 
   <groupId>de.difuture.uds</groupId>
   <artifactId>odm2fhir</artifactId>
-  <version>0.7.0</version>
+  <version>0.7.1</version>
 
   <name>ODM2FHIR</name>
   <description>Mapper for GECCO based study/patient data in CDISC ODM to HL7 FHIR</description>
@@ -16,7 +16,7 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>2.5.5</version>
+    <version>2.5.6</version>
   </parent>
 
   <properties>
@@ -25,9 +25,9 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-    <hapi-fhir.version>5.5.1</hapi-fhir.version>
+    <hapi-fhir.version>5.5.3</hapi-fhir.version>
     <jackson.version>2.13.0</jackson.version>
-    <lombok.version>1.18.20</lombok.version>
+    <lombok.version>1.18.22</lombok.version>
     <spring-boot.version>${project.parent.version}</spring-boot.version>
     <spring-retry.version>1.3.1</spring-retry.version>
     <woodstox.version>6.2.6</woodstox.version>

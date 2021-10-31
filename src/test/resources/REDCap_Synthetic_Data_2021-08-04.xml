@@ -207,7 +207,7 @@
             <ItemData ItemOID="reiseaktivitat_start_date_1" Value="2020-08-09"/>
           </ItemGroupData>
           <ItemGroupData ItemGroupOID="anamnese_risikofaktoren.reiseaktivitat_country_1" ItemGroupRepeatKey="1">
-            <ItemData ItemOID="reiseaktivitat_country_1" Value="82"/>
+            <ItemData ItemOID="reiseaktivitat_country_1" Value="69"/>
             <ItemData ItemOID="reiseaktivitat_state_1" Value=""/>
             <ItemData ItemOID="reiseaktivitat_city_1" Value=""/>
             <ItemData ItemOID="reiseaktivitat_end_date_1" Value="2020-07-09"/>
@@ -216,7 +216,7 @@
             <ItemData ItemOID="reiseaktivitat_start_date_2" Value="2020-07-08"/>
           </ItemGroupData>
           <ItemGroupData ItemGroupOID="anamnese_risikofaktoren.reiseaktivitat_country_2" ItemGroupRepeatKey="1">
-            <ItemData ItemOID="reiseaktivitat_country_2" Value="87"/>
+            <ItemData ItemOID="reiseaktivitat_country_2" Value="74"/>
             <ItemData ItemOID="reiseaktivitat_state_2" Value=""/>
             <ItemData ItemOID="reiseaktivitat_city_2" Value=""/>
             <ItemData ItemOID="reiseaktivitat_end_date_2" Value="2020-03-08"/>
@@ -225,7 +225,7 @@
             <ItemData ItemOID="reiseaktivitat_start_date_3" Value="2020-02-10"/>
           </ItemGroupData>
           <ItemGroupData ItemGroupOID="anamnese_risikofaktoren.reiseaktivitat_country_3" ItemGroupRepeatKey="1">
-            <ItemData ItemOID="reiseaktivitat_country_3" Value="209"/>
+            <ItemData ItemOID="reiseaktivitat_country_3" Value="200"/>
             <ItemData ItemOID="reiseaktivitat_state_3" Value=""/>
             <ItemData ItemOID="reiseaktivitat_city_3" Value=""/>
             <ItemData ItemOID="reiseaktivitat_end_date_3" Value="2020-07-20"/>
@@ -234,7 +234,7 @@
             <ItemData ItemOID="reiseaktivitat_start_date_4" Value="2020-01-15"/>
           </ItemGroupData>
           <ItemGroupData ItemGroupOID="anamnese_risikofaktoren.reiseaktivitat_country_4" ItemGroupRepeatKey="1">
-            <ItemData ItemOID="reiseaktivitat_country_4" Value="99"/>
+            <ItemData ItemOID="reiseaktivitat_country_4" Value="84"/>
             <ItemData ItemOID="reiseaktivitat_state_4" Value=""/>
             <ItemData ItemOID="reiseaktivitat_city_4" Value=""/>
             <ItemData ItemOID="reiseaktivitat_end_date_4" Value="2020-09-08"/>
@@ -243,7 +243,7 @@
             <ItemData ItemOID="reiseaktivitat_start_date_5" Value="2020-09-17"/>
           </ItemGroupData>
           <ItemGroupData ItemGroupOID="anamnese_risikofaktoren.reiseaktivitat_country_5" ItemGroupRepeatKey="1">
-            <ItemData ItemOID="reiseaktivitat_country_5" Value="16"/>
+            <ItemData ItemOID="reiseaktivitat_country_5" Value="18"/>
             <ItemData ItemOID="reiseaktivitat_state_5" Value=""/>
             <ItemData ItemOID="reiseaktivitat_city_5" Value=""/>
             <ItemData ItemOID="reiseaktivitat_end_date_5" Value="2020-01-04"/>
@@ -252,7 +252,7 @@
             <ItemData ItemOID="reiseaktivitat_start_date_6" Value="2020-11-09"/>
           </ItemGroupData>
           <ItemGroupData ItemGroupOID="anamnese_risikofaktoren.reiseaktivitat_country_6" ItemGroupRepeatKey="1">
-            <ItemData ItemOID="reiseaktivitat_country_6" Value="107"/>
+            <ItemData ItemOID="reiseaktivitat_country_6" Value="89"/>
             <ItemData ItemOID="reiseaktivitat_state_6" Value=""/>
             <ItemData ItemOID="reiseaktivitat_city_6" Value=""/>
             <ItemData ItemOID="reiseaktivitat_end_date_6" Value="2020-08-23"/>
@@ -261,7 +261,7 @@
             <ItemData ItemOID="reiseaktivitat_start_date_7" Value="2020-09-28"/>
           </ItemGroupData>
           <ItemGroupData ItemGroupOID="anamnese_risikofaktoren.reiseaktivitat_country_7" ItemGroupRepeatKey="1">
-            <ItemData ItemOID="reiseaktivitat_country_7" Value="229"/>
+            <ItemData ItemOID="reiseaktivitat_country_7" Value="230"/>
             <ItemData ItemOID="reiseaktivitat_state_7" Value=""/>
             <ItemData ItemOID="reiseaktivitat_city_7" Value=""/>
             <ItemData ItemOID="reiseaktivitat_end_date_7" Value="2020-01-18"/>
@@ -270,7 +270,7 @@
             <ItemData ItemOID="reiseaktivitat_start_date_8" Value="2020-05-16"/>
           </ItemGroupData>
           <ItemGroupData ItemGroupOID="anamnese_risikofaktoren.reiseaktivitat_country_8" ItemGroupRepeatKey="1">
-            <ItemData ItemOID="reiseaktivitat_country_8" Value="180"/>
+            <ItemData ItemOID="reiseaktivitat_country_8" Value="105"/>
             <ItemData ItemOID="reiseaktivitat_state_8" Value=""/>
             <ItemData ItemOID="reiseaktivitat_city_8" Value=""/>
             <ItemData ItemOID="reiseaktivitat_end_date_8" Value="2020-11-29"/>
@@ -279,7 +279,7 @@
             <ItemData ItemOID="reiseaktivitat_start_date_9" Value="2020-08-29"/>
           </ItemGroupData>
           <ItemGroupData ItemGroupOID="anamnese_risikofaktoren.reiseaktivitat_country_9" ItemGroupRepeatKey="1">
-            <ItemData ItemOID="reiseaktivitat_country_9" Value="12"/>
+            <ItemData ItemOID="reiseaktivitat_country_9" Value="16"/>
             <ItemData ItemOID="reiseaktivitat_state_9" Value=""/>
             <ItemData ItemOID="reiseaktivitat_city_9" Value=""/>
             <ItemData ItemOID="reiseaktivitat_end_date_9" Value="2020-09-13"/>

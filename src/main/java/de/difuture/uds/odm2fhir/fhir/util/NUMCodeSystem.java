@@ -24,6 +24,7 @@ public enum NUMCodeSystem {
 
   ECRF_PARAMETER_CODES,
   FRAILTY_SCORE,
+  SNOMED_PCE_SUPPLEMENT,
   SOFA_SCORE;
 
   private static final String BASE = "https://www.netzwerk-universitaetsmedizin.de/fhir/CodeSystem/";

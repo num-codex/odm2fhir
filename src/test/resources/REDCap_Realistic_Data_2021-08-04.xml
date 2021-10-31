@@ -4232,7 +4232,7 @@
           <ItemData ItemOID="reiseaktivitat_start_date_1" Value="2020-09-18"/>
         </ItemGroupData>
         <ItemGroupData ItemGroupOID="anamnese_risikofaktoren.reiseaktivitat_country_1" ItemGroupRepeatKey="1">
-          <ItemData ItemOID="reiseaktivitat_country_1" Value="213"/>
+          <ItemData ItemOID="reiseaktivitat_country_1" Value="201"/>
           <ItemData ItemOID="reiseaktivitat_state_1" Value=""/>
           <ItemData ItemOID="reiseaktivitat_city_1" Value=""/>
           <ItemData ItemOID="reiseaktivitat_end_date_1" Value="2020-09-30"/>
@@ -16051,7 +16051,7 @@
           <ItemData ItemOID="reiseaktivitat_start_date_1" Value="2020-06-01"/>
         </ItemGroupData>
         <ItemGroupData ItemGroupOID="anamnese_risikofaktoren.reiseaktivitat_country_1" ItemGroupRepeatKey="1">
-          <ItemData ItemOID="reiseaktivitat_country_1" Value="15"/>
+          <ItemData ItemOID="reiseaktivitat_country_1" Value="162"/>
           <ItemData ItemOID="reiseaktivitat_state_1" Value=""/>
           <ItemData ItemOID="reiseaktivitat_city_1" Value=""/>
           <ItemData ItemOID="reiseaktivitat_end_date_1" Value="2020-06-10"/>

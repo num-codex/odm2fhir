@@ -50,18 +50,13 @@ import static org.hl7.fhir.r4.model.codesystems.ResourceTypes.CONSENT;
 
 public class BroadConsent extends Item {
 
-  private static final List<String> ELEMENTS = List.of("erhebung_verarbeitung",
-                                                       "krankenkassendaten_retro",
-                                                       "krankenkassendaten_pro",
-                                                       "biomaterialien",
-                                                       "biomaterialien_zusaetzlich",
-                                                       "kontaktaufnahme",
-                                                       "kontaktaufnahme_zusatzbefunde",
-                                                       "projekt_codex",
-                                                       "projekt_codex_zusatz");
+  private static final List<String> ELEMENTS = List.of("erhebung_verarbeitung", "krankenkassendaten_retro",
+                                                       "krankenkassendaten_pro", "biomaterialien", "biomaterialien_zusaetzlich",
+                                                       "kontaktaufnahme", "kontaktaufnahme_zusatzbefunde",
+                                                       "projekt_codex", "projekt_codex_zusatz");
 
   private static final String POLICY =
-      "https://www.medizininformatik-initiative.de/sites/default/files/2020-04/MII_AG-Consent_Einheitlicher-Mustertext_v1.6d.pdf";
+      "https://www.medizininformatik-initiative.de/sites/default/files/2021-08/MII_AG-Consent_Einheitlicher-Mustertext_v1.6f_v08.pdf";
 
   private static final String BASE_OID = HL7_OID + ".3.1937.777.24.5.1";
 
@@ -123,7 +118,7 @@ public class BroadConsent extends Item {
         .setDateTimeElement(createDateTimeType(formData.getItemData("miibc_dat_dok")))
         .addOrganization(getOrganizationReference())
         .setScope(RESEARCH)
-        .addCategory(createCodeableConcept(createCoding(LOINC, "57016-8")))
+        .addCategory(createCodeableConcept(createCoding(LOINC, "57016-8", "Privacy policy acknowledgment Document")))
         .addPolicy(new ConsentPolicyComponent().setUri(POLICY))
         .setMeta(createMeta(GERMAN_CONSENT));
 

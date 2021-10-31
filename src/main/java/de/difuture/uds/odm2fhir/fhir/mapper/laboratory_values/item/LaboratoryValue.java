@@ -64,7 +64,7 @@ public class LaboratoryValue extends Item {
                            .setType(OBI).setAssigner(getOrganizationReference()))
         .setStatus(FINAL)
         .setEffective(createDateTimeType(dateCoding))
-        .addCategory(LABORATORY.copy().addCoding(createCoding(LOINC.getUrl(), "26436-6")))
+        .addCategory(LABORATORY.copy().addCoding(createCoding(LOINC, "26436-6", "Laboratory studies (set)")))
         .setMeta(createMeta(MI_I_OBSERVATION_LAB));
 
     var unitCounter = formData.getItemData(labValueName + "_unit").getValue();

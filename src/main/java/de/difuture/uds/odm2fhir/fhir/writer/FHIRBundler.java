@@ -180,6 +180,7 @@ public class FHIRBundler {
     domainResources.filter(domainResource -> {
       if (validationEnabled) {
         var validationResult = fhirValidator.validateWithResult(domainResource);
+        
         var messages = validationResult.getMessages().stream()
             .sorted(comparing(SingleValidationMessage::getSeverity).reversed())
             .peek(message -> {

@@ -58,7 +58,7 @@ public class VentilationType extends Item {
     for (var coding : createCodings(answerCoding)) {
       var material = ArrayUtils.get(coding.getCode().split("="), 1);
       if (material != null && !material.isEmpty()) {
-        procedure.addUsedCode(createCodeableConcept(createCoding(coding.getSystem(), material)));
+        procedure.addUsedCode(createCodeableConcept(createCoding(coding.getSystem(), material, null)));
       }
 
       // case "Unknown" or "No"

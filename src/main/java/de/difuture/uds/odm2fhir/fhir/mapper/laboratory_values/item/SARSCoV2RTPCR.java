@@ -72,7 +72,7 @@ public class SARSCoV2RTPCR extends Item {
             .addIdentifier(createIdentifier(OBSERVATION, generalCoding).setType(OBI).setAssigner(getOrganizationReference()))
             .setStatus(FINAL)
             .setEffective(createDateTimeType(dateCoding))
-            .addCategory(LABORATORY.copy().addCoding(createCoding(LOINC, "26436-6")))
+            .addCategory(LABORATORY.copy().addCoding(createCoding(LOINC, "26436-6", "Laboratory studies (set)")))
             .setValue(valueCodeableConcept)
             .setCode(new CodeableConcept().setCoding(usableCodings).setText("SARS-CoV-2-RNA (PCR)"))
             .setMeta(createMeta(SARS_COV_2_RT_PCR));

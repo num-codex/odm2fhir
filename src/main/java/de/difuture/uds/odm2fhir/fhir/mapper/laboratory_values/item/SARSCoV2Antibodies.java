@@ -83,7 +83,7 @@ public class SARSCoV2Antibodies extends Item {
 
           itemData.getItemGroupData().getItemData()
                   .addAll(List.of(itemData, itemData.copy().setItemOID(itemData.getItemOID() + "_code")
-                                                    .setValue(HL7_OID + ".6.1_94504-8")));
+                                                           .setValue(HL7_OID + ".6.1_94504-8")));
 
           var observation = createObservation(formData, itemData);
 
@@ -129,7 +129,7 @@ public class SARSCoV2Antibodies extends Item {
         .addIdentifier(identifier)
         .setStatus(FINAL)
         .setEffective(createDateTimeType(dateCoding))
-        .addCategory(LABORATORY.copy().addCoding(createCoding(LOINC.getUrl(), "26436-6")))
+        .addCategory(LABORATORY.copy().addCoding(createCoding(LOINC, "26436-6", "Laboratory studies (set)")))
         .setValue(value)
         .setCode(new CodeableConcept().setCoding(usableCodings).setText(labValueName)) // TODO Add parameter name as text!!!
         .setId(sha256Hex(identifier.getSystem() + identifier.getValue())) // This really needs to be and stay here!!!
