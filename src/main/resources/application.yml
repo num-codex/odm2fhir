@@ -53,3 +53,12 @@ fhir:
 #      observation: https://mein.krankenhaus.de/fhir/NamingSystem/observationId
 #      patient: https://mein.krankenhaus.de/fhir/NamingSystem/patientId
 #      procedure: https://mein.krankenhaus.de/fhir/NamingSystem/procedureId
+spring:
+  kafka:
+    producer:
+      bootstrap-servers: ${KAFKA_BROKER_URL:localhost:9092}
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      client-id: odm2fhir
+    template:
+      default-topic: ${KAFKA_OUTPUT_TOPIC:fhir.odm-gecco}

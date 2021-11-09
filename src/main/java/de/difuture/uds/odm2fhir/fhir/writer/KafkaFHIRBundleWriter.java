@@ -19,42 +19,30 @@ package de.difuture.uds.odm2fhir.fhir.writer;
  */
 
 import lombok.extern.slf4j.Slf4j;
-
 import org.hl7.fhir.r4.model.Bundle;
-import org.hl7.fhir.r4.model.Patient;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
-import java.io.IOException;
-import java.nio.file.Path;
-
-import static java.nio.file.Files.createDirectories;
-import static java.nio.file.Files.writeString;
-
-@ConditionalOnExpression("'${fhir.server.url:}'.empty and '${kafka.broker.url:}'.empty")
+@ConditionalOnExpression("'${fhir.server.url:}'.empty and !'${kafka.broker.url:}'.empty")
 @Service
 @Slf4j
-public class FileFHIRBundleWriter extends FHIRBundleWriter {
+public class KafkaFHIRBundleWriter extends FHIRBundleWriter {
 
-  @Value("${fhir.folder.path:}")
-  private Path folderPath;
+  @Value("${spring.kafka.template.default-topic:}")
+  private String topicName;
+
+  @Autowired
+  private KafkaTemplate<String, Bundle> kafkaTemplate;
 
   @Override
-  public void write(Bundle bundle) throws IOException {
-    if (folderPath == null) {
-      throw new IllegalArgumentException("'fhir.folder.path' not specified");
-    }
-
-    createDirectories(folderPath);
+  public void write(Bundle bundle) {
+    this.kafkaTemplate.send(topicName, bundle);
 
     BUNDLES_NUMBER.incrementAndGet();
     RESOURCES_NUMBER.addAndGet(bundle.getEntry().size());
-
-    var json = JSON_PARSER.encodeResourceToString(bundle);
-    var name = ((Patient) bundle.getEntryFirstRep().getResource()).getIdentifierFirstRep().getValue();
-    writeString(folderPath.resolve(name + ".json"), json);
   }
 
 }
