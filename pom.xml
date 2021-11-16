@@ -32,6 +32,7 @@
     <spring-retry.version>1.3.1</spring-retry.version>
     <woodstox.version>6.2.6</woodstox.version>
     <spring-kafka.version>2.7.8</spring-kafka.version>
+    <kafka-fhir-serializer.version>1.0.2</kafka-fhir-serializer.version>
 
     <maven-antrun-plugin.version>3.0.0</maven-antrun-plugin.version>
     <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
@@ -104,6 +105,11 @@
       <groupId>org.springframework.kafka</groupId>
       <artifactId>spring-kafka</artifactId>
       <version>${spring-kafka.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.miracum</groupId>
+      <artifactId>kafka-fhir-serializer</artifactId>
+      <version>${kafka-fhir-serializer.version}</version>
     </dependency>
   </dependencies>
 

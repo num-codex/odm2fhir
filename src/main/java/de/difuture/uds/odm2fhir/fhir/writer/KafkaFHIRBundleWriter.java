@@ -20,11 +20,16 @@ package de.difuture.uds.odm2fhir.fhir.writer;
 
 import lombok.extern.slf4j.Slf4j;
 import org.hl7.fhir.r4.model.Bundle;
+import org.hl7.fhir.r4.model.Patient;
+import org.hl7.fhir.r4.model.ResourceType;
+import org.hl7.fhir.r4.model.codesystems.ResourceTypes;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
+
+import static de.difuture.uds.odm2fhir.fhir.util.IdentifierHelper.getIdentifierSystem;
 
 @ConditionalOnExpression("'${fhir.server.url:}'.empty and !'${kafka.broker.url:}'.empty")
 @Service
@@ -37,9 +42,57 @@ public class KafkaFHIRBundleWriter extends FHIRBundleWriter {
   @Autowired
   private KafkaTemplate<String, Bundle> kafkaTemplate;
 
+  /**
+   * @param bundle the Bundle whose Patient resource should be retrieved.
+   * @return the patient resource or null, if bundle was null or no patient id was found
+   */
+  protected Patient getPatientResourceFromBundle(Bundle bundle) {
+    if (bundle == null) {
+      log.warn("Received Bundle is null. Discarding.");
+      return null;
+    }
+    var resource =
+        bundle.getEntry().stream()
+            .filter(
+                bundleEntryComponent ->
+                    bundleEntryComponent.getResource().getResourceType() == ResourceType.Patient)
+            .findFirst();
+    if (resource.isEmpty()) {
+      log.warn(
+          "Found GECCO FHIR Bundle without Patient resource: {}. Discarding.", bundle.getId());
+      return null;
+    }
+    return (Patient) resource.get().getResource();
+  }
+
+  /**
+   * @param patient the Patient resource whose id should be retrieved.
+   * @return the patient id or null, if none was found
+   */
+  protected String getPidFromPatientResource(Patient patient) {
+    var pid =
+        patient.getIdentifier().stream()
+            .filter(
+                identifier -> identifier.getSystem().equals(getIdentifierSystem(ResourceTypes.PATIENT)))
+            .findFirst();
+    if (pid.isEmpty()) {
+      log.warn("Did not find PID in Patient resource. Discarding.");
+      return null;
+    }
+    return pid.get().getValue();
+  }
+
   @Override
   public void write(Bundle bundle) {
-    this.kafkaTemplate.send(topicName, bundle);
+    var patientResource = getPatientResourceFromBundle(bundle);
+    if (patientResource == null) {
+      return;
+    }
+    var pid = getPidFromPatientResource(patientResource);
+    if (pid == null) {
+      return;
+    }
+    this.kafkaTemplate.send(topicName, pid, bundle);
 
     BUNDLES_NUMBER.incrementAndGet();
     RESOURCES_NUMBER.addAndGet(bundle.getEntry().size());

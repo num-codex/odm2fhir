@@ -58,7 +58,7 @@ spring:
     bootstrap-servers: ${KAFKA_BROKER_URL:localhost:9092}
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      value-serializer: org.miracum.kafka.serializers.KafkaFhirSerializer
       client-id: odm2fhir
     security.protocol: ${SECURITY_PROTOCOL:PLAINTEXT}
     ssl:
