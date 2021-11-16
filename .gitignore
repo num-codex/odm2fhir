@@ -30,3 +30,5 @@ index.md
 /nbdist/
 /.nb-gradle/
 *.db
+
+dev/env
