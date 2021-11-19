@@ -6,7 +6,7 @@ Details about the actual mapping can be found [here](docs/mappings.md).
 
 ## Command
 ```sh
-docker run **VOLUMES** ghcr.io/num-codex/odm2fhir **ARGUMENTS**
+docker run **ENVIRONMENTS** **VOLUMES** ghcr.io/num-codex/odm2fhir **ARGUMENTS**
 ```
 
 ### Arguments
@@ -23,9 +23,11 @@ docker run **VOLUMES** ghcr.io/num-codex/odm2fhir **ARGUMENTS**
 
 * `--fhir.identifier.assigner=**IDENTIFIER_ASSIGNER**` Add an identifier assigner.
 
-* `--fhir.updateascreate.enabled=true` Enable update-as-create (see [here](https://www.hl7.org/fhir/http.html#upsert)).
+* `--fhir.encounters.enabled=true` Enable encounters (enabled by default).
 
-* `--fhir.validation.enabled=true` Enable FHIR resource validation (see [here](#validation)).
+* `--fhir.updateascreate.enabled=true` Enable update-as-create (see [here](https://www.hl7.org/fhir/http.html#upsert), disabled by default).
+
+* `--fhir.validation.enabled=true` Enable FHIR resource validation (see [here](#validation), disabled by default).
 
 * `--cron="**CRON_PATTERN**"` Enable timed execution (see [here](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/scheduling/support/CronSequenceGenerator.html)).
 
@@ -42,6 +44,12 @@ docker run **VOLUMES** ghcr.io/num-codex/odm2fhir **ARGUMENTS**
 ```sh
 --odm.redcap.api.url=**ODM_REDCAP_API_URL**
 --odm.redcap.api.token=**ODM_REDCAP_API_TOKEN**
+```
+
+#### HTTP(S) Proxy
+Enable HTTP(S) proxy by adding the environment to `**ENVIRONMENTS**`:
+```sh
+-e JAVA_TOOL_OPTIONS="-Dhttp.proxyHost=**HTTP_PROXY_HOST** -Dhttp.proxyPort=**HTTP_PROXY_PORT** -Dhttp.nonProxyHosts=**HTTP_NON_PROXY_HOSTS** -Dhttps.proxyHost=**HTTPS_PROXY_HOST** -Dhttps.proxyPort=**HTTPS_PROXY_PORT** -Dhttps.nonProxyHosts=**HTTPS_NON_PROXY_HOSTS**"
 ```
 
 #### PKCS12 Certificate
@@ -71,6 +79,9 @@ By default, all subjects within an ODM are processed. To process only subjects w
 --odm.dis.rest.password=**ODM_DIS_REST_PASSWORD**
 ```
 
+#### HTTP(S) Proxy
+(see [here](#https-proxy))
+
 #### PKCS12 Certificate
 ```sh
 --odm.dis.rest.key.file.path=**ODM_DIS_REST_KEY_FILE_PATH**
@@ -90,6 +101,9 @@ By default, all subjects within an ODM are processed. To process only subjects w
 ```sh
 --fhir.server.url=**FHIR_SERVER_URL**
 ```
+
+#### HTTP(S) Proxy
+(see [here](#https-proxy))
 
 #### BasicAuth
 ```sh
@@ -119,6 +133,9 @@ Enable the use of an external terminology server by adding the argument(s) below
 ```sh
 --fhir.terminologyserver.url=**FHIR_TERMINOLOGYSERVER_URL**
 ```
+
+#### HTTP(S) Proxy
+(see [here](#https-proxy))
 
 #### BasicAuth
 ```sh

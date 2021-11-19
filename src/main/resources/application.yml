@@ -8,13 +8,20 @@ odm:
 #    url: http://redcap/api/
 #    token: 12345ABCDE67890ABCDE12345ABCDEF0
 #    patientspercall: 1
+#    key:
+#      file.path: /some/path/client_certificate.p12
+#      password: change-password
 #  dis.rest:
 #    url: http://dis/m4export/resteasy/export
 #    studyname: COVID_GECCO
 #    username: gecco
 #    password: gecco
+#    key:
+#      file.path: /some/path/client_certificate.p12
+#      password: change-password
 
 fhir:
+#  encounters.enabled: true
 #  updateascreate.enabled: true
 #  validation:
 #    enabled: true
@@ -31,6 +38,9 @@ fhir:
 #      client:
 #        id: fhir
 #        secret: 1234567890
+#    key:
+#      file.path: /some/path/client_certificate.p12
+#      password: change-password
 #  terminologyserver:
 #    url: https://fhir-server:9443/fhir-server/api/v4/
 #    basicauth:
@@ -41,6 +51,9 @@ fhir:
 #      client:
 #        id: fhir
 #        secret: 1234567890
+#    key:
+#      file.path: /some/path/client_certificate.p12
+#      password: change-password
 #  identifier:
 #    assigner: Mein Krankenhaus
 #    system:

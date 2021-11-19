@@ -91,7 +91,8 @@ public class StudyEvent {
 
     var encounter = new Encounter();
 
-    if (containsAny(studyEventData.getStudyEventOID(), "GECCOVISIT", "fall")) {
+    if (ENVIRONMENT.getProperty("fhir.encounters.enabled", Boolean.class, true) &&
+        containsAny(studyEventData.getStudyEventOID(), "GECCOVISIT", "fall")) {
       var value = format("%s-%s.%s",
                          studyEventData.getSubjectData().getSubjectKey(),
                          studyEventData.getStudyEventOID(), studyEventData.getStudyEventRepeatKey());

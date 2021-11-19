@@ -63,6 +63,9 @@ public class HTTPHelper {
         }));
 
     HTTP_CLIENT = HttpClientBuilder.create()
+                                   .useSystemProperties()
+                                   .setMaxConnTotal(100)
+                                   .setMaxConnPerRoute(100)
                                    .setSSLContext(sslContextBuilder.build())
                                    .setSSLHostnameVerifier(new NoopHostnameVerifier())
                                    .build();
@@ -74,12 +77,11 @@ public class HTTPHelper {
     IClientInterceptor clientInterceptor = new BasicAuthInterceptor(basicauthUsername, basicauthPassword);
 
     if (isNoneBlank(oauth2TokenURL, oauth2ClientId, oauth2ClientSecret)) {
-      var httpPost = RequestBuilder
-          .post(oauth2TokenURL)
-          .addParameter("grant_type", "client_credentials")
-          .addParameter("client_id", oauth2ClientId)
-          .addParameter("client_secret", oauth2ClientSecret)
-          .build();
+      var httpPost = RequestBuilder.post(oauth2TokenURL)
+                                   .addParameter("grant_type", "client_credentials")
+                                   .addParameter("client_id", oauth2ClientId)
+                                   .addParameter("client_secret", oauth2ClientSecret)
+                                   .build();
 
       var content = HTTP_CLIENT.execute(httpPost).getEntity().getContent();
 
