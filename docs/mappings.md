@@ -1,8 +1,8 @@
 # ODM2FHIR Mappings
 
-The following diagrams depict how study/patient data items in CDISC ODM based on the [GECCO data dictionary](https://confluence.imi.med.fau.de/display/MIIC/30+EDC+System+REDCap) is mapped onto HL7 FHIR which adheres to the [GECCO profiles, value sets and code systems](https://simplifier.net/ForschungsnetzCovid-19).
+The following diagrams depict the mapping of study/patient data (items) in [CDISC ODM](https://www.cdisc.org/standards/data-exchange/odm) based on the [GECCO data dictionary](https://confluence.imi.med.fau.de/display/MIIC/30+EDC+System+REDCap) onto [HL7 FHIR](https://www.hl7.org/fhir) (resources) adhering to the [GECCO implementation guide](https://simplifier.net/ForschungsnetzCovid-19).
 
-For static items the respective `ValueSet`, `CodeSystem` or `Extension` is shown along with the used actual value.
+For static items the respective `ValueSet`, `CodeSystem` or `Extension` is shown along with the actually used value.
 
 ## Patient
 ![Patient](diagrams/svg/Patient.svg)

@@ -26,6 +26,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.quartz.QuartzAutoConfiguration;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.info.BuildProperties;
 import org.springframework.context.annotation.PropertySource;
@@ -43,7 +44,7 @@ import static org.springframework.boot.Banner.Mode.OFF;
 import static java.nio.file.Files.readString;
 
 @Slf4j
-@SpringBootApplication
+@SpringBootApplication(exclude = QuartzAutoConfiguration.class)
 @PropertySource("classpath:odm/redcap/mapping.properties")
 public class ODM2FHIRApplication implements CommandLineRunner {
 

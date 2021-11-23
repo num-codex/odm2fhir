@@ -50,7 +50,6 @@ import static de.difuture.uds.odm2fhir.util.EnvironmentProvider.ENVIRONMENT;
 import static de.difuture.uds.odm2fhir.fhir.util.IdentifierHelper.getIdentifierSystem;
 
 import static org.apache.commons.codec.digest.DigestUtils.sha256Hex;
-import static org.apache.commons.lang3.StringUtils.containsAny;
 import static org.apache.commons.lang3.StringUtils.equalsAny;
 
 import static org.hl7.fhir.r4.model.Encounter.EncounterStatus.UNKNOWN;
@@ -92,7 +91,7 @@ public class StudyEvent {
     var encounter = new Encounter();
 
     if (ENVIRONMENT.getProperty("fhir.encounters.enabled", Boolean.class, true) &&
-        containsAny(studyEventData.getStudyEventOID(), "GECCOVISIT", "fall")) {
+        studyEventData.getStudyEventOID().matches("GECCOVISIT|Event.\\d_fall_arm_1")) {
       var value = format("%s-%s.%s",
                          studyEventData.getSubjectData().getSubjectKey(),
                          studyEventData.getStudyEventOID(), studyEventData.getStudyEventRepeatKey());

@@ -1,19 +1,18 @@
 # ODM2FHIR
 
-This tool maps study/patient data in CDISC ODM based on the [GECCO data dictionary](https://confluence.imi.med.fau.de/display/MIIC/30+EDC+System+REDCap) to HL7 FHIR which adheres to the [GECCO profiles, value sets and code systems](https://simplifier.net/ForschungsnetzCovid-19).
-
-Details about the actual mapping can be found [here](docs/mappings.md).
+Mapper for study/patient data in [CDISC ODM](https://www.cdisc.org/standards/data-exchange/odm) based on the [GECCO data dictionary](https://confluence.imi.med.fau.de/display/MIIC/30+EDC+System+REDCap) to [HL7 FHIR](https://www.hl7.org/fhir) adhering to the [GECCO implementation guide](https://simplifier.net/ForschungsnetzCovid-19) (see [here](docs/mappings.md) for mapping details).
 
 ## Command
 ```sh
 docker run **ENVIRONMENTS** **VOLUMES** ghcr.io/num-codex/odm2fhir **ARGUMENTS**
 ```
+(Note: Replace all `**VARIABLE**` references with their actual values.)
 
 ### Arguments
 
-(Note: Replace all `**VARIABLE**` references with their actual values.)
-
 * `--help` Print `README`.
+
+* `--debug` Print debug logging messages.
 
 * `--odm.redcap.datadictionary` Print current data dictionary.
 
@@ -23,7 +22,7 @@ docker run **ENVIRONMENTS** **VOLUMES** ghcr.io/num-codex/odm2fhir **ARGUMENTS**
 
 * `--fhir.identifier.assigner=**IDENTIFIER_ASSIGNER**` Add an identifier assigner.
 
-* `--fhir.encounters.enabled=true` Enable encounters (enabled by default).
+* `--fhir.encounters.enabled=true` Enable FHIR encounter resources for patient cases (enabled by default).
 
 * `--fhir.updateascreate.enabled=true` Enable update-as-create (see [here](https://www.hl7.org/fhir/http.html#upsert), disabled by default).
 
@@ -33,7 +32,7 @@ docker run **ENVIRONMENTS** **VOLUMES** ghcr.io/num-codex/odm2fhir **ARGUMENTS**
 
 ## Input
 
-***Either*** enable *local* input by adding the volume for the [local file](#local-file) to `**VOLUMES**` ***or*** enable *remote* input by adding the arguments for either [REDCap](#redcap) or [DIS](#dis) to `**ARGUMENTS**`.
+Enable ***either*** *local* input by adding the volume for the [local file](#local-file) to `**VOLUMES**` ***or*** *remote* input by adding the arguments for either [REDCap](#redcap) or [DIS](#dis) to `**ARGUMENTS**`.
 
 ### Local File
 ```sh
