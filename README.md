@@ -79,25 +79,41 @@ By default, all subjects within an ODM are processed. To process only subjects w
 
 ## Output
 
-***Either*** enable *local* output by adding the volume for the [local folder](#local-folder) to `**VOLUMES**` ***or*** enable *remote* output by adding the argument for the [FHIR Server](#fhir-server) in `**ARGUMENTS**` - together with [BasicAuth](#basicauth) or [OAuth2 (Client Credentials)](#oauth2-client-credentials), if applicable.
+There are three alternatives for the output of the FHIR Bundles:
 
-### Local Folder
+1. Output to local file system
+1. Ouput to a FHIR API (e.g. FHIR-Server)
+1. Ouput to a Kafka Topic
+
+> **_NOTE:_**: There is currently only one output method supported at a time.
+
+### 1. Output to Local File System
+
+To enable output to a directory in the local file system, mount a volume into the container:
+
 ```sh
 -v **FHIR_BUNDLES_FOLDER_PATH**:/workspace/output
 ```
 
-### FHIR Server
+### 2. Output to FHIR API
+
+To enable ouput to a FHIR API add the following argument:
+
 ```sh
 --fhir.server.url=**FHIR_SERVER_URL**
 ```
 
+If you need to use HTTP Basic Auth, OAuth2 or PKCS12 for the communication with the FHIR-Server, add the following arguments:
+
 #### BasicAuth
+
 ```sh
 --fhir.server.basicauth.username=**FHIR_SERVER_BASICAUTH_USERNAME**
 --fhir.server.basicauth.password=**FHIR_SERVER_BASICAUTH_PASSWORD**
 ```
 
 #### OAuth2 (Client Credentials)
+
 ```sh
 --fhir.server.oauth2.token.url=**FHIR_SERVER_OAUTH2_TOKEN_URL**
 --fhir.server.oauth2.client.id=**FHIR_SERVER_OAUTH2_CLIENT_ID**
@@ -105,28 +121,42 @@ By default, all subjects within an ODM are processed. To process only subjects w
 ```
 
 #### PKCS12 Certificate
+
 ```sh
 --fhir.server.key.file.path=**FHIR_SERVER_KEY_FILE_PATH**
 --fhir.server.key.password=**FHIR_SERVER_KEY_PASSWORD**
 ```
 
+### 3. Output to Kafka Topic
+
+To enable output to a Kafka Topic, the following environment variables can be set:
+
+| Environment Variable | Description                                                |
+|----------------------|------------------------------------------------------------|
+| KAFKA_BROKER_URL     | URL of the Kafka Broker                                    |
+| KAFKA_OUTPUT_TOPIC   | Name of the target Kafka Topic (default: `fhir.odm-gecco`) |
+
 ## Validation
+
 Enable validation of the generated FHIR resources - and filtering out of all invalid ones - according to mentioned profiles by adding the argument `--fhir.validation.enabled=true`.
 
 Enable the use of an external terminology server by adding the argument(s) below - together with BasicAuth or OAuth2 (Client Credentials), if applicable.
 
 ### FHIR Terminology Server
+
 ```sh
 --fhir.terminologyserver.url=**FHIR_TERMINOLOGYSERVER_URL**
 ```
 
 #### BasicAuth
+
 ```sh
 --fhir.terminologyserver.basicauth.username=**FHIR_TERMINOLOGYSERVER_BASICAUTH_USERNAME**
 --fhir.terminologyserver.basicauth.password=**FHIR_TERMINOLOGYSERVER_BASICAUTH_PASSWORD**
 ```
 
 #### OAuth2 (Client Credentials)
+
 ```sh
 --fhir.terminologyserver.oauth2.token.url=**FHIR_TERMINOLOGYSERVER_OAUTH2_TOKEN_URL**
 --fhir.terminologyserver.oauth2.client.id=**FHIR_TERMINOLOGYSERVER_OAUTH2_CLIENT_ID**
@@ -134,6 +164,7 @@ Enable the use of an external terminology server by adding the argument(s) below
 ```
 
 #### PKCS12 Certificate
+
 ```sh
 --fhir.terminologyserver.key.file.path=**FHIR_TERMINOLOGYSERVER_KEY_FILE_PATH**
 --fhir.terminologyserver.key.password=**FHIR_TERMINOLOGYSERVER_KEY_PASSWORD**

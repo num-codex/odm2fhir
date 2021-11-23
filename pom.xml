@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
                              http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>de.difuture.uds</groupId>
   <artifactId>odm2fhir</artifactId>
-  <version>0.7.1</version>
+  <version>0.7.1-beta.2</version>
 
   <name>ODM2FHIR</name>
   <description>Mapper for GECCO based study/patient data in CDISC ODM to HL7 FHIR</description>
@@ -124,7 +123,7 @@
             <name>${GITHUB_CONTAINER_REGISTRY_URL}/${project.artifactId}:${project.version}</name>
             <publish>true</publish>
             <env>
-              <BPE_DELIM_JAVA_TOOL_OPTIONS xml:space="preserve"> </BPE_DELIM_JAVA_TOOL_OPTIONS>
+              <BPE_DELIM_JAVA_TOOL_OPTIONS xml:space="preserve"></BPE_DELIM_JAVA_TOOL_OPTIONS>
               <BPE_PREPEND_JAVA_TOOL_OPTIONS>-XX:MaxDirectMemorySize=265m</BPE_PREPEND_JAVA_TOOL_OPTIONS>
               <BP_OCI_DESCRIPTION>${DESCRIPTION}</BP_OCI_DESCRIPTION>
               <BP_OCI_SOURCE>${GITHUB_PROJECT_REPOSITORY_URL}</BP_OCI_SOURCE>

@@ -1,4 +1,5 @@
 #cron: 0 0 0 * * *
+#debug: # For disabling ID hashing
 
 odm:
   cache.folder.path: /workspace/cache
