@@ -71,7 +71,7 @@ public class SARSCoV2Antibodies extends Item {
                                                                              "ig_m_ia_ql", SARS_COV_2_IGM_SER_PL_QL_IA,
                                                                              "ig_m_ia_qn", SARS_COV_2_IGM_SER_PL_IA_ACNC);
 
-  public Stream<DomainResource> map(FormData formData) {
+  protected Stream<DomainResource> map(FormData formData) {
     // Extremely ugly and hacky workaround for non-existent panel parameter in form... :-/
     return PARAMETERS.stream()
         .map(key -> "sarsco_v2_covid19_" + key)

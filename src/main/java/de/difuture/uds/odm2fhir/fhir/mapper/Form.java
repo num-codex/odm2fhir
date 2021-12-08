@@ -31,6 +31,7 @@ import java.util.stream.Stream;
 import static de.difuture.uds.odm2fhir.util.EnvironmentProvider.ENVIRONMENT;
 
 import static org.apache.commons.lang3.StringUtils.equalsAny;
+import static org.apache.commons.lang3.StringUtils.removeStart;
 
 import static java.util.function.Predicate.not;
 
@@ -39,7 +40,7 @@ public abstract class Form {
   @Getter
   private StudyEvent studyEvent;
 
-  public abstract String getOID();
+  protected abstract String getOID();
 
   protected abstract List<Item> getItems();
 
@@ -57,7 +58,7 @@ public abstract class Form {
     return "demographie".equals(getOID()) ||
            ENVIRONMENT.getProperty("odm.incompleteforms.allowed", Boolean.class, false) ||
            // Check REDCap X_complete and  DIS status field for complete (2), locked (4) or signed (5)
-           Stream.of(formData.getFormOID() + "_complete", "Status")
+           Stream.of(removeStart(formData.getFormOID(), "Form.") + "_complete", "Status")
                  .map(formData::getItemData)
                  .map(ItemData::getValue)
                  .anyMatch(value -> equalsAny(value, "2", "4", "5"));

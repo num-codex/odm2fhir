@@ -35,9 +35,6 @@ import java.util.stream.Stream;
 import static de.difuture.uds.odm2fhir.fhir.util.CommonCodeSystem.LOINC;
 import static de.difuture.uds.odm2fhir.fhir.util.CommonStructureDefinition.GERMAN_CONSENT;
 
-import static java.util.function.Predicate.not;
-import static java.util.stream.Collectors.toList;
-
 import static org.apache.commons.lang3.StringUtils.removeStart;
 import static org.apache.commons.lang3.time.DateUtils.addYears;
 
@@ -47,6 +44,9 @@ import static org.hl7.fhir.r4.model.Consent.ConsentState;
 import static org.hl7.fhir.r4.model.Consent.ConsentState.INACTIVE;
 import static org.hl7.fhir.r4.model.Consent.ConsentState.REJECTED;
 import static org.hl7.fhir.r4.model.codesystems.ResourceTypes.CONSENT;
+
+import static java.util.function.Predicate.not;
+import static java.util.stream.Collectors.toList;
 
 public class BroadConsent extends Item {
 
@@ -103,7 +103,7 @@ public class BroadConsent extends Item {
     OIDS.put("projekt_codex_zusatz_4", 38);
   }
 
-  public Stream<DomainResource> map(FormData formData) {
+  protected Stream<DomainResource> map(FormData formData) {
     var consentPresented = formData.getItemData("miibc_vorlage"); //1=Yes, 2=No, 3=Unknown
 
     return !"1".equals(consentPresented.getValue()) ? Stream.empty() : Stream.of(createConsent(formData));

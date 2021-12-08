@@ -41,7 +41,7 @@ import static java.util.function.Predicate.not;
 
 public class RheumatologicalImmunologicalDiseases extends Item {
 
-  public Stream<DomainResource> map(FormData formData) {
+  protected Stream<DomainResource> map(FormData formData) {
     var itemGroupData = formData.getItemGroupData("anamnese_risikofaktoren.rheumatologischeimmunologische_erkrankungen_chronisch_entzuendl_darmerkrankung");
     var generalPresence = formData.getItemData("rheumatologischeimmunologische_erkrankungen");
 

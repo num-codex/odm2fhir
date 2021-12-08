@@ -41,7 +41,7 @@ import static java.util.function.Predicate.not;
 
 public class ChronicLiverDiseases extends Item {
 
-  public Stream<DomainResource> map(FormData formData) {
+  protected Stream<DomainResource> map(FormData formData) {
     var itemGroupData = formData.getItemGroupData("anamnese_risikofaktoren.chronische_lebererkrankungen_fettleber");
     var generalPresence = formData.getItemData("chronische_lebererkrankungen");
 

@@ -4,6 +4,9 @@
     <SubjectData SubjectKey="synthetic_patient_659985488" redcap:RecordIdField="record_id">
       <StudyEventData StudyEventOID="Event.basisdaten_arm_1" StudyEventRepeatKey="1" redcap:UniqueEventName="basisdaten_arm_1">
         <FormData FormOID="Form.einwilligungserklaerung_mii_broad_consent" FormRepeatKey="1">
+          <ItemGroupData ItemGroupOID="einwilligungserklaerung_mii_broad_consent.record_id" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="record_id" Value="synthetic_patient_659985488"/>
+          </ItemGroupData>
           <ItemGroupData ItemGroupOID="einwilligungserklaerung_mii_broad_consent.miibc_vorlage" ItemGroupRepeatKey="1">
             <ItemData ItemOID="miibc_vorlage" Value="3"/>
           </ItemGroupData>
@@ -63,9 +66,6 @@
       </StudyEventData>
       <StudyEventData StudyEventOID="Event.1_fall_arm_1" StudyEventRepeatKey="1" redcap:UniqueEventName="1_fall_arm_1">
         <FormData FormOID="Form.krankheitsbeginn_aufnahme" FormRepeatKey="1">
-          <ItemGroupData ItemGroupOID="krankheitsbeginn_aufnahme.record_id" ItemGroupRepeatKey="1">
-            <ItemData ItemOID="record_id" Value="synthetic_patient_659985488"/>
-          </ItemGroupData>
           <ItemGroupData ItemGroupOID="krankheitsbeginn_aufnahme.aufnahmedatum" ItemGroupRepeatKey="1">
             <ItemData ItemOID="aufnahmedatum" Value="2020-01-05"/>
           </ItemGroupData>
@@ -506,9 +506,6 @@
       </StudyEventData>
       <StudyEventData StudyEventOID="Event.2_fall_arm_1" StudyEventRepeatKey="1" redcap:UniqueEventName="2_fall_arm_1">
         <FormData FormOID="Form.krankheitsbeginn_aufnahme" FormRepeatKey="1">
-          <ItemGroupData ItemGroupOID="krankheitsbeginn_aufnahme.record_id" ItemGroupRepeatKey="1">
-            <ItemData ItemOID="record_id" Value="synthetic_patient_659985488"/>
-          </ItemGroupData>
           <ItemGroupData ItemGroupOID="krankheitsbeginn_aufnahme.aufnahmedatum" ItemGroupRepeatKey="1">
             <ItemData ItemOID="aufnahmedatum" Value="2020-10-23"/>
           </ItemGroupData>
@@ -949,9 +946,6 @@
       </StudyEventData>
       <StudyEventData StudyEventOID="Event.3_fall_arm_1" StudyEventRepeatKey="1" redcap:UniqueEventName="3_fall_arm_1">
         <FormData FormOID="Form.krankheitsbeginn_aufnahme" FormRepeatKey="1">
-          <ItemGroupData ItemGroupOID="krankheitsbeginn_aufnahme.record_id" ItemGroupRepeatKey="1">
-            <ItemData ItemOID="record_id" Value="synthetic_patient_659985488"/>
-          </ItemGroupData>
           <ItemGroupData ItemGroupOID="krankheitsbeginn_aufnahme.aufnahmedatum" ItemGroupRepeatKey="1">
             <ItemData ItemOID="aufnahmedatum" Value="2020-05-11"/>
           </ItemGroupData>
@@ -7009,7 +7003,8 @@
             <ItemData ItemOID="antikoagulation_code" Value="2.16.840.1.113883.6.96_81839001"/>
             <ItemData ItemOID="antikoagulation" Value="1"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="medikation.antikoagulation_unfraktioniertes_heparin" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="medikation.antikoagulation_absicht" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antikoagulation_absicht" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin" Value="1.2.276.0.76.5.498_B01AB01__1.2.276.0.76.5.498_B01AB51__2.16.840.1.113883.6.96_410605003"/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin_code" Value="1.2.276.0.76.5.498_B01AB01"/>
             <ItemData ItemOID="antikoagulation_niedermolekulares_heparin" Value="1.2.276.0.76.5.498_B01AB08__1.2.276.0.76.5.498_B01AB13__1.2.276.0.76.5.498_B01AB04__1.2.276.0.76.5.498_B01AB05__1.2.276.0.76.5.498_B01AB06__1.2.276.0.76.5.498_B01AB10__1.2.276.0.76.5.498_B01AB12__1.2.276.0.76.5.498_B01AB63__1.2.276.0.76.5.498_B01AB07__1.2.276.0.76.5.498_B01AB11__2.16.840.1.113883.6.96_261665006"/>
@@ -7085,7 +7080,8 @@
             <ItemData ItemOID="antikoagulation_code" Value="2.16.840.1.113883.6.96_81839001"/>
             <ItemData ItemOID="antikoagulation" Value="2"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="medikation.antikoagulation_unfraktioniertes_heparin" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="medikation.antikoagulation_absicht" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antikoagulation_absicht" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin_code" Value=""/>
             <ItemData ItemOID="antikoagulation_niedermolekulares_heparin" Value=""/>
@@ -7161,7 +7157,8 @@
             <ItemData ItemOID="antikoagulation_code" Value="2.16.840.1.113883.6.96_81839001"/>
             <ItemData ItemOID="antikoagulation" Value="2"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="medikation.antikoagulation_unfraktioniertes_heparin" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="medikation.antikoagulation_absicht" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antikoagulation_absicht" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin_code" Value=""/>
             <ItemData ItemOID="antikoagulation_niedermolekulares_heparin" Value=""/>
@@ -7237,7 +7234,8 @@
             <ItemData ItemOID="antikoagulation_code" Value="2.16.840.1.113883.6.96_81839001"/>
             <ItemData ItemOID="antikoagulation" Value="2"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="medikation.antikoagulation_unfraktioniertes_heparin" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="medikation.antikoagulation_absicht" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antikoagulation_absicht" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin_code" Value=""/>
             <ItemData ItemOID="antikoagulation_niedermolekulares_heparin" Value=""/>
@@ -7313,7 +7311,8 @@
             <ItemData ItemOID="antikoagulation_code" Value="2.16.840.1.113883.6.96_81839001"/>
             <ItemData ItemOID="antikoagulation" Value="2"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="medikation.antikoagulation_unfraktioniertes_heparin" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="medikation.antikoagulation_absicht" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antikoagulation_absicht" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin_code" Value=""/>
             <ItemData ItemOID="antikoagulation_niedermolekulares_heparin" Value=""/>
@@ -7389,7 +7388,8 @@
             <ItemData ItemOID="antikoagulation_code" Value="2.16.840.1.113883.6.96_81839001"/>
             <ItemData ItemOID="antikoagulation" Value="2"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="medikation.antikoagulation_unfraktioniertes_heparin" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="medikation.antikoagulation_absicht" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antikoagulation_absicht" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin_code" Value=""/>
             <ItemData ItemOID="antikoagulation_niedermolekulares_heparin" Value=""/>
@@ -7465,7 +7465,8 @@
             <ItemData ItemOID="antikoagulation_code" Value="2.16.840.1.113883.6.96_81839001"/>
             <ItemData ItemOID="antikoagulation" Value="2"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="medikation.antikoagulation_unfraktioniertes_heparin" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="medikation.antikoagulation_absicht" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antikoagulation_absicht" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin_code" Value=""/>
             <ItemData ItemOID="antikoagulation_niedermolekulares_heparin" Value=""/>
@@ -7541,7 +7542,8 @@
             <ItemData ItemOID="antikoagulation_code" Value="2.16.840.1.113883.6.96_81839001"/>
             <ItemData ItemOID="antikoagulation" Value="2"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="medikation.antikoagulation_unfraktioniertes_heparin" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="medikation.antikoagulation_absicht" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antikoagulation_absicht" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin_code" Value=""/>
             <ItemData ItemOID="antikoagulation_niedermolekulares_heparin" Value=""/>
@@ -7617,7 +7619,8 @@
             <ItemData ItemOID="antikoagulation_code" Value="2.16.840.1.113883.6.96_81839001"/>
             <ItemData ItemOID="antikoagulation" Value="2"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="medikation.antikoagulation_unfraktioniertes_heparin" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="medikation.antikoagulation_absicht" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antikoagulation_absicht" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin_code" Value=""/>
             <ItemData ItemOID="antikoagulation_niedermolekulares_heparin" Value=""/>
@@ -7693,7 +7696,8 @@
             <ItemData ItemOID="antikoagulation_code" Value="2.16.840.1.113883.6.96_81839001"/>
             <ItemData ItemOID="antikoagulation" Value="2"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="medikation.antikoagulation_unfraktioniertes_heparin" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="medikation.antikoagulation_absicht" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antikoagulation_absicht" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin_code" Value=""/>
             <ItemData ItemOID="antikoagulation_niedermolekulares_heparin" Value=""/>
@@ -7769,7 +7773,8 @@
             <ItemData ItemOID="antikoagulation_code" Value="2.16.840.1.113883.6.96_81839001"/>
             <ItemData ItemOID="antikoagulation" Value="2"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="medikation.antikoagulation_unfraktioniertes_heparin" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="medikation.antikoagulation_absicht" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antikoagulation_absicht" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin_code" Value=""/>
             <ItemData ItemOID="antikoagulation_niedermolekulares_heparin" Value=""/>
@@ -7845,7 +7850,8 @@
             <ItemData ItemOID="antikoagulation_code" Value="2.16.840.1.113883.6.96_81839001"/>
             <ItemData ItemOID="antikoagulation" Value="2"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="medikation.antikoagulation_unfraktioniertes_heparin" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="medikation.antikoagulation_absicht" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antikoagulation_absicht" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin_code" Value=""/>
             <ItemData ItemOID="antikoagulation_niedermolekulares_heparin" Value=""/>
@@ -7921,7 +7927,8 @@
             <ItemData ItemOID="antikoagulation_code" Value="2.16.840.1.113883.6.96_81839001"/>
             <ItemData ItemOID="antikoagulation" Value="2"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="medikation.antikoagulation_unfraktioniertes_heparin" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="medikation.antikoagulation_absicht" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antikoagulation_absicht" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin_code" Value=""/>
             <ItemData ItemOID="antikoagulation_niedermolekulares_heparin" Value=""/>
@@ -7997,7 +8004,8 @@
             <ItemData ItemOID="antikoagulation_code" Value="2.16.840.1.113883.6.96_81839001"/>
             <ItemData ItemOID="antikoagulation" Value="2"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="medikation.antikoagulation_unfraktioniertes_heparin" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="medikation.antikoagulation_absicht" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antikoagulation_absicht" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin_code" Value=""/>
             <ItemData ItemOID="antikoagulation_niedermolekulares_heparin" Value=""/>
@@ -8073,7 +8081,8 @@
             <ItemData ItemOID="antikoagulation_code" Value="2.16.840.1.113883.6.96_81839001"/>
             <ItemData ItemOID="antikoagulation" Value="2"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="medikation.antikoagulation_unfraktioniertes_heparin" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="medikation.antikoagulation_absicht" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antikoagulation_absicht" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin_code" Value=""/>
             <ItemData ItemOID="antikoagulation_niedermolekulares_heparin" Value=""/>
@@ -8149,7 +8158,8 @@
             <ItemData ItemOID="antikoagulation_code" Value="2.16.840.1.113883.6.96_81839001"/>
             <ItemData ItemOID="antikoagulation" Value="2"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="medikation.antikoagulation_unfraktioniertes_heparin" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="medikation.antikoagulation_absicht" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antikoagulation_absicht" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin_code" Value=""/>
             <ItemData ItemOID="antikoagulation_niedermolekulares_heparin" Value=""/>
@@ -8225,7 +8235,8 @@
             <ItemData ItemOID="antikoagulation_code" Value="2.16.840.1.113883.6.96_81839001"/>
             <ItemData ItemOID="antikoagulation" Value="2"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="medikation.antikoagulation_unfraktioniertes_heparin" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="medikation.antikoagulation_absicht" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antikoagulation_absicht" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin_code" Value=""/>
             <ItemData ItemOID="antikoagulation_niedermolekulares_heparin" Value=""/>
@@ -8301,7 +8312,8 @@
             <ItemData ItemOID="antikoagulation_code" Value="2.16.840.1.113883.6.96_81839001"/>
             <ItemData ItemOID="antikoagulation" Value="2"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="medikation.antikoagulation_unfraktioniertes_heparin" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="medikation.antikoagulation_absicht" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antikoagulation_absicht" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin_code" Value=""/>
             <ItemData ItemOID="antikoagulation_niedermolekulares_heparin" Value=""/>
@@ -8377,7 +8389,8 @@
             <ItemData ItemOID="antikoagulation_code" Value="2.16.840.1.113883.6.96_81839001"/>
             <ItemData ItemOID="antikoagulation" Value="2"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="medikation.antikoagulation_unfraktioniertes_heparin" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="medikation.antikoagulation_absicht" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antikoagulation_absicht" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin_code" Value=""/>
             <ItemData ItemOID="antikoagulation_niedermolekulares_heparin" Value=""/>
@@ -8453,7 +8466,8 @@
             <ItemData ItemOID="antikoagulation_code" Value="2.16.840.1.113883.6.96_81839001"/>
             <ItemData ItemOID="antikoagulation" Value="2"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="medikation.antikoagulation_unfraktioniertes_heparin" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="medikation.antikoagulation_absicht" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antikoagulation_absicht" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin_code" Value=""/>
             <ItemData ItemOID="antikoagulation_niedermolekulares_heparin" Value=""/>
@@ -16011,7 +16025,8 @@
             <ItemData ItemOID="antikoagulation_code" Value="2.16.840.1.113883.6.96_81839001"/>
             <ItemData ItemOID="antikoagulation" Value="1"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="medikation.antikoagulation_unfraktioniertes_heparin" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="medikation.antikoagulation_absicht" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antikoagulation_absicht" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin" Value="1.2.276.0.76.5.498_B01AB01__1.2.276.0.76.5.498_B01AB51__2.16.840.1.113883.6.96_410605003"/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin_code" Value="1.2.276.0.76.5.498_B01AB01"/>
             <ItemData ItemOID="antikoagulation_niedermolekulares_heparin" Value="1.2.276.0.76.5.498_B01AB08__1.2.276.0.76.5.498_B01AB13__1.2.276.0.76.5.498_B01AB04__1.2.276.0.76.5.498_B01AB05__1.2.276.0.76.5.498_B01AB06__1.2.276.0.76.5.498_B01AB10__1.2.276.0.76.5.498_B01AB12__1.2.276.0.76.5.498_B01AB63__1.2.276.0.76.5.498_B01AB07__1.2.276.0.76.5.498_B01AB11__2.16.840.1.113883.6.96_261665006"/>
@@ -16087,7 +16102,8 @@
             <ItemData ItemOID="antikoagulation_code" Value="2.16.840.1.113883.6.96_81839001"/>
             <ItemData ItemOID="antikoagulation" Value="2"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="medikation.antikoagulation_unfraktioniertes_heparin" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="medikation.antikoagulation_absicht" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antikoagulation_absicht" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin_code" Value=""/>
             <ItemData ItemOID="antikoagulation_niedermolekulares_heparin" Value=""/>
@@ -16163,7 +16179,8 @@
             <ItemData ItemOID="antikoagulation_code" Value="2.16.840.1.113883.6.96_81839001"/>
             <ItemData ItemOID="antikoagulation" Value="2"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="medikation.antikoagulation_unfraktioniertes_heparin" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="medikation.antikoagulation_absicht" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antikoagulation_absicht" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin_code" Value=""/>
             <ItemData ItemOID="antikoagulation_niedermolekulares_heparin" Value=""/>
@@ -16239,7 +16256,8 @@
             <ItemData ItemOID="antikoagulation_code" Value="2.16.840.1.113883.6.96_81839001"/>
             <ItemData ItemOID="antikoagulation" Value="2"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="medikation.antikoagulation_unfraktioniertes_heparin" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="medikation.antikoagulation_absicht" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antikoagulation_absicht" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin_code" Value=""/>
             <ItemData ItemOID="antikoagulation_niedermolekulares_heparin" Value=""/>
@@ -16315,7 +16333,8 @@
             <ItemData ItemOID="antikoagulation_code" Value="2.16.840.1.113883.6.96_81839001"/>
             <ItemData ItemOID="antikoagulation" Value="2"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="medikation.antikoagulation_unfraktioniertes_heparin" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="medikation.antikoagulation_absicht" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antikoagulation_absicht" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin_code" Value=""/>
             <ItemData ItemOID="antikoagulation_niedermolekulares_heparin" Value=""/>
@@ -16391,7 +16410,8 @@
             <ItemData ItemOID="antikoagulation_code" Value="2.16.840.1.113883.6.96_81839001"/>
             <ItemData ItemOID="antikoagulation" Value="2"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="medikation.antikoagulation_unfraktioniertes_heparin" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="medikation.antikoagulation_absicht" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antikoagulation_absicht" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin_code" Value=""/>
             <ItemData ItemOID="antikoagulation_niedermolekulares_heparin" Value=""/>
@@ -16467,7 +16487,8 @@
             <ItemData ItemOID="antikoagulation_code" Value="2.16.840.1.113883.6.96_81839001"/>
             <ItemData ItemOID="antikoagulation" Value="2"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="medikation.antikoagulation_unfraktioniertes_heparin" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="medikation.antikoagulation_absicht" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antikoagulation_absicht" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin_code" Value=""/>
             <ItemData ItemOID="antikoagulation_niedermolekulares_heparin" Value=""/>
@@ -16543,7 +16564,8 @@
             <ItemData ItemOID="antikoagulation_code" Value="2.16.840.1.113883.6.96_81839001"/>
             <ItemData ItemOID="antikoagulation" Value="2"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="medikation.antikoagulation_unfraktioniertes_heparin" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="medikation.antikoagulation_absicht" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antikoagulation_absicht" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin_code" Value=""/>
             <ItemData ItemOID="antikoagulation_niedermolekulares_heparin" Value=""/>
@@ -16619,7 +16641,8 @@
             <ItemData ItemOID="antikoagulation_code" Value="2.16.840.1.113883.6.96_81839001"/>
             <ItemData ItemOID="antikoagulation" Value="2"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="medikation.antikoagulation_unfraktioniertes_heparin" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="medikation.antikoagulation_absicht" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antikoagulation_absicht" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin_code" Value=""/>
             <ItemData ItemOID="antikoagulation_niedermolekulares_heparin" Value=""/>
@@ -16695,7 +16718,8 @@
             <ItemData ItemOID="antikoagulation_code" Value="2.16.840.1.113883.6.96_81839001"/>
             <ItemData ItemOID="antikoagulation" Value="2"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="medikation.antikoagulation_unfraktioniertes_heparin" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="medikation.antikoagulation_absicht" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antikoagulation_absicht" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin_code" Value=""/>
             <ItemData ItemOID="antikoagulation_niedermolekulares_heparin" Value=""/>
@@ -16771,7 +16795,8 @@
             <ItemData ItemOID="antikoagulation_code" Value="2.16.840.1.113883.6.96_81839001"/>
             <ItemData ItemOID="antikoagulation" Value="2"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="medikation.antikoagulation_unfraktioniertes_heparin" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="medikation.antikoagulation_absicht" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antikoagulation_absicht" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin_code" Value=""/>
             <ItemData ItemOID="antikoagulation_niedermolekulares_heparin" Value=""/>
@@ -16847,7 +16872,8 @@
             <ItemData ItemOID="antikoagulation_code" Value="2.16.840.1.113883.6.96_81839001"/>
             <ItemData ItemOID="antikoagulation" Value="2"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="medikation.antikoagulation_unfraktioniertes_heparin" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="medikation.antikoagulation_absicht" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antikoagulation_absicht" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin_code" Value=""/>
             <ItemData ItemOID="antikoagulation_niedermolekulares_heparin" Value=""/>
@@ -16923,7 +16949,8 @@
             <ItemData ItemOID="antikoagulation_code" Value="2.16.840.1.113883.6.96_81839001"/>
             <ItemData ItemOID="antikoagulation" Value="2"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="medikation.antikoagulation_unfraktioniertes_heparin" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="medikation.antikoagulation_absicht" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antikoagulation_absicht" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin_code" Value=""/>
             <ItemData ItemOID="antikoagulation_niedermolekulares_heparin" Value=""/>
@@ -16999,7 +17026,8 @@
             <ItemData ItemOID="antikoagulation_code" Value="2.16.840.1.113883.6.96_81839001"/>
             <ItemData ItemOID="antikoagulation" Value="2"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="medikation.antikoagulation_unfraktioniertes_heparin" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="medikation.antikoagulation_absicht" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antikoagulation_absicht" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin_code" Value=""/>
             <ItemData ItemOID="antikoagulation_niedermolekulares_heparin" Value=""/>
@@ -17075,7 +17103,8 @@
             <ItemData ItemOID="antikoagulation_code" Value="2.16.840.1.113883.6.96_81839001"/>
             <ItemData ItemOID="antikoagulation" Value="2"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="medikation.antikoagulation_unfraktioniertes_heparin" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="medikation.antikoagulation_absicht" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antikoagulation_absicht" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin_code" Value=""/>
             <ItemData ItemOID="antikoagulation_niedermolekulares_heparin" Value=""/>
@@ -17151,7 +17180,8 @@
             <ItemData ItemOID="antikoagulation_code" Value="2.16.840.1.113883.6.96_81839001"/>
             <ItemData ItemOID="antikoagulation" Value="2"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="medikation.antikoagulation_unfraktioniertes_heparin" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="medikation.antikoagulation_absicht" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antikoagulation_absicht" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin_code" Value=""/>
             <ItemData ItemOID="antikoagulation_niedermolekulares_heparin" Value=""/>
@@ -17227,7 +17257,8 @@
             <ItemData ItemOID="antikoagulation_code" Value="2.16.840.1.113883.6.96_81839001"/>
             <ItemData ItemOID="antikoagulation" Value="2"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="medikation.antikoagulation_unfraktioniertes_heparin" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="medikation.antikoagulation_absicht" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antikoagulation_absicht" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin_code" Value=""/>
             <ItemData ItemOID="antikoagulation_niedermolekulares_heparin" Value=""/>
@@ -17303,7 +17334,8 @@
             <ItemData ItemOID="antikoagulation_code" Value="2.16.840.1.113883.6.96_81839001"/>
             <ItemData ItemOID="antikoagulation" Value="2"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="medikation.antikoagulation_unfraktioniertes_heparin" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="medikation.antikoagulation_absicht" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antikoagulation_absicht" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin_code" Value=""/>
             <ItemData ItemOID="antikoagulation_niedermolekulares_heparin" Value=""/>
@@ -17379,7 +17411,8 @@
             <ItemData ItemOID="antikoagulation_code" Value="2.16.840.1.113883.6.96_81839001"/>
             <ItemData ItemOID="antikoagulation" Value="2"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="medikation.antikoagulation_unfraktioniertes_heparin" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="medikation.antikoagulation_absicht" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antikoagulation_absicht" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin_code" Value=""/>
             <ItemData ItemOID="antikoagulation_niedermolekulares_heparin" Value=""/>
@@ -17455,7 +17488,8 @@
             <ItemData ItemOID="antikoagulation_code" Value="2.16.840.1.113883.6.96_81839001"/>
             <ItemData ItemOID="antikoagulation" Value="2"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="medikation.antikoagulation_unfraktioniertes_heparin" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="medikation.antikoagulation_absicht" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antikoagulation_absicht" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin_code" Value=""/>
             <ItemData ItemOID="antikoagulation_niedermolekulares_heparin" Value=""/>
@@ -25013,7 +25047,8 @@
             <ItemData ItemOID="antikoagulation_code" Value="2.16.840.1.113883.6.96_81839001"/>
             <ItemData ItemOID="antikoagulation" Value="1"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="medikation.antikoagulation_unfraktioniertes_heparin" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="medikation.antikoagulation_absicht" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antikoagulation_absicht" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin" Value="1.2.276.0.76.5.498_B01AB01__1.2.276.0.76.5.498_B01AB51__2.16.840.1.113883.6.96_410605003"/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin_code" Value="1.2.276.0.76.5.498_B01AB01"/>
             <ItemData ItemOID="antikoagulation_niedermolekulares_heparin" Value="1.2.276.0.76.5.498_B01AB08__1.2.276.0.76.5.498_B01AB13__1.2.276.0.76.5.498_B01AB04__1.2.276.0.76.5.498_B01AB05__1.2.276.0.76.5.498_B01AB06__1.2.276.0.76.5.498_B01AB10__1.2.276.0.76.5.498_B01AB12__1.2.276.0.76.5.498_B01AB63__1.2.276.0.76.5.498_B01AB07__1.2.276.0.76.5.498_B01AB11__2.16.840.1.113883.6.96_261665006"/>
@@ -25089,7 +25124,8 @@
             <ItemData ItemOID="antikoagulation_code" Value="2.16.840.1.113883.6.96_81839001"/>
             <ItemData ItemOID="antikoagulation" Value="2"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="medikation.antikoagulation_unfraktioniertes_heparin" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="medikation.antikoagulation_absicht" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antikoagulation_absicht" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin_code" Value=""/>
             <ItemData ItemOID="antikoagulation_niedermolekulares_heparin" Value=""/>
@@ -25165,7 +25201,8 @@
             <ItemData ItemOID="antikoagulation_code" Value="2.16.840.1.113883.6.96_81839001"/>
             <ItemData ItemOID="antikoagulation" Value="2"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="medikation.antikoagulation_unfraktioniertes_heparin" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="medikation.antikoagulation_absicht" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antikoagulation_absicht" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin_code" Value=""/>
             <ItemData ItemOID="antikoagulation_niedermolekulares_heparin" Value=""/>
@@ -25241,7 +25278,8 @@
             <ItemData ItemOID="antikoagulation_code" Value="2.16.840.1.113883.6.96_81839001"/>
             <ItemData ItemOID="antikoagulation" Value="2"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="medikation.antikoagulation_unfraktioniertes_heparin" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="medikation.antikoagulation_absicht" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antikoagulation_absicht" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin_code" Value=""/>
             <ItemData ItemOID="antikoagulation_niedermolekulares_heparin" Value=""/>
@@ -25317,7 +25355,8 @@
             <ItemData ItemOID="antikoagulation_code" Value="2.16.840.1.113883.6.96_81839001"/>
             <ItemData ItemOID="antikoagulation" Value="2"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="medikation.antikoagulation_unfraktioniertes_heparin" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="medikation.antikoagulation_absicht" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antikoagulation_absicht" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin_code" Value=""/>
             <ItemData ItemOID="antikoagulation_niedermolekulares_heparin" Value=""/>
@@ -25393,7 +25432,8 @@
             <ItemData ItemOID="antikoagulation_code" Value="2.16.840.1.113883.6.96_81839001"/>
             <ItemData ItemOID="antikoagulation" Value="2"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="medikation.antikoagulation_unfraktioniertes_heparin" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="medikation.antikoagulation_absicht" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antikoagulation_absicht" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin_code" Value=""/>
             <ItemData ItemOID="antikoagulation_niedermolekulares_heparin" Value=""/>
@@ -25469,7 +25509,8 @@
             <ItemData ItemOID="antikoagulation_code" Value="2.16.840.1.113883.6.96_81839001"/>
             <ItemData ItemOID="antikoagulation" Value="2"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="medikation.antikoagulation_unfraktioniertes_heparin" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="medikation.antikoagulation_absicht" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antikoagulation_absicht" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin_code" Value=""/>
             <ItemData ItemOID="antikoagulation_niedermolekulares_heparin" Value=""/>
@@ -25545,7 +25586,8 @@
             <ItemData ItemOID="antikoagulation_code" Value="2.16.840.1.113883.6.96_81839001"/>
             <ItemData ItemOID="antikoagulation" Value="2"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="medikation.antikoagulation_unfraktioniertes_heparin" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="medikation.antikoagulation_absicht" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antikoagulation_absicht" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin_code" Value=""/>
             <ItemData ItemOID="antikoagulation_niedermolekulares_heparin" Value=""/>
@@ -25621,7 +25663,8 @@
             <ItemData ItemOID="antikoagulation_code" Value="2.16.840.1.113883.6.96_81839001"/>
             <ItemData ItemOID="antikoagulation" Value="2"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="medikation.antikoagulation_unfraktioniertes_heparin" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="medikation.antikoagulation_absicht" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antikoagulation_absicht" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin_code" Value=""/>
             <ItemData ItemOID="antikoagulation_niedermolekulares_heparin" Value=""/>
@@ -25697,7 +25740,8 @@
             <ItemData ItemOID="antikoagulation_code" Value="2.16.840.1.113883.6.96_81839001"/>
             <ItemData ItemOID="antikoagulation" Value="2"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="medikation.antikoagulation_unfraktioniertes_heparin" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="medikation.antikoagulation_absicht" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antikoagulation_absicht" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin_code" Value=""/>
             <ItemData ItemOID="antikoagulation_niedermolekulares_heparin" Value=""/>
@@ -25773,7 +25817,8 @@
             <ItemData ItemOID="antikoagulation_code" Value="2.16.840.1.113883.6.96_81839001"/>
             <ItemData ItemOID="antikoagulation" Value="2"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="medikation.antikoagulation_unfraktioniertes_heparin" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="medikation.antikoagulation_absicht" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antikoagulation_absicht" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin_code" Value=""/>
             <ItemData ItemOID="antikoagulation_niedermolekulares_heparin" Value=""/>
@@ -25849,7 +25894,8 @@
             <ItemData ItemOID="antikoagulation_code" Value="2.16.840.1.113883.6.96_81839001"/>
             <ItemData ItemOID="antikoagulation" Value="2"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="medikation.antikoagulation_unfraktioniertes_heparin" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="medikation.antikoagulation_absicht" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antikoagulation_absicht" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin_code" Value=""/>
             <ItemData ItemOID="antikoagulation_niedermolekulares_heparin" Value=""/>
@@ -25925,7 +25971,8 @@
             <ItemData ItemOID="antikoagulation_code" Value="2.16.840.1.113883.6.96_81839001"/>
             <ItemData ItemOID="antikoagulation" Value="2"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="medikation.antikoagulation_unfraktioniertes_heparin" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="medikation.antikoagulation_absicht" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antikoagulation_absicht" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin_code" Value=""/>
             <ItemData ItemOID="antikoagulation_niedermolekulares_heparin" Value=""/>
@@ -26001,7 +26048,8 @@
             <ItemData ItemOID="antikoagulation_code" Value="2.16.840.1.113883.6.96_81839001"/>
             <ItemData ItemOID="antikoagulation" Value="2"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="medikation.antikoagulation_unfraktioniertes_heparin" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="medikation.antikoagulation_absicht" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antikoagulation_absicht" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin_code" Value=""/>
             <ItemData ItemOID="antikoagulation_niedermolekulares_heparin" Value=""/>
@@ -26077,7 +26125,8 @@
             <ItemData ItemOID="antikoagulation_code" Value="2.16.840.1.113883.6.96_81839001"/>
             <ItemData ItemOID="antikoagulation" Value="2"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="medikation.antikoagulation_unfraktioniertes_heparin" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="medikation.antikoagulation_absicht" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antikoagulation_absicht" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin_code" Value=""/>
             <ItemData ItemOID="antikoagulation_niedermolekulares_heparin" Value=""/>
@@ -26153,7 +26202,8 @@
             <ItemData ItemOID="antikoagulation_code" Value="2.16.840.1.113883.6.96_81839001"/>
             <ItemData ItemOID="antikoagulation" Value="2"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="medikation.antikoagulation_unfraktioniertes_heparin" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="medikation.antikoagulation_absicht" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antikoagulation_absicht" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin_code" Value=""/>
             <ItemData ItemOID="antikoagulation_niedermolekulares_heparin" Value=""/>
@@ -26229,7 +26279,8 @@
             <ItemData ItemOID="antikoagulation_code" Value="2.16.840.1.113883.6.96_81839001"/>
             <ItemData ItemOID="antikoagulation" Value="2"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="medikation.antikoagulation_unfraktioniertes_heparin" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="medikation.antikoagulation_absicht" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antikoagulation_absicht" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin_code" Value=""/>
             <ItemData ItemOID="antikoagulation_niedermolekulares_heparin" Value=""/>
@@ -26305,7 +26356,8 @@
             <ItemData ItemOID="antikoagulation_code" Value="2.16.840.1.113883.6.96_81839001"/>
             <ItemData ItemOID="antikoagulation" Value="2"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="medikation.antikoagulation_unfraktioniertes_heparin" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="medikation.antikoagulation_absicht" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antikoagulation_absicht" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin_code" Value=""/>
             <ItemData ItemOID="antikoagulation_niedermolekulares_heparin" Value=""/>
@@ -26381,7 +26433,8 @@
             <ItemData ItemOID="antikoagulation_code" Value="2.16.840.1.113883.6.96_81839001"/>
             <ItemData ItemOID="antikoagulation" Value="2"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="medikation.antikoagulation_unfraktioniertes_heparin" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="medikation.antikoagulation_absicht" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antikoagulation_absicht" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin_code" Value=""/>
             <ItemData ItemOID="antikoagulation_niedermolekulares_heparin" Value=""/>
@@ -26457,7 +26510,8 @@
             <ItemData ItemOID="antikoagulation_code" Value="2.16.840.1.113883.6.96_81839001"/>
             <ItemData ItemOID="antikoagulation" Value="2"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="medikation.antikoagulation_unfraktioniertes_heparin" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="medikation.antikoagulation_absicht" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antikoagulation_absicht" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin" Value=""/>
             <ItemData ItemOID="antikoagulation_unfraktioniertes_heparin_code" Value=""/>
             <ItemData ItemOID="antikoagulation_niedermolekulares_heparin" Value=""/>

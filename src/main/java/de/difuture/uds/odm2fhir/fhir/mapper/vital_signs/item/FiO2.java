@@ -35,7 +35,7 @@ import static org.hl7.fhir.r4.model.codesystems.ResourceTypes.OBSERVATION;
 
 public class FiO2 extends Item {
 
-  public Stream<DomainResource> map(FormData formData) {
+  protected Stream<DomainResource> map(FormData formData) {
     var answerCoding = formData.getItemData("fi_o2");
     var generalCoding = formData.getItemData("fi_o2_code");
     var dateCoding = formData.getItemData("vitalparameter_datum");

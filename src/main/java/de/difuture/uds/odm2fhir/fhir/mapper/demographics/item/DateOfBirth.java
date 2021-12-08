@@ -27,7 +27,7 @@ import java.util.stream.Stream;
 
 public class DateOfBirth extends Item {
 
-  public Stream<DomainResource> map(FormData formData) {
+  protected Stream<DomainResource> map(FormData formData) {
     getPatient().setBirthDateElement(createDateType(formData.getItemData("geburtsdatum")));
 
     return Stream.empty();

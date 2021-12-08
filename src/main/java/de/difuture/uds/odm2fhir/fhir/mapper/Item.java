@@ -104,7 +104,8 @@ import static java.util.stream.Collectors.toList;
 @Slf4j
 public abstract class Item {
 
-  @Getter private Form form;
+  @Getter
+  private Form form;
 
   public Stream<DomainResource> map(Form form, FormData formData) {
     this.form = form;

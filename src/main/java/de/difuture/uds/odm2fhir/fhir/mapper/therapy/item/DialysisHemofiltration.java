@@ -36,7 +36,7 @@ import static org.hl7.fhir.r4.model.codesystems.ResourceTypes.PROCEDURE;
 
 public class DialysisHemofiltration extends Item {
 
-  public Stream<DomainResource> map(FormData formData) {
+  protected Stream<DomainResource> map(FormData formData) {
     var answerCoding = formData.getItemData("dialyse_hamofiltration");
     var generalCoding = formData.getItemData("dialyse_hamofiltration_code");
 

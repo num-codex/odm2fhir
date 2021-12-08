@@ -47,7 +47,7 @@ public class LaboratoryValue extends Item {
                                                          "ptt", "thrombozyten_absolut", "inr", "serumalbumin", "antithrombin_iii",
                                                          "pct_procalcitonin", "il6_interleukin_6", "ntprobnp", "fibrinogen");
 
-  public Stream<DomainResource> map(FormData formData) {
+  protected Stream<DomainResource> map(FormData formData) {
     return PARAMETERS.stream()
         .map(formData::getItemData)
         .filter(not(ItemData::isEmpty))

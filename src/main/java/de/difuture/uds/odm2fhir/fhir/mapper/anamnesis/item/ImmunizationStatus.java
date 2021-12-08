@@ -43,7 +43,7 @@ import static org.hl7.fhir.r4.model.codesystems.ResourceTypes.IMMUNIZATION;
 
 public class ImmunizationStatus extends Item {
 
-  public Stream<DomainResource> map(FormData formData) {
+  protected Stream<DomainResource> map(FormData formData) {
     var itemGroupData = formData.getItemGroupData("anamnese_risikofaktoren.impfungen_influenza");
 
     return itemGroupData.isEmpty() ? Stream.empty() :

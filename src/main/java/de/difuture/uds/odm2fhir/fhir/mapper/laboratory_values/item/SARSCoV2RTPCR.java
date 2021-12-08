@@ -36,7 +36,7 @@ import static org.hl7.fhir.r4.model.codesystems.ResourceTypes.OBSERVATION;
 
 public class SARSCoV2RTPCR extends Item {
 
-  public Stream<DomainResource> map(FormData formData) {
+  protected Stream<DomainResource> map(FormData formData) {
     var dateCoding = formData.getItemData("labor_datum");
     var generalCoding = formData.getItemData("sarsco_v2rtpcr_code");
     var answerCoding = formData.getItemData("sarsco_v2rtpcr");

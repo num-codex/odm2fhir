@@ -41,7 +41,7 @@ import static java.util.function.Predicate.not;
 
 public class OrganRecipient extends Item {
 
-  public Stream<DomainResource> map(FormData formData) {
+  protected Stream<DomainResource> map(FormData formData) {
     var itemGroupData = formData.getItemGroupData("anamnese_risikofaktoren.organtransplantiert_herz");
     var generalPresence = formData.getItemData("organtransplantiert");
 

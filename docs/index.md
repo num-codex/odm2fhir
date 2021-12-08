@@ -18,6 +18,8 @@ docker run **ENVIRONMENTS** **VOLUMES** ghcr.io/num-codex/odm2fhir **ARGUMENTS**
 
 * `--odm.redcap.mapping` Print current mapping.
 
+* `--odm.incompleteforms.allowed=true` Allow processing of incomplete forms. 
+
 * `--fhir.identifier.system.**TYPE**=**TYPE_IDENTIFIER_SYSTEM**` Add an identifier system with `**TYPE**` of `condition`, `consent`, `diagnosticreport`, `encounter`, `immunization`, `medicationstatement`, `observation`, `patient` or `procedure` (see [here](https://simplifier.net/guide/GermanCoronaConsensusDataSet-ImplementationGuide/TransactionBundle)).
 
 * `--fhir.identifier.assigner=**IDENTIFIER_ASSIGNER**` Add an identifier assigner.

@@ -41,7 +41,7 @@ public class ComplicationConditions extends Item {
                                                             "lungenarterienembolie", "stroke", "myokardinfarkt",
                                                             "andere", "pulmonale_co_infektionen", "blutstrominfektionen");
 
-  public Stream<DomainResource> map(FormData formData) {
+  protected Stream<DomainResource> map(FormData formData) {
     var generalComplicationCoding = formData.getItemData("komplikation_code");
 
     return !"1".equals(formData.getItemData("komplikation").getValue()) ? Stream.empty() :

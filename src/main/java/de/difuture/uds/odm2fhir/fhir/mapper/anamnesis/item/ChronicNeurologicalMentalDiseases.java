@@ -40,7 +40,7 @@ import static java.util.function.Predicate.not;
 
 public class ChronicNeurologicalMentalDiseases extends Item {
 
-  public Stream<DomainResource> map(FormData formData) {
+  protected Stream<DomainResource> map(FormData formData) {
     var itemGroupData = formData.getItemGroupData("anamnese_risikofaktoren.chronische_neurologische_oder_psychiatrische_erkrankungen_m_parkinson");
     var generalPresence = formData.getItemData("chronische_neurologische_oder_psychiatrische_erkrankungen");
 

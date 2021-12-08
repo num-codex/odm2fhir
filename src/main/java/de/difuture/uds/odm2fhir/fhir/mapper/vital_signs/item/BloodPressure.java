@@ -38,7 +38,7 @@ import static org.hl7.fhir.r4.model.codesystems.ResourceTypes.OBSERVATION;
 
 public class BloodPressure extends Item {
 
-  public Stream<DomainResource> map(FormData formData) {
+  protected Stream<DomainResource> map(FormData formData) {
     var systolicValue = formData.getItemData("blutdruck_systolisch");
     var systolicCoding = formData.getItemData("blutdruck_systolisch_code");
     var diastolicValue = formData.getItemData("blutdruck_diastolisch");

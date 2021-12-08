@@ -37,7 +37,7 @@ public class DNROrder extends Item {
 
   private static final String POLICY = "https://www.aerzteblatt.de/archiv/65440/DNR-Anordnungen-Das-fehlende-Bindeglied";
 
-  public Stream<DomainResource> map(FormData formData) {
+  protected Stream<DomainResource> map(FormData formData) {
     var answerCoding = formData.getItemData("dnranordnung");
 
     return answerCoding.isEmpty() ? Stream.empty() : Stream.of(createConsent(answerCoding));

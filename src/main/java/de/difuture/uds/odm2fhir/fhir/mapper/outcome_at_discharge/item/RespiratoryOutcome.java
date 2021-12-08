@@ -36,7 +36,7 @@ import static org.hl7.fhir.r4.model.codesystems.ResourceTypes.CONDITION;
 
 public class RespiratoryOutcome extends Item {
 
-  public Stream<DomainResource> map(FormData formData) {
+  protected Stream<DomainResource> map(FormData formData) {
     var answerCoding = formData.getItemData("respiratorisches_outcome");
     var generalCoding = formData.getItemData("respiratorisches_outcome_code");
 

@@ -31,7 +31,7 @@ import static java.util.Optional.ofNullable;
 
 public class EthnicGroup extends Item {
 
-  public Stream<DomainResource> map(FormData formData) {
+  protected Stream<DomainResource> map(FormData formData) {
     var answerCoding = formData.getItemData("ethnische_zugehorigkeit");
 
     var coding = createCoding(answerCoding);

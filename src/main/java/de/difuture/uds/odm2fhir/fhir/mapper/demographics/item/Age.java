@@ -33,7 +33,7 @@ import static java.util.Optional.ofNullable;
 
 public class Age extends Item {
 
-  public Stream<DomainResource> map(FormData formData) {
+  protected Stream<DomainResource> map(FormData formData) {
     var answerCoding = formData.getItemData("alter");
 
     // TODO Age should not be attached to a patient but rather to an encounter...

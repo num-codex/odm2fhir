@@ -55,7 +55,6 @@ import static java.nio.file.Files.exists;
 import static java.nio.file.Files.isWritable;
 import static java.nio.file.Files.readString;
 import static java.nio.file.Files.writeString;
-import static java.util.stream.Collectors.toList;
 
 @Service
 @Slf4j
@@ -77,7 +76,7 @@ public abstract class ODMProcessor {
 
   boolean initialODMInRun = true;
 
-  abstract Stream<InputStream> read() throws Exception;
+  protected abstract Stream<InputStream> read() throws Exception;
 
   public void process() throws Exception {
     ObjectMapper objectMapper = null;
@@ -98,7 +97,7 @@ public abstract class ODMProcessor {
       }
     }
 
-    read().collect(toList()).forEach(asConsumer(this::process));
+    read().toList().forEach(asConsumer(this::process));
 
     if (subjectODMHashes != null) {
       objectMapper.writerWithDefaultPrettyPrinter().writeValue(subjectODMHashesFile.toFile(), subjectODMHashes);

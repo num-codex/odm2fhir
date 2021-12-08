@@ -19,6 +19,7 @@ package de.difuture.uds.odm2fhir.fhir.writer;
  */
 
 import ca.uhn.fhir.context.support.DefaultProfileValidationSupport;
+import ca.uhn.fhir.context.support.IValidationSupport.IssueSeverity;
 import ca.uhn.fhir.context.support.ValidationSupportContext;
 import ca.uhn.fhir.context.support.ValueSetExpansionOptions;
 import ca.uhn.fhir.validation.FhirValidator;
@@ -150,7 +151,7 @@ public class FHIRBundler {
           .forEach(prePopulatedValidationSupport::addResource);
 
       var unknownCodeSystemWarningValidationSupport = new UnknownCodeSystemWarningValidationSupport(FHIR_CONTEXT);
-      unknownCodeSystemWarningValidationSupport.setAllowNonExistentCodeSystem(true);
+      unknownCodeSystemWarningValidationSupport.setNonExistentCodeSystemSeverity(IssueSeverity.WARNING);
 
       var validationSupportChain = new ValidationSupportChain(
           new DefaultProfileValidationSupport(FHIR_CONTEXT),

@@ -53,7 +53,7 @@ public class ODM2FHIRApplication implements CommandLineRunner {
   private ODMProcessor odmProcessor;
 
   @Autowired
-  BuildProperties buildProperties;
+  private BuildProperties buildProperties;
 
   @Value("classpath:README.md")
   private Path readme;

@@ -41,7 +41,7 @@ import static java.util.function.Predicate.not;
 
 public class COVID19Therapy extends Item {
 
-  public Stream<DomainResource> map(FormData formData) {
+  protected Stream<DomainResource> map(FormData formData) {
     var itemGroupData = formData.getItemGroupData("medikation.covid19therapie_antipyretika");
     var generalPresence = formData.getItemData("covid19therapie");
     var dateCoding = formData.getItemData("medikation_datum");

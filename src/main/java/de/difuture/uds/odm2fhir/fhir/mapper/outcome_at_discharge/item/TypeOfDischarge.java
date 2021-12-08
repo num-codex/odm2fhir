@@ -34,7 +34,7 @@ import static org.hl7.fhir.r4.model.codesystems.ResourceTypes.OBSERVATION;
 
 public class TypeOfDischarge extends Item {
 
-  public Stream<DomainResource> map(FormData formData) {
+  protected Stream<DomainResource> map(FormData formData) {
     var answerCoding = formData.getItemData("entlassungsart");
     var generalCoding = formData.getItemData("entlassungsart_code");
 

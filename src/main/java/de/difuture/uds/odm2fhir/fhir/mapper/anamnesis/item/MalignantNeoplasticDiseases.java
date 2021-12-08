@@ -34,7 +34,7 @@ import static org.hl7.fhir.r4.model.codesystems.ResourceTypes.CONDITION;
 
 public class MalignantNeoplasticDiseases extends Item {
 
-  public Stream<DomainResource> map(FormData formData) {
+  protected Stream<DomainResource> map(FormData formData) {
     var answerCoding = formData.getItemData("aktive_tumorkrebserkrankungen");
     var generalCoding = formData.getItemData("aktive_tumorkrebserkrankungen_code");
 

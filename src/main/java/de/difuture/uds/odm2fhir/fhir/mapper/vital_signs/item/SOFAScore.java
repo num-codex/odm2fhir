@@ -140,7 +140,7 @@ public class SOFAScore extends Item {
     DEFINITIONS.put("kid4", "Creatinine (mg/dl) [umol/L] (or urine output) > 5.0 [> 440] (or < 200 ml/d)");
   }
 
-  public Stream<DomainResource> map(FormData formData) {
+  protected Stream<DomainResource> map(FormData formData) {
     var sofaTotalScore = formData.getItemData("sofa_total_score");
     var dateCoding = formData.getItemData("vitalparameter_datum");
 

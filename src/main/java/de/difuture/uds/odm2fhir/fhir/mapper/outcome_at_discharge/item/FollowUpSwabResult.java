@@ -36,7 +36,7 @@ import static org.hl7.fhir.r4.model.codesystems.ResourceTypes.OBSERVATION;
 
 public class FollowUpSwabResult extends Item {
 
-  public Stream<DomainResource> map(FormData formData) {
+  protected Stream<DomainResource> map(FormData formData) {
     var answerCoding = formData.getItemData("ergebnis_folgeabstrich");
     var generalCoding = formData.getItemData("ergebnis_folgeabstrich_code");
 

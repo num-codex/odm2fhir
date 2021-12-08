@@ -41,7 +41,7 @@ import static java.util.function.Predicate.not;
 
 public class ChronicLungDiseases extends Item {
 
-  public Stream<DomainResource> map(FormData formData) {
+  protected Stream<DomainResource> map(FormData formData) {
     var itemGroupData = formData.getItemGroupData("anamnese_risikofaktoren.chronische_lungenerkrankungen_asthma");
     var generalPresence = formData.getItemData("chronische_lungenerkrankungen");
 

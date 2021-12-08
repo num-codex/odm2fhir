@@ -34,7 +34,7 @@ import static org.hl7.fhir.r4.model.codesystems.ResourceTypes.OBSERVATION;
 
 public class PregnancyStatus extends Item {
 
-  public Stream<DomainResource> map(FormData formData) {
+  protected Stream<DomainResource> map(FormData formData) {
     var answerCoding = formData.getItemData("schwangerschaft");
     var generalCoding = formData.getItemData("schwangerschaft_code");
 

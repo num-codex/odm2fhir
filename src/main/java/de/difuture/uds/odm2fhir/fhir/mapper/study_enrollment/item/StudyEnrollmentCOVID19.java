@@ -35,7 +35,7 @@ import static org.hl7.fhir.r4.model.codesystems.ResourceTypes.OBSERVATION;
 
 public class StudyEnrollmentCOVID19 extends Item {
 
-  public Stream<DomainResource> map(FormData formData) {
+  protected Stream<DomainResource> map(FormData formData) {
     var answerCoding = formData.getItemData("covid19_aufnahme");
 
     return answerCoding.isEmpty() ? Stream.empty() : Stream.of(createObservation(answerCoding));

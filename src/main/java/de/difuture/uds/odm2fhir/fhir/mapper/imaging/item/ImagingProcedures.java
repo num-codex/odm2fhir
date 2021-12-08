@@ -53,7 +53,7 @@ import static java.util.stream.Collectors.toMap;
 
 public class ImagingProcedures extends Item {
 
-  public Stream<DomainResource> map(FormData formData) {
+  protected Stream<DomainResource> map(FormData formData) {
     var techniqueGroup = formData.getItemGroupData("bildgebung.bildgebende_verfahren_ct");
     var befundGroup = formData.getItemGroupData("bildgebung.befund_bildgebender_verfahren_ct");
     var generalCoding = formData.getItemData("bildgebende_verfahren");

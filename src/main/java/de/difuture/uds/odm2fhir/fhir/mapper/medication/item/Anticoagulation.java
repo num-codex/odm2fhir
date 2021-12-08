@@ -41,7 +41,7 @@ import static java.util.function.Predicate.not;
 
 public class Anticoagulation extends Item {
 
-  public Stream<DomainResource> map(FormData formData) {
+  protected Stream<DomainResource> map(FormData formData) {
     var itemGroupData = formData.getItemGroupData("medikation.antikoagulation_absicht");
     var generalPresence = formData.getItemData("antikoagulation");
     var generalCoding = formData.getItemData("antikoagulation_code");

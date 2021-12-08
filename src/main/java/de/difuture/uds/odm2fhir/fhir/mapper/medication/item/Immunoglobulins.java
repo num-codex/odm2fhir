@@ -35,7 +35,7 @@ import static org.hl7.fhir.r4.model.codesystems.ResourceTypes.MEDICATIONSTATEMEN
 
 public class Immunoglobulins extends Item {
 
-  public Stream<DomainResource> map(FormData formData) {
+  protected Stream<DomainResource> map(FormData formData) {
     var answerCoding = formData.getItemData("immunglobuline");
     var generalCoding = formData.getItemData("immunglobuline_code");
     var dateCoding = formData.getItemData("medikation_datum");

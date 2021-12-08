@@ -66,7 +66,7 @@ public class HistoryOfTravel extends Item {
     STATES.put("DE-TH", "Thüringen");
   }
 
-  public Stream<DomainResource> map(FormData formData) {
+  protected Stream<DomainResource> map(FormData formData) {
     var answerCoding = formData.getItemData("reiseaktivitat");
     var generalCoding = formData.getItemData("reiseaktivitat_code");
 

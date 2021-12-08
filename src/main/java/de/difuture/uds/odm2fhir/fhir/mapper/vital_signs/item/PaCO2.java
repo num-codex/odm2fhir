@@ -35,7 +35,7 @@ import static org.hl7.fhir.r4.model.codesystems.ResourceTypes.OBSERVATION;
 
 public class PaCO2 extends Item {
 
-  public Stream<DomainResource> map(FormData formData) {
+  protected Stream<DomainResource> map(FormData formData) {
     var answerCoding = formData.getItemData("pa_co2");
     var generalCoding = formData.getItemData("pa_co2_code");
     var dateCoding = formData.getItemData("vitalparameter_datum");

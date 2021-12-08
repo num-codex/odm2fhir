@@ -41,7 +41,7 @@ import static java.util.function.Predicate.not;
 
 public class CardiovascularDiseases extends Item {
 
-  public Stream<DomainResource> map(FormData formData) {
+  protected Stream<DomainResource> map(FormData formData) {
     var itemGroupData = formData.getItemGroupData("anamnese_risikofaktoren.herzkreislauferkrankungen_bluthochdruck");
     var generalPresence = formData.getItemData("herzkreislauferkrankungen");
 

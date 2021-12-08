@@ -35,7 +35,7 @@ import static org.hl7.fhir.r4.model.codesystems.ResourceTypes.MEDICATIONSTATEMEN
 
 public class ACEInhibitors extends Item {
 
-  public Stream<DomainResource> map(FormData formData) {
+  protected Stream<DomainResource> map(FormData formData) {
     var answerCoding = formData.getItemData("acehemmer");
     var generalCoding = formData.getItemData("acehemmer_code");
     var dateCoding = formData.getItemData("medikation_datum");

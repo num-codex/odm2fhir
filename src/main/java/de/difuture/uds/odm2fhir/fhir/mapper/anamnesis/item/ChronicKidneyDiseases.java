@@ -37,7 +37,7 @@ import static org.hl7.fhir.r4.model.codesystems.ResourceTypes.CONDITION;
 
 public class ChronicKidneyDiseases extends Item {
 
-  public Stream<DomainResource> map(FormData formData) {
+  protected Stream<DomainResource> map(FormData formData) {
     var answerCoding = formData.getItemData("chronische_nierenerkrankungen");
     var stageCoding = formData.getItemData("chronische_nierenerkrankungen_schweregrad");
     var generalCoding = formData.getItemData("chronische_nierenerkrankungen_code");

@@ -42,7 +42,7 @@ public class SymptomConditions extends Item {
                                                        "husten", "kurzatmigkeit_dyspnoe", "uebelkeit", "fieber",
                                                        "kopfschmerzen", "andere_symptome");
 
-  public Stream<DomainResource> map(FormData formData) {
+  protected Stream<DomainResource> map(FormData formData) {
     var generalSymptomCoding = formData.getItemData("symptome_code");
 
     return !"1".equals(formData.getItemData("symptome").getValue()) ? Stream.empty() :

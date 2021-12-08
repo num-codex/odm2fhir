@@ -35,7 +35,7 @@ import static org.hl7.fhir.r4.model.codesystems.ResourceTypes.CONDITION;
 
 public class StageAtDiagnosis extends Item {
 
-  public Stream<DomainResource> map(FormData formData) {
+  protected Stream<DomainResource> map(FormData formData) {
     var answerCoding = formData.getItemData("erkrankungsphase_zum_zeitpunkt_der_diagnose");
     var generalCoding = formData.getItemData("erkrankungsphase_zum_zeitpunkt_der_diagnose_code");
 

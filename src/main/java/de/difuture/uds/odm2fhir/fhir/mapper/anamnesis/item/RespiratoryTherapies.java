@@ -40,7 +40,7 @@ import static org.hl7.fhir.r4.model.codesystems.ResourceTypes.PROCEDURE;
 
 public class RespiratoryTherapies extends Item {
 
-  public Stream<DomainResource> map(FormData formData) {
+  protected Stream<DomainResource> map(FormData formData) {
     var answerCoding = formData.getItemData("bestehende_sauerstoff_oder_beatmungstherapie");
     var generalCoding = formData.getItemData("bestehende_sauerstoff_oder_beatmungstherapie_code");
 
