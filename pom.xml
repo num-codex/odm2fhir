@@ -8,7 +8,7 @@
 
   <groupId>de.difuture.uds</groupId>
   <artifactId>odm2fhir</artifactId>
-  <version>0.7.4</version>
+  <version>0.7.5</version>
 
   <name>ODM2FHIR</name>
   <description>Mapper for GECCO based study/patient data in CDISC ODM to HL7 FHIR</description>
@@ -27,6 +27,7 @@
 
     <hapi-fhir.version>5.6.1</hapi-fhir.version>
     <jackson.version>2.13.0</jackson.version>
+    <log4j.version>2.15.0</log4j.version>
     <lombok.version>1.18.22</lombok.version>
     <spring-boot.version>${project.parent.version}</spring-boot.version>
     <spring-retry.version>1.3.1</spring-retry.version>
@@ -39,6 +40,11 @@
   </properties>
 
   <dependencies>
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-to-slf4j</artifactId>
+      <version>${log4j.version}</version>
+    </dependency>
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-annotations</artifactId>
