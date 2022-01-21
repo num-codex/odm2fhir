@@ -18,39 +18,50 @@ package de.difuture.uds.odm2fhir.fhir.writer;
  * OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-import ca.uhn.fhir.context.FhirContext;
 import ca.uhn.fhir.parser.IParser;
 import ca.uhn.fhir.parser.StrictErrorHandler;
 
-import org.hl7.fhir.r4.model.Bundle;
+import lombok.extern.slf4j.Slf4j;
 
+import org.hl7.fhir.r4.model.Bundle;
+import org.hl7.fhir.r4.model.Patient;
 import org.springframework.beans.factory.annotation.Value;
 
 import java.io.IOException;
 import java.util.concurrent.atomic.AtomicInteger;
 import javax.annotation.PostConstruct;
 
+import static ca.uhn.fhir.context.FhirContext.forR4Cached;
+
 import static de.difuture.uds.odm2fhir.util.HTTPHelper.HTTP_CLIENT;
 
+@Slf4j
 public abstract class FHIRBundleWriter {
 
   @Value("${fhir.errorhandling.strict:false}")
   protected boolean errorhandlingStrict;
 
-  protected static final FhirContext FHIR_CONTEXT = FhirContext.forR4();
-  protected static final IParser JSON_PARSER = FHIR_CONTEXT.newJsonParser().setPrettyPrint(true);
+  protected static final IParser JSON_PARSER = forR4Cached().newJsonParser().setPrettyPrint(true);
 
   public static final AtomicInteger RESOURCES_NUMBER = new AtomicInteger();
   public static final AtomicInteger BUNDLES_NUMBER = new AtomicInteger();
 
-  public abstract void write(Bundle bundle) throws IOException;
+  protected abstract void write(Bundle bundle, String patientIdentifier) throws IOException;
 
   @PostConstruct
   private void init() {
     if (errorhandlingStrict) {
       JSON_PARSER.setParserErrorHandler(new StrictErrorHandler());
     }
-    FHIR_CONTEXT.getRestfulClientFactory().setHttpClient(HTTP_CLIENT);
+    forR4Cached().getRestfulClientFactory().setHttpClient(HTTP_CLIENT);
   }
+
+  public void write(Bundle bundle) throws IOException {
+    write(bundle, ((Patient) bundle.getEntryFirstRep().getResource()).getIdentifierFirstRep().getValue());
+
+    BUNDLES_NUMBER.incrementAndGet();
+    RESOURCES_NUMBER.addAndGet(bundle.getEntry().size());
+  }
+
 
 }

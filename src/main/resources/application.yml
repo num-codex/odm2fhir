@@ -1,4 +1,5 @@
 #cron: 0 0 0 * * *
+#debug:
 
 odm:
   cache.folder.path: /workspace/cache
@@ -66,3 +67,20 @@ fhir:
 #      observation: https://mein.krankenhaus.de/fhir/NamingSystem/observationId
 #      patient: https://mein.krankenhaus.de/fhir/NamingSystem/patientId
 #      procedure: https://mein.krankenhaus.de/fhir/NamingSystem/procedureId
+spring:
+  kafka:
+    bootstrap-servers: ${KAFKA_BROKER_URL:localhost:9092}
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.miracum.kafka.serializers.KafkaFhirSerializer
+      client-id: odm2fhir
+    security.protocol: ${SECURITY_PROTOCOL:PLAINTEXT}
+    ssl:
+      trust-store-type: PKCS12
+      trust-store-location: file://${SSL_TRUST_STORE:/opt/kafka-certs/ca.p12}
+      trust-store-password: ${SSL_TRUST_STORE_PASSWORD}
+      key-store-type: PKCS12
+      key-store-location: file://${SSL_KEY_STORE_FILE:/opt/kafka-certs/user.p12}
+      key-store-password: ${SSL_KEY_STORE_PASSWORD}
+    template:
+      default-topic: ${KAFKA_OUTPUT_TOPIC:fhir.odm-gecco}

@@ -48,6 +48,7 @@ import static com.fasterxml.jackson.dataformat.xml.XmlMapper.xmlBuilder;
 import static de.difuture.uds.odm2fhir.fhir.writer.FHIRBundleWriter.BUNDLES_NUMBER;
 import static de.difuture.uds.odm2fhir.fhir.writer.FHIRBundleWriter.RESOURCES_NUMBER;
 
+import static org.apache.commons.lang3.StringUtils.isBlank;
 import static org.apache.commons.lang3.function.Failable.asConsumer;
 
 import static java.nio.file.Files.createDirectories;
@@ -133,13 +134,23 @@ public abstract class ODMProcessor {
           case "SubjectData":
             var subjectData = xmlMapper.readValue(xmlStreamReader, SubjectData.class);
 
-            var hash = subjectODMHashes != null ? subjectData.hashCode() : null;
+            var subjectKey = subjectData.getSubjectKey();
 
-            if (hash == null || !hash.equals(subjectODMHashes.get(subjectData.getSubjectKey()))) {
-              fhirBundleWriter.write(fhirBundler.bundle(new Subject().map(subjectData)));
+            if (isBlank(subjectKey)) {
+              log.warn("Empty subject key for patient");
+            } else {
+              var hash = subjectODMHashes != null ? subjectData.hashCode() : null;
 
-              if (subjectODMHashes != null) {
-                subjectODMHashes.put(subjectData.getSubjectKey(), hash);
+              if (hash == null || !hash.equals(subjectODMHashes.get(subjectKey))) {
+                var bundle = fhirBundler.bundle(new Subject().map(subjectData));
+                if (bundle.isEmpty()) {
+                  log.warn("Empty bundle for patient '{}'", subjectKey);
+                } else {
+                  fhirBundleWriter.write(bundle);
+                  if (subjectODMHashes != null) {
+                    subjectODMHashes.put(subjectKey, hash);
+                  }
+                }
               }
             }
         }

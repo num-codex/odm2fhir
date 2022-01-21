@@ -22,33 +22,26 @@ import lombok.extern.slf4j.Slf4j;
 
 import org.hl7.fhir.r4.model.Bundle;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
-import java.io.IOException;
-import java.nio.file.Path;
-
-import static java.nio.file.Files.createDirectories;
-import static java.nio.file.Files.writeString;
-
-@ConditionalOnExpression("'${fhir.server.url:}'.empty and '${kafka.broker.url:}'.empty")
+@ConditionalOnExpression("'${fhir.server.url:}'.empty and !'${kafka.broker.url:}'.empty")
 @Service
 @Slf4j
-public class FileFHIRBundleWriter extends FHIRBundleWriter {
+public class KafkaFHIRBundleWriter extends FHIRBundleWriter {
 
-  @Value("${fhir.folder.path:}")
-  private Path folderPath;
+  @Value("${spring.kafka.template.default-topic:}")
+  private String topicName;
+
+  @Autowired
+  private KafkaTemplate<String, Bundle> kafkaTemplate;
 
   @Override
-  public void write(Bundle bundle, String patientIdentifier) throws IOException {
-    if (folderPath == null) {
-      throw new IllegalArgumentException("'fhir.folder.path' not specified");
-    }
-
-    createDirectories(folderPath);
-
-    writeString(folderPath.resolve(patientIdentifier + ".json"), JSON_PARSER.encodeResourceToString(bundle));
+  protected void write(Bundle bundle, String patientIdentifier) {
+    kafkaTemplate.send(topicName, patientIdentifier, bundle);
   }
 
 }
