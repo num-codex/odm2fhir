@@ -40,6 +40,7 @@ import org.hl7.fhir.r4.model.Identifier;
 import org.hl7.fhir.r4.model.Meta;
 import org.hl7.fhir.r4.model.Patient;
 import org.hl7.fhir.r4.model.Quantity;
+import org.hl7.fhir.r4.model.Quantity.QuantityComparator;
 import org.hl7.fhir.r4.model.Reference;
 import org.hl7.fhir.r4.model.StringType;
 import org.hl7.fhir.r4.model.codesystems.AdministrativeGender;
@@ -85,6 +86,7 @@ import static de.difuture.uds.odm2fhir.fhir.util.NUMStructureDefinition.UNCERTAI
 import static de.difuture.uds.odm2fhir.util.EnvironmentProvider.ENVIRONMENT;
 
 import static org.apache.commons.codec.digest.DigestUtils.sha256Hex;
+import static org.apache.commons.lang3.StringUtils.defaultString;
 import static org.apache.commons.lang3.StringUtils.isBlank;
 import static org.apache.commons.lang3.StringUtils.split;
 import static org.apache.commons.lang3.StringUtils.splitByWholeSeparator;
@@ -419,11 +421,23 @@ public abstract class Item {
   }
 
   protected final Quantity createQuantity(ItemData itemData, String code, String unit) {
+    return createQuantity(itemData, null, code, unit);
+  }
+
+  protected final Quantity createQuantity(ItemData itemData, String comparator, String code, String unit) {
     var quantity = new Quantity();
 
     if (itemData != null && !itemData.isEmpty()) {
       try {
         quantity.setValue(new BigDecimal(itemData.getValue().replace(',', '.')))
+            .setComparator(QuantityComparator.fromCode(
+                switch (defaultString(comparator)) {
+                  case "1" -> "<";
+                  case "2" -> "<=";
+                  case "3" -> ">=";
+                  case "4" -> ">";
+                  default -> null;
+                }))
             .setSystem(UCUM.getUrl()).setCode(code).setUnit(unit);
       } catch (RuntimeException runtimeException) {
         logInvalidValue(QUANTITY, itemData);

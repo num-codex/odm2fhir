@@ -83,7 +83,8 @@ public class LaboratoryValue extends Item {
         observation.setCode(new CodeableConcept()
         .setCoding(codings)
         .setText(labValueName)) //add Parameter Name as Text
-        .setValue(createQuantity(formData.getItemData(labValueName), unit, unit));
+        .setValue(createQuantity(formData.getItemData(labValueName),
+                                 formData.getItemData(labValueName + "_comparator").getValue(), unit, unit));
   }
 
 }
