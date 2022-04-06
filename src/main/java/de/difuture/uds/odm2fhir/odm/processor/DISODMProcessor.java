@@ -28,7 +28,7 @@ import java.io.InputStream;
 import java.net.URL;
 import java.util.stream.Stream;
 
-import static de.difuture.uds.odm2fhir.util.HTTPHelper.HTTP_CLIENT;
+import static de.difuture.uds.odm2fhir.util.HTTPHelper.HTTP_CLIENT_BUILDER;
 
 import static org.apache.http.client.methods.RequestBuilder.get;
 
@@ -59,7 +59,7 @@ public class DISODMProcessor extends ODMProcessor {
                                   .addParameter("sasname", "true")
                                   .build();
 
-    return Stream.of(HTTP_CLIENT.execute(httpGet).getEntity().getContent());
+    return Stream.of(HTTP_CLIENT_BUILDER.build().execute(httpGet).getEntity().getContent());
   }
 
 }

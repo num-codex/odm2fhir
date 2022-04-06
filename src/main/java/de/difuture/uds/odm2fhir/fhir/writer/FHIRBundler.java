@@ -58,6 +58,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.PostConstruct;
 
+import static ca.uhn.fhir.context.FhirContext.forR4Cached;
 import static ca.uhn.fhir.validation.ResultSeverityEnum.ERROR;
 import static ca.uhn.fhir.validation.ResultSeverityEnum.WARNING;
 
@@ -66,7 +67,6 @@ import static de.difuture.uds.odm2fhir.fhir.util.CommonCodeSystem.LOINC;
 import static de.difuture.uds.odm2fhir.fhir.util.CommonCodeSystem.SNOMED_CT;
 import static de.difuture.uds.odm2fhir.fhir.util.IdentifierHelper.getIdentifierSystem;
 import static de.difuture.uds.odm2fhir.fhir.util.NUMStructureDefinition.GECCO_BUNDLE;
-import static de.difuture.uds.odm2fhir.fhir.writer.FHIRBundleWriter.FHIR_CONTEXT;
 import static de.difuture.uds.odm2fhir.fhir.writer.FHIRBundleWriter.JSON_PARSER;
 import static de.difuture.uds.odm2fhir.util.HTTPHelper.createAuthInterceptor;
 
@@ -132,7 +132,7 @@ public class FHIRBundler {
       Locale.setDefault(ENGLISH);
 
       @SuppressWarnings("unchecked")
-      var prePopulatedValidationSupport = new PrePopulatedValidationSupport(FHIR_CONTEXT) {
+      var prePopulatedValidationSupport = new PrePopulatedValidationSupport(forR4Cached()) {
         @Override
         public ValueSetExpansionOutcome expandValueSet(ValidationSupportContext validationSupportContext,
                                                        @Nullable ValueSetExpansionOptions valueSetExpansionOptions,
@@ -150,19 +150,19 @@ public class FHIRBundler {
           .map(JSON_PARSER::parseResource)
           .forEach(prePopulatedValidationSupport::addResource);
 
-      var unknownCodeSystemWarningValidationSupport = new UnknownCodeSystemWarningValidationSupport(FHIR_CONTEXT);
+      var unknownCodeSystemWarningValidationSupport = new UnknownCodeSystemWarningValidationSupport(forR4Cached());
       unknownCodeSystemWarningValidationSupport.setNonExistentCodeSystemSeverity(IssueSeverity.WARNING);
 
       var validationSupportChain = new ValidationSupportChain(
-          new DefaultProfileValidationSupport(FHIR_CONTEXT),
-          new CommonCodeSystemsTerminologyService(FHIR_CONTEXT),
-          new InMemoryTerminologyServerValidationSupport(FHIR_CONTEXT),
+          new DefaultProfileValidationSupport(forR4Cached()),
+          new CommonCodeSystemsTerminologyService(forR4Cached()),
+          new InMemoryTerminologyServerValidationSupport(forR4Cached()),
           unknownCodeSystemWarningValidationSupport,
-          new SnapshotGeneratingValidationSupport(FHIR_CONTEXT),
+          new SnapshotGeneratingValidationSupport(forR4Cached()),
           prePopulatedValidationSupport);
 
       if (terminologyserverUrl.isAbsolute()) {
-        var remoteTerminologyServiceValidationSupport = new RemoteTerminologyServiceValidationSupport(FHIR_CONTEXT);
+        var remoteTerminologyServiceValidationSupport = new RemoteTerminologyServiceValidationSupport(forR4Cached());
         remoteTerminologyServiceValidationSupport.setBaseUrl(terminologyserverUrl.toString());
         remoteTerminologyServiceValidationSupport.addClientInterceptor(
             createAuthInterceptor(terminologyserverBasicauthUsername, terminologyserverBasicauthPassword,
@@ -170,7 +170,7 @@ public class FHIRBundler {
         validationSupportChain.addValidationSupport(remoteTerminologyServiceValidationSupport);
       }
 
-      fhirValidator = FHIR_CONTEXT.newValidator()
+      fhirValidator = forR4Cached().newValidator()
           .registerValidatorModule(new FhirInstanceValidator(new CachingValidationSupport(validationSupportChain)));
     }
   }

@@ -39,6 +39,8 @@ import java.net.URI;
 
 import static de.difuture.uds.odm2fhir.util.HTTPHelper.createAuthInterceptor;
 
+import static ca.uhn.fhir.context.FhirContext.forR4Cached;
+
 @ConditionalOnExpression("!'${fhir.server.url:}'.empty")
 @Service
 @Slf4j
@@ -66,7 +68,7 @@ public class ServerFHIRBundleWriter extends FHIRBundleWriter {
   private RetryTemplate retryTemplate;
 
   private void init() throws IOException {
-    genericClient = FHIR_CONTEXT.getRestfulClientFactory().newGenericClient(url.toString());
+    genericClient = forR4Cached().getRestfulClientFactory().newGenericClient(url.toString());
     genericClient.registerInterceptor(
         createAuthInterceptor(basicauthUsername, basicauthPassword, oauth2TokenURL, oauth2ClientId, oauth2ClientSecret));
 

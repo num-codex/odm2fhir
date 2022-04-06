@@ -1297,7 +1297,8 @@
           <ItemGroupData ItemGroupOID="laborwerte.crp" ItemGroupRepeatKey="1">
             <ItemData ItemOID="crp" Value="453.17"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.crp_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.crp_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="crp_comparator" Value=""/>
             <ItemData ItemOID="crp_unit" Value="3"/>
             <ItemData ItemOID="crp_loinc_1" Value="48421-2_c-reactive-protein-in-capillary-blood"/>
             <ItemData ItemOID="crp_loinc_2" Value="76485-2_c-reactive-protein-in-serum-or-plasma"/>
@@ -1307,7 +1308,8 @@
             <ItemData ItemOID="ferritin_code" Value="2.16.840.1.113883.6.1_20567-4__2.16.840.1.113883.6.1_86914-9__2.16.840.1.113883.6.1_14723-1__2.16.840.1.113883.6.1_2276-4__2.16.840.1.113883.6.1_24373-3"/>
             <ItemData ItemOID="ferritin" Value="565.14"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.ferritin_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.ferritin_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="ferritin_comparator" Value=""/>
             <ItemData ItemOID="ferritin_unit" Value="2"/>
             <ItemData ItemOID="ferritin_loinc_1" Value="24373-3_ferritin-in-blood"/>
             <ItemData ItemOID="ferritin_loinc_2" Value="14723-1_ferritin-in-serum-or-plasma"/>
@@ -1316,7 +1318,8 @@
             <ItemData ItemOID="bilirubin_code" Value="2.16.840.1.113883.6.1_59828-4__2.16.840.1.113883.6.1_59827-6__2.16.840.1.113883.6.1_42719-5__2.16.840.1.113883.6.1_14631-6__2.16.840.1.113883.6.1_1971-1__2.16.840.1.113883.6.1_1975-2"/>
             <ItemData ItemOID="bilirubin" Value="434.79"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.bilirubin_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.bilirubin_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="bilirubin_comparator" Value=""/>
             <ItemData ItemOID="bilirubin_unit" Value="1"/>
             <ItemData ItemOID="bilirubin_loinc_1" Value="59828-4_bilirubin.total-in-venous-blood"/>
             <ItemData ItemOID="bilirubin_loinc_2" Value="14631-6_bilirubin.total-in-serum-or-plasma"/>
@@ -1325,7 +1328,8 @@
             <ItemData ItemOID="ddimer_code" Value="2.16.840.1.113883.6.1_48065-7__2.16.840.1.113883.6.1_48066-5__2.16.840.1.113883.6.1_48067-3__2.16.840.1.113883.6.1_55398-2__2.16.840.1.113883.6.1_71427-9__2.16.840.1.113883.6.1_7799-0__2.16.840.1.113883.6.1_91556-1__2.16.840.1.113883.6.1_38898-3__2.16.840.1.113883.6.1_3246-6__2.16.840.1.113883.6.1_48058-2"/>
             <ItemData ItemOID="ddimer" Value="807.41"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.ddimer_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.ddimer_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="ddimer_comparator" Value=""/>
             <ItemData ItemOID="ddimer_unit" Value="5"/>
             <ItemData ItemOID="ddimer_loinc_1" Value="48067-3_fibrin-d-dimer-feu-in-platelet-poor-plasma-by-immunoassay"/>
             <ItemData ItemOID="ddimer_loinc_2" Value="71427-9_fibrin-d-dimer-feu-in-blood-by-immunoassay"/>
@@ -1338,7 +1342,8 @@
             <ItemData ItemOID="gammagt_code" Value="2.16.840.1.113883.6.1_2325-9__2.16.840.1.113883.6.1_2324-2"/>
             <ItemData ItemOID="gammagt" Value="380.54"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.gammagt_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.gammagt_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="gammagt_comparator" Value=""/>
             <ItemData ItemOID="gammagt_unit" Value="1"/>
             <ItemData ItemOID="gammagt_loinc_1" Value="2325-9_gamma-glutamyl-transferase-aspartate-aminotransferase-in-serum-or-plasma"/>
           </ItemGroupData>
@@ -1346,7 +1351,8 @@
             <ItemData ItemOID="gotast_code" Value="2.16.840.1.113883.6.1_88112-8__2.16.840.1.113883.6.1_30239-8__2.16.840.1.113883.6.1_1920-8"/>
             <ItemData ItemOID="gotast" Value="152.37"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.gotast_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.gotast_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="gotast_comparator" Value=""/>
             <ItemData ItemOID="gotast_unit" Value="1"/>
             <ItemData ItemOID="gotast_loinc_1" Value="88112-8_aspartate-aminotransferase-in-serum-or-plasma-by-no-addition-of-p-5-p"/>
           </ItemGroupData>
@@ -1354,7 +1360,8 @@
             <ItemData ItemOID="ldh_code" Value="2.16.840.1.113883.6.1_2532-0__2.16.840.1.113883.6.1_60017-1__2.16.840.1.113883.6.1_14803-1__2.16.840.1.113883.6.1_14804-9__2.16.840.1.113883.6.1_14805-6"/>
             <ItemData ItemOID="ldh" Value="658.23"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.ldh_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.ldh_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="ldh_comparator" Value=""/>
             <ItemData ItemOID="ldh_unit" Value="1"/>
             <ItemData ItemOID="ldh_loinc_1" Value="14803-1_lactate-dehydrogenase-in-body-fluid-by-lactate-to-pyruvate-reaction"/>
           </ItemGroupData>
@@ -1362,7 +1369,8 @@
             <ItemData ItemOID="kardiale_troponine_code" Value="2.16.840.1.113883.6.1_49563-0__2.16.840.1.113883.6.1_89579-7__2.16.840.1.113883.6.1_67151-1__2.16.840.1.113883.6.1_6598-7__2.16.840.1.113883.6.1_6597-9__2.16.840.1.113883.6.1_48425-3__2.16.840.1.113883.6.1_42757-5__2.16.840.1.113883.6.1_10839-9"/>
             <ItemData ItemOID="kardiale_troponine" Value="775.4"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.kardiale_troponine_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.kardiale_troponine_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="kardiale_troponine_comparator" Value=""/>
             <ItemData ItemOID="kardiale_troponine_unit" Value="1"/>
             <ItemData ItemOID="kardiale_troponine_loinc_1" Value="48425-3_troponin-t.cardiac-in-blood"/>
             <ItemData ItemOID="kardiale_troponine_loinc_2" Value="89579-7_troponin-i.cardiac-in-serum-or-plasma-by-high-sensitivity-method"/>
@@ -1372,7 +1380,8 @@
             <ItemData ItemOID="hamoglobin_code" Value="2.16.840.1.113883.6.1_76769-9__2.16.840.1.113883.6.1_718-7__2.16.840.1.113883.6.1_20509-6__2.16.840.1.113883.6.1_55782-7__2.16.840.1.113883.6.1_75928-2__2.16.840.1.113883.6.1_14775-1__2.16.840.1.113883.6.1_30313-1__2.16.840.1.113883.6.1_30350-3__2.16.840.1.113883.6.1_30351-1__2.16.840.1.113883.6.1_30352-9__2.16.840.1.113883.6.1_76768-1__2.16.840.1.113883.6.1_59260-0"/>
             <ItemData ItemOID="hamoglobin" Value="508.03"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.hamoglobin_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.hamoglobin_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="hamoglobin_comparator" Value=""/>
             <ItemData ItemOID="hamoglobin_unit" Value="1"/>
             <ItemData ItemOID="hamoglobin_loinc_1" Value="75928-2_hemoglobin-in-arterial-blood"/>
             <ItemData ItemOID="hamoglobin_loinc_2" Value="30352-9_hemoglobin-in-capillary-blood"/>
@@ -1382,7 +1391,8 @@
             <ItemData ItemOID="kreatinin_code" Value="2.16.840.1.113883.6.1_14682-9__2.16.840.1.113883.6.1_2160-0__2.16.840.1.113883.6.1_21232-4__2.16.840.1.113883.6.1_25386-4__2.16.840.1.113883.6.1_12190-5__2.16.840.1.113883.6.1_59826-8__2.16.840.1.113883.6.1_38483-4"/>
             <ItemData ItemOID="kreatinin" Value="891.52"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.kreatinin_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.kreatinin_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="kreatinin_comparator" Value=""/>
             <ItemData ItemOID="kreatinin_unit" Value="1"/>
             <ItemData ItemOID="kreatinin_loinc_1" Value="25386-4_creatinine-in-body-fluid"/>
             <ItemData ItemOID="kreatinin_loinc_2" Value="38483-4_creatinine-in-blood"/>
@@ -1391,7 +1401,8 @@
             <ItemData ItemOID="laktat_code" Value="2.16.840.1.113883.6.1_14118-4__2.16.840.1.113883.6.1_30242-2__2.16.840.1.113883.6.1_2524-7__2.16.840.1.113883.6.1_2519-7__2.16.840.1.113883.6.1_2518-9__2.16.840.1.113883.6.1_19240-1__2.16.840.1.113883.6.1_19239-3__2.16.840.1.113883.6.1_2520-5__2.16.840.1.113883.6.1_32693-4__2.16.840.1.113883.6.1_59032-3__2.16.840.1.113883.6.1_27941-4"/>
             <ItemData ItemOID="laktat" Value="343.07"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.laktat_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.laktat_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="laktat_comparator" Value=""/>
             <ItemData ItemOID="laktat_unit" Value="2"/>
             <ItemData ItemOID="laktat_loinc_1" Value="32693-4_lactate-in-blood"/>
             <ItemData ItemOID="laktat_loinc_2" Value="14118-4_lactate-in-serum-or-plasma"/>
@@ -1400,7 +1411,8 @@
             <ItemData ItemOID="leukozyten_absolut_code" Value="2.16.840.1.113883.6.1_804-5__2.16.840.1.113883.6.1_6690-2__2.16.840.1.113883.6.1_49498-9__2.16.840.1.113883.6.1_26464-8"/>
             <ItemData ItemOID="leukozyten_absolut" Value="250"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.leukozyten_absolut_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.leukozyten_absolut_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="leukozyten_absolut_comparator" Value=""/>
             <ItemData ItemOID="leukozyten_absolut_unit" Value="1"/>
             <ItemData ItemOID="leukozyten_absolut_loinc_1" Value="49498-9_leukocytes-in-blood-by-estimate"/>
           </ItemGroupData>
@@ -1408,7 +1420,8 @@
             <ItemData ItemOID="lymphozyten_absolut_code" Value="2.16.840.1.113883.6.1_732-8__2.16.840.1.113883.6.1_731-0__2.16.840.1.113883.6.1_30364-4__2.16.840.1.113883.6.1_26474-7"/>
             <ItemData ItemOID="lymphozyten_absolut" Value="94.22"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.lymphozyten_absolut_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.lymphozyten_absolut_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="lymphozyten_absolut_comparator" Value=""/>
             <ItemData ItemOID="lymphozyten_absolut_unit" Value="1"/>
             <ItemData ItemOID="lymphozyten_absolut_loinc_1" Value="732-8_lymphocytes-in-blood-by-manual-count"/>
           </ItemGroupData>
@@ -1416,7 +1429,8 @@
             <ItemData ItemOID="neutrophile_absolut_code" Value="2.16.840.1.113883.6.1_753-4__2.16.840.1.113883.6.1_751-8__2.16.840.1.113883.6.1_26499-4"/>
             <ItemData ItemOID="neutrophile_absolut" Value="190.16"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.neutrophile_absolut_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.neutrophile_absolut_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="neutrophile_absolut_comparator" Value=""/>
             <ItemData ItemOID="neutrophile_absolut_unit" Value="1"/>
             <ItemData ItemOID="neutrophile_absolut_loinc_1" Value="751-8_neutrophils-in-blood-by-automated-count"/>
           </ItemGroupData>
@@ -1424,7 +1438,8 @@
             <ItemData ItemOID="ptt_code" Value="2.16.840.1.113883.6.1_16631-4__2.16.840.1.113883.6.1_43734-3__2.16.840.1.113883.6.1_14979-9__2.16.840.1.113883.6.1_3173-2"/>
             <ItemData ItemOID="ptt" Value="480.19"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.ptt_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.ptt_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="ptt_comparator" Value=""/>
             <ItemData ItemOID="ptt_unit" Value="1"/>
             <ItemData ItemOID="ptt_loinc_1" Value="16631-4_aptt-in-blood-by-coagulation-11-saline"/>
           </ItemGroupData>
@@ -1432,7 +1447,8 @@
             <ItemData ItemOID="thrombozyten_absolut_code" Value="2.16.840.1.113883.6.1_74775-8__2.16.840.1.113883.6.1_13056-7__2.16.840.1.113883.6.1_26516-5__2.16.840.1.113883.6.1_74464-9__2.16.840.1.113883.6.1_778-1__2.16.840.1.113883.6.1_49497-1__2.16.840.1.113883.6.1_777-3__2.16.840.1.113883.6.1_26515-7"/>
             <ItemData ItemOID="thrombozyten_absolut" Value="980.07"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.thrombozyten_absolut_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.thrombozyten_absolut_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="thrombozyten_absolut_comparator" Value=""/>
             <ItemData ItemOID="thrombozyten_absolut_unit" Value="1"/>
             <ItemData ItemOID="thrombozyten_absolut_loinc_1" Value="777-3_platelets-in-blood-by-automated-count"/>
           </ItemGroupData>
@@ -1440,7 +1456,8 @@
             <ItemData ItemOID="inr_code" Value="2.16.840.1.113883.6.1_6301-6__2.16.840.1.113883.6.1_46418-0__2.16.840.1.113883.6.1_34714-6"/>
             <ItemData ItemOID="inr" Value="354.91"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.inr_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.inr_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="inr_comparator" Value=""/>
             <ItemData ItemOID="inr_unit" Value="1"/>
             <ItemData ItemOID="inr_loinc_1" Value="34714-6_inr-in-blood-by-coagulation-assay"/>
           </ItemGroupData>
@@ -1448,7 +1465,8 @@
             <ItemData ItemOID="serumalbumin_code" Value="2.16.840.1.113883.6.1_76631-1__2.16.840.1.113883.6.1_62235-7__2.16.840.1.113883.6.1_62234-0__2.16.840.1.113883.6.1_61152-5__2.16.840.1.113883.6.1_61151-7__2.16.840.1.113883.6.1_2862-1__2.16.840.1.113883.6.1_1751-7__2.16.840.1.113883.6.1_54347-0"/>
             <ItemData ItemOID="serumalbumin" Value="449.14"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.serumalbumin_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.serumalbumin_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="serumalbumin_comparator" Value=""/>
             <ItemData ItemOID="serumalbumin_unit" Value="2"/>
             <ItemData ItemOID="serumalbumin_loinc_1" Value="76631-1_albumin-in-blood-by-bromocresol-purple-bcp-dye-binding-method"/>
             <ItemData ItemOID="serumalbumin_loinc_2" Value="62235-7_albumin-in-serum-or-plasma-by-bromocresol-green-bcg-dye-binding-method"/>
@@ -1458,7 +1476,8 @@
             <ItemData ItemOID="antithrombin_iii_code" Value="2.16.840.1.113883.6.1_27812-7__2.16.840.1.113883.6.1_27811-9__2.16.840.1.113883.6.1_3176-5__2.16.840.1.113883.6.1_91120-6__2.16.840.1.113883.6.1_3174-0"/>
             <ItemData ItemOID="antithrombin_iii" Value="173.67"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.antithrombin_iii_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.antithrombin_iii_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antithrombin_iii_comparator" Value=""/>
             <ItemData ItemOID="antithrombin_iii_unit" Value="2"/>
             <ItemData ItemOID="antithrombin_iii_loinc_1" Value="27811-9_antithrombin-actual-normal-in-platelet-poor-plasma-by-chromogenic-method"/>
             <ItemData ItemOID="antithrombin_iii_loinc_2" Value="3174-0_antithrombin-in-platelet-poor-plasma-by-chromogenic-method"/>
@@ -1467,7 +1486,8 @@
             <ItemData ItemOID="pct_procalcitonin_code" Value="2.16.840.1.113883.6.1_75241-0__2.16.840.1.113883.6.1_33959-8"/>
             <ItemData ItemOID="pct_procalcitonin" Value="929.57"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.pct_procalcitonin_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.pct_procalcitonin_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="pct_procalcitonin_comparator" Value=""/>
             <ItemData ItemOID="pct_procalcitonin_unit" Value="1"/>
             <ItemData ItemOID="pct_procalcitonin_loinc_1" Value="33959-8_procalcitonin-in-serum-or-plasma"/>
           </ItemGroupData>
@@ -1475,7 +1495,8 @@
             <ItemData ItemOID="il6_interleukin_6_code" Value="2.16.840.1.113883.6.1_44322-6__2.16.840.1.113883.6.1_26881-3__2.16.840.1.113883.6.1_49919-4__2.16.840.1.113883.6.1_49732-1"/>
             <ItemData ItemOID="il6_interleukin_6" Value="746.28"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.il6_interleukin_6_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.il6_interleukin_6_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="il6_interleukin_6_comparator" Value=""/>
             <ItemData ItemOID="il6_interleukin_6_unit" Value="1"/>
             <ItemData ItemOID="il6_interleukin_6_loinc_1" Value="26881-3_interleukin-6-in-serum-or-plasma"/>
           </ItemGroupData>
@@ -1483,7 +1504,8 @@
             <ItemData ItemOID="ntprobnp_code" Value="2.16.840.1.113883.6.1_83107-3__2.16.840.1.113883.6.1_33762-6"/>
             <ItemData ItemOID="ntprobnp" Value="97.02"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.ntprobnp_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.ntprobnp_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="ntprobnp_comparator" Value=""/>
             <ItemData ItemOID="ntprobnp_unit" Value="1"/>
             <ItemData ItemOID="ntprobnp_loinc_1" Value="83107-3_natriuretic-peptide.b-prohormone-n-terminal-in-serum-or-plasma-by-immunoassay"/>
           </ItemGroupData>
@@ -1491,7 +1513,8 @@
             <ItemData ItemOID="fibrinogen_code" Value="2.16.840.1.113883.6.1_30902-1__2.16.840.1.113883.6.1_48664-7__2.16.840.1.113883.6.1_3255-7"/>
             <ItemData ItemOID="fibrinogen" Value="634.36"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.fibrinogen_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.fibrinogen_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="fibrinogen_comparator" Value=""/>
             <ItemData ItemOID="fibrinogen_unit" Value="2"/>
             <ItemData ItemOID="fibrinogen_loinc_1" Value="3255-7_fibrinogen-in-platelet-poor-plasma-by-coagulation-assay"/>
             <ItemData ItemOID="fibrinogen_loinc_2" Value="30902-1_fibrinogen-in-platelet-poor-plasma-by-heat-denaturation"/>
@@ -1514,7 +1537,8 @@
             <ItemData ItemOID="sarsco_v2_covid19_ig_g_ia_qn_code" Value="2.16.840.1.113883.6.1_94505-5"/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_g_ia_qn" Value="564.91"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ig_g_ia_qn_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ig_g_ia_qn_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="sarsco_v2_covid19_ig_g_ia_qn_comparator" Value=""/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_g_ia_qn_unit" Value="1"/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_g_ia_qn_loinc" Value="94505-5_sars-cov-2-covid-19-igg-ab-in-serum-or-plasma-by-immunoassay"/>
           </ItemGroupData>
@@ -1529,7 +1553,8 @@
             <ItemData ItemOID="sarsco_v2_covid19_ig_m_ia_qn_code" Value="2.16.840.1.113883.6.1_94506-3"/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_m_ia_qn" Value="228.02"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ig_m_ia_qn_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ig_m_ia_qn_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="sarsco_v2_covid19_ig_m_ia_qn_comparator" Value=""/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_m_ia_qn_unit" Value="1"/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_m_ia_qn_loinc" Value="94506-3_sars-cov-2-covid-19-igm-ab-in-serum-or-plasma-by-immunoassay"/>
           </ItemGroupData>
@@ -1544,7 +1569,8 @@
             <ItemData ItemOID="sarsco_v2_covid19_ig_a_ia_qn_code" Value="2.16.840.1.113883.6.1_94720-0"/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_a_ia_qn" Value="922.6"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ig_a_ia_qn_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ig_a_ia_qn_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="sarsco_v2_covid19_ig_a_ia_qn_comparator" Value=""/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_a_ia_qn_unit" Value="1"/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_a_ia_qn_loinc" Value="94720-0_sars-cov-2-covid-19-iga-ab-in-serum-or-plasma-by-immunoassay"/>
           </ItemGroupData>
@@ -1559,7 +1585,8 @@
             <ItemData ItemOID="sarsco_v2_covid19_ab_ia_qn_code" Value="2.16.840.1.113883.6.1_94769-7"/>
             <ItemData ItemOID="sarsco_v2_covid19_ab_ia_qn" Value="451.19"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ab_ia_qn_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ab_ia_qn_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="sarsco_v2_covid19_ab_ia_qn_comparator" Value=""/>
             <ItemData ItemOID="sarsco_v2_covid19_ab_ia_qn_unit" Value="1"/>
             <ItemData ItemOID="sarsco_v2_covid19_ab_ia_qn_loinc" Value="94769-7_sars-cov-2-covid-19-ab-in-serum-or-plasma-by-immunoassay"/>
           </ItemGroupData>
@@ -2955,7 +2982,8 @@
           <ItemGroupData ItemGroupOID="laborwerte.crp" ItemGroupRepeatKey="1">
             <ItemData ItemOID="crp" Value="990.4"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.crp_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.crp_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="crp_comparator" Value=""/>
             <ItemData ItemOID="crp_unit" Value="3"/>
             <ItemData ItemOID="crp_loinc_1" Value="71426-1_c-reactive-protein-in-blood-by-high-sensitivity-method"/>
             <ItemData ItemOID="crp_loinc_2" Value="76485-2_c-reactive-protein-in-serum-or-plasma"/>
@@ -2965,7 +2993,8 @@
             <ItemData ItemOID="ferritin_code" Value="2.16.840.1.113883.6.1_20567-4__2.16.840.1.113883.6.1_86914-9__2.16.840.1.113883.6.1_14723-1__2.16.840.1.113883.6.1_2276-4__2.16.840.1.113883.6.1_24373-3"/>
             <ItemData ItemOID="ferritin" Value="15.52"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.ferritin_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.ferritin_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="ferritin_comparator" Value=""/>
             <ItemData ItemOID="ferritin_unit" Value="2"/>
             <ItemData ItemOID="ferritin_loinc_1" Value="20567-4_ferritin-in-serum-or-plasma-by-immunoassay"/>
             <ItemData ItemOID="ferritin_loinc_2" Value="14723-1_ferritin-in-serum-or-plasma"/>
@@ -2974,7 +3003,8 @@
             <ItemData ItemOID="bilirubin_code" Value="2.16.840.1.113883.6.1_59828-4__2.16.840.1.113883.6.1_59827-6__2.16.840.1.113883.6.1_42719-5__2.16.840.1.113883.6.1_14631-6__2.16.840.1.113883.6.1_1971-1__2.16.840.1.113883.6.1_1975-2"/>
             <ItemData ItemOID="bilirubin" Value="535.3"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.bilirubin_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.bilirubin_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="bilirubin_comparator" Value=""/>
             <ItemData ItemOID="bilirubin_unit" Value="1"/>
             <ItemData ItemOID="bilirubin_loinc_1" Value="59828-4_bilirubin.total-in-venous-blood"/>
             <ItemData ItemOID="bilirubin_loinc_2" Value="14631-6_bilirubin.total-in-serum-or-plasma"/>
@@ -2983,7 +3013,8 @@
             <ItemData ItemOID="ddimer_code" Value="2.16.840.1.113883.6.1_48065-7__2.16.840.1.113883.6.1_48066-5__2.16.840.1.113883.6.1_48067-3__2.16.840.1.113883.6.1_55398-2__2.16.840.1.113883.6.1_71427-9__2.16.840.1.113883.6.1_7799-0__2.16.840.1.113883.6.1_91556-1__2.16.840.1.113883.6.1_38898-3__2.16.840.1.113883.6.1_3246-6__2.16.840.1.113883.6.1_48058-2"/>
             <ItemData ItemOID="ddimer" Value="64.17"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.ddimer_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.ddimer_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="ddimer_comparator" Value=""/>
             <ItemData ItemOID="ddimer_unit" Value="1"/>
             <ItemData ItemOID="ddimer_loinc_1" Value="48067-3_fibrin-d-dimer-feu-in-platelet-poor-plasma-by-immunoassay"/>
             <ItemData ItemOID="ddimer_loinc_2" Value="48066-5_fibrin-d-dimer-ddu-in-platelet-poor-plasma"/>
@@ -2996,7 +3027,8 @@
             <ItemData ItemOID="gammagt_code" Value="2.16.840.1.113883.6.1_2325-9__2.16.840.1.113883.6.1_2324-2"/>
             <ItemData ItemOID="gammagt" Value="51.35"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.gammagt_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.gammagt_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="gammagt_comparator" Value=""/>
             <ItemData ItemOID="gammagt_unit" Value="1"/>
             <ItemData ItemOID="gammagt_loinc_1" Value="2325-9_gamma-glutamyl-transferase-aspartate-aminotransferase-in-serum-or-plasma"/>
           </ItemGroupData>
@@ -3004,7 +3036,8 @@
             <ItemData ItemOID="gotast_code" Value="2.16.840.1.113883.6.1_88112-8__2.16.840.1.113883.6.1_30239-8__2.16.840.1.113883.6.1_1920-8"/>
             <ItemData ItemOID="gotast" Value="740.1"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.gotast_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.gotast_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="gotast_comparator" Value=""/>
             <ItemData ItemOID="gotast_unit" Value="1"/>
             <ItemData ItemOID="gotast_loinc_1" Value="88112-8_aspartate-aminotransferase-in-serum-or-plasma-by-no-addition-of-p-5-p"/>
           </ItemGroupData>
@@ -3012,7 +3045,8 @@
             <ItemData ItemOID="ldh_code" Value="2.16.840.1.113883.6.1_2532-0__2.16.840.1.113883.6.1_60017-1__2.16.840.1.113883.6.1_14803-1__2.16.840.1.113883.6.1_14804-9__2.16.840.1.113883.6.1_14805-6"/>
             <ItemData ItemOID="ldh" Value="325.31"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.ldh_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.ldh_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="ldh_comparator" Value=""/>
             <ItemData ItemOID="ldh_unit" Value="1"/>
             <ItemData ItemOID="ldh_loinc_1" Value="60017-1_lactate-dehydrogenase-in-body-fluid-by-pyruvate-to-lactate-reaction"/>
           </ItemGroupData>
@@ -3020,7 +3054,8 @@
             <ItemData ItemOID="kardiale_troponine_code" Value="2.16.840.1.113883.6.1_49563-0__2.16.840.1.113883.6.1_89579-7__2.16.840.1.113883.6.1_67151-1__2.16.840.1.113883.6.1_6598-7__2.16.840.1.113883.6.1_6597-9__2.16.840.1.113883.6.1_48425-3__2.16.840.1.113883.6.1_42757-5__2.16.840.1.113883.6.1_10839-9"/>
             <ItemData ItemOID="kardiale_troponine" Value="827.11"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.kardiale_troponine_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.kardiale_troponine_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="kardiale_troponine_comparator" Value=""/>
             <ItemData ItemOID="kardiale_troponine_unit" Value="1"/>
             <ItemData ItemOID="kardiale_troponine_loinc_1" Value="42757-5_troponin-i.cardiac-in-blood"/>
             <ItemData ItemOID="kardiale_troponine_loinc_2" Value="67151-1_troponin-t.cardiac-in-serum-or-plasma-by-high-sensitivity-method"/>
@@ -3030,7 +3065,8 @@
             <ItemData ItemOID="hamoglobin_code" Value="2.16.840.1.113883.6.1_76769-9__2.16.840.1.113883.6.1_718-7__2.16.840.1.113883.6.1_20509-6__2.16.840.1.113883.6.1_55782-7__2.16.840.1.113883.6.1_75928-2__2.16.840.1.113883.6.1_14775-1__2.16.840.1.113883.6.1_30313-1__2.16.840.1.113883.6.1_30350-3__2.16.840.1.113883.6.1_30351-1__2.16.840.1.113883.6.1_30352-9__2.16.840.1.113883.6.1_76768-1__2.16.840.1.113883.6.1_59260-0"/>
             <ItemData ItemOID="hamoglobin" Value="806.02"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.hamoglobin_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.hamoglobin_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="hamoglobin_comparator" Value=""/>
             <ItemData ItemOID="hamoglobin_unit" Value="1"/>
             <ItemData ItemOID="hamoglobin_loinc_1" Value="75928-2_hemoglobin-in-arterial-blood"/>
             <ItemData ItemOID="hamoglobin_loinc_2" Value="30352-9_hemoglobin-in-capillary-blood"/>
@@ -3040,7 +3076,8 @@
             <ItemData ItemOID="kreatinin_code" Value="2.16.840.1.113883.6.1_14682-9__2.16.840.1.113883.6.1_2160-0__2.16.840.1.113883.6.1_21232-4__2.16.840.1.113883.6.1_25386-4__2.16.840.1.113883.6.1_12190-5__2.16.840.1.113883.6.1_59826-8__2.16.840.1.113883.6.1_38483-4"/>
             <ItemData ItemOID="kreatinin" Value="984.87"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.kreatinin_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.kreatinin_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="kreatinin_comparator" Value=""/>
             <ItemData ItemOID="kreatinin_unit" Value="1"/>
             <ItemData ItemOID="kreatinin_loinc_1" Value="25386-4_creatinine-in-body-fluid"/>
             <ItemData ItemOID="kreatinin_loinc_2" Value="2160-0_creatinine-in-serum-or-plasma"/>
@@ -3049,7 +3086,8 @@
             <ItemData ItemOID="laktat_code" Value="2.16.840.1.113883.6.1_14118-4__2.16.840.1.113883.6.1_30242-2__2.16.840.1.113883.6.1_2524-7__2.16.840.1.113883.6.1_2519-7__2.16.840.1.113883.6.1_2518-9__2.16.840.1.113883.6.1_19240-1__2.16.840.1.113883.6.1_19239-3__2.16.840.1.113883.6.1_2520-5__2.16.840.1.113883.6.1_32693-4__2.16.840.1.113883.6.1_59032-3__2.16.840.1.113883.6.1_27941-4"/>
             <ItemData ItemOID="laktat" Value="162.39"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.laktat_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.laktat_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="laktat_comparator" Value=""/>
             <ItemData ItemOID="laktat_unit" Value="2"/>
             <ItemData ItemOID="laktat_loinc_1" Value="19240-1_lactate-in-mixed-venous-blood"/>
             <ItemData ItemOID="laktat_loinc_2" Value="14118-4_lactate-in-serum-or-plasma"/>
@@ -3058,7 +3096,8 @@
             <ItemData ItemOID="leukozyten_absolut_code" Value="2.16.840.1.113883.6.1_804-5__2.16.840.1.113883.6.1_6690-2__2.16.840.1.113883.6.1_49498-9__2.16.840.1.113883.6.1_26464-8"/>
             <ItemData ItemOID="leukozyten_absolut" Value="393.42"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.leukozyten_absolut_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.leukozyten_absolut_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="leukozyten_absolut_comparator" Value=""/>
             <ItemData ItemOID="leukozyten_absolut_unit" Value="1"/>
             <ItemData ItemOID="leukozyten_absolut_loinc_1" Value="49498-9_leukocytes-in-blood-by-estimate"/>
           </ItemGroupData>
@@ -3066,7 +3105,8 @@
             <ItemData ItemOID="lymphozyten_absolut_code" Value="2.16.840.1.113883.6.1_732-8__2.16.840.1.113883.6.1_731-0__2.16.840.1.113883.6.1_30364-4__2.16.840.1.113883.6.1_26474-7"/>
             <ItemData ItemOID="lymphozyten_absolut" Value="699.28"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.lymphozyten_absolut_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.lymphozyten_absolut_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="lymphozyten_absolut_comparator" Value=""/>
             <ItemData ItemOID="lymphozyten_absolut_unit" Value="1"/>
             <ItemData ItemOID="lymphozyten_absolut_loinc_1" Value="731-0_lymphocytes-in-blood-by-automated-count"/>
           </ItemGroupData>
@@ -3074,7 +3114,8 @@
             <ItemData ItemOID="neutrophile_absolut_code" Value="2.16.840.1.113883.6.1_753-4__2.16.840.1.113883.6.1_751-8__2.16.840.1.113883.6.1_26499-4"/>
             <ItemData ItemOID="neutrophile_absolut" Value="292.93"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.neutrophile_absolut_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.neutrophile_absolut_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="neutrophile_absolut_comparator" Value=""/>
             <ItemData ItemOID="neutrophile_absolut_unit" Value="1"/>
             <ItemData ItemOID="neutrophile_absolut_loinc_1" Value="751-8_neutrophils-in-blood-by-automated-count"/>
           </ItemGroupData>
@@ -3082,7 +3123,8 @@
             <ItemData ItemOID="ptt_code" Value="2.16.840.1.113883.6.1_16631-4__2.16.840.1.113883.6.1_43734-3__2.16.840.1.113883.6.1_14979-9__2.16.840.1.113883.6.1_3173-2"/>
             <ItemData ItemOID="ptt" Value="735.9"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.ptt_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.ptt_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="ptt_comparator" Value=""/>
             <ItemData ItemOID="ptt_unit" Value="1"/>
             <ItemData ItemOID="ptt_loinc_1" Value="16631-4_aptt-in-blood-by-coagulation-11-saline"/>
           </ItemGroupData>
@@ -3090,7 +3132,8 @@
             <ItemData ItemOID="thrombozyten_absolut_code" Value="2.16.840.1.113883.6.1_74775-8__2.16.840.1.113883.6.1_13056-7__2.16.840.1.113883.6.1_26516-5__2.16.840.1.113883.6.1_74464-9__2.16.840.1.113883.6.1_778-1__2.16.840.1.113883.6.1_49497-1__2.16.840.1.113883.6.1_777-3__2.16.840.1.113883.6.1_26515-7"/>
             <ItemData ItemOID="thrombozyten_absolut" Value="817.81"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.thrombozyten_absolut_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.thrombozyten_absolut_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="thrombozyten_absolut_comparator" Value=""/>
             <ItemData ItemOID="thrombozyten_absolut_unit" Value="1"/>
             <ItemData ItemOID="thrombozyten_absolut_loinc_1" Value="26515-7_platelets-in-blood"/>
           </ItemGroupData>
@@ -3098,7 +3141,8 @@
             <ItemData ItemOID="inr_code" Value="2.16.840.1.113883.6.1_6301-6__2.16.840.1.113883.6.1_46418-0__2.16.840.1.113883.6.1_34714-6"/>
             <ItemData ItemOID="inr" Value="886.14"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.inr_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.inr_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="inr_comparator" Value=""/>
             <ItemData ItemOID="inr_unit" Value="1"/>
             <ItemData ItemOID="inr_loinc_1" Value="46418-0_inr-in-capillary-blood-by-coagulation-assay"/>
           </ItemGroupData>
@@ -3106,7 +3150,8 @@
             <ItemData ItemOID="serumalbumin_code" Value="2.16.840.1.113883.6.1_76631-1__2.16.840.1.113883.6.1_62235-7__2.16.840.1.113883.6.1_62234-0__2.16.840.1.113883.6.1_61152-5__2.16.840.1.113883.6.1_61151-7__2.16.840.1.113883.6.1_2862-1__2.16.840.1.113883.6.1_1751-7__2.16.840.1.113883.6.1_54347-0"/>
             <ItemData ItemOID="serumalbumin" Value="778.12"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.serumalbumin_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.serumalbumin_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="serumalbumin_comparator" Value=""/>
             <ItemData ItemOID="serumalbumin_unit" Value="2"/>
             <ItemData ItemOID="serumalbumin_loinc_1" Value="61152-5_albumin-in-serum-or-plasma-by-bromocresol-purple-bcp-dye-binding-method"/>
             <ItemData ItemOID="serumalbumin_loinc_2" Value="62235-7_albumin-in-serum-or-plasma-by-bromocresol-green-bcg-dye-binding-method"/>
@@ -3116,7 +3161,8 @@
             <ItemData ItemOID="antithrombin_iii_code" Value="2.16.840.1.113883.6.1_27812-7__2.16.840.1.113883.6.1_27811-9__2.16.840.1.113883.6.1_3176-5__2.16.840.1.113883.6.1_91120-6__2.16.840.1.113883.6.1_3174-0"/>
             <ItemData ItemOID="antithrombin_iii" Value="345.01"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.antithrombin_iii_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.antithrombin_iii_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antithrombin_iii_comparator" Value=""/>
             <ItemData ItemOID="antithrombin_iii_unit" Value="2"/>
             <ItemData ItemOID="antithrombin_iii_loinc_1" Value="27811-9_antithrombin-actual-normal-in-platelet-poor-plasma-by-chromogenic-method"/>
             <ItemData ItemOID="antithrombin_iii_loinc_2" Value="3174-0_antithrombin-in-platelet-poor-plasma-by-chromogenic-method"/>
@@ -3125,7 +3171,8 @@
             <ItemData ItemOID="pct_procalcitonin_code" Value="2.16.840.1.113883.6.1_75241-0__2.16.840.1.113883.6.1_33959-8"/>
             <ItemData ItemOID="pct_procalcitonin" Value="388.68"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.pct_procalcitonin_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.pct_procalcitonin_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="pct_procalcitonin_comparator" Value=""/>
             <ItemData ItemOID="pct_procalcitonin_unit" Value="1"/>
             <ItemData ItemOID="pct_procalcitonin_loinc_1" Value="33959-8_procalcitonin-in-serum-or-plasma"/>
           </ItemGroupData>
@@ -3133,7 +3180,8 @@
             <ItemData ItemOID="il6_interleukin_6_code" Value="2.16.840.1.113883.6.1_44322-6__2.16.840.1.113883.6.1_26881-3__2.16.840.1.113883.6.1_49919-4__2.16.840.1.113883.6.1_49732-1"/>
             <ItemData ItemOID="il6_interleukin_6" Value="934.8"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.il6_interleukin_6_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.il6_interleukin_6_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="il6_interleukin_6_comparator" Value=""/>
             <ItemData ItemOID="il6_interleukin_6_unit" Value="1"/>
             <ItemData ItemOID="il6_interleukin_6_loinc_1" Value="26881-3_interleukin-6-in-serum-or-plasma"/>
           </ItemGroupData>
@@ -3141,7 +3189,8 @@
             <ItemData ItemOID="ntprobnp_code" Value="2.16.840.1.113883.6.1_83107-3__2.16.840.1.113883.6.1_33762-6"/>
             <ItemData ItemOID="ntprobnp" Value="630.7"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.ntprobnp_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.ntprobnp_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="ntprobnp_comparator" Value=""/>
             <ItemData ItemOID="ntprobnp_unit" Value="1"/>
             <ItemData ItemOID="ntprobnp_loinc_1" Value="83107-3_natriuretic-peptide.b-prohormone-n-terminal-in-serum-or-plasma-by-immunoassay"/>
           </ItemGroupData>
@@ -3149,7 +3198,8 @@
             <ItemData ItemOID="fibrinogen_code" Value="2.16.840.1.113883.6.1_30902-1__2.16.840.1.113883.6.1_48664-7__2.16.840.1.113883.6.1_3255-7"/>
             <ItemData ItemOID="fibrinogen" Value="38.86"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.fibrinogen_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.fibrinogen_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="fibrinogen_comparator" Value=""/>
             <ItemData ItemOID="fibrinogen_unit" Value="2"/>
             <ItemData ItemOID="fibrinogen_loinc_1" Value="30902-1_fibrinogen-in-platelet-poor-plasma-by-heat-denaturation"/>
             <ItemData ItemOID="fibrinogen_loinc_2" Value="30902-1_fibrinogen-in-platelet-poor-plasma-by-heat-denaturation"/>
@@ -3172,7 +3222,8 @@
             <ItemData ItemOID="sarsco_v2_covid19_ig_g_ia_qn_code" Value="2.16.840.1.113883.6.1_94505-5"/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_g_ia_qn" Value="831.66"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ig_g_ia_qn_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ig_g_ia_qn_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="sarsco_v2_covid19_ig_g_ia_qn_comparator" Value=""/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_g_ia_qn_unit" Value="1"/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_g_ia_qn_loinc" Value="94505-5_sars-cov-2-covid-19-igg-ab-in-serum-or-plasma-by-immunoassay"/>
           </ItemGroupData>
@@ -3187,7 +3238,8 @@
             <ItemData ItemOID="sarsco_v2_covid19_ig_m_ia_qn_code" Value="2.16.840.1.113883.6.1_94506-3"/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_m_ia_qn" Value="558.33"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ig_m_ia_qn_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ig_m_ia_qn_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="sarsco_v2_covid19_ig_m_ia_qn_comparator" Value=""/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_m_ia_qn_unit" Value="1"/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_m_ia_qn_loinc" Value="94506-3_sars-cov-2-covid-19-igm-ab-in-serum-or-plasma-by-immunoassay"/>
           </ItemGroupData>
@@ -3202,7 +3254,8 @@
             <ItemData ItemOID="sarsco_v2_covid19_ig_a_ia_qn_code" Value="2.16.840.1.113883.6.1_94720-0"/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_a_ia_qn" Value="18.4"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ig_a_ia_qn_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ig_a_ia_qn_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="sarsco_v2_covid19_ig_a_ia_qn_comparator" Value=""/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_a_ia_qn_unit" Value="1"/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_a_ia_qn_loinc" Value="94720-0_sars-cov-2-covid-19-iga-ab-in-serum-or-plasma-by-immunoassay"/>
           </ItemGroupData>
@@ -3217,7 +3270,8 @@
             <ItemData ItemOID="sarsco_v2_covid19_ab_ia_qn_code" Value="2.16.840.1.113883.6.1_94769-7"/>
             <ItemData ItemOID="sarsco_v2_covid19_ab_ia_qn" Value="592.43"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ab_ia_qn_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ab_ia_qn_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="sarsco_v2_covid19_ab_ia_qn_comparator" Value=""/>
             <ItemData ItemOID="sarsco_v2_covid19_ab_ia_qn_unit" Value="1"/>
             <ItemData ItemOID="sarsco_v2_covid19_ab_ia_qn_loinc" Value="94769-7_sars-cov-2-covid-19-ab-in-serum-or-plasma-by-immunoassay"/>
           </ItemGroupData>
@@ -4613,7 +4667,8 @@
           <ItemGroupData ItemGroupOID="laborwerte.crp" ItemGroupRepeatKey="1">
             <ItemData ItemOID="crp" Value="497.08"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.crp_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.crp_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="crp_comparator" Value=""/>
             <ItemData ItemOID="crp_unit" Value="3"/>
             <ItemData ItemOID="crp_loinc_1" Value="71426-1_c-reactive-protein-in-blood-by-high-sensitivity-method"/>
             <ItemData ItemOID="crp_loinc_2" Value="76485-2_c-reactive-protein-in-serum-or-plasma"/>
@@ -4623,7 +4678,8 @@
             <ItemData ItemOID="ferritin_code" Value="2.16.840.1.113883.6.1_20567-4__2.16.840.1.113883.6.1_86914-9__2.16.840.1.113883.6.1_14723-1__2.16.840.1.113883.6.1_2276-4__2.16.840.1.113883.6.1_24373-3"/>
             <ItemData ItemOID="ferritin" Value="728.92"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.ferritin_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.ferritin_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="ferritin_comparator" Value=""/>
             <ItemData ItemOID="ferritin_unit" Value="2"/>
             <ItemData ItemOID="ferritin_loinc_1" Value="24373-3_ferritin-in-blood"/>
             <ItemData ItemOID="ferritin_loinc_2" Value="14723-1_ferritin-in-serum-or-plasma"/>
@@ -4632,7 +4688,8 @@
             <ItemData ItemOID="bilirubin_code" Value="2.16.840.1.113883.6.1_59828-4__2.16.840.1.113883.6.1_59827-6__2.16.840.1.113883.6.1_42719-5__2.16.840.1.113883.6.1_14631-6__2.16.840.1.113883.6.1_1971-1__2.16.840.1.113883.6.1_1975-2"/>
             <ItemData ItemOID="bilirubin" Value="780.51"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.bilirubin_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.bilirubin_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="bilirubin_comparator" Value=""/>
             <ItemData ItemOID="bilirubin_unit" Value="1"/>
             <ItemData ItemOID="bilirubin_loinc_1" Value="1975-2_bilirubin.total-in-serum-or-plasma"/>
             <ItemData ItemOID="bilirubin_loinc_2" Value="14631-6_bilirubin.total-in-serum-or-plasma"/>
@@ -4641,7 +4698,8 @@
             <ItemData ItemOID="ddimer_code" Value="2.16.840.1.113883.6.1_48065-7__2.16.840.1.113883.6.1_48066-5__2.16.840.1.113883.6.1_48067-3__2.16.840.1.113883.6.1_55398-2__2.16.840.1.113883.6.1_71427-9__2.16.840.1.113883.6.1_7799-0__2.16.840.1.113883.6.1_91556-1__2.16.840.1.113883.6.1_38898-3__2.16.840.1.113883.6.1_3246-6__2.16.840.1.113883.6.1_48058-2"/>
             <ItemData ItemOID="ddimer" Value="337.78"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.ddimer_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.ddimer_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="ddimer_comparator" Value=""/>
             <ItemData ItemOID="ddimer_unit" Value="5"/>
             <ItemData ItemOID="ddimer_loinc_1" Value="48065-7_fibrin-d-dimer-feu-in-platelet-poor-plasma"/>
             <ItemData ItemOID="ddimer_loinc_2" Value="48067-3_fibrin-d-dimer-feu-in-platelet-poor-plasma-by-immunoassay"/>
@@ -4654,7 +4712,8 @@
             <ItemData ItemOID="gammagt_code" Value="2.16.840.1.113883.6.1_2325-9__2.16.840.1.113883.6.1_2324-2"/>
             <ItemData ItemOID="gammagt" Value="24.31"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.gammagt_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.gammagt_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="gammagt_comparator" Value=""/>
             <ItemData ItemOID="gammagt_unit" Value="1"/>
             <ItemData ItemOID="gammagt_loinc_1" Value="2325-9_gamma-glutamyl-transferase-aspartate-aminotransferase-in-serum-or-plasma"/>
           </ItemGroupData>
@@ -4662,7 +4721,8 @@
             <ItemData ItemOID="gotast_code" Value="2.16.840.1.113883.6.1_88112-8__2.16.840.1.113883.6.1_30239-8__2.16.840.1.113883.6.1_1920-8"/>
             <ItemData ItemOID="gotast" Value="883.65"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.gotast_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.gotast_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="gotast_comparator" Value=""/>
             <ItemData ItemOID="gotast_unit" Value="1"/>
             <ItemData ItemOID="gotast_loinc_1" Value="88112-8_aspartate-aminotransferase-in-serum-or-plasma-by-no-addition-of-p-5-p"/>
           </ItemGroupData>
@@ -4670,7 +4730,8 @@
             <ItemData ItemOID="ldh_code" Value="2.16.840.1.113883.6.1_2532-0__2.16.840.1.113883.6.1_60017-1__2.16.840.1.113883.6.1_14803-1__2.16.840.1.113883.6.1_14804-9__2.16.840.1.113883.6.1_14805-6"/>
             <ItemData ItemOID="ldh" Value="192.94"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.ldh_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.ldh_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="ldh_comparator" Value=""/>
             <ItemData ItemOID="ldh_unit" Value="1"/>
             <ItemData ItemOID="ldh_loinc_1" Value="14805-6_lactate-dehydrogenase-in-serum-or-plasma-by-pyruvate-to-lactate-reaction"/>
           </ItemGroupData>
@@ -4678,7 +4739,8 @@
             <ItemData ItemOID="kardiale_troponine_code" Value="2.16.840.1.113883.6.1_49563-0__2.16.840.1.113883.6.1_89579-7__2.16.840.1.113883.6.1_67151-1__2.16.840.1.113883.6.1_6598-7__2.16.840.1.113883.6.1_6597-9__2.16.840.1.113883.6.1_48425-3__2.16.840.1.113883.6.1_42757-5__2.16.840.1.113883.6.1_10839-9"/>
             <ItemData ItemOID="kardiale_troponine" Value="536.2"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.kardiale_troponine_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.kardiale_troponine_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="kardiale_troponine_comparator" Value=""/>
             <ItemData ItemOID="kardiale_troponine_unit" Value="2"/>
             <ItemData ItemOID="kardiale_troponine_loinc_1" Value="42757-5_troponin-i.cardiac-in-blood"/>
             <ItemData ItemOID="kardiale_troponine_loinc_2" Value="49563-0_troponin-i.cardiac-in-serum-or-plasma-by-detection-limit-leq-0.01-ng-ml"/>
@@ -4688,7 +4750,8 @@
             <ItemData ItemOID="hamoglobin_code" Value="2.16.840.1.113883.6.1_76769-9__2.16.840.1.113883.6.1_718-7__2.16.840.1.113883.6.1_20509-6__2.16.840.1.113883.6.1_55782-7__2.16.840.1.113883.6.1_75928-2__2.16.840.1.113883.6.1_14775-1__2.16.840.1.113883.6.1_30313-1__2.16.840.1.113883.6.1_30350-3__2.16.840.1.113883.6.1_30351-1__2.16.840.1.113883.6.1_30352-9__2.16.840.1.113883.6.1_76768-1__2.16.840.1.113883.6.1_59260-0"/>
             <ItemData ItemOID="hamoglobin" Value="916.72"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.hamoglobin_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.hamoglobin_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="hamoglobin_comparator" Value=""/>
             <ItemData ItemOID="hamoglobin_unit" Value="1"/>
             <ItemData ItemOID="hamoglobin_loinc_1" Value="75928-2_hemoglobin-in-arterial-blood"/>
             <ItemData ItemOID="hamoglobin_loinc_2" Value="76769-9_hemoglobin-in-venous-blood-by-oximetry"/>
@@ -4698,7 +4761,8 @@
             <ItemData ItemOID="kreatinin_code" Value="2.16.840.1.113883.6.1_14682-9__2.16.840.1.113883.6.1_2160-0__2.16.840.1.113883.6.1_21232-4__2.16.840.1.113883.6.1_25386-4__2.16.840.1.113883.6.1_12190-5__2.16.840.1.113883.6.1_59826-8__2.16.840.1.113883.6.1_38483-4"/>
             <ItemData ItemOID="kreatinin" Value="544.28"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.kreatinin_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.kreatinin_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="kreatinin_comparator" Value=""/>
             <ItemData ItemOID="kreatinin_unit" Value="1"/>
             <ItemData ItemOID="kreatinin_loinc_1" Value="25386-4_creatinine-in-body-fluid"/>
             <ItemData ItemOID="kreatinin_loinc_2" Value="21232-4_creatinine-in-arterial-blood"/>
@@ -4707,7 +4771,8 @@
             <ItemData ItemOID="laktat_code" Value="2.16.840.1.113883.6.1_14118-4__2.16.840.1.113883.6.1_30242-2__2.16.840.1.113883.6.1_2524-7__2.16.840.1.113883.6.1_2519-7__2.16.840.1.113883.6.1_2518-9__2.16.840.1.113883.6.1_19240-1__2.16.840.1.113883.6.1_19239-3__2.16.840.1.113883.6.1_2520-5__2.16.840.1.113883.6.1_32693-4__2.16.840.1.113883.6.1_59032-3__2.16.840.1.113883.6.1_27941-4"/>
             <ItemData ItemOID="laktat" Value="733.58"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.laktat_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.laktat_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="laktat_comparator" Value=""/>
             <ItemData ItemOID="laktat_unit" Value="2"/>
             <ItemData ItemOID="laktat_loinc_1" Value="2524-7_lactate-in-serum-or-plasma"/>
             <ItemData ItemOID="laktat_loinc_2" Value="27941-4_lactate-in-cerebral-spinal-fluid"/>
@@ -4716,7 +4781,8 @@
             <ItemData ItemOID="leukozyten_absolut_code" Value="2.16.840.1.113883.6.1_804-5__2.16.840.1.113883.6.1_6690-2__2.16.840.1.113883.6.1_49498-9__2.16.840.1.113883.6.1_26464-8"/>
             <ItemData ItemOID="leukozyten_absolut" Value="693.38"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.leukozyten_absolut_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.leukozyten_absolut_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="leukozyten_absolut_comparator" Value=""/>
             <ItemData ItemOID="leukozyten_absolut_unit" Value="1"/>
             <ItemData ItemOID="leukozyten_absolut_loinc_1" Value="804-5_leukocytes-in-blood-by-manual-count"/>
           </ItemGroupData>
@@ -4724,7 +4790,8 @@
             <ItemData ItemOID="lymphozyten_absolut_code" Value="2.16.840.1.113883.6.1_732-8__2.16.840.1.113883.6.1_731-0__2.16.840.1.113883.6.1_30364-4__2.16.840.1.113883.6.1_26474-7"/>
             <ItemData ItemOID="lymphozyten_absolut" Value="477.06"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.lymphozyten_absolut_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.lymphozyten_absolut_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="lymphozyten_absolut_comparator" Value=""/>
             <ItemData ItemOID="lymphozyten_absolut_unit" Value="1"/>
             <ItemData ItemOID="lymphozyten_absolut_loinc_1" Value="731-0_lymphocytes-in-blood-by-automated-count"/>
           </ItemGroupData>
@@ -4732,7 +4799,8 @@
             <ItemData ItemOID="neutrophile_absolut_code" Value="2.16.840.1.113883.6.1_753-4__2.16.840.1.113883.6.1_751-8__2.16.840.1.113883.6.1_26499-4"/>
             <ItemData ItemOID="neutrophile_absolut" Value="277.37"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.neutrophile_absolut_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.neutrophile_absolut_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="neutrophile_absolut_comparator" Value=""/>
             <ItemData ItemOID="neutrophile_absolut_unit" Value="1"/>
             <ItemData ItemOID="neutrophile_absolut_loinc_1" Value="26499-4_neutrophils-in-blood"/>
           </ItemGroupData>
@@ -4740,7 +4808,8 @@
             <ItemData ItemOID="ptt_code" Value="2.16.840.1.113883.6.1_16631-4__2.16.840.1.113883.6.1_43734-3__2.16.840.1.113883.6.1_14979-9__2.16.840.1.113883.6.1_3173-2"/>
             <ItemData ItemOID="ptt" Value="513.92"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.ptt_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.ptt_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="ptt_comparator" Value=""/>
             <ItemData ItemOID="ptt_unit" Value="1"/>
             <ItemData ItemOID="ptt_loinc_1" Value="16631-4_aptt-in-blood-by-coagulation-11-saline"/>
           </ItemGroupData>
@@ -4748,7 +4817,8 @@
             <ItemData ItemOID="thrombozyten_absolut_code" Value="2.16.840.1.113883.6.1_74775-8__2.16.840.1.113883.6.1_13056-7__2.16.840.1.113883.6.1_26516-5__2.16.840.1.113883.6.1_74464-9__2.16.840.1.113883.6.1_778-1__2.16.840.1.113883.6.1_49497-1__2.16.840.1.113883.6.1_777-3__2.16.840.1.113883.6.1_26515-7"/>
             <ItemData ItemOID="thrombozyten_absolut" Value="567.16"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.thrombozyten_absolut_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.thrombozyten_absolut_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="thrombozyten_absolut_comparator" Value=""/>
             <ItemData ItemOID="thrombozyten_absolut_unit" Value="1"/>
             <ItemData ItemOID="thrombozyten_absolut_loinc_1" Value="26515-7_platelets-in-blood"/>
           </ItemGroupData>
@@ -4756,7 +4826,8 @@
             <ItemData ItemOID="inr_code" Value="2.16.840.1.113883.6.1_6301-6__2.16.840.1.113883.6.1_46418-0__2.16.840.1.113883.6.1_34714-6"/>
             <ItemData ItemOID="inr" Value="976.22"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.inr_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.inr_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="inr_comparator" Value=""/>
             <ItemData ItemOID="inr_unit" Value="1"/>
             <ItemData ItemOID="inr_loinc_1" Value="46418-0_inr-in-capillary-blood-by-coagulation-assay"/>
           </ItemGroupData>
@@ -4764,7 +4835,8 @@
             <ItemData ItemOID="serumalbumin_code" Value="2.16.840.1.113883.6.1_76631-1__2.16.840.1.113883.6.1_62235-7__2.16.840.1.113883.6.1_62234-0__2.16.840.1.113883.6.1_61152-5__2.16.840.1.113883.6.1_61151-7__2.16.840.1.113883.6.1_2862-1__2.16.840.1.113883.6.1_1751-7__2.16.840.1.113883.6.1_54347-0"/>
             <ItemData ItemOID="serumalbumin" Value="798.82"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.serumalbumin_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.serumalbumin_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="serumalbumin_comparator" Value=""/>
             <ItemData ItemOID="serumalbumin_unit" Value="2"/>
             <ItemData ItemOID="serumalbumin_loinc_1" Value="61152-5_albumin-in-serum-or-plasma-by-bromocresol-purple-bcp-dye-binding-method"/>
             <ItemData ItemOID="serumalbumin_loinc_2" Value="54347-0_albumin-in-serum-or-plasma"/>
@@ -4774,7 +4846,8 @@
             <ItemData ItemOID="antithrombin_iii_code" Value="2.16.840.1.113883.6.1_27812-7__2.16.840.1.113883.6.1_27811-9__2.16.840.1.113883.6.1_3176-5__2.16.840.1.113883.6.1_91120-6__2.16.840.1.113883.6.1_3174-0"/>
             <ItemData ItemOID="antithrombin_iii" Value="960.77"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.antithrombin_iii_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.antithrombin_iii_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antithrombin_iii_comparator" Value=""/>
             <ItemData ItemOID="antithrombin_iii_unit" Value="2"/>
             <ItemData ItemOID="antithrombin_iii_loinc_1" Value="27812-7_antithrombin-ag-actual-normal-in-platelet-poor-plasma-by-immunoassay"/>
             <ItemData ItemOID="antithrombin_iii_loinc_2" Value="3174-0_antithrombin-in-platelet-poor-plasma-by-chromogenic-method"/>
@@ -4783,7 +4856,8 @@
             <ItemData ItemOID="pct_procalcitonin_code" Value="2.16.840.1.113883.6.1_75241-0__2.16.840.1.113883.6.1_33959-8"/>
             <ItemData ItemOID="pct_procalcitonin" Value="963.43"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.pct_procalcitonin_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.pct_procalcitonin_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="pct_procalcitonin_comparator" Value=""/>
             <ItemData ItemOID="pct_procalcitonin_unit" Value="1"/>
             <ItemData ItemOID="pct_procalcitonin_loinc_1" Value="33959-8_procalcitonin-in-serum-or-plasma"/>
           </ItemGroupData>
@@ -4791,7 +4865,8 @@
             <ItemData ItemOID="il6_interleukin_6_code" Value="2.16.840.1.113883.6.1_44322-6__2.16.840.1.113883.6.1_26881-3__2.16.840.1.113883.6.1_49919-4__2.16.840.1.113883.6.1_49732-1"/>
             <ItemData ItemOID="il6_interleukin_6" Value="684.17"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.il6_interleukin_6_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.il6_interleukin_6_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="il6_interleukin_6_comparator" Value=""/>
             <ItemData ItemOID="il6_interleukin_6_unit" Value="1"/>
             <ItemData ItemOID="il6_interleukin_6_loinc_1" Value="26881-3_interleukin-6-in-serum-or-plasma"/>
           </ItemGroupData>
@@ -4799,7 +4874,8 @@
             <ItemData ItemOID="ntprobnp_code" Value="2.16.840.1.113883.6.1_83107-3__2.16.840.1.113883.6.1_33762-6"/>
             <ItemData ItemOID="ntprobnp" Value="483.94"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.ntprobnp_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.ntprobnp_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="ntprobnp_comparator" Value=""/>
             <ItemData ItemOID="ntprobnp_unit" Value="1"/>
             <ItemData ItemOID="ntprobnp_loinc_1" Value="83107-3_natriuretic-peptide.b-prohormone-n-terminal-in-serum-or-plasma-by-immunoassay"/>
           </ItemGroupData>
@@ -4807,7 +4883,8 @@
             <ItemData ItemOID="fibrinogen_code" Value="2.16.840.1.113883.6.1_30902-1__2.16.840.1.113883.6.1_48664-7__2.16.840.1.113883.6.1_3255-7"/>
             <ItemData ItemOID="fibrinogen" Value="745.27"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.fibrinogen_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.fibrinogen_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="fibrinogen_comparator" Value=""/>
             <ItemData ItemOID="fibrinogen_unit" Value="2"/>
             <ItemData ItemOID="fibrinogen_loinc_1" Value="30902-1_fibrinogen-in-platelet-poor-plasma-by-heat-denaturation"/>
             <ItemData ItemOID="fibrinogen_loinc_2" Value="30902-1_fibrinogen-in-platelet-poor-plasma-by-heat-denaturation"/>
@@ -4830,7 +4907,8 @@
             <ItemData ItemOID="sarsco_v2_covid19_ig_g_ia_qn_code" Value="2.16.840.1.113883.6.1_94505-5"/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_g_ia_qn" Value="602.11"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ig_g_ia_qn_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ig_g_ia_qn_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="sarsco_v2_covid19_ig_g_ia_qn_comparator" Value=""/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_g_ia_qn_unit" Value="1"/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_g_ia_qn_loinc" Value="94505-5_sars-cov-2-covid-19-igg-ab-in-serum-or-plasma-by-immunoassay"/>
           </ItemGroupData>
@@ -4845,7 +4923,8 @@
             <ItemData ItemOID="sarsco_v2_covid19_ig_m_ia_qn_code" Value="2.16.840.1.113883.6.1_94506-3"/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_m_ia_qn" Value="521.37"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ig_m_ia_qn_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ig_m_ia_qn_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="sarsco_v2_covid19_ig_m_ia_qn_comparator" Value=""/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_m_ia_qn_unit" Value="1"/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_m_ia_qn_loinc" Value="94506-3_sars-cov-2-covid-19-igm-ab-in-serum-or-plasma-by-immunoassay"/>
           </ItemGroupData>
@@ -4860,7 +4939,8 @@
             <ItemData ItemOID="sarsco_v2_covid19_ig_a_ia_qn_code" Value="2.16.840.1.113883.6.1_94720-0"/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_a_ia_qn" Value="631.31"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ig_a_ia_qn_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ig_a_ia_qn_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="sarsco_v2_covid19_ig_a_ia_qn_comparator" Value=""/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_a_ia_qn_unit" Value="1"/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_a_ia_qn_loinc" Value="94720-0_sars-cov-2-covid-19-iga-ab-in-serum-or-plasma-by-immunoassay"/>
           </ItemGroupData>
@@ -4875,7 +4955,8 @@
             <ItemData ItemOID="sarsco_v2_covid19_ab_ia_qn_code" Value="2.16.840.1.113883.6.1_94769-7"/>
             <ItemData ItemOID="sarsco_v2_covid19_ab_ia_qn" Value="559.13"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ab_ia_qn_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ab_ia_qn_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="sarsco_v2_covid19_ab_ia_qn_comparator" Value=""/>
             <ItemData ItemOID="sarsco_v2_covid19_ab_ia_qn_unit" Value="1"/>
             <ItemData ItemOID="sarsco_v2_covid19_ab_ia_qn_loinc" Value="94769-7_sars-cov-2-covid-19-ab-in-serum-or-plasma-by-immunoassay"/>
           </ItemGroupData>
@@ -6271,7 +6352,8 @@
           <ItemGroupData ItemGroupOID="laborwerte.crp" ItemGroupRepeatKey="1">
             <ItemData ItemOID="crp" Value="91.48"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.crp_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.crp_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="crp_comparator" Value=""/>
             <ItemData ItemOID="crp_unit" Value="2"/>
             <ItemData ItemOID="crp_loinc_1" Value="30522-7_c-reactive-protein-in-serum-or-plasma-by-high-sensitivity-method"/>
             <ItemData ItemOID="crp_loinc_2" Value="76485-2_c-reactive-protein-in-serum-or-plasma"/>
@@ -6281,7 +6363,8 @@
             <ItemData ItemOID="ferritin_code" Value="2.16.840.1.113883.6.1_20567-4__2.16.840.1.113883.6.1_86914-9__2.16.840.1.113883.6.1_14723-1__2.16.840.1.113883.6.1_2276-4__2.16.840.1.113883.6.1_24373-3"/>
             <ItemData ItemOID="ferritin" Value="938.63"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.ferritin_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.ferritin_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="ferritin_comparator" Value=""/>
             <ItemData ItemOID="ferritin_unit" Value="2"/>
             <ItemData ItemOID="ferritin_loinc_1" Value="24373-3_ferritin-in-blood"/>
             <ItemData ItemOID="ferritin_loinc_2" Value="14723-1_ferritin-in-serum-or-plasma"/>
@@ -6290,7 +6373,8 @@
             <ItemData ItemOID="bilirubin_code" Value="2.16.840.1.113883.6.1_59828-4__2.16.840.1.113883.6.1_59827-6__2.16.840.1.113883.6.1_42719-5__2.16.840.1.113883.6.1_14631-6__2.16.840.1.113883.6.1_1971-1__2.16.840.1.113883.6.1_1975-2"/>
             <ItemData ItemOID="bilirubin" Value="81.97"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.bilirubin_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.bilirubin_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="bilirubin_comparator" Value=""/>
             <ItemData ItemOID="bilirubin_unit" Value="1"/>
             <ItemData ItemOID="bilirubin_loinc_1" Value="1975-2_bilirubin.total-in-serum-or-plasma"/>
             <ItemData ItemOID="bilirubin_loinc_2" Value="14631-6_bilirubin.total-in-serum-or-plasma"/>
@@ -6299,7 +6383,8 @@
             <ItemData ItemOID="ddimer_code" Value="2.16.840.1.113883.6.1_48065-7__2.16.840.1.113883.6.1_48066-5__2.16.840.1.113883.6.1_48067-3__2.16.840.1.113883.6.1_55398-2__2.16.840.1.113883.6.1_71427-9__2.16.840.1.113883.6.1_7799-0__2.16.840.1.113883.6.1_91556-1__2.16.840.1.113883.6.1_38898-3__2.16.840.1.113883.6.1_3246-6__2.16.840.1.113883.6.1_48058-2"/>
             <ItemData ItemOID="ddimer" Value="982.11"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.ddimer_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.ddimer_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="ddimer_comparator" Value=""/>
             <ItemData ItemOID="ddimer_unit" Value="5"/>
             <ItemData ItemOID="ddimer_loinc_1" Value="48065-7_fibrin-d-dimer-feu-in-platelet-poor-plasma"/>
             <ItemData ItemOID="ddimer_loinc_2" Value="71427-9_fibrin-d-dimer-feu-in-blood-by-immunoassay"/>
@@ -6312,7 +6397,8 @@
             <ItemData ItemOID="gammagt_code" Value="2.16.840.1.113883.6.1_2325-9__2.16.840.1.113883.6.1_2324-2"/>
             <ItemData ItemOID="gammagt" Value="938.74"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.gammagt_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.gammagt_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="gammagt_comparator" Value=""/>
             <ItemData ItemOID="gammagt_unit" Value="1"/>
             <ItemData ItemOID="gammagt_loinc_1" Value="2325-9_gamma-glutamyl-transferase-aspartate-aminotransferase-in-serum-or-plasma"/>
           </ItemGroupData>
@@ -6320,7 +6406,8 @@
             <ItemData ItemOID="gotast_code" Value="2.16.840.1.113883.6.1_88112-8__2.16.840.1.113883.6.1_30239-8__2.16.840.1.113883.6.1_1920-8"/>
             <ItemData ItemOID="gotast" Value="399.16"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.gotast_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.gotast_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="gotast_comparator" Value=""/>
             <ItemData ItemOID="gotast_unit" Value="1"/>
             <ItemData ItemOID="gotast_loinc_1" Value="88112-8_aspartate-aminotransferase-in-serum-or-plasma-by-no-addition-of-p-5-p"/>
           </ItemGroupData>
@@ -6328,7 +6415,8 @@
             <ItemData ItemOID="ldh_code" Value="2.16.840.1.113883.6.1_2532-0__2.16.840.1.113883.6.1_60017-1__2.16.840.1.113883.6.1_14803-1__2.16.840.1.113883.6.1_14804-9__2.16.840.1.113883.6.1_14805-6"/>
             <ItemData ItemOID="ldh" Value="44.29"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.ldh_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.ldh_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="ldh_comparator" Value=""/>
             <ItemData ItemOID="ldh_unit" Value="1"/>
             <ItemData ItemOID="ldh_loinc_1" Value="14804-9_lactate-dehydrogenase-in-serum-or-plasma-by-lactate-to-pyruvate-reaction"/>
           </ItemGroupData>
@@ -6336,7 +6424,8 @@
             <ItemData ItemOID="kardiale_troponine_code" Value="2.16.840.1.113883.6.1_49563-0__2.16.840.1.113883.6.1_89579-7__2.16.840.1.113883.6.1_67151-1__2.16.840.1.113883.6.1_6598-7__2.16.840.1.113883.6.1_6597-9__2.16.840.1.113883.6.1_48425-3__2.16.840.1.113883.6.1_42757-5__2.16.840.1.113883.6.1_10839-9"/>
             <ItemData ItemOID="kardiale_troponine" Value="956.01"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.kardiale_troponine_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.kardiale_troponine_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="kardiale_troponine_comparator" Value=""/>
             <ItemData ItemOID="kardiale_troponine_unit" Value="1"/>
             <ItemData ItemOID="kardiale_troponine_loinc_1" Value="6598-7_troponin-t.cardiac-in-serum-or-plasma"/>
             <ItemData ItemOID="kardiale_troponine_loinc_2" Value="6598-7_troponin-t.cardiac-in-serum-or-plasma"/>
@@ -6346,7 +6435,8 @@
             <ItemData ItemOID="hamoglobin_code" Value="2.16.840.1.113883.6.1_76769-9__2.16.840.1.113883.6.1_718-7__2.16.840.1.113883.6.1_20509-6__2.16.840.1.113883.6.1_55782-7__2.16.840.1.113883.6.1_75928-2__2.16.840.1.113883.6.1_14775-1__2.16.840.1.113883.6.1_30313-1__2.16.840.1.113883.6.1_30350-3__2.16.840.1.113883.6.1_30351-1__2.16.840.1.113883.6.1_30352-9__2.16.840.1.113883.6.1_76768-1__2.16.840.1.113883.6.1_59260-0"/>
             <ItemData ItemOID="hamoglobin" Value="861.14"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.hamoglobin_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.hamoglobin_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="hamoglobin_comparator" Value=""/>
             <ItemData ItemOID="hamoglobin_unit" Value="1"/>
             <ItemData ItemOID="hamoglobin_loinc_1" Value="75928-2_hemoglobin-in-arterial-blood"/>
             <ItemData ItemOID="hamoglobin_loinc_2" Value="76768-1_hemoglobin-in-mixed-venous-blood-by-oximetry"/>
@@ -6356,7 +6446,8 @@
             <ItemData ItemOID="kreatinin_code" Value="2.16.840.1.113883.6.1_14682-9__2.16.840.1.113883.6.1_2160-0__2.16.840.1.113883.6.1_21232-4__2.16.840.1.113883.6.1_25386-4__2.16.840.1.113883.6.1_12190-5__2.16.840.1.113883.6.1_59826-8__2.16.840.1.113883.6.1_38483-4"/>
             <ItemData ItemOID="kreatinin" Value="558.76"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.kreatinin_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.kreatinin_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="kreatinin_comparator" Value=""/>
             <ItemData ItemOID="kreatinin_unit" Value="1"/>
             <ItemData ItemOID="kreatinin_loinc_1" Value="25386-4_creatinine-in-body-fluid"/>
             <ItemData ItemOID="kreatinin_loinc_2" Value="38483-4_creatinine-in-blood"/>
@@ -6365,7 +6456,8 @@
             <ItemData ItemOID="laktat_code" Value="2.16.840.1.113883.6.1_14118-4__2.16.840.1.113883.6.1_30242-2__2.16.840.1.113883.6.1_2524-7__2.16.840.1.113883.6.1_2519-7__2.16.840.1.113883.6.1_2518-9__2.16.840.1.113883.6.1_19240-1__2.16.840.1.113883.6.1_19239-3__2.16.840.1.113883.6.1_2520-5__2.16.840.1.113883.6.1_32693-4__2.16.840.1.113883.6.1_59032-3__2.16.840.1.113883.6.1_27941-4"/>
             <ItemData ItemOID="laktat" Value="306.69"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.laktat_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.laktat_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="laktat_comparator" Value=""/>
             <ItemData ItemOID="laktat_unit" Value="2"/>
             <ItemData ItemOID="laktat_loinc_1" Value="2520-5_lactate-in-cerebral-spinal-fluid"/>
             <ItemData ItemOID="laktat_loinc_2" Value="27941-4_lactate-in-cerebral-spinal-fluid"/>
@@ -6374,7 +6466,8 @@
             <ItemData ItemOID="leukozyten_absolut_code" Value="2.16.840.1.113883.6.1_804-5__2.16.840.1.113883.6.1_6690-2__2.16.840.1.113883.6.1_49498-9__2.16.840.1.113883.6.1_26464-8"/>
             <ItemData ItemOID="leukozyten_absolut" Value="121.48"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.leukozyten_absolut_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.leukozyten_absolut_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="leukozyten_absolut_comparator" Value=""/>
             <ItemData ItemOID="leukozyten_absolut_unit" Value="1"/>
             <ItemData ItemOID="leukozyten_absolut_loinc_1" Value="49498-9_leukocytes-in-blood-by-estimate"/>
           </ItemGroupData>
@@ -6382,7 +6475,8 @@
             <ItemData ItemOID="lymphozyten_absolut_code" Value="2.16.840.1.113883.6.1_732-8__2.16.840.1.113883.6.1_731-0__2.16.840.1.113883.6.1_30364-4__2.16.840.1.113883.6.1_26474-7"/>
             <ItemData ItemOID="lymphozyten_absolut" Value="160.68"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.lymphozyten_absolut_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.lymphozyten_absolut_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="lymphozyten_absolut_comparator" Value=""/>
             <ItemData ItemOID="lymphozyten_absolut_unit" Value="1"/>
             <ItemData ItemOID="lymphozyten_absolut_loinc_1" Value="30364-4_lymphocytes-in-blood-by-flow-cytometry-fc"/>
           </ItemGroupData>
@@ -6390,7 +6484,8 @@
             <ItemData ItemOID="neutrophile_absolut_code" Value="2.16.840.1.113883.6.1_753-4__2.16.840.1.113883.6.1_751-8__2.16.840.1.113883.6.1_26499-4"/>
             <ItemData ItemOID="neutrophile_absolut" Value="496.92"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.neutrophile_absolut_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.neutrophile_absolut_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="neutrophile_absolut_comparator" Value=""/>
             <ItemData ItemOID="neutrophile_absolut_unit" Value="1"/>
             <ItemData ItemOID="neutrophile_absolut_loinc_1" Value="751-8_neutrophils-in-blood-by-automated-count"/>
           </ItemGroupData>
@@ -6398,7 +6493,8 @@
             <ItemData ItemOID="ptt_code" Value="2.16.840.1.113883.6.1_16631-4__2.16.840.1.113883.6.1_43734-3__2.16.840.1.113883.6.1_14979-9__2.16.840.1.113883.6.1_3173-2"/>
             <ItemData ItemOID="ptt" Value="420.37"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.ptt_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.ptt_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="ptt_comparator" Value=""/>
             <ItemData ItemOID="ptt_unit" Value="1"/>
             <ItemData ItemOID="ptt_loinc_1" Value="16631-4_aptt-in-blood-by-coagulation-11-saline"/>
           </ItemGroupData>
@@ -6406,7 +6502,8 @@
             <ItemData ItemOID="thrombozyten_absolut_code" Value="2.16.840.1.113883.6.1_74775-8__2.16.840.1.113883.6.1_13056-7__2.16.840.1.113883.6.1_26516-5__2.16.840.1.113883.6.1_74464-9__2.16.840.1.113883.6.1_778-1__2.16.840.1.113883.6.1_49497-1__2.16.840.1.113883.6.1_777-3__2.16.840.1.113883.6.1_26515-7"/>
             <ItemData ItemOID="thrombozyten_absolut" Value="148.59"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.thrombozyten_absolut_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.thrombozyten_absolut_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="thrombozyten_absolut_comparator" Value=""/>
             <ItemData ItemOID="thrombozyten_absolut_unit" Value="1"/>
             <ItemData ItemOID="thrombozyten_absolut_loinc_1" Value="74775-8_platelets-in-platelet-rich-plasma-by-automated-count"/>
           </ItemGroupData>
@@ -6414,7 +6511,8 @@
             <ItemData ItemOID="inr_code" Value="2.16.840.1.113883.6.1_6301-6__2.16.840.1.113883.6.1_46418-0__2.16.840.1.113883.6.1_34714-6"/>
             <ItemData ItemOID="inr" Value="652.14"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.inr_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.inr_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="inr_comparator" Value=""/>
             <ItemData ItemOID="inr_unit" Value="1"/>
             <ItemData ItemOID="inr_loinc_1" Value="34714-6_inr-in-blood-by-coagulation-assay"/>
           </ItemGroupData>
@@ -6422,7 +6520,8 @@
             <ItemData ItemOID="serumalbumin_code" Value="2.16.840.1.113883.6.1_76631-1__2.16.840.1.113883.6.1_62235-7__2.16.840.1.113883.6.1_62234-0__2.16.840.1.113883.6.1_61152-5__2.16.840.1.113883.6.1_61151-7__2.16.840.1.113883.6.1_2862-1__2.16.840.1.113883.6.1_1751-7__2.16.840.1.113883.6.1_54347-0"/>
             <ItemData ItemOID="serumalbumin" Value="59.28"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.serumalbumin_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.serumalbumin_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="serumalbumin_comparator" Value=""/>
             <ItemData ItemOID="serumalbumin_unit" Value="2"/>
             <ItemData ItemOID="serumalbumin_loinc_1" Value="2862-1_albumin-in-serum-or-plasma-by-electrophoresis"/>
             <ItemData ItemOID="serumalbumin_loinc_2" Value="62235-7_albumin-in-serum-or-plasma-by-bromocresol-green-bcg-dye-binding-method"/>
@@ -6432,7 +6531,8 @@
             <ItemData ItemOID="antithrombin_iii_code" Value="2.16.840.1.113883.6.1_27812-7__2.16.840.1.113883.6.1_27811-9__2.16.840.1.113883.6.1_3176-5__2.16.840.1.113883.6.1_91120-6__2.16.840.1.113883.6.1_3174-0"/>
             <ItemData ItemOID="antithrombin_iii" Value="69.95"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.antithrombin_iii_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.antithrombin_iii_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antithrombin_iii_comparator" Value=""/>
             <ItemData ItemOID="antithrombin_iii_unit" Value="2"/>
             <ItemData ItemOID="antithrombin_iii_loinc_1" Value="27811-9_antithrombin-actual-normal-in-platelet-poor-plasma-by-chromogenic-method"/>
             <ItemData ItemOID="antithrombin_iii_loinc_2" Value="3174-0_antithrombin-in-platelet-poor-plasma-by-chromogenic-method"/>
@@ -6441,7 +6541,8 @@
             <ItemData ItemOID="pct_procalcitonin_code" Value="2.16.840.1.113883.6.1_75241-0__2.16.840.1.113883.6.1_33959-8"/>
             <ItemData ItemOID="pct_procalcitonin" Value="31.36"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.pct_procalcitonin_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.pct_procalcitonin_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="pct_procalcitonin_comparator" Value=""/>
             <ItemData ItemOID="pct_procalcitonin_unit" Value="1"/>
             <ItemData ItemOID="pct_procalcitonin_loinc_1" Value="33959-8_procalcitonin-in-serum-or-plasma"/>
           </ItemGroupData>
@@ -6449,7 +6550,8 @@
             <ItemData ItemOID="il6_interleukin_6_code" Value="2.16.840.1.113883.6.1_44322-6__2.16.840.1.113883.6.1_26881-3__2.16.840.1.113883.6.1_49919-4__2.16.840.1.113883.6.1_49732-1"/>
             <ItemData ItemOID="il6_interleukin_6" Value="528.88"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.il6_interleukin_6_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.il6_interleukin_6_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="il6_interleukin_6_comparator" Value=""/>
             <ItemData ItemOID="il6_interleukin_6_unit" Value="1"/>
             <ItemData ItemOID="il6_interleukin_6_loinc_1" Value="49919-4_interleukin-6-in-cerebral-spinal-fluid"/>
           </ItemGroupData>
@@ -6457,7 +6559,8 @@
             <ItemData ItemOID="ntprobnp_code" Value="2.16.840.1.113883.6.1_83107-3__2.16.840.1.113883.6.1_33762-6"/>
             <ItemData ItemOID="ntprobnp" Value="323.17"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.ntprobnp_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.ntprobnp_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="ntprobnp_comparator" Value=""/>
             <ItemData ItemOID="ntprobnp_unit" Value="1"/>
             <ItemData ItemOID="ntprobnp_loinc_1" Value="83107-3_natriuretic-peptide.b-prohormone-n-terminal-in-serum-or-plasma-by-immunoassay"/>
           </ItemGroupData>
@@ -6465,7 +6568,8 @@
             <ItemData ItemOID="fibrinogen_code" Value="2.16.840.1.113883.6.1_30902-1__2.16.840.1.113883.6.1_48664-7__2.16.840.1.113883.6.1_3255-7"/>
             <ItemData ItemOID="fibrinogen" Value="402.81"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.fibrinogen_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.fibrinogen_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="fibrinogen_comparator" Value=""/>
             <ItemData ItemOID="fibrinogen_unit" Value="2"/>
             <ItemData ItemOID="fibrinogen_loinc_1" Value="3255-7_fibrinogen-in-platelet-poor-plasma-by-coagulation-assay"/>
             <ItemData ItemOID="fibrinogen_loinc_2" Value="3255-7_fibrinogen-in-platelet-poor-plasma-by-coagulation-assay"/>
@@ -6488,7 +6592,8 @@
             <ItemData ItemOID="sarsco_v2_covid19_ig_g_ia_qn_code" Value="2.16.840.1.113883.6.1_94505-5"/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_g_ia_qn" Value="105.87"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ig_g_ia_qn_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ig_g_ia_qn_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="sarsco_v2_covid19_ig_g_ia_qn_comparator" Value=""/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_g_ia_qn_unit" Value="1"/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_g_ia_qn_loinc" Value="94505-5_sars-cov-2-covid-19-igg-ab-in-serum-or-plasma-by-immunoassay"/>
           </ItemGroupData>
@@ -6503,7 +6608,8 @@
             <ItemData ItemOID="sarsco_v2_covid19_ig_m_ia_qn_code" Value="2.16.840.1.113883.6.1_94506-3"/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_m_ia_qn" Value="517.24"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ig_m_ia_qn_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ig_m_ia_qn_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="sarsco_v2_covid19_ig_m_ia_qn_comparator" Value=""/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_m_ia_qn_unit" Value="1"/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_m_ia_qn_loinc" Value="94506-3_sars-cov-2-covid-19-igm-ab-in-serum-or-plasma-by-immunoassay"/>
           </ItemGroupData>
@@ -6518,7 +6624,8 @@
             <ItemData ItemOID="sarsco_v2_covid19_ig_a_ia_qn_code" Value="2.16.840.1.113883.6.1_94720-0"/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_a_ia_qn" Value="796.06"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ig_a_ia_qn_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ig_a_ia_qn_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="sarsco_v2_covid19_ig_a_ia_qn_comparator" Value=""/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_a_ia_qn_unit" Value="1"/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_a_ia_qn_loinc" Value="94720-0_sars-cov-2-covid-19-iga-ab-in-serum-or-plasma-by-immunoassay"/>
           </ItemGroupData>
@@ -6533,7 +6640,8 @@
             <ItemData ItemOID="sarsco_v2_covid19_ab_ia_qn_code" Value="2.16.840.1.113883.6.1_94769-7"/>
             <ItemData ItemOID="sarsco_v2_covid19_ab_ia_qn" Value="438.78"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ab_ia_qn_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ab_ia_qn_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="sarsco_v2_covid19_ab_ia_qn_comparator" Value=""/>
             <ItemData ItemOID="sarsco_v2_covid19_ab_ia_qn_unit" Value="1"/>
             <ItemData ItemOID="sarsco_v2_covid19_ab_ia_qn_loinc" Value="94769-7_sars-cov-2-covid-19-ab-in-serum-or-plasma-by-immunoassay"/>
           </ItemGroupData>
@@ -7929,7 +8037,8 @@
           <ItemGroupData ItemGroupOID="laborwerte.crp" ItemGroupRepeatKey="1">
             <ItemData ItemOID="crp" Value="435.94"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.crp_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.crp_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="crp_comparator" Value=""/>
             <ItemData ItemOID="crp_unit" Value="3"/>
             <ItemData ItemOID="crp_loinc_1" Value="71426-1_c-reactive-protein-in-blood-by-high-sensitivity-method"/>
             <ItemData ItemOID="crp_loinc_2" Value="76485-2_c-reactive-protein-in-serum-or-plasma"/>
@@ -7939,7 +8048,8 @@
             <ItemData ItemOID="ferritin_code" Value="2.16.840.1.113883.6.1_20567-4__2.16.840.1.113883.6.1_86914-9__2.16.840.1.113883.6.1_14723-1__2.16.840.1.113883.6.1_2276-4__2.16.840.1.113883.6.1_24373-3"/>
             <ItemData ItemOID="ferritin" Value="497.7"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.ferritin_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.ferritin_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="ferritin_comparator" Value=""/>
             <ItemData ItemOID="ferritin_unit" Value="2"/>
             <ItemData ItemOID="ferritin_loinc_1" Value="24373-3_ferritin-in-blood"/>
             <ItemData ItemOID="ferritin_loinc_2" Value="14723-1_ferritin-in-serum-or-plasma"/>
@@ -7948,7 +8058,8 @@
             <ItemData ItemOID="bilirubin_code" Value="2.16.840.1.113883.6.1_59828-4__2.16.840.1.113883.6.1_59827-6__2.16.840.1.113883.6.1_42719-5__2.16.840.1.113883.6.1_14631-6__2.16.840.1.113883.6.1_1971-1__2.16.840.1.113883.6.1_1975-2"/>
             <ItemData ItemOID="bilirubin" Value="835.59"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.bilirubin_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.bilirubin_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="bilirubin_comparator" Value=""/>
             <ItemData ItemOID="bilirubin_unit" Value="1"/>
             <ItemData ItemOID="bilirubin_loinc_1" Value="42719-5_bilirubin.total-in-blood"/>
             <ItemData ItemOID="bilirubin_loinc_2" Value="14631-6_bilirubin.total-in-serum-or-plasma"/>
@@ -7957,7 +8068,8 @@
             <ItemData ItemOID="ddimer_code" Value="2.16.840.1.113883.6.1_48065-7__2.16.840.1.113883.6.1_48066-5__2.16.840.1.113883.6.1_48067-3__2.16.840.1.113883.6.1_55398-2__2.16.840.1.113883.6.1_71427-9__2.16.840.1.113883.6.1_7799-0__2.16.840.1.113883.6.1_91556-1__2.16.840.1.113883.6.1_38898-3__2.16.840.1.113883.6.1_3246-6__2.16.840.1.113883.6.1_48058-2"/>
             <ItemData ItemOID="ddimer" Value="844.7"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.ddimer_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.ddimer_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="ddimer_comparator" Value=""/>
             <ItemData ItemOID="ddimer_unit" Value="3"/>
             <ItemData ItemOID="ddimer_loinc_1" Value="48065-7_fibrin-d-dimer-feu-in-platelet-poor-plasma"/>
             <ItemData ItemOID="ddimer_loinc_2" Value="48058-2_fibrin-d-dimer-ddu-in-platelet-poor-plasma-by-immunoassay"/>
@@ -7970,7 +8082,8 @@
             <ItemData ItemOID="gammagt_code" Value="2.16.840.1.113883.6.1_2325-9__2.16.840.1.113883.6.1_2324-2"/>
             <ItemData ItemOID="gammagt" Value="355.33"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.gammagt_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.gammagt_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="gammagt_comparator" Value=""/>
             <ItemData ItemOID="gammagt_unit" Value="1"/>
             <ItemData ItemOID="gammagt_loinc_1" Value="2325-9_gamma-glutamyl-transferase-aspartate-aminotransferase-in-serum-or-plasma"/>
           </ItemGroupData>
@@ -7978,7 +8091,8 @@
             <ItemData ItemOID="gotast_code" Value="2.16.840.1.113883.6.1_88112-8__2.16.840.1.113883.6.1_30239-8__2.16.840.1.113883.6.1_1920-8"/>
             <ItemData ItemOID="gotast" Value="549.66"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.gotast_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.gotast_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="gotast_comparator" Value=""/>
             <ItemData ItemOID="gotast_unit" Value="1"/>
             <ItemData ItemOID="gotast_loinc_1" Value="30239-8_aspartate-aminotransferase-in-serum-or-plasma-by-with-p-5-p"/>
           </ItemGroupData>
@@ -7986,7 +8100,8 @@
             <ItemData ItemOID="ldh_code" Value="2.16.840.1.113883.6.1_2532-0__2.16.840.1.113883.6.1_60017-1__2.16.840.1.113883.6.1_14803-1__2.16.840.1.113883.6.1_14804-9__2.16.840.1.113883.6.1_14805-6"/>
             <ItemData ItemOID="ldh" Value="181.93"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.ldh_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.ldh_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="ldh_comparator" Value=""/>
             <ItemData ItemOID="ldh_unit" Value="1"/>
             <ItemData ItemOID="ldh_loinc_1" Value="14804-9_lactate-dehydrogenase-in-serum-or-plasma-by-lactate-to-pyruvate-reaction"/>
           </ItemGroupData>
@@ -7994,7 +8109,8 @@
             <ItemData ItemOID="kardiale_troponine_code" Value="2.16.840.1.113883.6.1_49563-0__2.16.840.1.113883.6.1_89579-7__2.16.840.1.113883.6.1_67151-1__2.16.840.1.113883.6.1_6598-7__2.16.840.1.113883.6.1_6597-9__2.16.840.1.113883.6.1_48425-3__2.16.840.1.113883.6.1_42757-5__2.16.840.1.113883.6.1_10839-9"/>
             <ItemData ItemOID="kardiale_troponine" Value="905.39"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.kardiale_troponine_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.kardiale_troponine_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="kardiale_troponine_comparator" Value=""/>
             <ItemData ItemOID="kardiale_troponine_unit" Value="2"/>
             <ItemData ItemOID="kardiale_troponine_loinc_1" Value="10839-9_troponin-i.cardiac-in-serum-or-plasma"/>
             <ItemData ItemOID="kardiale_troponine_loinc_2" Value="42757-5_troponin-i.cardiac-in-blood"/>
@@ -8004,7 +8120,8 @@
             <ItemData ItemOID="hamoglobin_code" Value="2.16.840.1.113883.6.1_76769-9__2.16.840.1.113883.6.1_718-7__2.16.840.1.113883.6.1_20509-6__2.16.840.1.113883.6.1_55782-7__2.16.840.1.113883.6.1_75928-2__2.16.840.1.113883.6.1_14775-1__2.16.840.1.113883.6.1_30313-1__2.16.840.1.113883.6.1_30350-3__2.16.840.1.113883.6.1_30351-1__2.16.840.1.113883.6.1_30352-9__2.16.840.1.113883.6.1_76768-1__2.16.840.1.113883.6.1_59260-0"/>
             <ItemData ItemOID="hamoglobin" Value="534.97"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.hamoglobin_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.hamoglobin_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="hamoglobin_comparator" Value=""/>
             <ItemData ItemOID="hamoglobin_unit" Value="2"/>
             <ItemData ItemOID="hamoglobin_loinc_1" Value="75928-2_hemoglobin-in-arterial-blood"/>
             <ItemData ItemOID="hamoglobin_loinc_2" Value="76769-9_hemoglobin-in-venous-blood-by-oximetry"/>
@@ -8014,7 +8131,8 @@
             <ItemData ItemOID="kreatinin_code" Value="2.16.840.1.113883.6.1_14682-9__2.16.840.1.113883.6.1_2160-0__2.16.840.1.113883.6.1_21232-4__2.16.840.1.113883.6.1_25386-4__2.16.840.1.113883.6.1_12190-5__2.16.840.1.113883.6.1_59826-8__2.16.840.1.113883.6.1_38483-4"/>
             <ItemData ItemOID="kreatinin" Value="141.27"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.kreatinin_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.kreatinin_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="kreatinin_comparator" Value=""/>
             <ItemData ItemOID="kreatinin_unit" Value="1"/>
             <ItemData ItemOID="kreatinin_loinc_1" Value="25386-4_creatinine-in-body-fluid"/>
             <ItemData ItemOID="kreatinin_loinc_2" Value="21232-4_creatinine-in-arterial-blood"/>
@@ -8023,7 +8141,8 @@
             <ItemData ItemOID="laktat_code" Value="2.16.840.1.113883.6.1_14118-4__2.16.840.1.113883.6.1_30242-2__2.16.840.1.113883.6.1_2524-7__2.16.840.1.113883.6.1_2519-7__2.16.840.1.113883.6.1_2518-9__2.16.840.1.113883.6.1_19240-1__2.16.840.1.113883.6.1_19239-3__2.16.840.1.113883.6.1_2520-5__2.16.840.1.113883.6.1_32693-4__2.16.840.1.113883.6.1_59032-3__2.16.840.1.113883.6.1_27941-4"/>
             <ItemData ItemOID="laktat" Value="857.96"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.laktat_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.laktat_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="laktat_comparator" Value=""/>
             <ItemData ItemOID="laktat_unit" Value="2"/>
             <ItemData ItemOID="laktat_loinc_1" Value="2519-7_lactate-in-venous-blood"/>
             <ItemData ItemOID="laktat_loinc_2" Value="30242-2_lactate-in-arterial-blood"/>
@@ -8032,7 +8151,8 @@
             <ItemData ItemOID="leukozyten_absolut_code" Value="2.16.840.1.113883.6.1_804-5__2.16.840.1.113883.6.1_6690-2__2.16.840.1.113883.6.1_49498-9__2.16.840.1.113883.6.1_26464-8"/>
             <ItemData ItemOID="leukozyten_absolut" Value="299.16"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.leukozyten_absolut_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.leukozyten_absolut_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="leukozyten_absolut_comparator" Value=""/>
             <ItemData ItemOID="leukozyten_absolut_unit" Value="1"/>
             <ItemData ItemOID="leukozyten_absolut_loinc_1" Value="804-5_leukocytes-in-blood-by-manual-count"/>
           </ItemGroupData>
@@ -8040,7 +8160,8 @@
             <ItemData ItemOID="lymphozyten_absolut_code" Value="2.16.840.1.113883.6.1_732-8__2.16.840.1.113883.6.1_731-0__2.16.840.1.113883.6.1_30364-4__2.16.840.1.113883.6.1_26474-7"/>
             <ItemData ItemOID="lymphozyten_absolut" Value="760.53"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.lymphozyten_absolut_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.lymphozyten_absolut_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="lymphozyten_absolut_comparator" Value=""/>
             <ItemData ItemOID="lymphozyten_absolut_unit" Value="1"/>
             <ItemData ItemOID="lymphozyten_absolut_loinc_1" Value="30364-4_lymphocytes-in-blood-by-flow-cytometry-fc"/>
           </ItemGroupData>
@@ -8048,7 +8169,8 @@
             <ItemData ItemOID="neutrophile_absolut_code" Value="2.16.840.1.113883.6.1_753-4__2.16.840.1.113883.6.1_751-8__2.16.840.1.113883.6.1_26499-4"/>
             <ItemData ItemOID="neutrophile_absolut" Value="311.15"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.neutrophile_absolut_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.neutrophile_absolut_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="neutrophile_absolut_comparator" Value=""/>
             <ItemData ItemOID="neutrophile_absolut_unit" Value="1"/>
             <ItemData ItemOID="neutrophile_absolut_loinc_1" Value="751-8_neutrophils-in-blood-by-automated-count"/>
           </ItemGroupData>
@@ -8056,7 +8178,8 @@
             <ItemData ItemOID="ptt_code" Value="2.16.840.1.113883.6.1_16631-4__2.16.840.1.113883.6.1_43734-3__2.16.840.1.113883.6.1_14979-9__2.16.840.1.113883.6.1_3173-2"/>
             <ItemData ItemOID="ptt" Value="221.18"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.ptt_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.ptt_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="ptt_comparator" Value=""/>
             <ItemData ItemOID="ptt_unit" Value="1"/>
             <ItemData ItemOID="ptt_loinc_1" Value="16631-4_aptt-in-blood-by-coagulation-11-saline"/>
           </ItemGroupData>
@@ -8064,7 +8187,8 @@
             <ItemData ItemOID="thrombozyten_absolut_code" Value="2.16.840.1.113883.6.1_74775-8__2.16.840.1.113883.6.1_13056-7__2.16.840.1.113883.6.1_26516-5__2.16.840.1.113883.6.1_74464-9__2.16.840.1.113883.6.1_778-1__2.16.840.1.113883.6.1_49497-1__2.16.840.1.113883.6.1_777-3__2.16.840.1.113883.6.1_26515-7"/>
             <ItemData ItemOID="thrombozyten_absolut" Value="452.46"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.thrombozyten_absolut_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.thrombozyten_absolut_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="thrombozyten_absolut_comparator" Value=""/>
             <ItemData ItemOID="thrombozyten_absolut_unit" Value="1"/>
             <ItemData ItemOID="thrombozyten_absolut_loinc_1" Value="74775-8_platelets-in-platelet-rich-plasma-by-automated-count"/>
           </ItemGroupData>
@@ -8072,7 +8196,8 @@
             <ItemData ItemOID="inr_code" Value="2.16.840.1.113883.6.1_6301-6__2.16.840.1.113883.6.1_46418-0__2.16.840.1.113883.6.1_34714-6"/>
             <ItemData ItemOID="inr" Value="701.55"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.inr_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.inr_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="inr_comparator" Value=""/>
             <ItemData ItemOID="inr_unit" Value="1"/>
             <ItemData ItemOID="inr_loinc_1" Value="34714-6_inr-in-blood-by-coagulation-assay"/>
           </ItemGroupData>
@@ -8080,7 +8205,8 @@
             <ItemData ItemOID="serumalbumin_code" Value="2.16.840.1.113883.6.1_76631-1__2.16.840.1.113883.6.1_62235-7__2.16.840.1.113883.6.1_62234-0__2.16.840.1.113883.6.1_61152-5__2.16.840.1.113883.6.1_61151-7__2.16.840.1.113883.6.1_2862-1__2.16.840.1.113883.6.1_1751-7__2.16.840.1.113883.6.1_54347-0"/>
             <ItemData ItemOID="serumalbumin" Value="830.78"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.serumalbumin_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.serumalbumin_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="serumalbumin_comparator" Value=""/>
             <ItemData ItemOID="serumalbumin_unit" Value="2"/>
             <ItemData ItemOID="serumalbumin_loinc_1" Value="1751-7_albumin-in-serum-or-plasma"/>
             <ItemData ItemOID="serumalbumin_loinc_2" Value="62235-7_albumin-in-serum-or-plasma-by-bromocresol-green-bcg-dye-binding-method"/>
@@ -8090,7 +8216,8 @@
             <ItemData ItemOID="antithrombin_iii_code" Value="2.16.840.1.113883.6.1_27812-7__2.16.840.1.113883.6.1_27811-9__2.16.840.1.113883.6.1_3176-5__2.16.840.1.113883.6.1_91120-6__2.16.840.1.113883.6.1_3174-0"/>
             <ItemData ItemOID="antithrombin_iii" Value="489.66"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.antithrombin_iii_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.antithrombin_iii_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antithrombin_iii_comparator" Value=""/>
             <ItemData ItemOID="antithrombin_iii_unit" Value="2"/>
             <ItemData ItemOID="antithrombin_iii_loinc_1" Value="27811-9_antithrombin-actual-normal-in-platelet-poor-plasma-by-chromogenic-method"/>
             <ItemData ItemOID="antithrombin_iii_loinc_2" Value="3174-0_antithrombin-in-platelet-poor-plasma-by-chromogenic-method"/>
@@ -8099,7 +8226,8 @@
             <ItemData ItemOID="pct_procalcitonin_code" Value="2.16.840.1.113883.6.1_75241-0__2.16.840.1.113883.6.1_33959-8"/>
             <ItemData ItemOID="pct_procalcitonin" Value="106.74"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.pct_procalcitonin_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.pct_procalcitonin_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="pct_procalcitonin_comparator" Value=""/>
             <ItemData ItemOID="pct_procalcitonin_unit" Value="1"/>
             <ItemData ItemOID="pct_procalcitonin_loinc_1" Value="33959-8_procalcitonin-in-serum-or-plasma"/>
           </ItemGroupData>
@@ -8107,7 +8235,8 @@
             <ItemData ItemOID="il6_interleukin_6_code" Value="2.16.840.1.113883.6.1_44322-6__2.16.840.1.113883.6.1_26881-3__2.16.840.1.113883.6.1_49919-4__2.16.840.1.113883.6.1_49732-1"/>
             <ItemData ItemOID="il6_interleukin_6" Value="712.85"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.il6_interleukin_6_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.il6_interleukin_6_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="il6_interleukin_6_comparator" Value=""/>
             <ItemData ItemOID="il6_interleukin_6_unit" Value="1"/>
             <ItemData ItemOID="il6_interleukin_6_loinc_1" Value="26881-3_interleukin-6-in-serum-or-plasma"/>
           </ItemGroupData>
@@ -8115,7 +8244,8 @@
             <ItemData ItemOID="ntprobnp_code" Value="2.16.840.1.113883.6.1_83107-3__2.16.840.1.113883.6.1_33762-6"/>
             <ItemData ItemOID="ntprobnp" Value="185.43"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.ntprobnp_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.ntprobnp_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="ntprobnp_comparator" Value=""/>
             <ItemData ItemOID="ntprobnp_unit" Value="1"/>
             <ItemData ItemOID="ntprobnp_loinc_1" Value="83107-3_natriuretic-peptide.b-prohormone-n-terminal-in-serum-or-plasma-by-immunoassay"/>
           </ItemGroupData>
@@ -8123,7 +8253,8 @@
             <ItemData ItemOID="fibrinogen_code" Value="2.16.840.1.113883.6.1_30902-1__2.16.840.1.113883.6.1_48664-7__2.16.840.1.113883.6.1_3255-7"/>
             <ItemData ItemOID="fibrinogen" Value="993.59"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.fibrinogen_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.fibrinogen_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="fibrinogen_comparator" Value=""/>
             <ItemData ItemOID="fibrinogen_unit" Value="2"/>
             <ItemData ItemOID="fibrinogen_loinc_1" Value="3255-7_fibrinogen-in-platelet-poor-plasma-by-coagulation-assay"/>
             <ItemData ItemOID="fibrinogen_loinc_2" Value="3255-7_fibrinogen-in-platelet-poor-plasma-by-coagulation-assay"/>
@@ -8146,7 +8277,8 @@
             <ItemData ItemOID="sarsco_v2_covid19_ig_g_ia_qn_code" Value="2.16.840.1.113883.6.1_94505-5"/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_g_ia_qn" Value="979.81"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ig_g_ia_qn_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ig_g_ia_qn_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="sarsco_v2_covid19_ig_g_ia_qn_comparator" Value=""/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_g_ia_qn_unit" Value="1"/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_g_ia_qn_loinc" Value="94505-5_sars-cov-2-covid-19-igg-ab-in-serum-or-plasma-by-immunoassay"/>
           </ItemGroupData>
@@ -8161,7 +8293,8 @@
             <ItemData ItemOID="sarsco_v2_covid19_ig_m_ia_qn_code" Value="2.16.840.1.113883.6.1_94506-3"/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_m_ia_qn" Value="433.34"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ig_m_ia_qn_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ig_m_ia_qn_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="sarsco_v2_covid19_ig_m_ia_qn_comparator" Value=""/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_m_ia_qn_unit" Value="1"/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_m_ia_qn_loinc" Value="94506-3_sars-cov-2-covid-19-igm-ab-in-serum-or-plasma-by-immunoassay"/>
           </ItemGroupData>
@@ -8176,7 +8309,8 @@
             <ItemData ItemOID="sarsco_v2_covid19_ig_a_ia_qn_code" Value="2.16.840.1.113883.6.1_94720-0"/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_a_ia_qn" Value="497.73"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ig_a_ia_qn_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ig_a_ia_qn_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="sarsco_v2_covid19_ig_a_ia_qn_comparator" Value=""/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_a_ia_qn_unit" Value="1"/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_a_ia_qn_loinc" Value="94720-0_sars-cov-2-covid-19-iga-ab-in-serum-or-plasma-by-immunoassay"/>
           </ItemGroupData>
@@ -8191,7 +8325,8 @@
             <ItemData ItemOID="sarsco_v2_covid19_ab_ia_qn_code" Value="2.16.840.1.113883.6.1_94769-7"/>
             <ItemData ItemOID="sarsco_v2_covid19_ab_ia_qn" Value="700.97"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ab_ia_qn_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ab_ia_qn_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="sarsco_v2_covid19_ab_ia_qn_comparator" Value=""/>
             <ItemData ItemOID="sarsco_v2_covid19_ab_ia_qn_unit" Value="1"/>
             <ItemData ItemOID="sarsco_v2_covid19_ab_ia_qn_loinc" Value="94769-7_sars-cov-2-covid-19-ab-in-serum-or-plasma-by-immunoassay"/>
           </ItemGroupData>
@@ -9587,7 +9722,8 @@
           <ItemGroupData ItemGroupOID="laborwerte.crp" ItemGroupRepeatKey="1">
             <ItemData ItemOID="crp" Value="671.24"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.crp_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.crp_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="crp_comparator" Value=""/>
             <ItemData ItemOID="crp_unit" Value="3"/>
             <ItemData ItemOID="crp_loinc_1" Value="48421-2_c-reactive-protein-in-capillary-blood"/>
             <ItemData ItemOID="crp_loinc_2" Value="76485-2_c-reactive-protein-in-serum-or-plasma"/>
@@ -9597,7 +9733,8 @@
             <ItemData ItemOID="ferritin_code" Value="2.16.840.1.113883.6.1_20567-4__2.16.840.1.113883.6.1_86914-9__2.16.840.1.113883.6.1_14723-1__2.16.840.1.113883.6.1_2276-4__2.16.840.1.113883.6.1_24373-3"/>
             <ItemData ItemOID="ferritin" Value="555.24"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.ferritin_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.ferritin_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="ferritin_comparator" Value=""/>
             <ItemData ItemOID="ferritin_unit" Value="2"/>
             <ItemData ItemOID="ferritin_loinc_1" Value="86914-9_ferritin-goal-serum-or-plasma"/>
             <ItemData ItemOID="ferritin_loinc_2" Value="14723-1_ferritin-in-serum-or-plasma"/>
@@ -9606,7 +9743,8 @@
             <ItemData ItemOID="bilirubin_code" Value="2.16.840.1.113883.6.1_59828-4__2.16.840.1.113883.6.1_59827-6__2.16.840.1.113883.6.1_42719-5__2.16.840.1.113883.6.1_14631-6__2.16.840.1.113883.6.1_1971-1__2.16.840.1.113883.6.1_1975-2"/>
             <ItemData ItemOID="bilirubin" Value="267.69"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.bilirubin_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.bilirubin_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="bilirubin_comparator" Value=""/>
             <ItemData ItemOID="bilirubin_unit" Value="1"/>
             <ItemData ItemOID="bilirubin_loinc_1" Value="1975-2_bilirubin.total-in-serum-or-plasma"/>
             <ItemData ItemOID="bilirubin_loinc_2" Value="14631-6_bilirubin.total-in-serum-or-plasma"/>
@@ -9615,7 +9753,8 @@
             <ItemData ItemOID="ddimer_code" Value="2.16.840.1.113883.6.1_48065-7__2.16.840.1.113883.6.1_48066-5__2.16.840.1.113883.6.1_48067-3__2.16.840.1.113883.6.1_55398-2__2.16.840.1.113883.6.1_71427-9__2.16.840.1.113883.6.1_7799-0__2.16.840.1.113883.6.1_91556-1__2.16.840.1.113883.6.1_38898-3__2.16.840.1.113883.6.1_3246-6__2.16.840.1.113883.6.1_48058-2"/>
             <ItemData ItemOID="ddimer" Value="775.63"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.ddimer_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.ddimer_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="ddimer_comparator" Value=""/>
             <ItemData ItemOID="ddimer_unit" Value="4"/>
             <ItemData ItemOID="ddimer_loinc_1" Value="48066-5_fibrin-d-dimer-ddu-in-platelet-poor-plasma"/>
             <ItemData ItemOID="ddimer_loinc_2" Value="48067-3_fibrin-d-dimer-feu-in-platelet-poor-plasma-by-immunoassay"/>
@@ -9628,7 +9767,8 @@
             <ItemData ItemOID="gammagt_code" Value="2.16.840.1.113883.6.1_2325-9__2.16.840.1.113883.6.1_2324-2"/>
             <ItemData ItemOID="gammagt" Value="952.44"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.gammagt_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.gammagt_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="gammagt_comparator" Value=""/>
             <ItemData ItemOID="gammagt_unit" Value="1"/>
             <ItemData ItemOID="gammagt_loinc_1" Value="2325-9_gamma-glutamyl-transferase-aspartate-aminotransferase-in-serum-or-plasma"/>
           </ItemGroupData>
@@ -9636,7 +9776,8 @@
             <ItemData ItemOID="gotast_code" Value="2.16.840.1.113883.6.1_88112-8__2.16.840.1.113883.6.1_30239-8__2.16.840.1.113883.6.1_1920-8"/>
             <ItemData ItemOID="gotast" Value="608.19"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.gotast_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.gotast_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="gotast_comparator" Value=""/>
             <ItemData ItemOID="gotast_unit" Value="1"/>
             <ItemData ItemOID="gotast_loinc_1" Value="88112-8_aspartate-aminotransferase-in-serum-or-plasma-by-no-addition-of-p-5-p"/>
           </ItemGroupData>
@@ -9644,7 +9785,8 @@
             <ItemData ItemOID="ldh_code" Value="2.16.840.1.113883.6.1_2532-0__2.16.840.1.113883.6.1_60017-1__2.16.840.1.113883.6.1_14803-1__2.16.840.1.113883.6.1_14804-9__2.16.840.1.113883.6.1_14805-6"/>
             <ItemData ItemOID="ldh" Value="415.83"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.ldh_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.ldh_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="ldh_comparator" Value=""/>
             <ItemData ItemOID="ldh_unit" Value="1"/>
             <ItemData ItemOID="ldh_loinc_1" Value="14803-1_lactate-dehydrogenase-in-body-fluid-by-lactate-to-pyruvate-reaction"/>
           </ItemGroupData>
@@ -9652,7 +9794,8 @@
             <ItemData ItemOID="kardiale_troponine_code" Value="2.16.840.1.113883.6.1_49563-0__2.16.840.1.113883.6.1_89579-7__2.16.840.1.113883.6.1_67151-1__2.16.840.1.113883.6.1_6598-7__2.16.840.1.113883.6.1_6597-9__2.16.840.1.113883.6.1_48425-3__2.16.840.1.113883.6.1_42757-5__2.16.840.1.113883.6.1_10839-9"/>
             <ItemData ItemOID="kardiale_troponine" Value="499.97"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.kardiale_troponine_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.kardiale_troponine_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="kardiale_troponine_comparator" Value=""/>
             <ItemData ItemOID="kardiale_troponine_unit" Value="2"/>
             <ItemData ItemOID="kardiale_troponine_loinc_1" Value="48425-3_troponin-t.cardiac-in-blood"/>
             <ItemData ItemOID="kardiale_troponine_loinc_2" Value="89579-7_troponin-i.cardiac-in-serum-or-plasma-by-high-sensitivity-method"/>
@@ -9662,7 +9805,8 @@
             <ItemData ItemOID="hamoglobin_code" Value="2.16.840.1.113883.6.1_76769-9__2.16.840.1.113883.6.1_718-7__2.16.840.1.113883.6.1_20509-6__2.16.840.1.113883.6.1_55782-7__2.16.840.1.113883.6.1_75928-2__2.16.840.1.113883.6.1_14775-1__2.16.840.1.113883.6.1_30313-1__2.16.840.1.113883.6.1_30350-3__2.16.840.1.113883.6.1_30351-1__2.16.840.1.113883.6.1_30352-9__2.16.840.1.113883.6.1_76768-1__2.16.840.1.113883.6.1_59260-0"/>
             <ItemData ItemOID="hamoglobin" Value="609.98"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.hamoglobin_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.hamoglobin_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="hamoglobin_comparator" Value=""/>
             <ItemData ItemOID="hamoglobin_unit" Value="2"/>
             <ItemData ItemOID="hamoglobin_loinc_1" Value="75928-2_hemoglobin-in-arterial-blood"/>
             <ItemData ItemOID="hamoglobin_loinc_2" Value="76769-9_hemoglobin-in-venous-blood-by-oximetry"/>
@@ -9672,7 +9816,8 @@
             <ItemData ItemOID="kreatinin_code" Value="2.16.840.1.113883.6.1_14682-9__2.16.840.1.113883.6.1_2160-0__2.16.840.1.113883.6.1_21232-4__2.16.840.1.113883.6.1_25386-4__2.16.840.1.113883.6.1_12190-5__2.16.840.1.113883.6.1_59826-8__2.16.840.1.113883.6.1_38483-4"/>
             <ItemData ItemOID="kreatinin" Value="859.1"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.kreatinin_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.kreatinin_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="kreatinin_comparator" Value=""/>
             <ItemData ItemOID="kreatinin_unit" Value="1"/>
             <ItemData ItemOID="kreatinin_loinc_1" Value="25386-4_creatinine-in-body-fluid"/>
             <ItemData ItemOID="kreatinin_loinc_2" Value="21232-4_creatinine-in-arterial-blood"/>
@@ -9681,7 +9826,8 @@
             <ItemData ItemOID="laktat_code" Value="2.16.840.1.113883.6.1_14118-4__2.16.840.1.113883.6.1_30242-2__2.16.840.1.113883.6.1_2524-7__2.16.840.1.113883.6.1_2519-7__2.16.840.1.113883.6.1_2518-9__2.16.840.1.113883.6.1_19240-1__2.16.840.1.113883.6.1_19239-3__2.16.840.1.113883.6.1_2520-5__2.16.840.1.113883.6.1_32693-4__2.16.840.1.113883.6.1_59032-3__2.16.840.1.113883.6.1_27941-4"/>
             <ItemData ItemOID="laktat" Value="49.33"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.laktat_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.laktat_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="laktat_comparator" Value=""/>
             <ItemData ItemOID="laktat_unit" Value="2"/>
             <ItemData ItemOID="laktat_loinc_1" Value="2519-7_lactate-in-venous-blood"/>
             <ItemData ItemOID="laktat_loinc_2" Value="27941-4_lactate-in-cerebral-spinal-fluid"/>
@@ -9690,7 +9836,8 @@
             <ItemData ItemOID="leukozyten_absolut_code" Value="2.16.840.1.113883.6.1_804-5__2.16.840.1.113883.6.1_6690-2__2.16.840.1.113883.6.1_49498-9__2.16.840.1.113883.6.1_26464-8"/>
             <ItemData ItemOID="leukozyten_absolut" Value="707.32"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.leukozyten_absolut_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.leukozyten_absolut_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="leukozyten_absolut_comparator" Value=""/>
             <ItemData ItemOID="leukozyten_absolut_unit" Value="1"/>
             <ItemData ItemOID="leukozyten_absolut_loinc_1" Value="804-5_leukocytes-in-blood-by-manual-count"/>
           </ItemGroupData>
@@ -9698,7 +9845,8 @@
             <ItemData ItemOID="lymphozyten_absolut_code" Value="2.16.840.1.113883.6.1_732-8__2.16.840.1.113883.6.1_731-0__2.16.840.1.113883.6.1_30364-4__2.16.840.1.113883.6.1_26474-7"/>
             <ItemData ItemOID="lymphozyten_absolut" Value="687.32"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.lymphozyten_absolut_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.lymphozyten_absolut_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="lymphozyten_absolut_comparator" Value=""/>
             <ItemData ItemOID="lymphozyten_absolut_unit" Value="1"/>
             <ItemData ItemOID="lymphozyten_absolut_loinc_1" Value="731-0_lymphocytes-in-blood-by-automated-count"/>
           </ItemGroupData>
@@ -9706,7 +9854,8 @@
             <ItemData ItemOID="neutrophile_absolut_code" Value="2.16.840.1.113883.6.1_753-4__2.16.840.1.113883.6.1_751-8__2.16.840.1.113883.6.1_26499-4"/>
             <ItemData ItemOID="neutrophile_absolut" Value="411.11"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.neutrophile_absolut_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.neutrophile_absolut_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="neutrophile_absolut_comparator" Value=""/>
             <ItemData ItemOID="neutrophile_absolut_unit" Value="1"/>
             <ItemData ItemOID="neutrophile_absolut_loinc_1" Value="751-8_neutrophils-in-blood-by-automated-count"/>
           </ItemGroupData>
@@ -9714,7 +9863,8 @@
             <ItemData ItemOID="ptt_code" Value="2.16.840.1.113883.6.1_16631-4__2.16.840.1.113883.6.1_43734-3__2.16.840.1.113883.6.1_14979-9__2.16.840.1.113883.6.1_3173-2"/>
             <ItemData ItemOID="ptt" Value="824.65"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.ptt_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.ptt_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="ptt_comparator" Value=""/>
             <ItemData ItemOID="ptt_unit" Value="1"/>
             <ItemData ItemOID="ptt_loinc_1" Value="14979-9_aptt-in-platelet-poor-plasma-by-coagulation-assay"/>
           </ItemGroupData>
@@ -9722,7 +9872,8 @@
             <ItemData ItemOID="thrombozyten_absolut_code" Value="2.16.840.1.113883.6.1_74775-8__2.16.840.1.113883.6.1_13056-7__2.16.840.1.113883.6.1_26516-5__2.16.840.1.113883.6.1_74464-9__2.16.840.1.113883.6.1_778-1__2.16.840.1.113883.6.1_49497-1__2.16.840.1.113883.6.1_777-3__2.16.840.1.113883.6.1_26515-7"/>
             <ItemData ItemOID="thrombozyten_absolut" Value="680.74"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.thrombozyten_absolut_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.thrombozyten_absolut_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="thrombozyten_absolut_comparator" Value=""/>
             <ItemData ItemOID="thrombozyten_absolut_unit" Value="1"/>
             <ItemData ItemOID="thrombozyten_absolut_loinc_1" Value="26515-7_platelets-in-blood"/>
           </ItemGroupData>
@@ -9730,7 +9881,8 @@
             <ItemData ItemOID="inr_code" Value="2.16.840.1.113883.6.1_6301-6__2.16.840.1.113883.6.1_46418-0__2.16.840.1.113883.6.1_34714-6"/>
             <ItemData ItemOID="inr" Value="391.98"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.inr_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.inr_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="inr_comparator" Value=""/>
             <ItemData ItemOID="inr_unit" Value="1"/>
             <ItemData ItemOID="inr_loinc_1" Value="46418-0_inr-in-capillary-blood-by-coagulation-assay"/>
           </ItemGroupData>
@@ -9738,7 +9890,8 @@
             <ItemData ItemOID="serumalbumin_code" Value="2.16.840.1.113883.6.1_76631-1__2.16.840.1.113883.6.1_62235-7__2.16.840.1.113883.6.1_62234-0__2.16.840.1.113883.6.1_61152-5__2.16.840.1.113883.6.1_61151-7__2.16.840.1.113883.6.1_2862-1__2.16.840.1.113883.6.1_1751-7__2.16.840.1.113883.6.1_54347-0"/>
             <ItemData ItemOID="serumalbumin" Value="757.69"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.serumalbumin_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.serumalbumin_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="serumalbumin_comparator" Value=""/>
             <ItemData ItemOID="serumalbumin_unit" Value="1"/>
             <ItemData ItemOID="serumalbumin_loinc_1" Value="76631-1_albumin-in-blood-by-bromocresol-purple-bcp-dye-binding-method"/>
             <ItemData ItemOID="serumalbumin_loinc_2" Value="54347-0_albumin-in-serum-or-plasma"/>
@@ -9748,7 +9901,8 @@
             <ItemData ItemOID="antithrombin_iii_code" Value="2.16.840.1.113883.6.1_27812-7__2.16.840.1.113883.6.1_27811-9__2.16.840.1.113883.6.1_3176-5__2.16.840.1.113883.6.1_91120-6__2.16.840.1.113883.6.1_3174-0"/>
             <ItemData ItemOID="antithrombin_iii" Value="820.16"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.antithrombin_iii_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.antithrombin_iii_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antithrombin_iii_comparator" Value=""/>
             <ItemData ItemOID="antithrombin_iii_unit" Value="2"/>
             <ItemData ItemOID="antithrombin_iii_loinc_1" Value="27811-9_antithrombin-actual-normal-in-platelet-poor-plasma-by-chromogenic-method"/>
             <ItemData ItemOID="antithrombin_iii_loinc_2" Value="3174-0_antithrombin-in-platelet-poor-plasma-by-chromogenic-method"/>
@@ -9757,7 +9911,8 @@
             <ItemData ItemOID="pct_procalcitonin_code" Value="2.16.840.1.113883.6.1_75241-0__2.16.840.1.113883.6.1_33959-8"/>
             <ItemData ItemOID="pct_procalcitonin" Value="790.9"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.pct_procalcitonin_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.pct_procalcitonin_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="pct_procalcitonin_comparator" Value=""/>
             <ItemData ItemOID="pct_procalcitonin_unit" Value="1"/>
             <ItemData ItemOID="pct_procalcitonin_loinc_1" Value="33959-8_procalcitonin-in-serum-or-plasma"/>
           </ItemGroupData>
@@ -9765,7 +9920,8 @@
             <ItemData ItemOID="il6_interleukin_6_code" Value="2.16.840.1.113883.6.1_44322-6__2.16.840.1.113883.6.1_26881-3__2.16.840.1.113883.6.1_49919-4__2.16.840.1.113883.6.1_49732-1"/>
             <ItemData ItemOID="il6_interleukin_6" Value="338.88"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.il6_interleukin_6_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.il6_interleukin_6_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="il6_interleukin_6_comparator" Value=""/>
             <ItemData ItemOID="il6_interleukin_6_unit" Value="1"/>
             <ItemData ItemOID="il6_interleukin_6_loinc_1" Value="26881-3_interleukin-6-in-serum-or-plasma"/>
           </ItemGroupData>
@@ -9773,7 +9929,8 @@
             <ItemData ItemOID="ntprobnp_code" Value="2.16.840.1.113883.6.1_83107-3__2.16.840.1.113883.6.1_33762-6"/>
             <ItemData ItemOID="ntprobnp" Value="404.68"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.ntprobnp_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.ntprobnp_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="ntprobnp_comparator" Value=""/>
             <ItemData ItemOID="ntprobnp_unit" Value="1"/>
             <ItemData ItemOID="ntprobnp_loinc_1" Value="83107-3_natriuretic-peptide.b-prohormone-n-terminal-in-serum-or-plasma-by-immunoassay"/>
           </ItemGroupData>
@@ -9781,7 +9938,8 @@
             <ItemData ItemOID="fibrinogen_code" Value="2.16.840.1.113883.6.1_30902-1__2.16.840.1.113883.6.1_48664-7__2.16.840.1.113883.6.1_3255-7"/>
             <ItemData ItemOID="fibrinogen" Value="299.87"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.fibrinogen_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.fibrinogen_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="fibrinogen_comparator" Value=""/>
             <ItemData ItemOID="fibrinogen_unit" Value="2"/>
             <ItemData ItemOID="fibrinogen_loinc_1" Value="3255-7_fibrinogen-in-platelet-poor-plasma-by-coagulation-assay"/>
             <ItemData ItemOID="fibrinogen_loinc_2" Value="30902-1_fibrinogen-in-platelet-poor-plasma-by-heat-denaturation"/>
@@ -9804,7 +9962,8 @@
             <ItemData ItemOID="sarsco_v2_covid19_ig_g_ia_qn_code" Value="2.16.840.1.113883.6.1_94505-5"/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_g_ia_qn" Value="623.43"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ig_g_ia_qn_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ig_g_ia_qn_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="sarsco_v2_covid19_ig_g_ia_qn_comparator" Value=""/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_g_ia_qn_unit" Value="1"/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_g_ia_qn_loinc" Value="94505-5_sars-cov-2-covid-19-igg-ab-in-serum-or-plasma-by-immunoassay"/>
           </ItemGroupData>
@@ -9819,7 +9978,8 @@
             <ItemData ItemOID="sarsco_v2_covid19_ig_m_ia_qn_code" Value="2.16.840.1.113883.6.1_94506-3"/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_m_ia_qn" Value="992.93"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ig_m_ia_qn_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ig_m_ia_qn_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="sarsco_v2_covid19_ig_m_ia_qn_comparator" Value=""/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_m_ia_qn_unit" Value="1"/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_m_ia_qn_loinc" Value="94506-3_sars-cov-2-covid-19-igm-ab-in-serum-or-plasma-by-immunoassay"/>
           </ItemGroupData>
@@ -9834,7 +9994,8 @@
             <ItemData ItemOID="sarsco_v2_covid19_ig_a_ia_qn_code" Value="2.16.840.1.113883.6.1_94720-0"/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_a_ia_qn" Value="488.78"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ig_a_ia_qn_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ig_a_ia_qn_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="sarsco_v2_covid19_ig_a_ia_qn_comparator" Value=""/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_a_ia_qn_unit" Value="1"/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_a_ia_qn_loinc" Value="94720-0_sars-cov-2-covid-19-iga-ab-in-serum-or-plasma-by-immunoassay"/>
           </ItemGroupData>
@@ -9849,7 +10010,8 @@
             <ItemData ItemOID="sarsco_v2_covid19_ab_ia_qn_code" Value="2.16.840.1.113883.6.1_94769-7"/>
             <ItemData ItemOID="sarsco_v2_covid19_ab_ia_qn" Value="837.72"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ab_ia_qn_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ab_ia_qn_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="sarsco_v2_covid19_ab_ia_qn_comparator" Value=""/>
             <ItemData ItemOID="sarsco_v2_covid19_ab_ia_qn_unit" Value="1"/>
             <ItemData ItemOID="sarsco_v2_covid19_ab_ia_qn_loinc" Value="94769-7_sars-cov-2-covid-19-ab-in-serum-or-plasma-by-immunoassay"/>
           </ItemGroupData>
@@ -11245,7 +11407,8 @@
           <ItemGroupData ItemGroupOID="laborwerte.crp" ItemGroupRepeatKey="1">
             <ItemData ItemOID="crp" Value="404.91"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.crp_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.crp_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="crp_comparator" Value=""/>
             <ItemData ItemOID="crp_unit" Value="2"/>
             <ItemData ItemOID="crp_loinc_1" Value="71426-1_c-reactive-protein-in-blood-by-high-sensitivity-method"/>
             <ItemData ItemOID="crp_loinc_2" Value="76485-2_c-reactive-protein-in-serum-or-plasma"/>
@@ -11255,7 +11418,8 @@
             <ItemData ItemOID="ferritin_code" Value="2.16.840.1.113883.6.1_20567-4__2.16.840.1.113883.6.1_86914-9__2.16.840.1.113883.6.1_14723-1__2.16.840.1.113883.6.1_2276-4__2.16.840.1.113883.6.1_24373-3"/>
             <ItemData ItemOID="ferritin" Value="246.48"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.ferritin_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.ferritin_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="ferritin_comparator" Value=""/>
             <ItemData ItemOID="ferritin_unit" Value="2"/>
             <ItemData ItemOID="ferritin_loinc_1" Value="86914-9_ferritin-goal-serum-or-plasma"/>
             <ItemData ItemOID="ferritin_loinc_2" Value="14723-1_ferritin-in-serum-or-plasma"/>
@@ -11264,7 +11428,8 @@
             <ItemData ItemOID="bilirubin_code" Value="2.16.840.1.113883.6.1_59828-4__2.16.840.1.113883.6.1_59827-6__2.16.840.1.113883.6.1_42719-5__2.16.840.1.113883.6.1_14631-6__2.16.840.1.113883.6.1_1971-1__2.16.840.1.113883.6.1_1975-2"/>
             <ItemData ItemOID="bilirubin" Value="655.53"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.bilirubin_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.bilirubin_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="bilirubin_comparator" Value=""/>
             <ItemData ItemOID="bilirubin_unit" Value="1"/>
             <ItemData ItemOID="bilirubin_loinc_1" Value="42719-5_bilirubin.total-in-blood"/>
             <ItemData ItemOID="bilirubin_loinc_2" Value="14631-6_bilirubin.total-in-serum-or-plasma"/>
@@ -11273,7 +11438,8 @@
             <ItemData ItemOID="ddimer_code" Value="2.16.840.1.113883.6.1_48065-7__2.16.840.1.113883.6.1_48066-5__2.16.840.1.113883.6.1_48067-3__2.16.840.1.113883.6.1_55398-2__2.16.840.1.113883.6.1_71427-9__2.16.840.1.113883.6.1_7799-0__2.16.840.1.113883.6.1_91556-1__2.16.840.1.113883.6.1_38898-3__2.16.840.1.113883.6.1_3246-6__2.16.840.1.113883.6.1_48058-2"/>
             <ItemData ItemOID="ddimer" Value="880.25"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.ddimer_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.ddimer_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="ddimer_comparator" Value=""/>
             <ItemData ItemOID="ddimer_unit" Value="6"/>
             <ItemData ItemOID="ddimer_loinc_1" Value="71427-9_fibrin-d-dimer-feu-in-blood-by-immunoassay"/>
             <ItemData ItemOID="ddimer_loinc_2" Value="48067-3_fibrin-d-dimer-feu-in-platelet-poor-plasma-by-immunoassay"/>
@@ -11286,7 +11452,8 @@
             <ItemData ItemOID="gammagt_code" Value="2.16.840.1.113883.6.1_2325-9__2.16.840.1.113883.6.1_2324-2"/>
             <ItemData ItemOID="gammagt" Value="173.44"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.gammagt_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.gammagt_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="gammagt_comparator" Value=""/>
             <ItemData ItemOID="gammagt_unit" Value="1"/>
             <ItemData ItemOID="gammagt_loinc_1" Value="2325-9_gamma-glutamyl-transferase-aspartate-aminotransferase-in-serum-or-plasma"/>
           </ItemGroupData>
@@ -11294,7 +11461,8 @@
             <ItemData ItemOID="gotast_code" Value="2.16.840.1.113883.6.1_88112-8__2.16.840.1.113883.6.1_30239-8__2.16.840.1.113883.6.1_1920-8"/>
             <ItemData ItemOID="gotast" Value="320.25"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.gotast_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.gotast_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="gotast_comparator" Value=""/>
             <ItemData ItemOID="gotast_unit" Value="1"/>
             <ItemData ItemOID="gotast_loinc_1" Value="30239-8_aspartate-aminotransferase-in-serum-or-plasma-by-with-p-5-p"/>
           </ItemGroupData>
@@ -11302,7 +11470,8 @@
             <ItemData ItemOID="ldh_code" Value="2.16.840.1.113883.6.1_2532-0__2.16.840.1.113883.6.1_60017-1__2.16.840.1.113883.6.1_14803-1__2.16.840.1.113883.6.1_14804-9__2.16.840.1.113883.6.1_14805-6"/>
             <ItemData ItemOID="ldh" Value="607.59"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.ldh_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.ldh_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="ldh_comparator" Value=""/>
             <ItemData ItemOID="ldh_unit" Value="1"/>
             <ItemData ItemOID="ldh_loinc_1" Value="14805-6_lactate-dehydrogenase-in-serum-or-plasma-by-pyruvate-to-lactate-reaction"/>
           </ItemGroupData>
@@ -11310,7 +11479,8 @@
             <ItemData ItemOID="kardiale_troponine_code" Value="2.16.840.1.113883.6.1_49563-0__2.16.840.1.113883.6.1_89579-7__2.16.840.1.113883.6.1_67151-1__2.16.840.1.113883.6.1_6598-7__2.16.840.1.113883.6.1_6597-9__2.16.840.1.113883.6.1_48425-3__2.16.840.1.113883.6.1_42757-5__2.16.840.1.113883.6.1_10839-9"/>
             <ItemData ItemOID="kardiale_troponine" Value="510.62"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.kardiale_troponine_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.kardiale_troponine_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="kardiale_troponine_comparator" Value=""/>
             <ItemData ItemOID="kardiale_troponine_unit" Value="1"/>
             <ItemData ItemOID="kardiale_troponine_loinc_1" Value="42757-5_troponin-i.cardiac-in-blood"/>
             <ItemData ItemOID="kardiale_troponine_loinc_2" Value="42757-5_troponin-i.cardiac-in-blood"/>
@@ -11320,7 +11490,8 @@
             <ItemData ItemOID="hamoglobin_code" Value="2.16.840.1.113883.6.1_76769-9__2.16.840.1.113883.6.1_718-7__2.16.840.1.113883.6.1_20509-6__2.16.840.1.113883.6.1_55782-7__2.16.840.1.113883.6.1_75928-2__2.16.840.1.113883.6.1_14775-1__2.16.840.1.113883.6.1_30313-1__2.16.840.1.113883.6.1_30350-3__2.16.840.1.113883.6.1_30351-1__2.16.840.1.113883.6.1_30352-9__2.16.840.1.113883.6.1_76768-1__2.16.840.1.113883.6.1_59260-0"/>
             <ItemData ItemOID="hamoglobin" Value="11.62"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.hamoglobin_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.hamoglobin_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="hamoglobin_comparator" Value=""/>
             <ItemData ItemOID="hamoglobin_unit" Value="2"/>
             <ItemData ItemOID="hamoglobin_loinc_1" Value="75928-2_hemoglobin-in-arterial-blood"/>
             <ItemData ItemOID="hamoglobin_loinc_2" Value="20509-6_hemoglobin-in-blood-by-calculation"/>
@@ -11330,7 +11501,8 @@
             <ItemData ItemOID="kreatinin_code" Value="2.16.840.1.113883.6.1_14682-9__2.16.840.1.113883.6.1_2160-0__2.16.840.1.113883.6.1_21232-4__2.16.840.1.113883.6.1_25386-4__2.16.840.1.113883.6.1_12190-5__2.16.840.1.113883.6.1_59826-8__2.16.840.1.113883.6.1_38483-4"/>
             <ItemData ItemOID="kreatinin" Value="938.96"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.kreatinin_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.kreatinin_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="kreatinin_comparator" Value=""/>
             <ItemData ItemOID="kreatinin_unit" Value="1"/>
             <ItemData ItemOID="kreatinin_loinc_1" Value="14682-9_creatinine-in-serum-or-plasma"/>
             <ItemData ItemOID="kreatinin_loinc_2" Value="21232-4_creatinine-in-arterial-blood"/>
@@ -11339,7 +11511,8 @@
             <ItemData ItemOID="laktat_code" Value="2.16.840.1.113883.6.1_14118-4__2.16.840.1.113883.6.1_30242-2__2.16.840.1.113883.6.1_2524-7__2.16.840.1.113883.6.1_2519-7__2.16.840.1.113883.6.1_2518-9__2.16.840.1.113883.6.1_19240-1__2.16.840.1.113883.6.1_19239-3__2.16.840.1.113883.6.1_2520-5__2.16.840.1.113883.6.1_32693-4__2.16.840.1.113883.6.1_59032-3__2.16.840.1.113883.6.1_27941-4"/>
             <ItemData ItemOID="laktat" Value="472.97"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.laktat_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.laktat_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="laktat_comparator" Value=""/>
             <ItemData ItemOID="laktat_unit" Value="2"/>
             <ItemData ItemOID="laktat_loinc_1" Value="19240-1_lactate-in-mixed-venous-blood"/>
             <ItemData ItemOID="laktat_loinc_2" Value="27941-4_lactate-in-cerebral-spinal-fluid"/>
@@ -11348,7 +11521,8 @@
             <ItemData ItemOID="leukozyten_absolut_code" Value="2.16.840.1.113883.6.1_804-5__2.16.840.1.113883.6.1_6690-2__2.16.840.1.113883.6.1_49498-9__2.16.840.1.113883.6.1_26464-8"/>
             <ItemData ItemOID="leukozyten_absolut" Value="362.08"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.leukozyten_absolut_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.leukozyten_absolut_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="leukozyten_absolut_comparator" Value=""/>
             <ItemData ItemOID="leukozyten_absolut_unit" Value="1"/>
             <ItemData ItemOID="leukozyten_absolut_loinc_1" Value="804-5_leukocytes-in-blood-by-manual-count"/>
           </ItemGroupData>
@@ -11356,7 +11530,8 @@
             <ItemData ItemOID="lymphozyten_absolut_code" Value="2.16.840.1.113883.6.1_732-8__2.16.840.1.113883.6.1_731-0__2.16.840.1.113883.6.1_30364-4__2.16.840.1.113883.6.1_26474-7"/>
             <ItemData ItemOID="lymphozyten_absolut" Value="296.25"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.lymphozyten_absolut_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.lymphozyten_absolut_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="lymphozyten_absolut_comparator" Value=""/>
             <ItemData ItemOID="lymphozyten_absolut_unit" Value="1"/>
             <ItemData ItemOID="lymphozyten_absolut_loinc_1" Value="30364-4_lymphocytes-in-blood-by-flow-cytometry-fc"/>
           </ItemGroupData>
@@ -11364,7 +11539,8 @@
             <ItemData ItemOID="neutrophile_absolut_code" Value="2.16.840.1.113883.6.1_753-4__2.16.840.1.113883.6.1_751-8__2.16.840.1.113883.6.1_26499-4"/>
             <ItemData ItemOID="neutrophile_absolut" Value="823.65"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.neutrophile_absolut_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.neutrophile_absolut_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="neutrophile_absolut_comparator" Value=""/>
             <ItemData ItemOID="neutrophile_absolut_unit" Value="1"/>
             <ItemData ItemOID="neutrophile_absolut_loinc_1" Value="751-8_neutrophils-in-blood-by-automated-count"/>
           </ItemGroupData>
@@ -11372,7 +11548,8 @@
             <ItemData ItemOID="ptt_code" Value="2.16.840.1.113883.6.1_16631-4__2.16.840.1.113883.6.1_43734-3__2.16.840.1.113883.6.1_14979-9__2.16.840.1.113883.6.1_3173-2"/>
             <ItemData ItemOID="ptt" Value="679.62"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.ptt_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.ptt_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="ptt_comparator" Value=""/>
             <ItemData ItemOID="ptt_unit" Value="1"/>
             <ItemData ItemOID="ptt_loinc_1" Value="43734-3_aptt-in-platelet-poor-plasma-by-coagulation-11-saline"/>
           </ItemGroupData>
@@ -11380,7 +11557,8 @@
             <ItemData ItemOID="thrombozyten_absolut_code" Value="2.16.840.1.113883.6.1_74775-8__2.16.840.1.113883.6.1_13056-7__2.16.840.1.113883.6.1_26516-5__2.16.840.1.113883.6.1_74464-9__2.16.840.1.113883.6.1_778-1__2.16.840.1.113883.6.1_49497-1__2.16.840.1.113883.6.1_777-3__2.16.840.1.113883.6.1_26515-7"/>
             <ItemData ItemOID="thrombozyten_absolut" Value="178.47"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.thrombozyten_absolut_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.thrombozyten_absolut_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="thrombozyten_absolut_comparator" Value=""/>
             <ItemData ItemOID="thrombozyten_absolut_unit" Value="1"/>
             <ItemData ItemOID="thrombozyten_absolut_loinc_1" Value="777-3_platelets-in-blood-by-automated-count"/>
           </ItemGroupData>
@@ -11388,7 +11566,8 @@
             <ItemData ItemOID="inr_code" Value="2.16.840.1.113883.6.1_6301-6__2.16.840.1.113883.6.1_46418-0__2.16.840.1.113883.6.1_34714-6"/>
             <ItemData ItemOID="inr" Value="786.37"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.inr_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.inr_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="inr_comparator" Value=""/>
             <ItemData ItemOID="inr_unit" Value="1"/>
             <ItemData ItemOID="inr_loinc_1" Value="46418-0_inr-in-capillary-blood-by-coagulation-assay"/>
           </ItemGroupData>
@@ -11396,7 +11575,8 @@
             <ItemData ItemOID="serumalbumin_code" Value="2.16.840.1.113883.6.1_76631-1__2.16.840.1.113883.6.1_62235-7__2.16.840.1.113883.6.1_62234-0__2.16.840.1.113883.6.1_61152-5__2.16.840.1.113883.6.1_61151-7__2.16.840.1.113883.6.1_2862-1__2.16.840.1.113883.6.1_1751-7__2.16.840.1.113883.6.1_54347-0"/>
             <ItemData ItemOID="serumalbumin" Value="817.34"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.serumalbumin_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.serumalbumin_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="serumalbumin_comparator" Value=""/>
             <ItemData ItemOID="serumalbumin_unit" Value="2"/>
             <ItemData ItemOID="serumalbumin_loinc_1" Value="1751-7_albumin-in-serum-or-plasma"/>
             <ItemData ItemOID="serumalbumin_loinc_2" Value="62235-7_albumin-in-serum-or-plasma-by-bromocresol-green-bcg-dye-binding-method"/>
@@ -11406,7 +11586,8 @@
             <ItemData ItemOID="antithrombin_iii_code" Value="2.16.840.1.113883.6.1_27812-7__2.16.840.1.113883.6.1_27811-9__2.16.840.1.113883.6.1_3176-5__2.16.840.1.113883.6.1_91120-6__2.16.840.1.113883.6.1_3174-0"/>
             <ItemData ItemOID="antithrombin_iii" Value="590.22"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.antithrombin_iii_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.antithrombin_iii_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antithrombin_iii_comparator" Value=""/>
             <ItemData ItemOID="antithrombin_iii_unit" Value="2"/>
             <ItemData ItemOID="antithrombin_iii_loinc_1" Value="27812-7_antithrombin-ag-actual-normal-in-platelet-poor-plasma-by-immunoassay"/>
             <ItemData ItemOID="antithrombin_iii_loinc_2" Value="3174-0_antithrombin-in-platelet-poor-plasma-by-chromogenic-method"/>
@@ -11415,7 +11596,8 @@
             <ItemData ItemOID="pct_procalcitonin_code" Value="2.16.840.1.113883.6.1_75241-0__2.16.840.1.113883.6.1_33959-8"/>
             <ItemData ItemOID="pct_procalcitonin" Value="572.54"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.pct_procalcitonin_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.pct_procalcitonin_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="pct_procalcitonin_comparator" Value=""/>
             <ItemData ItemOID="pct_procalcitonin_unit" Value="1"/>
             <ItemData ItemOID="pct_procalcitonin_loinc_1" Value="33959-8_procalcitonin-in-serum-or-plasma"/>
           </ItemGroupData>
@@ -11423,7 +11605,8 @@
             <ItemData ItemOID="il6_interleukin_6_code" Value="2.16.840.1.113883.6.1_44322-6__2.16.840.1.113883.6.1_26881-3__2.16.840.1.113883.6.1_49919-4__2.16.840.1.113883.6.1_49732-1"/>
             <ItemData ItemOID="il6_interleukin_6" Value="235.57"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.il6_interleukin_6_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.il6_interleukin_6_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="il6_interleukin_6_comparator" Value=""/>
             <ItemData ItemOID="il6_interleukin_6_unit" Value="1"/>
             <ItemData ItemOID="il6_interleukin_6_loinc_1" Value="49919-4_interleukin-6-in-cerebral-spinal-fluid"/>
           </ItemGroupData>
@@ -11431,7 +11614,8 @@
             <ItemData ItemOID="ntprobnp_code" Value="2.16.840.1.113883.6.1_83107-3__2.16.840.1.113883.6.1_33762-6"/>
             <ItemData ItemOID="ntprobnp" Value="311.06"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.ntprobnp_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.ntprobnp_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="ntprobnp_comparator" Value=""/>
             <ItemData ItemOID="ntprobnp_unit" Value="1"/>
             <ItemData ItemOID="ntprobnp_loinc_1" Value="83107-3_natriuretic-peptide.b-prohormone-n-terminal-in-serum-or-plasma-by-immunoassay"/>
           </ItemGroupData>
@@ -11439,7 +11623,8 @@
             <ItemData ItemOID="fibrinogen_code" Value="2.16.840.1.113883.6.1_30902-1__2.16.840.1.113883.6.1_48664-7__2.16.840.1.113883.6.1_3255-7"/>
             <ItemData ItemOID="fibrinogen" Value="779.66"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.fibrinogen_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.fibrinogen_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="fibrinogen_comparator" Value=""/>
             <ItemData ItemOID="fibrinogen_unit" Value="2"/>
             <ItemData ItemOID="fibrinogen_loinc_1" Value="30902-1_fibrinogen-in-platelet-poor-plasma-by-heat-denaturation"/>
             <ItemData ItemOID="fibrinogen_loinc_2" Value="3255-7_fibrinogen-in-platelet-poor-plasma-by-coagulation-assay"/>
@@ -11462,7 +11647,8 @@
             <ItemData ItemOID="sarsco_v2_covid19_ig_g_ia_qn_code" Value="2.16.840.1.113883.6.1_94505-5"/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_g_ia_qn" Value="779.47"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ig_g_ia_qn_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ig_g_ia_qn_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="sarsco_v2_covid19_ig_g_ia_qn_comparator" Value=""/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_g_ia_qn_unit" Value="1"/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_g_ia_qn_loinc" Value="94505-5_sars-cov-2-covid-19-igg-ab-in-serum-or-plasma-by-immunoassay"/>
           </ItemGroupData>
@@ -11477,7 +11663,8 @@
             <ItemData ItemOID="sarsco_v2_covid19_ig_m_ia_qn_code" Value="2.16.840.1.113883.6.1_94506-3"/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_m_ia_qn" Value="730.75"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ig_m_ia_qn_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ig_m_ia_qn_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="sarsco_v2_covid19_ig_m_ia_qn_comparator" Value=""/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_m_ia_qn_unit" Value="1"/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_m_ia_qn_loinc" Value="94506-3_sars-cov-2-covid-19-igm-ab-in-serum-or-plasma-by-immunoassay"/>
           </ItemGroupData>
@@ -11492,7 +11679,8 @@
             <ItemData ItemOID="sarsco_v2_covid19_ig_a_ia_qn_code" Value="2.16.840.1.113883.6.1_94720-0"/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_a_ia_qn" Value="1.71"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ig_a_ia_qn_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ig_a_ia_qn_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="sarsco_v2_covid19_ig_a_ia_qn_comparator" Value=""/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_a_ia_qn_unit" Value="1"/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_a_ia_qn_loinc" Value="94720-0_sars-cov-2-covid-19-iga-ab-in-serum-or-plasma-by-immunoassay"/>
           </ItemGroupData>
@@ -11507,7 +11695,8 @@
             <ItemData ItemOID="sarsco_v2_covid19_ab_ia_qn_code" Value="2.16.840.1.113883.6.1_94769-7"/>
             <ItemData ItemOID="sarsco_v2_covid19_ab_ia_qn" Value="155.08"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ab_ia_qn_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ab_ia_qn_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="sarsco_v2_covid19_ab_ia_qn_comparator" Value=""/>
             <ItemData ItemOID="sarsco_v2_covid19_ab_ia_qn_unit" Value="1"/>
             <ItemData ItemOID="sarsco_v2_covid19_ab_ia_qn_loinc" Value="94769-7_sars-cov-2-covid-19-ab-in-serum-or-plasma-by-immunoassay"/>
           </ItemGroupData>
@@ -12903,7 +13092,8 @@
           <ItemGroupData ItemGroupOID="laborwerte.crp" ItemGroupRepeatKey="1">
             <ItemData ItemOID="crp" Value="747.37"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.crp_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.crp_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="crp_comparator" Value=""/>
             <ItemData ItemOID="crp_unit" Value="2"/>
             <ItemData ItemOID="crp_loinc_1" Value="48421-2_c-reactive-protein-in-capillary-blood"/>
             <ItemData ItemOID="crp_loinc_2" Value="76485-2_c-reactive-protein-in-serum-or-plasma"/>
@@ -12913,7 +13103,8 @@
             <ItemData ItemOID="ferritin_code" Value="2.16.840.1.113883.6.1_20567-4__2.16.840.1.113883.6.1_86914-9__2.16.840.1.113883.6.1_14723-1__2.16.840.1.113883.6.1_2276-4__2.16.840.1.113883.6.1_24373-3"/>
             <ItemData ItemOID="ferritin" Value="313.15"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.ferritin_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.ferritin_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="ferritin_comparator" Value=""/>
             <ItemData ItemOID="ferritin_unit" Value="2"/>
             <ItemData ItemOID="ferritin_loinc_1" Value="86914-9_ferritin-goal-serum-or-plasma"/>
             <ItemData ItemOID="ferritin_loinc_2" Value="14723-1_ferritin-in-serum-or-plasma"/>
@@ -12922,7 +13113,8 @@
             <ItemData ItemOID="bilirubin_code" Value="2.16.840.1.113883.6.1_59828-4__2.16.840.1.113883.6.1_59827-6__2.16.840.1.113883.6.1_42719-5__2.16.840.1.113883.6.1_14631-6__2.16.840.1.113883.6.1_1971-1__2.16.840.1.113883.6.1_1975-2"/>
             <ItemData ItemOID="bilirubin" Value="714.55"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.bilirubin_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.bilirubin_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="bilirubin_comparator" Value=""/>
             <ItemData ItemOID="bilirubin_unit" Value="1"/>
             <ItemData ItemOID="bilirubin_loinc_1" Value="59828-4_bilirubin.total-in-venous-blood"/>
             <ItemData ItemOID="bilirubin_loinc_2" Value="14631-6_bilirubin.total-in-serum-or-plasma"/>
@@ -12931,7 +13123,8 @@
             <ItemData ItemOID="ddimer_code" Value="2.16.840.1.113883.6.1_48065-7__2.16.840.1.113883.6.1_48066-5__2.16.840.1.113883.6.1_48067-3__2.16.840.1.113883.6.1_55398-2__2.16.840.1.113883.6.1_71427-9__2.16.840.1.113883.6.1_7799-0__2.16.840.1.113883.6.1_91556-1__2.16.840.1.113883.6.1_38898-3__2.16.840.1.113883.6.1_3246-6__2.16.840.1.113883.6.1_48058-2"/>
             <ItemData ItemOID="ddimer" Value="662.59"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.ddimer_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.ddimer_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="ddimer_comparator" Value=""/>
             <ItemData ItemOID="ddimer_unit" Value="1"/>
             <ItemData ItemOID="ddimer_loinc_1" Value="48066-5_fibrin-d-dimer-ddu-in-platelet-poor-plasma"/>
             <ItemData ItemOID="ddimer_loinc_2" Value="48067-3_fibrin-d-dimer-feu-in-platelet-poor-plasma-by-immunoassay"/>
@@ -12944,7 +13137,8 @@
             <ItemData ItemOID="gammagt_code" Value="2.16.840.1.113883.6.1_2325-9__2.16.840.1.113883.6.1_2324-2"/>
             <ItemData ItemOID="gammagt" Value="171.45"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.gammagt_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.gammagt_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="gammagt_comparator" Value=""/>
             <ItemData ItemOID="gammagt_unit" Value="1"/>
             <ItemData ItemOID="gammagt_loinc_1" Value="2325-9_gamma-glutamyl-transferase-aspartate-aminotransferase-in-serum-or-plasma"/>
           </ItemGroupData>
@@ -12952,7 +13146,8 @@
             <ItemData ItemOID="gotast_code" Value="2.16.840.1.113883.6.1_88112-8__2.16.840.1.113883.6.1_30239-8__2.16.840.1.113883.6.1_1920-8"/>
             <ItemData ItemOID="gotast" Value="81.57"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.gotast_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.gotast_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="gotast_comparator" Value=""/>
             <ItemData ItemOID="gotast_unit" Value="1"/>
             <ItemData ItemOID="gotast_loinc_1" Value="88112-8_aspartate-aminotransferase-in-serum-or-plasma-by-no-addition-of-p-5-p"/>
           </ItemGroupData>
@@ -12960,7 +13155,8 @@
             <ItemData ItemOID="ldh_code" Value="2.16.840.1.113883.6.1_2532-0__2.16.840.1.113883.6.1_60017-1__2.16.840.1.113883.6.1_14803-1__2.16.840.1.113883.6.1_14804-9__2.16.840.1.113883.6.1_14805-6"/>
             <ItemData ItemOID="ldh" Value="356.97"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.ldh_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.ldh_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="ldh_comparator" Value=""/>
             <ItemData ItemOID="ldh_unit" Value="1"/>
             <ItemData ItemOID="ldh_loinc_1" Value="14805-6_lactate-dehydrogenase-in-serum-or-plasma-by-pyruvate-to-lactate-reaction"/>
           </ItemGroupData>
@@ -12968,7 +13164,8 @@
             <ItemData ItemOID="kardiale_troponine_code" Value="2.16.840.1.113883.6.1_49563-0__2.16.840.1.113883.6.1_89579-7__2.16.840.1.113883.6.1_67151-1__2.16.840.1.113883.6.1_6598-7__2.16.840.1.113883.6.1_6597-9__2.16.840.1.113883.6.1_48425-3__2.16.840.1.113883.6.1_42757-5__2.16.840.1.113883.6.1_10839-9"/>
             <ItemData ItemOID="kardiale_troponine" Value="316.87"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.kardiale_troponine_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.kardiale_troponine_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="kardiale_troponine_comparator" Value=""/>
             <ItemData ItemOID="kardiale_troponine_unit" Value="2"/>
             <ItemData ItemOID="kardiale_troponine_loinc_1" Value="48425-3_troponin-t.cardiac-in-blood"/>
             <ItemData ItemOID="kardiale_troponine_loinc_2" Value="10839-9_troponin-i.cardiac-in-serum-or-plasma"/>
@@ -12978,7 +13175,8 @@
             <ItemData ItemOID="hamoglobin_code" Value="2.16.840.1.113883.6.1_76769-9__2.16.840.1.113883.6.1_718-7__2.16.840.1.113883.6.1_20509-6__2.16.840.1.113883.6.1_55782-7__2.16.840.1.113883.6.1_75928-2__2.16.840.1.113883.6.1_14775-1__2.16.840.1.113883.6.1_30313-1__2.16.840.1.113883.6.1_30350-3__2.16.840.1.113883.6.1_30351-1__2.16.840.1.113883.6.1_30352-9__2.16.840.1.113883.6.1_76768-1__2.16.840.1.113883.6.1_59260-0"/>
             <ItemData ItemOID="hamoglobin" Value="169.45"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.hamoglobin_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.hamoglobin_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="hamoglobin_comparator" Value=""/>
             <ItemData ItemOID="hamoglobin_unit" Value="1"/>
             <ItemData ItemOID="hamoglobin_loinc_1" Value="75928-2_hemoglobin-in-arterial-blood"/>
             <ItemData ItemOID="hamoglobin_loinc_2" Value="20509-6_hemoglobin-in-blood-by-calculation"/>
@@ -12988,7 +13186,8 @@
             <ItemData ItemOID="kreatinin_code" Value="2.16.840.1.113883.6.1_14682-9__2.16.840.1.113883.6.1_2160-0__2.16.840.1.113883.6.1_21232-4__2.16.840.1.113883.6.1_25386-4__2.16.840.1.113883.6.1_12190-5__2.16.840.1.113883.6.1_59826-8__2.16.840.1.113883.6.1_38483-4"/>
             <ItemData ItemOID="kreatinin" Value="653.01"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.kreatinin_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.kreatinin_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="kreatinin_comparator" Value=""/>
             <ItemData ItemOID="kreatinin_unit" Value="1"/>
             <ItemData ItemOID="kreatinin_loinc_1" Value="14682-9_creatinine-in-serum-or-plasma"/>
             <ItemData ItemOID="kreatinin_loinc_2" Value="21232-4_creatinine-in-arterial-blood"/>
@@ -12997,7 +13196,8 @@
             <ItemData ItemOID="laktat_code" Value="2.16.840.1.113883.6.1_14118-4__2.16.840.1.113883.6.1_30242-2__2.16.840.1.113883.6.1_2524-7__2.16.840.1.113883.6.1_2519-7__2.16.840.1.113883.6.1_2518-9__2.16.840.1.113883.6.1_19240-1__2.16.840.1.113883.6.1_19239-3__2.16.840.1.113883.6.1_2520-5__2.16.840.1.113883.6.1_32693-4__2.16.840.1.113883.6.1_59032-3__2.16.840.1.113883.6.1_27941-4"/>
             <ItemData ItemOID="laktat" Value="815.27"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.laktat_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.laktat_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="laktat_comparator" Value=""/>
             <ItemData ItemOID="laktat_unit" Value="2"/>
             <ItemData ItemOID="laktat_loinc_1" Value="2520-5_lactate-in-cerebral-spinal-fluid"/>
             <ItemData ItemOID="laktat_loinc_2" Value="14118-4_lactate-in-serum-or-plasma"/>
@@ -13006,7 +13206,8 @@
             <ItemData ItemOID="leukozyten_absolut_code" Value="2.16.840.1.113883.6.1_804-5__2.16.840.1.113883.6.1_6690-2__2.16.840.1.113883.6.1_49498-9__2.16.840.1.113883.6.1_26464-8"/>
             <ItemData ItemOID="leukozyten_absolut" Value="573.95"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.leukozyten_absolut_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.leukozyten_absolut_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="leukozyten_absolut_comparator" Value=""/>
             <ItemData ItemOID="leukozyten_absolut_unit" Value="1"/>
             <ItemData ItemOID="leukozyten_absolut_loinc_1" Value="49498-9_leukocytes-in-blood-by-estimate"/>
           </ItemGroupData>
@@ -13014,7 +13215,8 @@
             <ItemData ItemOID="lymphozyten_absolut_code" Value="2.16.840.1.113883.6.1_732-8__2.16.840.1.113883.6.1_731-0__2.16.840.1.113883.6.1_30364-4__2.16.840.1.113883.6.1_26474-7"/>
             <ItemData ItemOID="lymphozyten_absolut" Value="60.68"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.lymphozyten_absolut_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.lymphozyten_absolut_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="lymphozyten_absolut_comparator" Value=""/>
             <ItemData ItemOID="lymphozyten_absolut_unit" Value="1"/>
             <ItemData ItemOID="lymphozyten_absolut_loinc_1" Value="732-8_lymphocytes-in-blood-by-manual-count"/>
           </ItemGroupData>
@@ -13022,7 +13224,8 @@
             <ItemData ItemOID="neutrophile_absolut_code" Value="2.16.840.1.113883.6.1_753-4__2.16.840.1.113883.6.1_751-8__2.16.840.1.113883.6.1_26499-4"/>
             <ItemData ItemOID="neutrophile_absolut" Value="669.65"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.neutrophile_absolut_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.neutrophile_absolut_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="neutrophile_absolut_comparator" Value=""/>
             <ItemData ItemOID="neutrophile_absolut_unit" Value="1"/>
             <ItemData ItemOID="neutrophile_absolut_loinc_1" Value="26499-4_neutrophils-in-blood"/>
           </ItemGroupData>
@@ -13030,7 +13233,8 @@
             <ItemData ItemOID="ptt_code" Value="2.16.840.1.113883.6.1_16631-4__2.16.840.1.113883.6.1_43734-3__2.16.840.1.113883.6.1_14979-9__2.16.840.1.113883.6.1_3173-2"/>
             <ItemData ItemOID="ptt" Value="9.74"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.ptt_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.ptt_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="ptt_comparator" Value=""/>
             <ItemData ItemOID="ptt_unit" Value="1"/>
             <ItemData ItemOID="ptt_loinc_1" Value="14979-9_aptt-in-platelet-poor-plasma-by-coagulation-assay"/>
           </ItemGroupData>
@@ -13038,7 +13242,8 @@
             <ItemData ItemOID="thrombozyten_absolut_code" Value="2.16.840.1.113883.6.1_74775-8__2.16.840.1.113883.6.1_13056-7__2.16.840.1.113883.6.1_26516-5__2.16.840.1.113883.6.1_74464-9__2.16.840.1.113883.6.1_778-1__2.16.840.1.113883.6.1_49497-1__2.16.840.1.113883.6.1_777-3__2.16.840.1.113883.6.1_26515-7"/>
             <ItemData ItemOID="thrombozyten_absolut" Value="220.47"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.thrombozyten_absolut_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.thrombozyten_absolut_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="thrombozyten_absolut_comparator" Value=""/>
             <ItemData ItemOID="thrombozyten_absolut_unit" Value="1"/>
             <ItemData ItemOID="thrombozyten_absolut_loinc_1" Value="49497-1_platelets-in-blood-by-estimate"/>
           </ItemGroupData>
@@ -13046,7 +13251,8 @@
             <ItemData ItemOID="inr_code" Value="2.16.840.1.113883.6.1_6301-6__2.16.840.1.113883.6.1_46418-0__2.16.840.1.113883.6.1_34714-6"/>
             <ItemData ItemOID="inr" Value="795.51"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.inr_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.inr_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="inr_comparator" Value=""/>
             <ItemData ItemOID="inr_unit" Value="1"/>
             <ItemData ItemOID="inr_loinc_1" Value="46418-0_inr-in-capillary-blood-by-coagulation-assay"/>
           </ItemGroupData>
@@ -13054,7 +13260,8 @@
             <ItemData ItemOID="serumalbumin_code" Value="2.16.840.1.113883.6.1_76631-1__2.16.840.1.113883.6.1_62235-7__2.16.840.1.113883.6.1_62234-0__2.16.840.1.113883.6.1_61152-5__2.16.840.1.113883.6.1_61151-7__2.16.840.1.113883.6.1_2862-1__2.16.840.1.113883.6.1_1751-7__2.16.840.1.113883.6.1_54347-0"/>
             <ItemData ItemOID="serumalbumin" Value="633"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.serumalbumin_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.serumalbumin_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="serumalbumin_comparator" Value=""/>
             <ItemData ItemOID="serumalbumin_unit" Value="1"/>
             <ItemData ItemOID="serumalbumin_loinc_1" Value="1751-7_albumin-in-serum-or-plasma"/>
             <ItemData ItemOID="serumalbumin_loinc_2" Value="54347-0_albumin-in-serum-or-plasma"/>
@@ -13064,7 +13271,8 @@
             <ItemData ItemOID="antithrombin_iii_code" Value="2.16.840.1.113883.6.1_27812-7__2.16.840.1.113883.6.1_27811-9__2.16.840.1.113883.6.1_3176-5__2.16.840.1.113883.6.1_91120-6__2.16.840.1.113883.6.1_3174-0"/>
             <ItemData ItemOID="antithrombin_iii" Value="293.58"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.antithrombin_iii_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.antithrombin_iii_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="antithrombin_iii_comparator" Value=""/>
             <ItemData ItemOID="antithrombin_iii_unit" Value="2"/>
             <ItemData ItemOID="antithrombin_iii_loinc_1" Value="27811-9_antithrombin-actual-normal-in-platelet-poor-plasma-by-chromogenic-method"/>
             <ItemData ItemOID="antithrombin_iii_loinc_2" Value="3174-0_antithrombin-in-platelet-poor-plasma-by-chromogenic-method"/>
@@ -13073,7 +13281,8 @@
             <ItemData ItemOID="pct_procalcitonin_code" Value="2.16.840.1.113883.6.1_75241-0__2.16.840.1.113883.6.1_33959-8"/>
             <ItemData ItemOID="pct_procalcitonin" Value="790.97"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.pct_procalcitonin_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.pct_procalcitonin_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="pct_procalcitonin_comparator" Value=""/>
             <ItemData ItemOID="pct_procalcitonin_unit" Value="1"/>
             <ItemData ItemOID="pct_procalcitonin_loinc_1" Value="33959-8_procalcitonin-in-serum-or-plasma"/>
           </ItemGroupData>
@@ -13081,7 +13290,8 @@
             <ItemData ItemOID="il6_interleukin_6_code" Value="2.16.840.1.113883.6.1_44322-6__2.16.840.1.113883.6.1_26881-3__2.16.840.1.113883.6.1_49919-4__2.16.840.1.113883.6.1_49732-1"/>
             <ItemData ItemOID="il6_interleukin_6" Value="970.85"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.il6_interleukin_6_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.il6_interleukin_6_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="il6_interleukin_6_comparator" Value=""/>
             <ItemData ItemOID="il6_interleukin_6_unit" Value="1"/>
             <ItemData ItemOID="il6_interleukin_6_loinc_1" Value="49919-4_interleukin-6-in-cerebral-spinal-fluid"/>
           </ItemGroupData>
@@ -13089,7 +13299,8 @@
             <ItemData ItemOID="ntprobnp_code" Value="2.16.840.1.113883.6.1_83107-3__2.16.840.1.113883.6.1_33762-6"/>
             <ItemData ItemOID="ntprobnp" Value="626.82"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.ntprobnp_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.ntprobnp_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="ntprobnp_comparator" Value=""/>
             <ItemData ItemOID="ntprobnp_unit" Value="1"/>
             <ItemData ItemOID="ntprobnp_loinc_1" Value="83107-3_natriuretic-peptide.b-prohormone-n-terminal-in-serum-or-plasma-by-immunoassay"/>
           </ItemGroupData>
@@ -13097,7 +13308,8 @@
             <ItemData ItemOID="fibrinogen_code" Value="2.16.840.1.113883.6.1_30902-1__2.16.840.1.113883.6.1_48664-7__2.16.840.1.113883.6.1_3255-7"/>
             <ItemData ItemOID="fibrinogen" Value="452.29"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.fibrinogen_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.fibrinogen_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="fibrinogen_comparator" Value=""/>
             <ItemData ItemOID="fibrinogen_unit" Value="2"/>
             <ItemData ItemOID="fibrinogen_loinc_1" Value="3255-7_fibrinogen-in-platelet-poor-plasma-by-coagulation-assay"/>
             <ItemData ItemOID="fibrinogen_loinc_2" Value="30902-1_fibrinogen-in-platelet-poor-plasma-by-heat-denaturation"/>
@@ -13120,7 +13332,8 @@
             <ItemData ItemOID="sarsco_v2_covid19_ig_g_ia_qn_code" Value="2.16.840.1.113883.6.1_94505-5"/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_g_ia_qn" Value="891.36"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ig_g_ia_qn_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ig_g_ia_qn_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="sarsco_v2_covid19_ig_g_ia_qn_comparator" Value=""/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_g_ia_qn_unit" Value="1"/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_g_ia_qn_loinc" Value="94505-5_sars-cov-2-covid-19-igg-ab-in-serum-or-plasma-by-immunoassay"/>
           </ItemGroupData>
@@ -13135,7 +13348,8 @@
             <ItemData ItemOID="sarsco_v2_covid19_ig_m_ia_qn_code" Value="2.16.840.1.113883.6.1_94506-3"/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_m_ia_qn" Value="475.82"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ig_m_ia_qn_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ig_m_ia_qn_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="sarsco_v2_covid19_ig_m_ia_qn_comparator" Value=""/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_m_ia_qn_unit" Value="1"/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_m_ia_qn_loinc" Value="94506-3_sars-cov-2-covid-19-igm-ab-in-serum-or-plasma-by-immunoassay"/>
           </ItemGroupData>
@@ -13150,7 +13364,8 @@
             <ItemData ItemOID="sarsco_v2_covid19_ig_a_ia_qn_code" Value="2.16.840.1.113883.6.1_94720-0"/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_a_ia_qn" Value="13.55"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ig_a_ia_qn_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ig_a_ia_qn_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="sarsco_v2_covid19_ig_a_ia_qn_comparator" Value=""/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_a_ia_qn_unit" Value="1"/>
             <ItemData ItemOID="sarsco_v2_covid19_ig_a_ia_qn_loinc" Value="94720-0_sars-cov-2-covid-19-iga-ab-in-serum-or-plasma-by-immunoassay"/>
           </ItemGroupData>
@@ -13165,7 +13380,8 @@
             <ItemData ItemOID="sarsco_v2_covid19_ab_ia_qn_code" Value="2.16.840.1.113883.6.1_94769-7"/>
             <ItemData ItemOID="sarsco_v2_covid19_ab_ia_qn" Value="47.98"/>
           </ItemGroupData>
-          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ab_ia_qn_unit" ItemGroupRepeatKey="1">
+          <ItemGroupData ItemGroupOID="laborwerte.sarsco_v2_covid19_ab_ia_qn_comparator" ItemGroupRepeatKey="1">
+            <ItemData ItemOID="sarsco_v2_covid19_ab_ia_qn_comparator" Value=""/>
             <ItemData ItemOID="sarsco_v2_covid19_ab_ia_qn_unit" Value="1"/>
             <ItemData ItemOID="sarsco_v2_covid19_ab_ia_qn_loinc" Value="94769-7_sars-cov-2-covid-19-ab-in-serum-or-plasma-by-immunoassay"/>
           </ItemGroupData>

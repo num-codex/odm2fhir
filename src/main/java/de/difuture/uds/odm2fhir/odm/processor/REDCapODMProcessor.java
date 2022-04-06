@@ -31,7 +31,7 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Stream;
 
-import static de.difuture.uds.odm2fhir.util.HTTPHelper.HTTP_CLIENT;
+import static de.difuture.uds.odm2fhir.util.HTTPHelper.HTTP_CLIENT_BUILDER;
 
 import static org.apache.commons.io.IOUtils.readLines;
 import static org.apache.commons.lang3.StringUtils.isNotBlank;
@@ -88,7 +88,7 @@ public class REDCapODMProcessor extends ODMProcessor {
                                     .addParameter("dateRangeBegin", dateRangeBegin)
                                     .build();
 
-    return HTTP_CLIENT.execute(httpPost).getEntity().getContent();
+    return HTTP_CLIENT_BUILDER.build().execute(httpPost).getEntity().getContent();
   }
 
   private Stream<String> readPatientIDs() throws Exception {
@@ -100,7 +100,7 @@ public class REDCapODMProcessor extends ODMProcessor {
                                     .addParameter("events", "basisdaten_arm_1,1_fall_arm_1,2_fall_arm_1,3_fall_arm_1")
                                     .build();
 
-    return readLines(HTTP_CLIENT.execute(httpPost).getEntity().getContent(), UTF_8)
+    return readLines(HTTP_CLIENT_BUILDER.build().execute(httpPost).getEntity().getContent(), UTF_8)
         .stream()
         .skip(1)
         .map(line -> substringBefore(line, ","))

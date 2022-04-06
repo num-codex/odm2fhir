@@ -24,6 +24,7 @@ import ca.uhn.fhir.rest.client.interceptor.BearerTokenAuthInterceptor;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.RequestBuilder;
 import org.apache.http.conn.ssl.NoopHostnameVerifier;
 import org.apache.http.impl.client.CloseableHttpClient;
@@ -46,10 +47,10 @@ public class HTTPHelper {
 
   private HTTPHelper() {}
 
-  public static CloseableHttpClient HTTP_CLIENT;
+  public static HttpClientBuilder HTTP_CLIENT_BUILDER;
 
   @Autowired
-  public void setHttpClient(Environment environment) throws Exception {
+  public void setHTTPClientBuilder(Environment environment) throws Exception {
     var sslContextBuilder = SSLContextBuilder.create()
                                              .loadTrustMaterial(null, (certificate, authType) -> true);
 
@@ -62,13 +63,10 @@ public class HTTPHelper {
           }
         }));
 
-    HTTP_CLIENT = HttpClientBuilder.create()
-                                   .useSystemProperties()
-                                   .setMaxConnTotal(100)
-                                   .setMaxConnPerRoute(100)
-                                   .setSSLContext(sslContextBuilder.build())
-                                   .setSSLHostnameVerifier(new NoopHostnameVerifier())
-                                   .build();
+    HTTP_CLIENT_BUILDER = HttpClientBuilder.create()
+                                           .useSystemProperties()
+                                           .setSSLContext(sslContextBuilder.build())
+                                           .setSSLHostnameVerifier(new NoopHostnameVerifier());
   }
 
   public static IClientInterceptor createAuthInterceptor(String basicauthUsername, String basicauthPassword,
@@ -83,7 +81,7 @@ public class HTTPHelper {
                                    .addParameter("client_secret", oauth2ClientSecret)
                                    .build();
 
-      var content = HTTP_CLIENT.execute(httpPost).getEntity().getContent();
+      var content = HTTP_CLIENT_BUILDER.build().execute(httpPost).getEntity().getContent();
 
       var token = new ObjectMapper().readTree(content).get("access_token").textValue();
 
