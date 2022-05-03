@@ -22,6 +22,8 @@ import de.difuture.uds.odm2fhir.odm.processor.ODMProcessor;
 
 import lombok.extern.slf4j.Slf4j;
 
+import org.apache.commons.io.IOUtils;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
@@ -33,15 +35,13 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.scheduling.concurrent.ConcurrentTaskScheduler;
 import org.springframework.scheduling.support.CronTrigger;
 
-import java.nio.file.Path;
+import java.io.Reader;
 
 import static org.apache.commons.lang3.ArrayUtils.contains;
 import static org.apache.commons.lang3.StringUtils.isBlank;
 import static org.apache.commons.lang3.function.Failable.asRunnable;
 
 import static org.springframework.boot.Banner.Mode.OFF;
-
-import static java.nio.file.Files.readString;
 
 @Slf4j
 @SpringBootApplication(exclude = QuartzAutoConfiguration.class)
@@ -56,13 +56,13 @@ public class ODM2FHIRApplication implements CommandLineRunner {
   private BuildProperties buildProperties;
 
   @Value("classpath:README.md")
-  private Path readme;
+  private Reader readme;
 
   @Value("classpath:odm/redcap/datadictionary.csv")
-  private Path odmRedcapDatadictionary;
+  private Reader odmRedcapDatadictionary;
 
   @Value("classpath:odm/redcap/mapping.properties")
-  private Path odmRedcapMapping;
+  private Reader odmRedcapMapping;
 
   @Value("${cron:}")
   private String cron;
@@ -76,11 +76,11 @@ public class ODM2FHIRApplication implements CommandLineRunner {
     log.info("{} version {}", buildProperties.getName(), buildProperties.getVersion());
 
     if (contains(args, "--help")) {
-      log.info(readString(readme));
+      log.info(IOUtils.toString(readme));
     } else if (contains(args, "--odm.redcap.datadictionary")) {
-      log.info(readString(odmRedcapDatadictionary));
+      log.info(IOUtils.toString(odmRedcapDatadictionary));
     } else if (contains(args, "--odm.redcap.mapping")) {
-      log.info(readString(odmRedcapMapping));
+      log.info(IOUtils.toString(odmRedcapMapping));
     } else {
       if (odmProcessor == null) {
         throw new IllegalArgumentException("Neither (existing) 'odm.file.path' nor " +

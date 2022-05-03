@@ -46,12 +46,12 @@ import org.hl7.fhir.utilities.npm.NpmPackage;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.DependsOn;
+import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.net.URI;
-import java.nio.file.Files;
-import java.nio.file.Path;
+import java.util.Arrays;
 import java.util.Locale;
 import java.util.stream.Stream;
 import javax.annotation.Nonnull;
@@ -72,7 +72,6 @@ import static de.difuture.uds.odm2fhir.util.HTTPHelper.createAuthInterceptor;
 
 import static org.apache.commons.lang3.StringUtils.containsAny;
 import static org.apache.commons.lang3.function.Failable.asFunction;
-import static org.apache.commons.lang3.function.Failable.asPredicate;
 
 import static org.hl7.fhir.r4.model.Bundle.BundleType.TRANSACTION;
 import static org.hl7.fhir.r4.model.Bundle.HTTPVerb.POST;
@@ -87,15 +86,14 @@ import static org.springframework.util.ReflectionUtils.invokeMethod;
 import static java.lang.String.format;
 import static java.util.Comparator.comparing;
 import static java.util.Locale.ENGLISH;
-import static java.util.function.Predicate.not;
 
 @Slf4j
 @Service
 @DependsOn("HTTPHelper")
 public class FHIRBundler {
 
-  @Value("classpath:fhir/profiles")
-  private Path profiles;
+  @Value("classpath:fhir/profiles/*.tgz")
+  private Resource[] profiles;
 
   @Value("${fhir.updateascreate.enabled:false}")
   private boolean updateascreateEnabled;
@@ -141,9 +139,8 @@ public class FHIRBundler {
         }
       };
 
-      Files.list(profiles)
-          .filter(not(asPredicate(Files::isHidden)))
-          .map(asFunction(Files::newInputStream))
+      Arrays.stream(profiles)
+          .map(asFunction(Resource::getInputStream))
           .map(asFunction(NpmPackage::fromPackage))
           .flatMap(asFunction(npmPackage -> npmPackage.list("package").stream()
                                                       .map(asFunction(npmPackage::loadResource))))
