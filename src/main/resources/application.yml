@@ -3,6 +3,7 @@
 odm:
   cache.folder.path: /workspace/cache
 #  incompleteforms.allowed: true
+#  subjectkeys.hashed: false
   file.path: /workspace/input/ODM.xml
 #  redcap.api:
 #    url: http://redcap/api/
@@ -55,14 +56,14 @@ fhir:
 #      file.path: /some/path/client_certificate.p12
 #      password: change-password
 #  identifier:
-#    assigner: Mein Krankenhaus
+#    assigner: Ein Fiktives Krankenhaus
 #    system:
-#      condition: https://mein.krankenhaus.de/fhir/NamingSystem/conditionId
-#      consent: https://mein.krankenhaus.de/fhir/NamingSystem/consentId
-#      diagnosticreport: https://mein.krankenhaus.de/fhir/NamingSystem/diagnosticreportId
-#      encounter: https://mein.krankenhaus.de/fhir/NamingSystem/encounterId
-#      immunization: https://mein.krankenhaus.de/fhir/NamingSystem/immunizationId
-#      medicationstatement: https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId
-#      observation: https://mein.krankenhaus.de/fhir/NamingSystem/observationId
-#      patient: https://mein.krankenhaus.de/fhir/NamingSystem/patientId
-#      procedure: https://mein.krankenhaus.de/fhir/NamingSystem/procedureId
+#      condition: https://ein.fiktives.krankenhaus/fhir/NamingSystem/conditionId
+#      consent: https://ein.fiktives.krankenhaus/fhir/NamingSystem/consentId
+#      diagnosticreport: https://ein.fiktives.krankenhaus/fhir/NamingSystem/diagnosticreportId
+#      encounter: https://ein.fiktives.krankenhaus/fhir/NamingSystem/encounterId
+#      immunization: https://ein.kfiktives.rankenhaus/fhir/NamingSystem/immunizationId
+#      medicationstatement: https://ein.fiktives.krankenhaus/fhir/NamingSystem/medicationstatementId
+#      observation: https://ein.fiktives.krankenhaus/fhir/NamingSystem/observationId
+#      patient: https://ein.fiktives.krankenhaus/fhir/NamingSystem/patientId
+#      procedure: https://ein.fiktives.krankenhaus/fhir/NamingSystem/procedureId

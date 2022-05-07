@@ -8,7 +8,7 @@
 
   <groupId>de.difuture.uds</groupId>
   <artifactId>odm2fhir</artifactId>
-  <version>0.7.8</version>
+  <version>0.7.9</version>
 
   <name>ODM2FHIR</name>
   <description>Mapper for GECCO based study/patient data in CDISC ODM to HL7 FHIR</description>
@@ -33,10 +33,10 @@
     <spring-retry.version>1.3.3</spring-retry.version>
     <woodstox.version>6.2.8</woodstox.version>
 
-    <maven-antrun-plugin.version>3.0.0</maven-antrun-plugin.version>
+    <maven-antrun-plugin.version>3.1.0</maven-antrun-plugin.version>
     <maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
-    <maven-project-info-reports-plugin.version>3.2.2</maven-project-info-reports-plugin.version>
-    <maven-site-plugin.version>3.11.0</maven-site-plugin.version>
+    <maven-project-info-reports-plugin.version>3.3.0</maven-project-info-reports-plugin.version>
+    <maven-site-plugin.version>3.12.0</maven-site-plugin.version>
   </properties>
 
   <dependencies>

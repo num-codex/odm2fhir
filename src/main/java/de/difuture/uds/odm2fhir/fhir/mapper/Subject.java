@@ -83,7 +83,8 @@ public class Subject {
 
     value = subjectData.getSubjectKey();
 
-    if (!ENVIRONMENT.containsProperty("debug")) {
+    if (!ENVIRONMENT.containsProperty("debug") &&
+        ENVIRONMENT.getProperty("odm.subjectkeys.hashed", Boolean.class, true)) {
       value = sha256Hex(value);
     }
 
