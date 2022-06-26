@@ -7,7 +7,6 @@ For static items the respective `ValueSet`, `CodeSystem` or `Extension` is shown
 ## Patient
 ![Patient](diagrams/svg/Patient.svg)
 
-
 ## Anamnesis
 
 ### Cardiovascular Diseases
@@ -58,12 +57,10 @@ For static items the respective `ValueSet`, `CodeSystem` or `Extension` is shown
 ### Smoking Status
 ![Smoking Status](diagrams/svg/anamnesis/SmokingStatus.svg)
 
-
 ## Complications
 
 ### Complication Conditions
 ![Complication Conditions](diagrams/svg/complications/ComplicationConditions.svg)
-
 
 ## Demographics
 
@@ -88,18 +85,15 @@ For static items the respective `ValueSet`, `CodeSystem` or `Extension` is shown
 ### Pregnancy Status
 ![Pregnancy Status](diagrams/svg/demographics/PregnancyStatus.svg)
 
-
 ## Epidemiological Factors
 
 ### Known Exposure
 ![Known Exposure](diagrams/svg/epidemiological_factors/KnownExposure.svg)
 
-
 ## Imaging
 
 ### Imaging Procedures
 ![Imaging Procedures](diagrams/svg/imaging/ImagingProcedures.svg)
-
 
 ## Laboratory Values
 
@@ -111,7 +105,6 @@ For static items the respective `ValueSet`, `CodeSystem` or `Extension` is shown
 
 ### SARS CoV2 RTPCR
 ![SARS CoV2 RTPCR](diagrams/svg/laboratory_values/SARSCoV2RTPCR.svg)
-
 
 ## Medication
 
@@ -127,12 +120,10 @@ For static items the respective `ValueSet`, `CodeSystem` or `Extension` is shown
 ### Immunoglobulins
 ![Immunoglobulins](diagrams/svg/medication/Immunoglobulins.svg)
 
-
 ## Onset of Illness
 
 ### Stage at Diagnosis
 ![Stage at Diagnosis](diagrams/svg/onset_of_illness/StageAtDiagnosis.svg)
-
 
 ## Outcome at Discharge
 
@@ -145,7 +136,6 @@ For static items the respective `ValueSet`, `CodeSystem` or `Extension` is shown
 ### Type of Discharge
 ![Type of Discharge](diagrams/svg/outcome_at_discharge/TypeOfDischarge.svg)
 
-
 ## Study Enrollment
 
 ### Interventional Studies Participation
@@ -154,12 +144,10 @@ For static items the respective `ValueSet`, `CodeSystem` or `Extension` is shown
 ### Study Enrollment COVID-19
 ![Study Enrollment COVID-19](diagrams/svg/study_enrollment/StudyEnrollmentCOVID19.svg)
 
-
 ## Symptoms
 
 ### Symptom Conditions
 ![Symptom Conditions](diagrams/svg/symptoms/SymptomConditions.svg)
-
 
 ## Therapy
 
@@ -180,7 +168,6 @@ For static items the respective `ValueSet`, `CodeSystem` or `Extension` is shown
 
 ### Ventilation Type
 ![Ventilation Type](diagrams/svg/therapy/VentilationType.svg)
-
 
 ## Vital Signs
 

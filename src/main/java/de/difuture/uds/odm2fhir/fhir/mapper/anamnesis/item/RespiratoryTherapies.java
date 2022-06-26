@@ -60,7 +60,8 @@ public class RespiratoryTherapies extends Item {
         .map(ProcedureStatus::fromCode)
         .forEach(procedure::setStatus);
 
-    var codeableConcept = createCodeableConcept(generalCoding);
+    var codeableConcept = createCodeableConcept(createCoding(generalCoding)
+                                                    .setDisplay("Respiratory therapy (procedure)"));
     return codeableConcept.isEmpty() ? new Procedure() : procedure.setCode(codeableConcept);
   }
 

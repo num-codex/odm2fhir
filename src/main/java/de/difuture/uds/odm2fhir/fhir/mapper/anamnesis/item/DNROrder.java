@@ -46,6 +46,7 @@ public class DNROrder extends Item {
   private Consent createConsent(ItemData answerCoding) {
     return (Consent) new Consent()
         .addIdentifier(createIdentifier(CONSENT, answerCoding))
+        .setDateTimeElement(UNKNOWN_DATE_TIME) // TODO Set actual DateTime value
         .setStatus(ConsentState.ACTIVE)
         .setScope(ADR)
         .addCategory(DNR)

@@ -18,7 +18,6 @@ package de.difuture.uds.odm2fhir.fhir.mapper.therapy.item;
  * OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-
 import de.difuture.uds.odm2fhir.fhir.mapper.Item;
 import de.difuture.uds.odm2fhir.odm.model.FormData;
 import de.difuture.uds.odm2fhir.odm.model.ItemData;

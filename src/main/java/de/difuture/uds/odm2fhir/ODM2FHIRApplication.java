@@ -48,7 +48,6 @@ import static org.springframework.boot.Banner.Mode.OFF;
 @PropertySource("classpath:odm/redcap/mapping.properties")
 public class ODM2FHIRApplication implements CommandLineRunner {
 
-  @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
   @Autowired(required = false)
   private ODMProcessor odmProcessor;
 
@@ -68,7 +67,7 @@ public class ODM2FHIRApplication implements CommandLineRunner {
   private String cron;
 
   public static void main(String... args) {
-    new SpringApplicationBuilder(ODM2FHIRApplication.class).bannerMode(OFF).run(args);
+    new SpringApplicationBuilder(ODM2FHIRApplication.class).bannerMode(OFF).lazyInitialization(true).run(args);
   }
 
   @Override

@@ -50,7 +50,6 @@ public class OrganRecipient extends Item {
         .anyMatch(code -> equalsAny(code, "410594000", "261665006")) ? Stream.empty() : // generalPresence != YES
 //        Stream.of(createCondition(generalPresence)) :
 
-
         itemGroupData.getItemData()
             .stream()
             .filter(not(ItemData::isEmpty))

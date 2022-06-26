@@ -138,9 +138,12 @@ public abstract class Item {
       createCoding(SNOMED_CT, "261665006", "Unknown (qualifier value)"), "Presence unknown.");
   protected final Extension DATA_ABSENT_FOR_UNKNOWN_REASON = createExtension(
       createCoding(DATA_ABSENT_REASON.getUrl(), DataAbsentReason.UNKNOWN.toCode(), DataAbsentReason.UNKNOWN.getDisplay()));
+  protected final Extension DATA_ABSENT_BECAUSE_NOT_PERFORMED = createExtension(
+      createCoding(DATA_ABSENT_REASON.getUrl(), DataAbsentReason.NOTPERFORMED.toCode(), DataAbsentReason.NOTPERFORMED.getDisplay()));
 
   protected final DateType UNKNOWN_DATE = (DateType) new DateType().addExtension(DATA_ABSENT_FOR_UNKNOWN_REASON);
   protected final DateTimeType UNKNOWN_DATE_TIME = (DateTimeType) new DateTimeType().addExtension(DATA_ABSENT_FOR_UNKNOWN_REASON);
+  protected final DateTimeType NOT_PERFORMED_DATE_TIME = (DateTimeType) new DateTimeType().addExtension(DATA_ABSENT_BECAUSE_NOT_PERFORMED);
 
   private static final Map<String, String> CODE_SYSTEMS, LAB_UNITS;
 

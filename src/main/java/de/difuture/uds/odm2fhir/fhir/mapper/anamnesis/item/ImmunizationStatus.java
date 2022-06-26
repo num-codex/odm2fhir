@@ -106,7 +106,8 @@ public class ImmunizationStatus extends Item {
     }
 
     if (vaccineCodeableCoding.isEmpty()) { //add No-Known-Immunuzations if no vaccineCode given
-      vaccineCodeableCoding.addCoding(createCoding(NO_IMMUNIZATION_INFO_UV_IPS, "no-known-immunizations", "vaccineCode unknown"));
+      vaccineCodeableCoding.addCoding(createCoding(NO_IMMUNIZATION_INFO_UV_IPS, "no-known-immunizations",
+                                                   "No known immunizations"));
     }
 
     if (diseaseCodeableCoding.isEmpty()) { //add targetDisease unknown if none present

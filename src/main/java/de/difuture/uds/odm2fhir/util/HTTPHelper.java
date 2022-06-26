@@ -30,6 +30,8 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.ssl.SSLContextBuilder;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.DependsOn;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
 
@@ -41,6 +43,8 @@ import static org.apache.commons.lang3.StringUtils.isNoneBlank;
 import static org.apache.commons.lang3.function.Failable.asConsumer;
 
 @Service
+@DependsOn("environmentProvider")
+@Lazy(false)
 public class HTTPHelper {
 
   private HTTPHelper() {}

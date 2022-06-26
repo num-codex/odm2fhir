@@ -122,7 +122,7 @@ public class HistoryOfTravel extends Item {
       var countryCoding = createCoding(country);
       countryCoding.setDisplay(new Locale("", countryCoding.getCode()).getDisplayCountry(ENGLISH));
       observation.addComponent(new ObservationComponentComponent()
-          .setCode(createCodeableConcept(createCoding(LOINC, "94651-7", "Country of travel"))
+          .setCode(createCodeableConcept(createCoding(LOINC, "94651-7", "Country of travel [Location]"))
               .setText("Country of travel"))
           .setValue(createCodeableConcept(countryCoding).setText(countryCoding.getDisplay())));
     }
@@ -140,7 +140,7 @@ public class HistoryOfTravel extends Item {
     var city = travelActivity.get("city");
     if (!city.isEmpty()) {
       observation.addComponent(new ObservationComponentComponent()
-          .setCode(createCodeableConcept(createCoding(LOINC, "94653-3", "City of travel"))
+          .setCode(createCodeableConcept(createCoding(LOINC, "94653-3", "City of travel [Location]"))
               .setText("City of travel"))
           .setValue(createStringType(city)));
     }

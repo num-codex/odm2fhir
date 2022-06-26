@@ -44,7 +44,7 @@ import static ca.uhn.fhir.context.FhirContext.forR4Cached;
 @ConditionalOnExpression("!'${fhir.server.url:}'.empty")
 @Service
 @Slf4j
-public class ServerFHIRBundleWriter extends FHIRBundleWriter {
+public class ServerFHIRBundleWriter implements FHIRBundleWriter {
 
   @Value("${fhir.server.url:}")
   private URI url;

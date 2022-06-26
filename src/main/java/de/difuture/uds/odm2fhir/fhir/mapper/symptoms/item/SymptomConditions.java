@@ -62,7 +62,6 @@ public class SymptomConditions extends Item {
         .setSeverity(createCodeableConcept(formData.getItemData(specificCoding.getItemOID() + "_schweregrad")))
         .setMeta(createMeta(SYMPTOMS_COVID_19));
 
-
     var specificCodings = createCodings(specificCoding);
 
     var codeCodeableConcept = new CodeableConcept();

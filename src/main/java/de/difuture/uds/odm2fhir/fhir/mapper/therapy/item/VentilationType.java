@@ -56,18 +56,33 @@ public class VentilationType extends Item {
 
     var codeableConcept = new CodeableConcept();
     for (var coding : createCodings(answerCoding)) {
+      var split = coding.getCode().split("=");
+
       var material = ArrayUtils.get(coding.getCode().split("="), 1);
       if (material != null && !material.isEmpty()) {
-        procedure.addUsedCode(createCodeableConcept(createCoding(coding.getSystem(), material, null)));
+        var display = switch (material) {
+          case "426854004" -> "High flow oxygen nasal cannula (physical object)";
+          case "26412008" -> "Endotracheal tube, device (physical object)";
+          case "129121000" -> "Tracheostomy tube, device (physical object)";
+          default -> null;
+        };
+        procedure.addUsedCode(createCodeableConcept(createCoding(coding.getSystem(), material, display)));
       }
+
+      var code = ArrayUtils.get(split, 0);
+      var display = switch (code) {
+        case "371907003" -> "Oxygen administration by nasal cannula (procedure)";
+        case "428311008" -> "Noninvasive ventilation (procedure)";
+        default -> "Artificial respiration (procedure)";
+      };
 
       // case "Unknown" or "No"
       if (DATA_ABSENT_REASON.getUrl().equals(coding.getSystem())) {
-        codeableConcept.addCoding(createCoding(SNOMED_CT, "40617009", "Artificial respiration (procedure)"));
+        codeableConcept.addCoding(createCoding(SNOMED_CT, "40617009", display));
       } else if (ProcedureStatus.UNKNOWN.getSystem().equals(coding.getSystem())) {
         procedure.setStatus(ProcedureStatus.fromCode(coding.getCode()));
       } else { // case "Yes"
-        codeableConcept.addCoding(coding);
+        codeableConcept.addCoding(createCoding(SNOMED_CT, code, display));
       }
     }
 

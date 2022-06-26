@@ -327,9 +327,9 @@
             <ItemData ItemOID="bildgebende_verfahren" Value="1"/>
           </ItemGroupData>
           <ItemGroupData ItemGroupOID="bildgebung.bildgebende_verfahren_ct" ItemGroupRepeatKey="1">
-            <ItemData ItemOID="bildgebende_verfahren_ct" Value="1.2.840.10008.2.16.4_CT__2.16.840.1.113883.6.96_77477000COLON363704007EQUAL39607008__2.16.840.1.113883.6.96_261665006"/>
-            <ItemData ItemOID="bildgebende_verfahren_roentgen" Value="1.2.840.10008.2.16.4_RG__2.16.840.1.113883.6.96_168537006COLON363704007EQUAL39607008__2.16.840.1.113883.6.96_410594000"/>
-            <ItemData ItemOID="bildgebende_verfahren_us" Value="1.2.840.10008.2.16.4_US__2.16.840.1.113883.6.96_16310003COLON363704007EQUAL39607008__2.16.840.1.113883.6.96_410605003"/>
+            <ItemData ItemOID="bildgebende_verfahren_ct" Value="1.2.840.10008.2.16.4_CT__2.16.840.1.113883.6.96_77477000__2.16.840.1.113883.6.96_261665006"/>
+            <ItemData ItemOID="bildgebende_verfahren_roentgen" Value="1.2.840.10008.2.16.4_RG__2.16.840.1.113883.6.96_168537006__2.16.840.1.113883.6.96_410594000"/>
+            <ItemData ItemOID="bildgebende_verfahren_us" Value="1.2.840.10008.2.16.4_US__2.16.840.1.113883.6.96_16310003__2.16.840.1.113883.6.96_410605003"/>
           </ItemGroupData>
           <ItemGroupData ItemGroupOID="bildgebung.befund_bildgebender_verfahren_code" ItemGroupRepeatKey="1">
             <ItemData ItemOID="befund_bildgebender_verfahren_code" Value="2.16.840.1.113883.6.96_118247008"/>
@@ -477,7 +477,7 @@
           </ItemGroupData>
           <ItemGroupData ItemGroupOID="therapie.beatmungstherapie_code" ItemGroupRepeatKey="1">
             <ItemData ItemOID="beatmungstherapie_code" Value="NoCodeSystem_NoCode"/>
-            <ItemData ItemOID="beatmungstherapie" Value="2.16.840.1.113883.6.96_40617009COLON425391005EQUAL129121000"/>
+            <ItemData ItemOID="beatmungstherapie" Value="2.16.840.1.113883.6.96_40617009EQUAL129121000"/>
           </ItemGroupData>
           <ItemGroupData ItemGroupOID="therapie.therapie_complete" ItemGroupRepeatKey="1">
             <ItemData ItemOID="therapie_complete" Value="2"/>
@@ -917,7 +917,7 @@
           </ItemGroupData>
           <ItemGroupData ItemGroupOID="therapie.beatmungstherapie_code" ItemGroupRepeatKey="1">
             <ItemData ItemOID="beatmungstherapie_code" Value="NoCodeSystem_NoCode"/>
-            <ItemData ItemOID="beatmungstherapie" Value="2.16.840.1.113883.6.96_40617009COLON425391005EQUAL129121000"/>
+            <ItemData ItemOID="beatmungstherapie" Value="2.16.840.1.113883.6.96_40617009EQUAL129121000"/>
           </ItemGroupData>
           <ItemGroupData ItemGroupOID="therapie.therapie_complete" ItemGroupRepeatKey="1">
             <ItemData ItemOID="therapie_complete" Value="2"/>
@@ -980,11 +980,11 @@
           </ItemGroupData>
           <ItemGroupData ItemGroupOID="anamnese_risikofaktoren.herzkreislauferkrankungen_bluthochdruck" ItemGroupRepeatKey="1">
             <ItemData ItemOID="herzkreislauferkrankungen_bluthochdruck" Value="1.2.276.0.76.5.502_I10.90__2.16.840.1.113883.6.96_38341003__2.16.840.1.113883.6.96_261665006"/>
-            <ItemData ItemOID="herzkreislauferkrankungen_zustand_nach_herzinfarkt" Value="1.2.276.0.76.5.502_I25.29__2.16.840.1.113883.6.96_417662000COLON246090004EQUAL22298006__2.16.840.1.113883.6.96_261665006"/>
+            <ItemData ItemOID="herzkreislauferkrankungen_zustand_nach_herzinfarkt" Value="1.2.276.0.76.5.502_I25.29__2.16.840.1.113883.6.96_399211009__2.16.840.1.113883.6.96_261665006"/>
             <ItemData ItemOID="herzkreislauferkrankungen_herzrhythmusstoerungen" Value="1.2.276.0.76.5.502_I49.9__2.16.840.1.113883.6.96_698247007__2.16.840.1.113883.6.96_261665006"/>
             <ItemData ItemOID="herzkreislauferkrankungen_herzinsuffizienz" Value=""/>
             <ItemData ItemOID="herzkreislauferkrankungen_pavk" Value="1.2.276.0.76.5.502_I73.9__2.16.840.1.113883.6.96_399957001__2.16.840.1.113883.6.96_410605003"/>
-            <ItemData ItemOID="herzkreislauferkrankungen_zustand_nach_revaskularisation" Value="1.2.276.0.76.5.502_Z95.5__2.16.840.1.113883.6.96_416940007COLON363589002EQUAL81266008__2.16.840.1.113883.6.96_410594000"/>
+            <ItemData ItemOID="herzkreislauferkrankungen_zustand_nach_revaskularisation" Value="1.2.276.0.76.5.502_Z95.5__2.16.840.1.113883.6.96_399261000__2.16.840.1.113883.6.96_410594000"/>
             <ItemData ItemOID="herzkreislauferkrankungen_koronare_herzerkrankung_khk" Value="1.2.276.0.76.5.502_I25.1__2.16.840.1.113883.6.96_53741008__2.16.840.1.113883.6.96_410594000"/>
             <ItemData ItemOID="herzkreislauferkrankungen_carotisstenose" Value="1.2.276.0.76.5.502_I65.2__2.16.840.1.113883.6.96_64586002__2.16.840.1.113883.6.96_261665006"/>
             <ItemData ItemOID="herzkreislauferkrankungen_andere" Value=""/>

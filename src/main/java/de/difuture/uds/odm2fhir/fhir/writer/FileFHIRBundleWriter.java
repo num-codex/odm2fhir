@@ -18,6 +18,8 @@ package de.difuture.uds.odm2fhir.fhir.writer;
  * OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
+import ca.uhn.fhir.parser.IParser;
+
 import lombok.extern.slf4j.Slf4j;
 
 import org.hl7.fhir.r4.model.Bundle;
@@ -30,16 +32,20 @@ import org.springframework.stereotype.Service;
 import java.io.IOException;
 import java.nio.file.Path;
 
+import static ca.uhn.fhir.context.FhirContext.forR4Cached;
+
 import static java.nio.file.Files.createDirectories;
 import static java.nio.file.Files.writeString;
 
 @ConditionalOnExpression("'${fhir.server.url:}'.empty")
 @Service
 @Slf4j
-public class FileFHIRBundleWriter extends FHIRBundleWriter {
+public class FileFHIRBundleWriter implements FHIRBundleWriter {
 
   @Value("${fhir.folder.path:}")
   private Path folderPath;
+
+  private static final IParser JSON_PARSER = forR4Cached().newJsonParser().setPrettyPrint(true);
 
   @Override
   public void write(Bundle bundle) throws IOException {

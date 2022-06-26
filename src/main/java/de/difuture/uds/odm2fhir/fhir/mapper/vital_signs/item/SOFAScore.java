@@ -166,18 +166,18 @@ public class SOFAScore extends Item {
             .setText("Sepsis-related organ failure assessment score"))
         .setMeta(createMeta(NUMStructureDefinition.SOFA_SCORE));
 
-    itemDatas.stream()
-        .map(ItemData::getValue)
-        .filter(StringUtils::isNotBlank)
-        .forEach(code -> observation.addComponent(new ObservationComponentComponent()
-            .setCode(createCodeableConcept(createCoding(SOFA_SCORE, chop(code), getDisplay(chop(code))))
-                .setText(getDefinition(chop(code))))
-            .setValue(createCodeableConcept(createCoding(SOFA_SCORE, code, getDisplay(code)))
-                .setText(getDefinition(code)))));
-
     if (sofaTotalScore.isEmpty()) {
       observation.setDataAbsentReason(UNKNOWN);
     } else {
+      itemDatas.stream()
+               .map(ItemData::getValue)
+               .filter(StringUtils::isNotBlank)
+               .forEach(code -> observation.addComponent(new ObservationComponentComponent()
+                                                             .setCode(createCodeableConcept(createCoding(SOFA_SCORE, chop(code), getDisplay(chop(code))))
+                                                                          .setText(getDefinition(chop(code))))
+                                                             .setValue(createCodeableConcept(createCoding(SOFA_SCORE, code, getDisplay(code)))
+                                                                           .setText(getDefinition(code)))));
+
       observation.setValue(new IntegerType().setValue(Integer.valueOf(sofaTotalScore.getValue())));
     }
 
@@ -185,11 +185,11 @@ public class SOFAScore extends Item {
   }
 
   public String getDisplay(String code) {
-    return DISPLAYS.getOrDefault(code, "No Display");
+    return DISPLAYS.get(code);
   }
 
   public String getDefinition(String code) {
-    return DEFINITIONS.getOrDefault(code, "No Definition");
+    return DEFINITIONS.get(code);
   }
 
 }

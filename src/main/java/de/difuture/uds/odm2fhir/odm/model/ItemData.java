@@ -57,7 +57,6 @@ public class ItemData {
     return new ItemData().setItemOID(itemOID).setValue(value).setItemGroupData(itemGroupData);
   }
 
-  @SuppressWarnings("unchecked")
   public String getValue() {
     if (isNumeric(value)) {
       var codes = ENVIRONMENT.getProperty(itemOID, List.class);

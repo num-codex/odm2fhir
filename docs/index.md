@@ -1,5 +1,3 @@
-
-
 Mapper for study/patient data in [CDISC ODM](https://www.cdisc.org/standards/data-exchange/odm) based on the [GECCO data dictionary](https://confluence.imi.med.fau.de/display/MIIC/30+EDC+System+REDCap) to [HL7 FHIR](https://www.hl7.org/fhir) adhering to the [GECCO implementation guide](https://simplifier.net/ForschungsnetzCovid-19) (see [here](mappings.md) for mapping details).
 
 ## Command
@@ -18,18 +16,20 @@ docker run **ENVIRONMENTS** **VOLUMES** ghcr.io/num-codex/odm2fhir **ARGUMENTS**
 
 * `--odm.redcap.mapping` Print current mapping.
 
-* `--odm.incompleteforms.allowed=(true|false)` Allow processing of incomplete forms (`false` b y default). 
+* `--odm.incompleteforms.allowed=(true|false)` Allow processing of incomplete forms (`false` by default). 
 
 * `--odm.subjectkeys.hashed=(true|false)` Hash the original subject keys (`true` by default).
 
-* `--fhir.identifier.system.**TYPE**=**TYPE_IDENTIFIER_SYSTEM**` Add an identifier system with `**TYPE**` of `condition`, `consent`, `diagnosticreport`, `encounter`, `immunization`, `medicationstatement`, `observation`, `patient` or `procedure` (see [here](https://simplifier.net/guide/GermanCoronaConsensusDataSet-ImplementationGuide/TransactionBundle)).
+* `--fhir.identifier.system.**TYPE**=**TYPE_IDENTIFIER_SYSTEM**` Add an identifier system with `**TYPE**` of `condition`, `consent`, `diagnosticreport`, `encounter`, `immunization`, `medicationstatement`, `observation`, `organization`, `patient` or `procedure` (see [here](https://simplifier.net/guide/GermanCoronaConsensusDataSet-ImplementationGuide/TransactionBundle)).
 
 * `--fhir.identifier.assigner=**IDENTIFIER_ASSIGNER**` Add an identifier assigner.
 
-* `--fhir.encounters.enabled=(true|false)` Enable FHIR `encounter` resources for patient cases (`true` by default).
+* `--fhir.encounters.enabled=(true|false)` Enable FHIR `Encounter` resources for patient cases (`true` by default).
 
 * `--fhir.updateascreate.enabled=(true|false)` Enable update-as-create (see [here](https://www.hl7.org/fhir/http.html#upsert), `false` by default).
 
+* `--fhir.codingdisplays.removed=(true|false)` Remove the `display` property from all FHIR `Coding` resources (`false` by default).
+* 
 * `--fhir.validation.enabled=(true|false)` Enable FHIR resource validation (see [here](#validation), `false` by default).
 
 * `--cron="**CRON_PATTERN**"` Enable timed execution (see [here](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/scheduling/support/CronSequenceGenerator.html)).
