@@ -31,7 +31,9 @@ docker run **ENVIRONMENTS** **VOLUMES** ghcr.io/num-codex/odm2fhir **ARGUMENTS**
 * `--fhir.updateascreate.enabled=(true|false)` Enable update-as-create (see [here](https://www.hl7.org/fhir/http.html#upsert), `false` by default).
 
 * `--fhir.codingdisplays.removed=(true|false)` Remove the `display` property from all FHIR `Coding` resources (`false` by default).
-* 
+
+* `--fhir.notapplicables.removed=(true|false)` Remove all FHIR resources having code `not applicable` (`true` by default).
+
 * `--fhir.validation.enabled=(true|false)` Enable FHIR resource validation (see [here](#validation), `false` by default).
 
 * `--cron="**CRON_PATTERN**"` Enable timed execution (see [here](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/scheduling/support/CronSequenceGenerator.html)).

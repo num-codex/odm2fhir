@@ -24,6 +24,7 @@ import de.difuture.uds.odm2fhir.odm.model.FormData;
 import de.difuture.uds.odm2fhir.odm.model.ItemData;
 
 import org.hl7.fhir.r4.model.CodeableConcept;
+import org.hl7.fhir.r4.model.Coding;
 import org.hl7.fhir.r4.model.DomainResource;
 import org.hl7.fhir.r4.model.Immunization;
 import org.hl7.fhir.r4.model.Immunization.ImmunizationProtocolAppliedComponent;
@@ -33,6 +34,7 @@ import java.util.stream.Stream;
 
 import static de.difuture.uds.odm2fhir.fhir.util.CommonCodeSystem.NO_IMMUNIZATION_INFO_UV_IPS;
 import static de.difuture.uds.odm2fhir.fhir.util.CommonCodeSystem.SNOMED_CT;
+import static de.difuture.uds.odm2fhir.util.EnvironmentProvider.ENVIRONMENT;
 
 import static org.apache.commons.lang3.StringUtils.endsWithAny;
 
@@ -108,6 +110,11 @@ public class ImmunizationStatus extends Item {
     if (vaccineCodeableCoding.isEmpty()) { //add No-Known-Immunuzations if no vaccineCode given
       vaccineCodeableCoding.addCoding(createCoding(NO_IMMUNIZATION_INFO_UV_IPS, "no-known-immunizations",
                                                    "No known immunizations"));
+    }
+
+    if (ENVIRONMENT.getProperty("fhir.notapplicables.removed", Boolean.class, true) &&
+        diseaseCodeableCoding.getCoding().stream().map(Coding::getCode).anyMatch("385432009"::equals)) {
+      diseaseCodeableCoding.setCoding(null).setText(null);
     }
 
     if (diseaseCodeableCoding.isEmpty()) { //add targetDisease unknown if none present

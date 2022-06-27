@@ -23,6 +23,7 @@ import de.difuture.uds.odm2fhir.odm.model.FormData;
 import de.difuture.uds.odm2fhir.odm.model.ItemData;
 
 import org.hl7.fhir.r4.model.CodeableConcept;
+import org.hl7.fhir.r4.model.Coding;
 import org.hl7.fhir.r4.model.Condition;
 import org.hl7.fhir.r4.model.DomainResource;
 
@@ -30,6 +31,7 @@ import java.util.List;
 import java.util.stream.Stream;
 
 import static de.difuture.uds.odm2fhir.fhir.util.NUMStructureDefinition.SYMPTOMS_COVID_19;
+import static de.difuture.uds.odm2fhir.util.EnvironmentProvider.ENVIRONMENT;
 
 import static org.hl7.fhir.r4.model.codesystems.ResourceTypes.CONDITION;
 
@@ -104,6 +106,11 @@ public class SymptomConditions extends Item {
                        condition.copy()
                                 .setCode(codeableConceptSMELL)
                                 .setIdentifier(List.of(identifier.copy().setValue(identifier.getValue() + "_geruch"))));
+    }
+
+    if (ENVIRONMENT.getProperty("fhir.notapplicables.removed", Boolean.class, true) &&
+        codeCodeableConcept.getCoding().stream().map(Coding::getCode).anyMatch("385432009"::equals)) {
+      codeCodeableConcept.setCoding(null).setText(null);
     }
 
     return codeCodeableConcept.isEmpty() ? Stream.empty() : Stream.of(condition.setCode(codeCodeableConcept));

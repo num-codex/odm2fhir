@@ -23,6 +23,7 @@ import de.difuture.uds.odm2fhir.odm.model.FormData;
 import de.difuture.uds.odm2fhir.odm.model.ItemData;
 
 import org.hl7.fhir.r4.model.CodeableConcept;
+import org.hl7.fhir.r4.model.Coding;
 import org.hl7.fhir.r4.model.DomainResource;
 import org.hl7.fhir.r4.model.MedicationStatement;
 import org.hl7.fhir.r4.model.MedicationStatement.MedicationStatementStatus;
@@ -30,6 +31,7 @@ import org.hl7.fhir.r4.model.MedicationStatement.MedicationStatementStatus;
 import java.util.stream.Stream;
 
 import static de.difuture.uds.odm2fhir.fhir.util.NUMStructureDefinition.PHARMACOLOGICAL_THERAPY;
+import static de.difuture.uds.odm2fhir.util.EnvironmentProvider.ENVIRONMENT;
 
 import static org.apache.commons.lang3.StringUtils.endsWith;
 import static org.apache.commons.lang3.StringUtils.endsWithAny;
@@ -95,6 +97,12 @@ public class COVID19Therapy extends Item {
         medicationCodeableConcept.addCoding(coding);
       }
     }
+
+    if (ENVIRONMENT.getProperty("fhir.notapplicables.removed", Boolean.class, true) &&
+        medicationCodeableConcept.getCoding().stream().map(Coding::getCode).anyMatch("385432009"::equals)) {
+      medicationCodeableConcept.setCoding(null).setText(null);
+    }
+
     return medicationCodeableConcept.isEmpty() ? new MedicationStatement() : medicationStatement.setMedication(medicationCodeableConcept);
   }
 
