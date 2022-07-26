@@ -498,7 +498,7 @@ pa_co2_unit,vitalparameter,PaCO2,dropdown,Kohlendioxidpartialdruck (PaCO2) Einhe
 pa_co2_code,vitalparameter,,text,2.16.840.1.113883.6.1_11557-6,,,,,,,,,,,,,"@HIDDEN @DEFAULT=""2.16.840.1.113883.6.1_11557-6"""
 pa_co2,vitalparameter,,text,Kohlendioxidpartialdruck (PaCO2),,mm[Hg]PaCO2,integer,0,200,,,,,,,,
 pa_o2_unit,vitalparameter,PaO2,dropdown,Sauerstoffpartialdruck (PaO2) Einheit,"1,mm[Hg]",,,,,,,,,,,,"@DEFAULT=""1""@READONLY"
-pa_o2_code,vitalparameter,,text,2.16.840.1.113883.6.1_11557-8,,,,,,,,,,,,,"@HIDDEN @DEFAULT=""2.16.840.1.113883.6.1_11557-8"""
+pa_o2_code,vitalparameter,,text,2.16.840.1.113883.6.1_11556-8,,,,,,,,,,,,,"@HIDDEN @DEFAULT=""2.16.840.1.113883.6.1_11556-8"""
 pa_o2,vitalparameter,,text,Sauerstoffpartialdruck (PaO2),,mm[Hg]PaO2,integer,0,200,,,,,,,,
 fi_o2_unit,vitalparameter,FiO2,dropdown,Inspiratorische Sauerstoffkonzentration (FiO2) Einheit,"1,%",,,,,,,,,,,,"@DEFAULT=""1""@READONLY"
 fi_o2_code,vitalparameter,,text,2.16.840.1.113883.6.1_3150-0__2.16.840.1.113883.6.96_250774007,,,,,,,,,,,,,"@HIDDEN @DEFAULT=""2.16.840.1.113883.6.1_3150-0__2.16.840.1.113883.6.96_250774007"""

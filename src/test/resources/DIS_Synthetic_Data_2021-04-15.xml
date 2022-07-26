@@ -444,7 +444,7 @@
             <ItemData ItemOID="pa_o2_unit" Value="1"/>
           </ItemGroupData>
           <ItemGroupData ItemGroupOID="vitalparameter.pa_o2_code" ItemGroupRepeatKey="1">
-            <ItemData ItemOID="pa_o2_code" Value="2.16.840.1.113883.6.1_11557-8"/>
+            <ItemData ItemOID="pa_o2_code" Value="2.16.840.1.113883.6.1_11556-8"/>
             <ItemData ItemOID="pa_o2" Value="119"/>
           </ItemGroupData>
           <ItemGroupData ItemGroupOID="vitalparameter.fi_o2_unit" ItemGroupRepeatKey="1">
@@ -2129,7 +2129,7 @@
             <ItemData ItemOID="pa_o2_unit" Value="1"/>
           </ItemGroupData>
           <ItemGroupData ItemGroupOID="vitalparameter.pa_o2_code" ItemGroupRepeatKey="1">
-            <ItemData ItemOID="pa_o2_code" Value="2.16.840.1.113883.6.1_11557-8"/>
+            <ItemData ItemOID="pa_o2_code" Value="2.16.840.1.113883.6.1_11556-8"/>
             <ItemData ItemOID="pa_o2" Value="50"/>
           </ItemGroupData>
           <ItemGroupData ItemGroupOID="vitalparameter.fi_o2_unit" ItemGroupRepeatKey="1">
@@ -3814,7 +3814,7 @@
             <ItemData ItemOID="pa_o2_unit" Value="1"/>
           </ItemGroupData>
           <ItemGroupData ItemGroupOID="vitalparameter.pa_o2_code" ItemGroupRepeatKey="1">
-            <ItemData ItemOID="pa_o2_code" Value="2.16.840.1.113883.6.1_11557-8"/>
+            <ItemData ItemOID="pa_o2_code" Value="2.16.840.1.113883.6.1_11556-8"/>
             <ItemData ItemOID="pa_o2" Value="149"/>
           </ItemGroupData>
           <ItemGroupData ItemGroupOID="vitalparameter.fi_o2_unit" ItemGroupRepeatKey="1">
@@ -5499,7 +5499,7 @@
             <ItemData ItemOID="pa_o2_unit" Value="1"/>
           </ItemGroupData>
           <ItemGroupData ItemGroupOID="vitalparameter.pa_o2_code" ItemGroupRepeatKey="1">
-            <ItemData ItemOID="pa_o2_code" Value="2.16.840.1.113883.6.1_11557-8"/>
+            <ItemData ItemOID="pa_o2_code" Value="2.16.840.1.113883.6.1_11556-8"/>
             <ItemData ItemOID="pa_o2" Value="97"/>
           </ItemGroupData>
           <ItemGroupData ItemGroupOID="vitalparameter.fi_o2_unit" ItemGroupRepeatKey="1">
@@ -7184,7 +7184,7 @@
             <ItemData ItemOID="pa_o2_unit" Value="1"/>
           </ItemGroupData>
           <ItemGroupData ItemGroupOID="vitalparameter.pa_o2_code" ItemGroupRepeatKey="1">
-            <ItemData ItemOID="pa_o2_code" Value="2.16.840.1.113883.6.1_11557-8"/>
+            <ItemData ItemOID="pa_o2_code" Value="2.16.840.1.113883.6.1_11556-8"/>
             <ItemData ItemOID="pa_o2" Value="93"/>
           </ItemGroupData>
           <ItemGroupData ItemGroupOID="vitalparameter.fi_o2_unit" ItemGroupRepeatKey="1">
@@ -8869,7 +8869,7 @@
             <ItemData ItemOID="pa_o2_unit" Value="1"/>
           </ItemGroupData>
           <ItemGroupData ItemGroupOID="vitalparameter.pa_o2_code" ItemGroupRepeatKey="1">
-            <ItemData ItemOID="pa_o2_code" Value="2.16.840.1.113883.6.1_11557-8"/>
+            <ItemData ItemOID="pa_o2_code" Value="2.16.840.1.113883.6.1_11556-8"/>
             <ItemData ItemOID="pa_o2" Value="56"/>
           </ItemGroupData>
           <ItemGroupData ItemGroupOID="vitalparameter.fi_o2_unit" ItemGroupRepeatKey="1">
@@ -10554,7 +10554,7 @@
             <ItemData ItemOID="pa_o2_unit" Value="1"/>
           </ItemGroupData>
           <ItemGroupData ItemGroupOID="vitalparameter.pa_o2_code" ItemGroupRepeatKey="1">
-            <ItemData ItemOID="pa_o2_code" Value="2.16.840.1.113883.6.1_11557-8"/>
+            <ItemData ItemOID="pa_o2_code" Value="2.16.840.1.113883.6.1_11556-8"/>
             <ItemData ItemOID="pa_o2" Value="148"/>
           </ItemGroupData>
           <ItemGroupData ItemGroupOID="vitalparameter.fi_o2_unit" ItemGroupRepeatKey="1">
@@ -12239,7 +12239,7 @@
             <ItemData ItemOID="pa_o2_unit" Value="1"/>
           </ItemGroupData>
           <ItemGroupData ItemGroupOID="vitalparameter.pa_o2_code" ItemGroupRepeatKey="1">
-            <ItemData ItemOID="pa_o2_code" Value="2.16.840.1.113883.6.1_11557-8"/>
+            <ItemData ItemOID="pa_o2_code" Value="2.16.840.1.113883.6.1_11556-8"/>
             <ItemData ItemOID="pa_o2" Value="124"/>
           </ItemGroupData>
           <ItemGroupData ItemGroupOID="vitalparameter.fi_o2_unit" ItemGroupRepeatKey="1">

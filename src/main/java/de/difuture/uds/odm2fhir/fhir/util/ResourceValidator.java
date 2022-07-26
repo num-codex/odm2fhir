@@ -122,11 +122,11 @@ public class ResourceValidator {
           .forEach(prePopulatedValidationSupport::addResource);
 
     var validationSupportChain = new ValidationSupportChain(
+        prePopulatedValidationSupport,
         new DefaultProfileValidationSupport(forR4Cached()),
-        new InMemoryTerminologyServerValidationSupport(forR4Cached()),
         new CommonCodeSystemsTerminologyService(forR4Cached()),
-        new SnapshotGeneratingValidationSupport(forR4Cached()),
-        prePopulatedValidationSupport);
+        new InMemoryTerminologyServerValidationSupport(forR4Cached()),
+        new SnapshotGeneratingValidationSupport(forR4Cached()));
 
     if (terminologyserverUrl.isAbsolute()) {
       forR4Cached().getRestfulClientFactory().setHttpClient(HTTP_CLIENT_BUILDER.build());
@@ -165,13 +165,14 @@ public class ResourceValidator {
             case INFORMATION -> log.info(message.toString());
           }
         })
-        .sorted(comparing(SingleValidationMessage::getSeverity).reversed());
+        .sorted(comparing(SingleValidationMessage::getSeverity))
+        .toList();
 
-    if (!isEmpty(validationResult.getMessages())) {
+    if (!isEmpty(messages)) {
       log.debug(JSON_PARSER.encodeResourceToString(domainResource));
     }
 
-    return validationResult.isSuccessful() || messages.noneMatch(message -> message.getSeverity() == ERROR);
+    return messages.stream().map(SingleValidationMessage::getSeverity).noneMatch(ERROR::equals);
   }
 
 }
