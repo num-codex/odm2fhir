@@ -4612,7 +4612,7 @@
             <ItemData ItemOID="symptome_uebelkeit" Value="2.16.840.1.113883.6.96_422587007__2.16.840.1.113883.6.96_410605003"/>
             <ItemData ItemOID="symptome_fieber" Value="2.16.840.1.113883.6.96_426000000__2.16.840.1.113883.6.96_261665006"/>
             <ItemData ItemOID="symptome_kopfschmerzen" Value="2.16.840.1.113883.6.96_25064002__2.16.840.1.113883.6.96_261665006"/>
-            <ItemData ItemOID="symptome_andere_symptome" Value="2.16.840.1.113883.6.96_385432009__2.16.840.1.113883.6.96_410605003"/>
+            <ItemData ItemOID="symptome_andere_symptome" Value="2.16.840.1.113883.6.96_74964007__2.16.840.1.113883.6.96_410605003"/>
             <ItemData ItemOID="symptome_andere_symptome_textfeld" Value="Fatigue"/>
           </ItemGroupData>
           <ItemGroupData ItemGroupOID="symptome.schweregrad_code" ItemGroupRepeatKey="1">
@@ -7179,7 +7179,7 @@
             <ItemData ItemOID="covid19therapie_interferone_any" Value="1.2.276.0.76.5.498_S01AD05__2.16.840.1.113883.6.96_768865007__2.16.840.1.113883.6.96_410594000"/>
             <ItemData ItemOID="covid19therapie_25_hydroxyvitamin_d" Value="1.2.276.0.76.5.498_A11CC06__2.16.840.1.113883.6.96_88519001__2.16.840.1.113883.6.96_410594000"/>
             <ItemData ItemOID="covid19therapie_zinc" Value="1.2.276.0.76.5.498_A12CB__2.16.840.1.113883.6.96_764877006__2.16.840.1.113883.6.96_410605003"/>
-            <ItemData ItemOID="covid19therapie_andere" Value="2.16.840.1.113883.6.96_385432009__2.16.840.1.113883.6.96_410605003"/>
+            <ItemData ItemOID="covid19therapie_andere" Value="2.16.840.1.113883.6.96_74964007__2.16.840.1.113883.6.96_410605003"/>
             <ItemData ItemOID="covid19therapie_andere_textfeld" Value="&lt;Freitext&gt;"/>
           </ItemGroupData>
           <ItemGroupData ItemGroupOID="medikation.acehemmer_code" ItemGroupRepeatKey="1">
@@ -11260,7 +11260,7 @@
             <ItemData ItemOID="antikoagulation_phenprocoumon" Value="1.2.276.0.76.5.498_B01AA04__2.16.840.1.113883.6.96_410605003"/>
             <ItemData ItemOID="antikoagulation_doak" Value=""/>
             <ItemData ItemOID="antikoagulation_doak_code" Value=""/>
-            <ItemData ItemOID="antikoagulation_sonstige" Value="2.16.840.1.113883.6.96_385432009__2.16.840.1.113883.6.96_410605003"/>
+            <ItemData ItemOID="antikoagulation_sonstige" Value="2.16.840.1.113883.6.96_74964007__2.16.840.1.113883.6.96_410605003"/>
             <ItemData ItemOID="antikoagulation_sonstige_textfeld" Value="&lt;Freitext&gt;"/>
           </ItemGroupData>
           <ItemGroupData ItemGroupOID="medikation.medikation_complete" ItemGroupRepeatKey="1">

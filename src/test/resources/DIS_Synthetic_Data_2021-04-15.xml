@@ -565,7 +565,7 @@
             <ItemData ItemOID="covid19therapie_interferone_any" Value="1.2.276.0.76.5.498_S01AD05__2.16.840.1.113883.6.96_768865007__2.16.840.1.113883.6.96_410605003"/>
             <ItemData ItemOID="covid19therapie_25_hydroxyvitamin_d" Value="1.2.276.0.76.5.498_A11CC06__2.16.840.1.113883.6.96_88519001__2.16.840.1.113883.6.96_410605003"/>
             <ItemData ItemOID="covid19therapie_zinc" Value="1.2.276.0.76.5.498_A12CB__2.16.840.1.113883.6.96_764877006__2.16.840.1.113883.6.96_410594000"/>
-            <ItemData ItemOID="covid19therapie_andere" Value="2.16.840.1.113883.6.96_385432009__2.16.840.1.113883.6.96_410605003"/>
+            <ItemData ItemOID="covid19therapie_andere" Value="2.16.840.1.113883.6.96_74964007__2.16.840.1.113883.6.96_410605003"/>
             <ItemData ItemOID="covid19therapie_andere_textfeld" Value="FreeText526"/>
           </ItemGroupData>
           <ItemGroupData ItemGroupOID="medikation.acehemmer_code" ItemGroupRepeatKey="1">
@@ -678,7 +678,7 @@
             <ItemData ItemOID="symptome_uebelkeit" Value="2.16.840.1.113883.6.96_422587007__2.16.840.1.113883.6.96_410605003"/>
             <ItemData ItemOID="symptome_fieber" Value="2.16.840.1.113883.6.96_426000000__2.16.840.1.113883.6.96_410605003"/>
             <ItemData ItemOID="symptome_kopfschmerzen" Value="2.16.840.1.113883.6.96_25064002__2.16.840.1.113883.6.96_261665006"/>
-            <ItemData ItemOID="symptome_andere_symptome" Value="2.16.840.1.113883.6.96_385432009__2.16.840.1.113883.6.96_410605003"/>
+            <ItemData ItemOID="symptome_andere_symptome" Value="2.16.840.1.113883.6.96_74964007__2.16.840.1.113883.6.96_410605003"/>
             <ItemData ItemOID="symptome_andere_symptome_textfeld" Value="FreeText595"/>
           </ItemGroupData>
           <ItemGroupData ItemGroupOID="symptome.schweregrad_code" ItemGroupRepeatKey="1">
@@ -2250,7 +2250,7 @@
             <ItemData ItemOID="covid19therapie_interferone_any" Value="1.2.276.0.76.5.498_S01AD05__2.16.840.1.113883.6.96_768865007__2.16.840.1.113883.6.96_410605003"/>
             <ItemData ItemOID="covid19therapie_25_hydroxyvitamin_d" Value="1.2.276.0.76.5.498_A11CC06__2.16.840.1.113883.6.96_88519001__2.16.840.1.113883.6.96_410605003"/>
             <ItemData ItemOID="covid19therapie_zinc" Value="1.2.276.0.76.5.498_A12CB__2.16.840.1.113883.6.96_764877006__2.16.840.1.113883.6.96_410594000"/>
-            <ItemData ItemOID="covid19therapie_andere" Value="2.16.840.1.113883.6.96_385432009__2.16.840.1.113883.6.96_410605003"/>
+            <ItemData ItemOID="covid19therapie_andere" Value="2.16.840.1.113883.6.96_74964007__2.16.840.1.113883.6.96_410605003"/>
             <ItemData ItemOID="covid19therapie_andere_textfeld" Value="FreeText261"/>
           </ItemGroupData>
           <ItemGroupData ItemGroupOID="medikation.acehemmer_code" ItemGroupRepeatKey="1">
@@ -2363,7 +2363,7 @@
             <ItemData ItemOID="symptome_uebelkeit" Value="2.16.840.1.113883.6.96_422587007__2.16.840.1.113883.6.96_410605003"/>
             <ItemData ItemOID="symptome_fieber" Value="2.16.840.1.113883.6.96_426000000__2.16.840.1.113883.6.96_261665006"/>
             <ItemData ItemOID="symptome_kopfschmerzen" Value="2.16.840.1.113883.6.96_25064002__2.16.840.1.113883.6.96_410605003"/>
-            <ItemData ItemOID="symptome_andere_symptome" Value="2.16.840.1.113883.6.96_385432009__2.16.840.1.113883.6.96_410605003"/>
+            <ItemData ItemOID="symptome_andere_symptome" Value="2.16.840.1.113883.6.96_74964007__2.16.840.1.113883.6.96_410605003"/>
             <ItemData ItemOID="symptome_andere_symptome_textfeld" Value="FreeText541"/>
           </ItemGroupData>
           <ItemGroupData ItemGroupOID="symptome.schweregrad_code" ItemGroupRepeatKey="1">
@@ -4048,7 +4048,7 @@
             <ItemData ItemOID="symptome_uebelkeit" Value="2.16.840.1.113883.6.96_422587007__2.16.840.1.113883.6.96_410605003"/>
             <ItemData ItemOID="symptome_fieber" Value="2.16.840.1.113883.6.96_426000000__2.16.840.1.113883.6.96_410605003"/>
             <ItemData ItemOID="symptome_kopfschmerzen" Value="2.16.840.1.113883.6.96_25064002__2.16.840.1.113883.6.96_410605003"/>
-            <ItemData ItemOID="symptome_andere_symptome" Value="2.16.840.1.113883.6.96_385432009__2.16.840.1.113883.6.96_410605003"/>
+            <ItemData ItemOID="symptome_andere_symptome" Value="2.16.840.1.113883.6.96_74964007__2.16.840.1.113883.6.96_410605003"/>
             <ItemData ItemOID="symptome_andere_symptome_textfeld" Value="FreeText220"/>
           </ItemGroupData>
           <ItemGroupData ItemGroupOID="symptome.schweregrad_code" ItemGroupRepeatKey="1">
@@ -7305,7 +7305,7 @@
             <ItemData ItemOID="covid19therapie_interferone_any" Value="1.2.276.0.76.5.498_S01AD05__2.16.840.1.113883.6.96_768865007__2.16.840.1.113883.6.96_410605003"/>
             <ItemData ItemOID="covid19therapie_25_hydroxyvitamin_d" Value="1.2.276.0.76.5.498_A11CC06__2.16.840.1.113883.6.96_88519001__2.16.840.1.113883.6.96_410605003"/>
             <ItemData ItemOID="covid19therapie_zinc" Value="1.2.276.0.76.5.498_A12CB__2.16.840.1.113883.6.96_764877006__2.16.840.1.113883.6.96_410594000"/>
-            <ItemData ItemOID="covid19therapie_andere" Value="2.16.840.1.113883.6.96_385432009__2.16.840.1.113883.6.96_410605003"/>
+            <ItemData ItemOID="covid19therapie_andere" Value="2.16.840.1.113883.6.96_74964007__2.16.840.1.113883.6.96_410605003"/>
             <ItemData ItemOID="covid19therapie_andere_textfeld" Value="FreeText393"/>
           </ItemGroupData>
           <ItemGroupData ItemGroupOID="medikation.acehemmer_code" ItemGroupRepeatKey="1">
@@ -7418,7 +7418,7 @@
             <ItemData ItemOID="symptome_uebelkeit" Value="2.16.840.1.113883.6.96_422587007__2.16.840.1.113883.6.96_261665006"/>
             <ItemData ItemOID="symptome_fieber" Value="2.16.840.1.113883.6.96_426000000__2.16.840.1.113883.6.96_261665006"/>
             <ItemData ItemOID="symptome_kopfschmerzen" Value="2.16.840.1.113883.6.96_25064002__2.16.840.1.113883.6.96_261665006"/>
-            <ItemData ItemOID="symptome_andere_symptome" Value="2.16.840.1.113883.6.96_385432009__2.16.840.1.113883.6.96_410605003"/>
+            <ItemData ItemOID="symptome_andere_symptome" Value="2.16.840.1.113883.6.96_74964007__2.16.840.1.113883.6.96_410605003"/>
             <ItemData ItemOID="symptome_andere_symptome_textfeld" Value="FreeText531"/>
           </ItemGroupData>
           <ItemGroupData ItemGroupOID="symptome.schweregrad_code" ItemGroupRepeatKey="1">
@@ -9103,7 +9103,7 @@
             <ItemData ItemOID="symptome_uebelkeit" Value="2.16.840.1.113883.6.96_422587007__2.16.840.1.113883.6.96_261665006"/>
             <ItemData ItemOID="symptome_fieber" Value="2.16.840.1.113883.6.96_426000000__2.16.840.1.113883.6.96_261665006"/>
             <ItemData ItemOID="symptome_kopfschmerzen" Value="2.16.840.1.113883.6.96_25064002__2.16.840.1.113883.6.96_410605003"/>
-            <ItemData ItemOID="symptome_andere_symptome" Value="2.16.840.1.113883.6.96_385432009__2.16.840.1.113883.6.96_410605003"/>
+            <ItemData ItemOID="symptome_andere_symptome" Value="2.16.840.1.113883.6.96_74964007__2.16.840.1.113883.6.96_410605003"/>
             <ItemData ItemOID="symptome_andere_symptome_textfeld" Value="FreeText144"/>
           </ItemGroupData>
           <ItemGroupData ItemGroupOID="symptome.schweregrad_code" ItemGroupRepeatKey="1">
@@ -10701,7 +10701,7 @@
             <ItemData ItemOID="antikoagulation_phenprocoumon" Value="1.2.276.0.76.5.498_B01AA04__2.16.840.1.113883.6.96_261665006"/>
             <ItemData ItemOID="antikoagulation_doak" Value="1.2.276.0.76.5.498_B01AE__1.2.276.0.76.5.498_B01AF__2.16.840.1.113883.6.96_261665006"/>
             <ItemData ItemOID="antikoagulation_doak_code" Value="1.2.276.0.76.5.498_B01AF"/>
-            <ItemData ItemOID="antikoagulation_sonstige" Value="2.16.840.1.113883.6.96_385432009__2.16.840.1.113883.6.96_410605003"/>
+            <ItemData ItemOID="antikoagulation_sonstige" Value="2.16.840.1.113883.6.96_74964007__2.16.840.1.113883.6.96_410605003"/>
             <ItemData ItemOID="antikoagulation_sonstige_textfeld" Value="FreeText692"/>
           </ItemGroupData>
         </FormData>
@@ -12386,7 +12386,7 @@
             <ItemData ItemOID="antikoagulation_phenprocoumon" Value="1.2.276.0.76.5.498_B01AA04__2.16.840.1.113883.6.96_410605003"/>
             <ItemData ItemOID="antikoagulation_doak" Value="1.2.276.0.76.5.498_B01AE__1.2.276.0.76.5.498_B01AF__2.16.840.1.113883.6.96_261665006"/>
             <ItemData ItemOID="antikoagulation_doak_code" Value="1.2.276.0.76.5.498_B01AF"/>
-            <ItemData ItemOID="antikoagulation_sonstige" Value="2.16.840.1.113883.6.96_385432009__2.16.840.1.113883.6.96_410605003"/>
+            <ItemData ItemOID="antikoagulation_sonstige" Value="2.16.840.1.113883.6.96_74964007__2.16.840.1.113883.6.96_410605003"/>
             <ItemData ItemOID="antikoagulation_sonstige_textfeld" Value="FreeText880"/>
           </ItemGroupData>
         </FormData>

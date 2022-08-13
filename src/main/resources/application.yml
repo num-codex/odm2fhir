@@ -67,3 +67,21 @@ fhir:
 #      observation: https://ein.fiktives.krankenhaus/fhir/NamingSystem/observationId
 #      patient: https://ein.fiktives.krankenhaus/fhir/NamingSystem/patientId
 #      procedure: https://ein.fiktives.krankenhaus/fhir/NamingSystem/procedureId
+
+#spring:
+#  kafka:
+#    bootstrap-servers: localhost:9092
+#    producer:
+#      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      value-serializer: org.miracum.kafka.serializers.KafkaFhirSerializer
+#      client-id: odm2fhir
+#    security.protocol: PLAINTEXT
+#    ssl:
+#      trust-store-type: PKCS12
+#      trust-store-location: file:///opt/kafka-certs/ca.p12
+#      trust-store-password: change-password
+#      key-store-type: PKCS12
+#      key-store-location: file:///opt/kafka-certs/user.p12
+#      key-store-password: change-password
+#    template:
+#      default-topic: fhir.odm-gecco

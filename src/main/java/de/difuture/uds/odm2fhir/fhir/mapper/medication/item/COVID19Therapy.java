@@ -77,8 +77,8 @@ public class COVID19Therapy extends Item {
         case "261665006":
           medicationStatement.setStatus(MedicationStatementStatus.UNKNOWN);
           break;
-        case "385432009": //Answer = Sonstige/Other
-          medicationCodeableConcept.addCoding(coding.setDisplay("Not applicable (qualifier value)"));
+        case "74964007": //Answer = Sonstige/Other
+          medicationCodeableConcept.addCoding(coding.setDisplay("Other (qualifier value)"));
           if (endsWith(accurateCodingOrText.getItemOID(), "_textfeld") && !accurateCodingOrText.isEmpty()) {
             medicationCodeableConcept.setText(accurateCodingOrText.getValue());
           }
@@ -98,8 +98,8 @@ public class COVID19Therapy extends Item {
       }
     }
 
-    if (ENVIRONMENT.getProperty("fhir.notapplicables.removed", Boolean.class, true) &&
-        medicationCodeableConcept.getCoding().stream().map(Coding::getCode).anyMatch("385432009"::equals)) {
+    if (ENVIRONMENT.getProperty("fhir.others.removed", Boolean.class, true) &&
+        medicationCodeableConcept.getCoding().stream().map(Coding::getCode).anyMatch("74964007"::equals)) {
       medicationCodeableConcept.setCoding(null).setText(null);
     }
 

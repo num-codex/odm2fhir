@@ -871,7 +871,7 @@
             <ItemData ItemOID="symptome_uebelkeit" Value="2.16.840.1.113883.6.96_422587007__2.16.840.1.113883.6.96_261665006"/>
             <ItemData ItemOID="symptome_fieber" Value="2.16.840.1.113883.6.96_426000000__2.16.840.1.113883.6.96_410594000"/>
             <ItemData ItemOID="symptome_kopfschmerzen" Value="2.16.840.1.113883.6.96_25064002__2.16.840.1.113883.6.96_410605003"/>
-            <ItemData ItemOID="symptome_andere_symptome" Value="2.16.840.1.113883.6.96_385432009__2.16.840.1.113883.6.96_410605003"/>
+            <ItemData ItemOID="symptome_andere_symptome" Value="2.16.840.1.113883.6.96_74964007__2.16.840.1.113883.6.96_410605003"/>
             <ItemData ItemOID="symptome_andere_symptome_textfeld" Value="&lt;Freitext&gt;"/>
           </ItemGroupData>
           <ItemGroupData ItemGroupOID="symptome.schweregrad_code" ItemGroupRepeatKey="1">

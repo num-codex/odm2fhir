@@ -64,6 +64,7 @@ public class FHIRBundler {
   @Autowired(required = false)
   private ResourceValidator resourceValidator;
 
+  @SuppressWarnings("unchecked")
   private void removeCodingDisplays(Object object) {
     if (codingdisplaysRemoved) {
       var children = findMethod(object.getClass(), "children");

@@ -77,8 +77,8 @@ public class ImmunizationStatus extends Item {
         case "410594000": //NO
           immunization.setStatus(NOTDONE);
           break;
-        case "385432009": //Answer = Sonstige/Other
-          diseaseCodeableCoding.addCoding(coding.setDisplay("Not applicable (qualifier value)"));
+        case "74964007": //Answer = Sonstige/Other
+          diseaseCodeableCoding.addCoding(coding.setDisplay("Other (qualifier value)"));
           if (!textValue.isEmpty()) {
             diseaseCodeableCoding.setText(textValue.getValue());
           }
@@ -112,8 +112,8 @@ public class ImmunizationStatus extends Item {
                                                    "No known immunizations"));
     }
 
-    if (ENVIRONMENT.getProperty("fhir.notapplicables.removed", Boolean.class, true) &&
-        diseaseCodeableCoding.getCoding().stream().map(Coding::getCode).anyMatch("385432009"::equals)) {
+    if (ENVIRONMENT.getProperty("fhir.others.removed", Boolean.class, true) &&
+        diseaseCodeableCoding.getCoding().stream().map(Coding::getCode).anyMatch("74964007"::equals)) {
       diseaseCodeableCoding.setCoding(null).setText(null);
     }
 

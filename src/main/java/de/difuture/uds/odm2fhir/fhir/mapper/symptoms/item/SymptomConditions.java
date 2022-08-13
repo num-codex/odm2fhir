@@ -78,8 +78,8 @@ public class SymptomConditions extends Item {
         case "261665006": //UNKNOWN
           condition.addModifierExtension(DATA_PRESENCE_UNKNOWN);
           break;
-        case "385432009": //Answer = Sonstige/Other
-          codeCodeableConcept.addCoding(coding.setDisplay("Not applicable (qualifier value)"));
+        case "74964007": //Answer = Sonstige/Other
+          codeCodeableConcept.addCoding(coding.setDisplay("Other (qualifier value)"));
           if (!formData.getItemData("symptome_andere_symptome_textfeld").isEmpty()) {
             codeCodeableConcept.setText(formData.getItemData("symptome_andere_symptome_textfeld").getValue());
           }
@@ -108,8 +108,8 @@ public class SymptomConditions extends Item {
                                 .setIdentifier(List.of(identifier.copy().setValue(identifier.getValue() + "_geruch"))));
     }
 
-    if (ENVIRONMENT.getProperty("fhir.notapplicables.removed", Boolean.class, true) &&
-        codeCodeableConcept.getCoding().stream().map(Coding::getCode).anyMatch("385432009"::equals)) {
+    if (ENVIRONMENT.getProperty("fhir.others.removed", Boolean.class, true) &&
+        codeCodeableConcept.getCoding().stream().map(Coding::getCode).anyMatch("74964007"::equals)) {
       codeCodeableConcept.setCoding(null).setText(null);
     }
 
