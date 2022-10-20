@@ -90,7 +90,7 @@ public class StudyEvent {
 
     var encounter = new Encounter();
 
-    if (ENVIRONMENT.getProperty("fhir.encounters.enabled", Boolean.class, true) &&
+    if (ENVIRONMENT.getProperty("fhir.encounters.enabled", Boolean.class, false) &&
         studyEventData.getStudyEventOID().matches("GECCOVISIT|Event.\\d_fall_arm_1")) {
       var value = format("%s-%s.%s",
                          studyEventData.getSubjectData().getSubjectKey(),

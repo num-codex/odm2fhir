@@ -70,16 +70,22 @@ public class Subject {
       value = sha256Hex(value);
     }
 
-    var organizationIdentifier = new Identifier()
-        .setSystem(getIdentifierSystem(ORGANIZATION))
-        .setValue(value);
+    var organization = new Organization();
 
-    var organization = (Organization) new Organization()
-        .setName(getIdentifierAssigner())
-        .addIdentifier(organizationIdentifier)
-        .setId(sha256Hex(organizationIdentifier.getSystem() + organizationIdentifier.getValue()));
+    if (ENVIRONMENT.getProperty("fhir.organization.enabled", Boolean.class, false)) {
+      var organizationIdentifier = new Identifier()
+          .setSystem(getIdentifierSystem(ORGANIZATION))
+          .setValue(value);
 
-    organizationReference = new Reference(format("%s/%s", ORGANIZATION.toCode(), organization.getId()));
+      organization = (Organization) new Organization()
+          .setName(getIdentifierAssigner())
+          .addIdentifier(organizationIdentifier)
+          .setId(sha256Hex(organizationIdentifier.getSystem() + organizationIdentifier.getValue()));
+
+    }
+
+    organizationReference = new Reference(format("%s/%s", ORGANIZATION.toCode(), organization.isEmpty() ?
+                                                                                 getIdentifierAssigner() : organization.getId()));
 
     value = subjectData.getSubjectKey();
 

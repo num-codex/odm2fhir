@@ -26,7 +26,9 @@ docker run **ENVIRONMENTS** **VOLUMES** ghcr.io/num-codex/odm2fhir **ARGUMENTS**
 
 * `--fhir.identifier.assigner=**IDENTIFIER_ASSIGNER**` Add an identifier assigner.
 
-* `--fhir.encounters.enabled=(true|false)` Enable FHIR `Encounter` resources for patient cases (`true` by default).
+* `--fhir.encounters.enabled=(true|false)` Enable FHIR `Encounter` resources for patient cases (`false` by default).
+
+* `--fhir.organization.enabled=(true|false)` Enable FHIR `Organization` resource for patient (`false` by default).
 
 * `--fhir.updateascreate.enabled=(true|false)` Enable update-as-create (see [here](https://www.hl7.org/fhir/http.html#upsert), `false` by default).
 

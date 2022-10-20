@@ -32,7 +32,7 @@ import static org.apache.commons.lang3.StringUtils.isBlank;
 @Slf4j
 public class IdentifierHelper {
 
-  private static String DEFAULT_ASSIGNER = "Ein Fiktives Krankenhaus";
+  private static String DEFAULT_ASSIGNER = "Ein-Fiktives-Krankenhaus";
   private static String DEFAULT_BASE_URL = "https://ein.fiktives.krankenhaus/fhir/NamingSystem/";
 
   private static Map<String,String> mapping = new HashMap<>();
