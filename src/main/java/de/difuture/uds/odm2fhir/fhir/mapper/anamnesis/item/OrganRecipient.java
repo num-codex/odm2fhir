@@ -68,21 +68,16 @@ public class OrganRecipient extends Item {
 
     for (var coding : createCodings(transplantCoding)) {
       switch (coding.getCode()) {
-        case "410605003": //YES
-          condition.setClinicalStatus(ACTIVE).setVerificationStatus(CONFIRMED);
-          break;
-        case "410594000": //NO
-          condition.setVerificationStatus(REFUTED);
-          break;
-        case "261665006": //UNKNOWN
-          condition.addModifierExtension(DATA_PRESENCE_UNKNOWN);
-          break;
-        default:
+        case "410605003" -> condition.setClinicalStatus(ACTIVE).setVerificationStatus(CONFIRMED); //YES
+        case "410594000" -> condition.setVerificationStatus(REFUTED); //NO
+        case "261665006" -> condition.addModifierExtension(DATA_PRESENCE_UNKNOWN); //UNKNOWN
+        default -> {
           if (ICD_10_GM.getUrl().equals(coding.getSystem())) { //add ICD Code
             codeCodeableConcept.addCoding(coding);
           } else if (SNOMED_CT.getUrl().equals(coding.getSystem())) { //add SNOMED Code of bodySite
             bodySiteCodeableConcept.addCoding(coding);
           }
+        }
       }
     }
 

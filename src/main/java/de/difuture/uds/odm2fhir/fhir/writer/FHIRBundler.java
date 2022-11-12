@@ -50,6 +50,7 @@ import static org.springframework.util.ReflectionUtils.findMethod;
 import static org.springframework.util.ReflectionUtils.invokeMethod;
 
 import static java.lang.String.format;
+import static java.util.function.Predicate.not;
 
 @Slf4j
 @Service
@@ -88,6 +89,7 @@ public class FHIRBundler {
     var bundle = (Bundle) new Bundle().setType(TRANSACTION).setMeta(new Meta().addProfile(GECCO_BUNDLE.getUrl()));
 
     domainResources
+        .filter(not(DomainResource::isEmpty))
         .peek(this::removeCodingDisplays)
         .filter(domainResource -> resourceValidator == null || resourceValidator.validate(domainResource))
         .forEach(domainResource -> {

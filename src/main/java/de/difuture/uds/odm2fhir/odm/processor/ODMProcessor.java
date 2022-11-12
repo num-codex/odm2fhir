@@ -120,7 +120,7 @@ public abstract class ODMProcessor {
 
       if (xmlStreamReader.isStartElement()) {
         switch (xmlStreamReader.getLocalName()) {
-          case "ODM":
+          case "ODM" -> {
             if (subjectODMHashes != null && initialODMInRun) {
               var creationDateTime = xmlStreamReader.getAttributeValue(null, "CreationDateTime");
               try {
@@ -129,12 +129,10 @@ public abstract class ODMProcessor {
                 previousRunDateTime = ZonedDateTime.parse(creationDateTime).toLocalDateTime();
               }
             }
-            break;
-          case "SubjectData":
+          }
+          case "SubjectData" -> {
             var subjectData = xmlMapper.readValue(xmlStreamReader, SubjectData.class);
-
             var hash = subjectODMHashes != null ? subjectData.hashCode() : null;
-
             if (hash == null || !hash.equals(subjectODMHashes.get(subjectData.getSubjectKey()))) {
               fhirBundleWriter.write(fhirBundler.bundle(new Subject().map(subjectData)));
 
@@ -142,6 +140,7 @@ public abstract class ODMProcessor {
                 subjectODMHashes.put(subjectData.getSubjectKey(), hash);
               }
             }
+          }
         }
       }
     }

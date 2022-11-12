@@ -8,7 +8,7 @@
 
   <groupId>de.difuture.uds</groupId>
   <artifactId>odm2fhir</artifactId>
-  <version>0.8.4</version>
+  <version>0.8.5</version>
 
   <name>ODM2FHIR</name>
   <description>Mapper for GECCO based study/patient data in CDISC ODM to HL7 FHIR</description>
@@ -25,13 +25,13 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-    <hapi-fhir.version>6.1.3</hapi-fhir.version>
-    <jackson.version>2.13.4</jackson.version>
+    <hapi-fhir.version>6.2.0</hapi-fhir.version>
+    <jackson.version>2.14.0</jackson.version>
     <kafka-fhir-serializer.version>1.0.2</kafka-fhir-serializer.version>
     <lombok.version>1.18.24</lombok.version>
     <spring-kafka.version>2.9.2</spring-kafka.version>
     <spring-retry.version>1.3.4</spring-retry.version>
-    <woodstox.version>6.3.1</woodstox.version>
+    <woodstox.version>6.4.0</woodstox.version>
 
     <maven-antrun-plugin.version>3.1.0</maven-antrun-plugin.version>
     <maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>

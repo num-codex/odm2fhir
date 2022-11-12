@@ -123,30 +123,25 @@ public class BroadConsent extends Item {
         .setMeta(createMeta(GERMAN_CONSENT));
 
     switch (formData.getItemData("miibc_consent_status").getValue()) {
-      case "1": //agreed
-        consent.setStatus(ConsentState.ACTIVE);
-        break;
-      case "2": //rejected
-        consent.setStatus(REJECTED);
-        break;
-      case "3": //revoked
+      case "1" -> consent.setStatus(ConsentState.ACTIVE); //agreed
+      case "2" -> consent.setStatus(REJECTED); //rejected
+      case "3" -> { //revoked
         var revocationDateItem = formData.getItemData("miibc_w_dat_dok");
         switch (formData.getItemData("miibc_widerruf").getValue()) {
-          case "1": //fully revoked
-            consent.setStatus(INACTIVE)
-              .setDateTimeElement(createDateTimeType(revocationDateItem)); //revocation -> replace 'consentDate' by 'revocationDate'
-            break;
-          case "2": //partly revoked
-            consent.setDateTimeElement(createDateTimeType(revocationDateItem)); //revocation -> replace 'consentDate' by 'revocationDate'
+          case "1" -> //fully revoked
+            consent.setStatus(INACTIVE).setDateTimeElement(
+                createDateTimeType(revocationDateItem)); //revocation -> replace 'consentDate' by 'revocationDate'
+          case "2" -> //partly revoked
+            consent.setDateTimeElement(
+                createDateTimeType(revocationDateItem)); //revocation -> replace 'consentDate' by 'revocationDate'
             //purposely no 'break;'
-          case "3": //not revoked
-          case "4": //unknown (REVOCATION-Status, not CONSENT-Status!)
+          case "3", "4" -> //not revoked, //unknown (REVOCATION-Status, not CONSENT-Status!)
             consent.setStatus(ConsentState.ACTIVE); //default if not revoked
-            break;
         }
-        break;
-      case "4": //unknown
+      }
+      case "4" -> { //unknown
         return new Consent(); //skip if general CONSENT-Status is 'unknown'
+      }
     }
 
     var mainProvisionComponent = new Consent.provisionComponent().setType(DENY);

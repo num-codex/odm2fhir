@@ -75,26 +75,20 @@ public class Anticoagulation extends Item {
     var medicationCodeableConcept = createCodeableConcept(generalCoding);
     for (var coding : createCodings(specificCoding)) {
       switch (coding.getCode()) {
-        case "410605003": //Answer = YES
-          medicationStatement.setStatus(MedicationStatementStatus.ACTIVE);
-          break;
-        case "410594000": //Answer = NO
-          medicationStatement.setStatus(NOTTAKEN);
-          break;
-        case "261665006": //Answer = Unknown
-          medicationStatement.setStatus(MedicationStatementStatus.UNKNOWN);
-          break;
-        case "74964007": //Answer = Sonstige/Other
+        case "410605003" -> medicationStatement.setStatus(MedicationStatementStatus.ACTIVE); //Answer = YES
+        case "410594000" -> medicationStatement.setStatus(NOTTAKEN); //Answer = NO
+        case "261665006" -> medicationStatement.setStatus(MedicationStatementStatus.UNKNOWN); //Answer = Unknown
+        case "74964007" -> { //Answer = Sonstige/Other
           medicationCodeableConcept.addCoding(coding.setDisplay("Other (qualifier value)"));
           if (endsWith(accurateCodingOrText.getItemOID(), "_textfeld") && !accurateCodingOrText.isEmpty()) {
             medicationCodeableConcept.setText(accurateCodingOrText.getValue());
           }
-          break;
-        default: //add Medication Codes
+        }
+        default -> { //add Medication Codes
           if (accurateCodingOrText.isEmpty()) {
             medicationCodeableConcept.addCoding(coding);
           }
-          break;
+        }
       }
     }
 

@@ -69,26 +69,20 @@ public class SymptomConditions extends Item {
     var codeCodeableConcept = new CodeableConcept();
     for (var coding : specificCodings) {
       switch (coding.getCode()) {
-        case "410605003": //PRESENT
-          condition.setClinicalStatus(ACTIVE).setVerificationStatus(CONFIRMED);
-          break;
-        case "410594000": //ABSENT
-          condition.setVerificationStatus(REFUTED);
-          break;
-        case "261665006": //UNKNOWN
-          condition.addModifierExtension(DATA_PRESENCE_UNKNOWN);
-          break;
-        case "74964007": //Answer = Sonstige/Other
+        case "410605003" -> condition.setClinicalStatus(ACTIVE).setVerificationStatus(CONFIRMED); //PRESENT
+        case "410594000" -> condition.setVerificationStatus(REFUTED); //ABSENT
+        case "261665006" -> condition.addModifierExtension(DATA_PRESENCE_UNKNOWN); //UNKNOWN
+        case "74964007" -> { //Answer = Sonstige/Other
           codeCodeableConcept.addCoding(coding.setDisplay("Other (qualifier value)"));
           if (!formData.getItemData("symptome_andere_symptome_textfeld").isEmpty()) {
             codeCodeableConcept.setText(formData.getItemData("symptome_andere_symptome_textfeld").getValue());
           }
-          break;
-        default: //SYMPTOM CODING
+        }
+        default -> { //SYMPTOM CODING
           if (!"symptome_geruchs_bzw_geschmacksstoerungen".equals(specificCoding.getItemOID())) {
             codeCodeableConcept.addCoding(coding);
           }
-          break;
+        }
       }
     }
 

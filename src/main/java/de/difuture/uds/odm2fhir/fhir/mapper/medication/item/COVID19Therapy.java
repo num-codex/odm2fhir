@@ -68,26 +68,20 @@ public class COVID19Therapy extends Item {
     var medicationCodeableConcept = new CodeableConcept();
     for (var coding : createCodings(specificCoding)) {
       switch (coding.getCode()) {
-        case "410605003":
-          medicationStatement.setStatus(MedicationStatementStatus.ACTIVE);
-          break;
-        case "410594000":
-          medicationStatement.setStatus(NOTTAKEN);
-          break;
-        case "261665006":
-          medicationStatement.setStatus(MedicationStatementStatus.UNKNOWN);
-          break;
-        case "74964007": //Answer = Sonstige/Other
+        case "410605003" -> medicationStatement.setStatus(MedicationStatementStatus.ACTIVE);
+        case "410594000" -> medicationStatement.setStatus(NOTTAKEN);
+        case "261665006" -> medicationStatement.setStatus(MedicationStatementStatus.UNKNOWN);
+        case "74964007" -> { //Answer = Sonstige/Other
           medicationCodeableConcept.addCoding(coding.setDisplay("Other (qualifier value)"));
           if (endsWith(accurateCodingOrText.getItemOID(), "_textfeld") && !accurateCodingOrText.isEmpty()) {
             medicationCodeableConcept.setText(accurateCodingOrText.getValue());
           }
-          break;
-        default: //add Medication Codes
+        }
+        default -> { //add Medication Codes
           if (accurateCodingOrText.isEmpty()) {
             medicationCodeableConcept.addCoding(coding);
           }
-          break;
+        }
       }
     }
 
