@@ -36,7 +36,7 @@ public class BodyWeight extends Item {
 
   protected Stream<DomainResource> map(FormData formData) {
     var answerCoding = formData.getItemData("gewicht");
-    var generalCoding = formData.getItemData("gewicht_code");
+    var generalCoding = formData.getItemData("gewicht_code", "1");
 
     return answerCoding.isEmpty() ? Stream.empty() : Stream.of(createObservation(generalCoding, answerCoding));
   }

@@ -38,7 +38,7 @@ public class SARSCoV2RTPCR extends Item {
 
   protected Stream<DomainResource> map(FormData formData) {
     var dateCoding = formData.getItemData("labor_datum");
-    var generalCoding = formData.getItemData("sarsco_v2rtpcr_code");
+    var generalCoding = formData.getItemData("sarsco_v2rtpcr_code", "1");
     var answerCoding = formData.getItemData("sarsco_v2rtpcr");
     var loincCoding = formData.getItemData("sarsco_v2rtpcr_loinc");
 

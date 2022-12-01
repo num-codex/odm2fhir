@@ -42,7 +42,7 @@ public class RespiratoryTherapies extends Item {
 
   protected Stream<DomainResource> map(FormData formData) {
     var answerCoding = formData.getItemData("bestehende_sauerstoff_oder_beatmungstherapie");
-    var generalCoding = formData.getItemData("bestehende_sauerstoff_oder_beatmungstherapie_code");
+    var generalCoding = formData.getItemData("bestehende_sauerstoff_oder_beatmungstherapie_code", "1");
 
     return answerCoding.isEmpty() ? Stream.empty() : Stream.of(createProcedure(generalCoding, answerCoding));
   }

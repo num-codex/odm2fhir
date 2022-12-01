@@ -38,7 +38,7 @@ public class ECMO extends Item {
 
   protected Stream<DomainResource> map(FormData formData) {
     var answerCoding = formData.getItemData("ecmotherapie");
-    var generalCoding = formData.getItemData("ecmotherapie_code");
+    var generalCoding = formData.getItemData("ecmotherapie_code", "1");
 
     return answerCoding.isEmpty() ? Stream.empty() : Stream.of(createProcedure(generalCoding, answerCoding));
   }

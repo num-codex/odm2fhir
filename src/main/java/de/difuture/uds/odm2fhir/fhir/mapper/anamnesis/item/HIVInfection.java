@@ -36,7 +36,7 @@ public class HIVInfection extends Item {
 
   protected Stream<DomainResource> map(FormData formData) {
     var answerCoding = formData.getItemData("bestehende_hivinfektion");
-    var generalCoding = formData.getItemData("bestehende_hivinfektion_code");
+    var generalCoding = formData.getItemData("bestehende_hivinfektion_code", "1");
 
     return answerCoding.isEmpty() ? Stream.empty() : Stream.of(createCondition(generalCoding, answerCoding));
   }

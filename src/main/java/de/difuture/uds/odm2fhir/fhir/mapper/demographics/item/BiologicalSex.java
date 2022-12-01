@@ -36,7 +36,7 @@ public class BiologicalSex extends Item {
 
   protected Stream<DomainResource> map(FormData formData) {
     var answerCoding = formData.getItemData("biologisches_geschlecht");
-    var generalCoding = formData.getItemData("biologisches_geschlecht_code");
+    var generalCoding = formData.getItemData("biologisches_geschlecht_code", "1");
 
     return answerCoding.isEmpty() ? Stream.empty() : Stream.of(createObservation(generalCoding, answerCoding));
   }

@@ -36,7 +36,7 @@ public class MalignantNeoplasticDiseases extends Item {
 
   protected Stream<DomainResource> map(FormData formData) {
     var answerCoding = formData.getItemData("aktive_tumorkrebserkrankungen");
-    var generalCoding = formData.getItemData("aktive_tumorkrebserkrankungen_code");
+    var generalCoding = formData.getItemData("aktive_tumorkrebserkrankungen_code", "1");
 
     return answerCoding.isEmpty() ? Stream.empty() : Stream.of(createCondition(generalCoding, answerCoding));
   }

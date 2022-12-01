@@ -40,9 +40,9 @@ public class BloodPressure extends Item {
 
   protected Stream<DomainResource> map(FormData formData) {
     var systolicValue = formData.getItemData("blutdruck_systolisch");
-    var systolicCoding = formData.getItemData("blutdruck_systolisch_code");
+    var systolicCoding = formData.getItemData("blutdruck_systolisch_code", "1");
     var diastolicValue = formData.getItemData("blutdruck_diastolisch");
-    var diastolicCoding = formData.getItemData("blutdruck_diastolisch_code");
+    var diastolicCoding = formData.getItemData("blutdruck_diastolisch_code", "1");
     var dateCoding = formData.getItemData("vitalparameter_datum");
 
     return systolicValue.isEmpty() && diastolicValue.isEmpty() ? Stream.empty() :

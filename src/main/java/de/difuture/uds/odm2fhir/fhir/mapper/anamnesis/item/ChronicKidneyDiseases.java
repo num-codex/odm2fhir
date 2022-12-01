@@ -40,7 +40,7 @@ public class ChronicKidneyDiseases extends Item {
   protected Stream<DomainResource> map(FormData formData) {
     var answerCoding = formData.getItemData("chronische_nierenerkrankungen");
     var stageCoding = formData.getItemData("chronische_nierenerkrankungen_schweregrad");
-    var generalCoding = formData.getItemData("chronische_nierenerkrankungen_code");
+    var generalCoding = formData.getItemData("chronische_nierenerkrankungen_code", "1");
 
     if (!stageCoding.isEmpty() &&
         (contains(answerCoding.getValue(), "410594000") || contains(answerCoding.getValue(), "261665006"))) {

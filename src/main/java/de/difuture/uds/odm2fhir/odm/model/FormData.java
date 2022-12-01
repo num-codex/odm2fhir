@@ -31,6 +31,7 @@ import org.springframework.util.CollectionUtils;
 
 import java.util.List;
 
+import static org.apache.commons.lang3.StringUtils.defaultIfBlank;
 import static org.apache.commons.lang3.StringUtils.equalsAny;
 
 @Data
@@ -64,16 +65,21 @@ public class FormData {
     return itemGroupData.stream()
         .filter(itemGroupData -> equalsAny(itemGroupData.getItemGroupOID(), itemGroupOID))
         .findFirst()
-        .orElse(new ItemGroupData().setItemGroupOID(itemGroupOID));
+        .orElseGet(() -> new ItemGroupData().setItemGroupOID(itemGroupOID));
   }
 
   public ItemData getItemData(String itemOID) {
+    return getItemData(itemOID, null);
+  }
+
+  public ItemData getItemData(String itemOID, String defaultValue) {
     return itemGroupData.stream()
-        .map(ItemGroupData::getItemData)
-        .flatMap(List::stream)
-        .filter(itemData -> equalsAny(itemData.getItemOID(), itemOID))
-        .findFirst()
-        .orElse(new ItemData().setItemOID(itemOID));
+                        .map(ItemGroupData::getItemData)
+                        .flatMap(List::stream)
+                        .filter(itemData -> equalsAny(itemData.getItemOID(), itemOID))
+                        .findFirst()
+                        .map(itemData -> itemData.setValue(defaultIfBlank(itemData.getValue(), defaultValue)))
+                        .orElseGet(() -> new ItemData().setItemOID(itemOID).setValue(defaultValue));
   }
 
 }

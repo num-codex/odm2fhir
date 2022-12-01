@@ -37,7 +37,7 @@ public class PaCO2 extends Item {
 
   protected Stream<DomainResource> map(FormData formData) {
     var answerCoding = formData.getItemData("pa_co2");
-    var generalCoding = formData.getItemData("pa_co2_code");
+    var generalCoding = formData.getItemData("pa_co2_code", "1");
     var dateCoding = formData.getItemData("vitalparameter_datum");
 
     return answerCoding.isEmpty() ? Stream.empty() : Stream.of(createObservation(generalCoding, answerCoding, dateCoding));

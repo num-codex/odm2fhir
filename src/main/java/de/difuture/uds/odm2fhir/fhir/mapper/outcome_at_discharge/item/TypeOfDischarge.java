@@ -36,7 +36,7 @@ public class TypeOfDischarge extends Item {
 
   protected Stream<DomainResource> map(FormData formData) {
     var answerCoding = formData.getItemData("entlassungsart");
-    var generalCoding = formData.getItemData("entlassungsart_code");
+    var generalCoding = formData.getItemData("entlassungsart_code", "1");
 
     return answerCoding.isEmpty() ? Stream.empty() : Stream.of(createObservation(generalCoding, answerCoding));
   }

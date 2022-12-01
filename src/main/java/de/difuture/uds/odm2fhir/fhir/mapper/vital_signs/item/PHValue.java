@@ -37,7 +37,7 @@ public class PHValue extends Item {
 
   protected Stream<DomainResource> map(FormData formData) {
     var answerCoding = formData.getItemData("p_hwert");
-    var generalCoding = formData.getItemData("p_hwert_code");
+    var generalCoding = formData.getItemData("p_hwert_code", "1");
     var dateCoding = formData.getItemData("vitalparameter_datum");
 
     return answerCoding.isEmpty() ? Stream.empty() : Stream.of(createObservation(generalCoding, answerCoding, dateCoding));

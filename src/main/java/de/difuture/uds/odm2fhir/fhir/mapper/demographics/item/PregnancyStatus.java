@@ -36,7 +36,7 @@ public class PregnancyStatus extends Item {
 
   protected Stream<DomainResource> map(FormData formData) {
     var answerCoding = formData.getItemData("schwangerschaft");
-    var generalCoding = formData.getItemData("schwangerschaft_code");
+    var generalCoding = formData.getItemData("schwangerschaft_code", "1");
 
     return answerCoding.isEmpty() ? Stream.empty() : Stream.of(createObservation(generalCoding, answerCoding));
   }

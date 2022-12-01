@@ -38,7 +38,7 @@ public class KnownExposure extends Item {
   @Override
   protected Stream<DomainResource> map(FormData formData) {
     var answerCoding = formData.getItemData("kontakt_mit_an_covid19_erkrankter_personq");
-    var generalCoding = formData.getItemData("kontakt_mit_an_covid19_erkrankter_personq_code");
+    var generalCoding = formData.getItemData("kontakt_mit_an_covid19_erkrankter_personq_code", "1");
 
     return answerCoding.isEmpty() ? Stream.empty() : Stream.of(createObservation(generalCoding, answerCoding));
   }

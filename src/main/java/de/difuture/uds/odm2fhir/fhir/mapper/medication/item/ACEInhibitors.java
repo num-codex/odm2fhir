@@ -37,7 +37,7 @@ public class ACEInhibitors extends Item {
 
   protected Stream<DomainResource> map(FormData formData) {
     var answerCoding = formData.getItemData("acehemmer");
-    var generalCoding = formData.getItemData("acehemmer_code");
+    var generalCoding = formData.getItemData("acehemmer_code", "1");
     var dateCoding = formData.getItemData("medikation_datum");
 
     return answerCoding.isEmpty() || generalCoding.isEmpty() ? Stream.empty() :

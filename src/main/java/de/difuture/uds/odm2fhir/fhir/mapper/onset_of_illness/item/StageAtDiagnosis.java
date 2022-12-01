@@ -37,7 +37,7 @@ public class StageAtDiagnosis extends Item {
 
   protected Stream<DomainResource> map(FormData formData) {
     var answerCoding = formData.getItemData("erkrankungsphase_zum_zeitpunkt_der_diagnose");
-    var generalCoding = formData.getItemData("erkrankungsphase_zum_zeitpunkt_der_diagnose_code");
+    var generalCoding = formData.getItemData("erkrankungsphase_zum_zeitpunkt_der_diagnose_code", "1");
 
     return answerCoding.isEmpty() ? Stream.empty() : Stream.of(createCondition(generalCoding, answerCoding));
   }

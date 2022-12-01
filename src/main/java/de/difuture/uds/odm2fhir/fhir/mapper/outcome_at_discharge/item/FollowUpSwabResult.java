@@ -38,7 +38,7 @@ public class FollowUpSwabResult extends Item {
 
   protected Stream<DomainResource> map(FormData formData) {
     var answerCoding = formData.getItemData("ergebnis_folgeabstrich");
-    var generalCoding = formData.getItemData("ergebnis_folgeabstrich_code");
+    var generalCoding = formData.getItemData("ergebnis_folgeabstrich_code", "1");
 
     return answerCoding.isEmpty() ? Stream.empty() : Stream.of(createObservation(generalCoding, answerCoding));
   }

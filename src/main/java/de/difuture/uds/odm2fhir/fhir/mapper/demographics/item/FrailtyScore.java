@@ -37,7 +37,7 @@ public class FrailtyScore extends Item {
 
   protected Stream<DomainResource> map(FormData formData) {
     var answerCoding = formData.getItemData("frailtyscore");
-    var generalCoding = formData.getItemData("frailtyscore_code");
+    var generalCoding = formData.getItemData("frailtyscore_code", "1");
 
     return answerCoding.isEmpty() ? Stream.empty() : Stream.of(createObservation(generalCoding, answerCoding));
   }

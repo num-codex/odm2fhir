@@ -38,7 +38,7 @@ public class PronePosition extends Item {
 
   protected Stream<DomainResource> map(FormData formData) {
     var answerCoding = formData.getItemData("bauchlage");
-    var generalCoding = formData.getItemData("bauchlage_code");
+    var generalCoding = formData.getItemData("bauchlage_code", "1");
 
     return answerCoding.isEmpty() ? Stream.empty() : Stream.of(createProcedure(generalCoding, answerCoding));
   }

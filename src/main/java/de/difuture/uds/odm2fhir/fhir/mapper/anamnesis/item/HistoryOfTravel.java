@@ -68,7 +68,7 @@ public class HistoryOfTravel extends Item {
 
   protected Stream<DomainResource> map(FormData formData) {
     var answerCoding = formData.getItemData("reiseaktivitat");
-    var generalCoding = formData.getItemData("reiseaktivitat_code");
+    var generalCoding = formData.getItemData("reiseaktivitat_code", "1");
 
     return generalCoding.isEmpty() ? Stream.empty() :
         IntStream.rangeClosed(1, 10)

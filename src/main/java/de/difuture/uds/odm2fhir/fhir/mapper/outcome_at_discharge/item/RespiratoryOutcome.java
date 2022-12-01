@@ -38,7 +38,7 @@ public class RespiratoryOutcome extends Item {
 
   protected Stream<DomainResource> map(FormData formData) {
     var answerCoding = formData.getItemData("respiratorisches_outcome");
-    var generalCoding = formData.getItemData("respiratorisches_outcome_code");
+    var generalCoding = formData.getItemData("respiratorisches_outcome_code", "1");
 
     return answerCoding.isEmpty() ? Stream.empty() : Stream.of(createCondition(generalCoding, answerCoding));
   }

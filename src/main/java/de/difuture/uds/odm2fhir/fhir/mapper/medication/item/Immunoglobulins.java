@@ -37,7 +37,7 @@ public class Immunoglobulins extends Item {
 
   protected Stream<DomainResource> map(FormData formData) {
     var answerCoding = formData.getItemData("immunglobuline");
-    var generalCoding = formData.getItemData("immunglobuline_code");
+    var generalCoding = formData.getItemData("immunglobuline_code", "1");
     var dateCoding = formData.getItemData("medikation_datum");
 
     return answerCoding.isEmpty() || generalCoding.isEmpty() ? Stream.empty() :

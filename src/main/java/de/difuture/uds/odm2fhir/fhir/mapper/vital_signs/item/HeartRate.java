@@ -36,7 +36,7 @@ public class HeartRate extends Item {
 
   protected Stream<DomainResource> map(FormData formData) {
     var answerCoding = formData.getItemData("herzfrequenz");
-    var generalCoding = formData.getItemData("herzfrequenz_code");
+    var generalCoding = formData.getItemData("herzfrequenz_code", "1");
     var dateCoding = formData.getItemData("vitalparameter_datum");
 
     return answerCoding.isEmpty() ? Stream.empty() : Stream.of(createObservation(generalCoding, answerCoding, dateCoding));

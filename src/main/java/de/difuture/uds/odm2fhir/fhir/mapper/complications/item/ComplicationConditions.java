@@ -42,7 +42,7 @@ public class ComplicationConditions extends Item {
                                                             "andere", "pulmonale_co_infektionen", "blutstrominfektionen");
 
   protected Stream<DomainResource> map(FormData formData) {
-    var generalComplicationCoding = formData.getItemData("komplikation_code");
+    var generalComplicationCoding = formData.getItemData("komplikation_code", "1");
 
     return !"1".equals(formData.getItemData("komplikation").getValue()) ? Stream.empty() :
         COMPLICATIONS.stream().map(key -> createCondition(generalComplicationCoding,

@@ -36,7 +36,7 @@ public class SmokingStatus extends Item {
 
   protected Stream<DomainResource> map(FormData formData) {
     var answerCoding = formData.getItemData("raucherstatus");
-    var generalCoding = formData.getItemData("raucherstatus_code");
+    var generalCoding = formData.getItemData("raucherstatus_code", "1");
 
     return answerCoding.isEmpty() ? Stream.empty() : Stream.of(createObservation(generalCoding, answerCoding));
   }

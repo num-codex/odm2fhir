@@ -38,7 +38,7 @@ public class DiabetesMellitus extends Item {
   @Override
   protected Stream<DomainResource> map(FormData formData) {
     var answerCoding = formData.getItemData("diabetes");
-    var resourceCoding = formData.getItemData("diabetes_code");
+    var resourceCoding = formData.getItemData("diabetes_code", "1");
 
     return answerCoding.isEmpty() ? Stream.empty() : Stream.of(createCondition(resourceCoding, answerCoding));
   }

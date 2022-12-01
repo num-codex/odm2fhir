@@ -36,7 +36,7 @@ public class BodyHeight extends Item {
 
   protected Stream<DomainResource> map(FormData formData) {
     var answerCoding = formData.getItemData("korpergrose");
-    var generalCoding = formData.getItemData("korpergrose_code");
+    var generalCoding = formData.getItemData("korpergrose_code", "1");
 
     return answerCoding.isEmpty() ? Stream.empty() : Stream.of(createObservation(generalCoding, answerCoding));
   }

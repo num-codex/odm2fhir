@@ -38,7 +38,7 @@ public class Apheresis extends Item {
 
   protected Stream<DomainResource> map(FormData formData) {
     var answerCoding = formData.getItemData("apherese");
-    var generalCoding = formData.getItemData("apherese_code");
+    var generalCoding = formData.getItemData("apherese_code", "1");
 
     return answerCoding.isEmpty() ? Stream.empty() : Stream.of(createProcedure(generalCoding, answerCoding));
   }

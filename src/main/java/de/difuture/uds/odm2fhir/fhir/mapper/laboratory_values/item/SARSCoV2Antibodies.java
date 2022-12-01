@@ -96,7 +96,7 @@ public class SARSCoV2Antibodies extends Item {
                   .map(labValue -> (DomainResource) createObservation(formData, labValue))
                   .peek(obs -> observation.addHasMember(new Reference(format("%s/%s", OBSERVATION.toCode(), obs.getId())))));
         })
-        .orElse(Stream.empty());
+        .orElseGet(Stream::empty);
   }
 
   private Observation createObservation(FormData formData, ItemData labValue) {

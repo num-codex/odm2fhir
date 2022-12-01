@@ -46,7 +46,7 @@ public class Anticoagulation extends Item {
   protected Stream<DomainResource> map(FormData formData) {
     var itemGroupData = formData.getItemGroupData("medikation.antikoagulation_absicht");
     var generalPresence = formData.getItemData("antikoagulation");
-    var generalCoding = formData.getItemData("antikoagulation_code");
+    var generalCoding = formData.getItemData("antikoagulation_code", "1");
     var dateCoding = formData.getItemData("medikation_datum");
     var reasonCoding = formData.getItemData("antikoagulation_absicht");
 

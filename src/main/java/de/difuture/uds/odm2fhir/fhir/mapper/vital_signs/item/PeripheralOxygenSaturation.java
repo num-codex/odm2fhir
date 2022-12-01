@@ -36,7 +36,7 @@ public class PeripheralOxygenSaturation extends Item {
 
   protected Stream<DomainResource> map(FormData formData) {
     var answerCoding = formData.getItemData("periphere_sauerstoffsattigung");
-    var generalCoding = formData.getItemData("periphere_sauerstoffsattigung_code");
+    var generalCoding = formData.getItemData("periphere_sauerstoffsattigung_code", "1");
     var dateCoding = formData.getItemData("vitalparameter_datum");
 
     return answerCoding.isEmpty() ? Stream.empty() : Stream.of(createObservation(generalCoding, answerCoding, dateCoding));

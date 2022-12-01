@@ -36,7 +36,7 @@ public class GastrointestinalUlcers extends Item {
 
   protected Stream<DomainResource> map(FormData formData) {
     var answerCoding = formData.getItemData("magengeschwure");
-    var generalCoding = formData.getItemData("magengeschwure_code");
+    var generalCoding = formData.getItemData("magengeschwure_code", "1");
 
     return answerCoding.isEmpty() ? Stream.empty() : Stream.of(createCondition(generalCoding, answerCoding));
   }

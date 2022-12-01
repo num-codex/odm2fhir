@@ -45,7 +45,7 @@ public class SymptomConditions extends Item {
                                                        "kopfschmerzen", "andere_symptome");
 
   protected Stream<DomainResource> map(FormData formData) {
-    var generalSymptomCoding = formData.getItemData("symptome_code");
+    var generalSymptomCoding = formData.getItemData("symptome_code", "1");
 
     return !"1".equals(formData.getItemData("symptome").getValue()) ? Stream.empty() :
         SYMPTOMS.stream()
