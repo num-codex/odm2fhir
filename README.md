@@ -68,7 +68,7 @@ Enable HTTP(S) proxy by adding the environment to `**ENVIRONMENTS**`:
 ```
 
 #### Export Chunking
-The ODM export from REDCap is by default divided into exports for data of single patients to avoid connection issues and timeouts but can be changed by adding the argument:
+By default, the ODM export from REDCap is divided into exports for data of single patients to avoid connection issues and timeouts. This can be changed by adding the argument:
 ```sh
 --odm.redcap.api.patientspercall=**PATIENTS_PER_CALL**
 ```
@@ -79,6 +79,11 @@ By default, all subjects within an ODM are processed. To process only subjects w
 -v **CACHE_FOLDER**:/workspace/cache
 ```
 (Note: To reset the filtering, empty the folder `**CACHE_FOLDER**`.)
+
+To filter subjects using REDCap's filter logic add the argument with `**FILTER_LOGIC**` holding a valid filter logic string:
+```sh
+--odm.redcap.api.filterlogic=**FILTER_LOGIC**
+```
 
 ### DIS
 ```sh

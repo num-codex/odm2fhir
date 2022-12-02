@@ -9,6 +9,7 @@ odm:
 #    url: http://redcap/api/
 #    token: 12345ABCDE67890ABCDE12345ABCDEF0
 #    patientspercall: 1
+#    filterlogic: "[record_id] <> 0"
 #    key:
 #      file.path: /some/path/client_certificate.p12
 #      password: change-password

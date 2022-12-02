@@ -60,6 +60,9 @@ public class REDCapODMProcessor extends ODMProcessor {
   @Value("${odm.redcap.api.patientspercall:1}")
   private int patientspercall;
 
+  @Value("${odm.redcap.api.filterlogic:}")
+  private String filterlogic;
+
   public Stream<InputStream> read() throws Exception {
     log.info("Reading ODM via REDCap API at '{}'", url);
 
@@ -98,6 +101,7 @@ public class REDCapODMProcessor extends ODMProcessor {
                                     .addParameter("format", "csv")
                                     .addParameter("fields", "record_id")
                                     .addParameter("events", "basisdaten_arm_1,1_fall_arm_1,2_fall_arm_1,3_fall_arm_1")
+                                    .addParameter("filterLogic", filterlogic)
                                     .build();
 
     return readLines(HTTP_CLIENT_BUILDER.build().execute(httpPost).getEntity().getContent(), UTF_8)
